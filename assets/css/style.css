@@ -623,6 +623,28 @@ ul { margin: 0; padding-left: 1.25em; }
   min-width: 0;
 }
 
+.page-characters .content-column,
+.page-characters .section,
+.page-characters .data-table-wrap {
+  min-width: 0;
+}
+
+.page-characters .data-table {
+  min-width: 0;
+  table-layout: fixed;
+}
+
+.page-characters .data-table th,
+.page-characters .data-table td {
+  overflow-wrap: anywhere;
+}
+
+.page-characters .data-table th:first-child,
+.page-characters .data-table td:first-child {
+  width: 72px;
+  white-space: nowrap;
+}
+
 .data-table th,
 .data-table td {
   padding: 9px 12px;
