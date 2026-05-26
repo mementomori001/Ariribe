@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>キャラスキル一覧 | ありリベ攻略備忘録</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="header-inner">
+      <div class="site-logo">
+        <span class="logo-en">ARIFURETA REBELLION SOUL NOTES</span>
+        <a href="../index.html"><h1 class="logo-ja">ありリベ攻略備忘録</h1></a>
+      </div>
+      <nav class="main-nav" id="mainNav">
+        <a href="../index.html" class="nav-link">ホーム</a>
+        <a href="characters.html" class="nav-link">キャラ図鑑</a>
+        <a href="character-skills.html" class="nav-link active">キャラスキル一覧</a>
+        <a href="beasts.html" class="nav-link">魔獣一覧</a>
+        <a href="magic-circles.html" class="nav-link">魔法陣一覧</a>
+        <a href="artifacts.html" class="nav-link">アーティファクト一覧</a>
+        <a href="city.html" class="nav-link">都市建設</a>
+        <a href="party.html" class="nav-link">編成</a>
+        <a href="tips.html" class="nav-link highlight">その他お役立ち情報</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <p class="page-hero-eyebrow">CHARACTER SKILLS</p>
+    <h2 class="page-hero-title">キャラスキル一覧</h2>
+    <p class="page-hero-desc">キャラクターごとのメインスキル、基礎スキル、覚醒スキルをまとめるページです。</p>
+  </section>
+
+  <main class="page-content">
+    <div class="content-column">
+      <section class="section">
+        <div class="section-header">
+          <h2 class="section-title"><span>HEART</span>心属性</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="skill-card" id="oscar">
+          <h3>オスカー</h3>
+          <div class="skill-list">
+            <div class="skill-row">
+              <div class="skill-label">タイプ</div>
+              <div class="skill-text">応援タイプ</div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label">メインスキル</div>
+              <div class="skill-text">雷光</div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label">基礎スキル</div>
+              <div class="skill-text">敵全体に160%のダメージを与える。与えたダメージの50%相当の生命値を回復する。</div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label">覚醒スキル</div>
+              <div class="skill-text">敵全体に210%のダメージを与える。与えたダメージの65%相当の生命値を回復する。さらに相手の貫通-10%効果3ターン。</div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label">パッシブスキル1</div>
+              <div class="skill-text">トラップ</div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label">基礎スキル</div>
+              <div class="skill-text">味方がスキルを発動時、自身のスキルダメージ+20%、戦闘終了まで継続、重複可能</div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label">覚醒スキル</div>
+              <div class="skill-text">味方がスキルを発動時、自身のスキルダメージ+20%、貫通+10%、戦闘終了まで継続、重複可能</div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label">パッシブスキル2</div>
+              <div class="skill-text">神代生成魔法</div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label">基礎スキル</div>
+              <div class="skill-text">攻撃力+15%、防御力+15%、ダメージ軽減+20%。</div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label">覚醒スキル</div>
+              <div class="skill-text">攻撃力+15%、生命値+10%、防御力+15%、会心+20%、ダメージ軽減+20%。</div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label">パッシブスキル3</div>
+              <div class="skill-text">準備万全</div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label">基礎スキル</div>
+              <div class="skill-text">毎ターン終了時、自身の攻撃力+20%、戦闘終了まで継続、重複可能。</div>
+            </div>
+            <div class="skill-row">
+              <div class="skill-label">覚醒スキル</div>
+              <div class="skill-text">毎ターン終了時、自身の攻撃力+20%、貫通耐性+10%、戦闘終了まで継続、重複可能。</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <aside class="side-column">
+      <section class="side-box">
+        <h2 class="side-title">手動で追加する場所</h2>
+        <p>このページの本文側にある <strong>skill-card</strong> をキャラごとに追加します。属性ごとに section を分けると、あとで探しやすいです。</p>
+      </section>
+      <section class="side-box">
+        <h2 class="side-title">書き方</h2>
+        <ul>
+          <li>覚醒前は「基礎スキル」</li>
+          <li>覚醒後は「覚醒スキル」</li>
+          <li>パッシブは番号ごとに分ける</li>
+        </ul>
+      </section>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">ありリベ攻略備忘録</div>
+      <p class="footer-copy">© 2026 ありリベ攻略備忘録 / 非公式ファンサイト</p>
+    </div>
+  </footer>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>
