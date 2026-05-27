@@ -582,6 +582,12 @@ ul { margin: 0; padding-left: 1.25em; }
 
 .side-box li:last-child { border-bottom: 0; }
 
+.update-scroll-list {
+  max-height: 180px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
 .page-hero {
   max-width: var(--max);
   margin: 22px auto 0;
