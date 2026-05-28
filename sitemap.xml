@@ -1,67 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+<!--  created with free sitemap generation system www.sitemapxml.jp  --> 
 <url>
-<loc>https://mementomori001.github.io/Ariribe/google96031a4c1747e2ad.html</loc>
-<lastmod>2026-05-28T06:59:24+00:00</lastmod>
+  <loc>https://mementomori001.github.io/Ariribe/</loc>
+  <priority>1.0</priority>
+  <lastmod>2026-05-28T20:10:58+09:00</lastmod>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>https://mementomori001.github.io/Ariribe/</loc>
-<lastmod>2026-05-28T06:59:24+00:00</lastmod>
+  <loc>https://mementomori001.github.io/Ariribe/index.html</loc>
+  <priority>0.8</priority>
+  <lastmod>2026-05-28T20:10:58+09:00</lastmod>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>https://mementomori001.github.io/Ariribe/pages/artifacts.html</loc>
-<lastmod>2026-05-28T06:59:24+00:00</lastmod>
+  <loc>https://mementomori001.github.io/Ariribe/pages/characters.html</loc>
+  <priority>0.8</priority>
+  <lastmod>2026-05-28T20:10:58+09:00</lastmod>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>https://mementomori001.github.io/Ariribe/pages/beasts.html</loc>
-<lastmod>2026-05-28T06:59:24+00:00</lastmod>
+  <loc>https://mementomori001.github.io/Ariribe/pages/character-skills.html</loc>
+  <priority>0.8</priority>
+  <lastmod>2026-05-28T20:10:58+09:00</lastmod>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>https://mementomori001.github.io/Ariribe/pages/beginner.html</loc>
-<lastmod>2026-05-28T06:59:24+00:00</lastmod>
+  <loc>https://mementomori001.github.io/Ariribe/pages/beasts.html</loc>
+  <priority>0.8</priority>
+  <lastmod>2026-05-28T20:10:58+09:00</lastmod>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>https://mementomori001.github.io/Ariribe/pages/board.html</loc>
-<lastmod>2026-05-28T06:59:24+00:00</lastmod>
+  <loc>https://mementomori001.github.io/Ariribe/pages/magic-circles.html</loc>
+  <priority>0.8</priority>
+  <lastmod>2026-05-28T20:10:58+09:00</lastmod>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>https://mementomori001.github.io/Ariribe/pages/character-skills.html</loc>
-<lastmod>2026-05-28T06:59:24+00:00</lastmod>
+  <loc>https://mementomori001.github.io/Ariribe/pages/artifacts.html</loc>
+  <priority>0.8</priority>
+  <lastmod>2026-05-28T20:10:58+09:00</lastmod>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>https://mementomori001.github.io/Ariribe/pages/characters.html</loc>
-<lastmod>2026-05-28T06:59:24+00:00</lastmod>
+  <loc>https://mementomori001.github.io/Ariribe/pages/city.html</loc>
+  <priority>0.8</priority>
+  <lastmod>2026-05-28T20:10:58+09:00</lastmod>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>https://mementomori001.github.io/Ariribe/pages/city.html</loc>
-<lastmod>2026-05-28T06:59:24+00:00</lastmod>
+  <loc>https://mementomori001.github.io/Ariribe/pages/divine-arts.html</loc>
+  <priority>0.8</priority>
+  <lastmod>2026-05-28T20:10:58+09:00</lastmod>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>https://mementomori001.github.io/Ariribe/pages/divine-arts.html</loc>
-<lastmod>2026-05-28T06:59:24+00:00</lastmod>
+  <loc>https://mementomori001.github.io/Ariribe/pages/party.html</loc>
+  <priority>0.8</priority>
+  <lastmod>2026-05-28T20:10:58+09:00</lastmod>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>https://mementomori001.github.io/Ariribe/pages/equipment.html</loc>
-<lastmod>2026-05-28T06:59:24+00:00</lastmod>
+  <loc>https://mementomori001.github.io/Ariribe/pages/tips.html</loc>
+  <priority>0.8</priority>
+  <lastmod>2026-05-28T20:10:58+09:00</lastmod>
+  <changefreq>weekly</changefreq>
 </url>
 <url>
-<loc>https://mementomori001.github.io/Ariribe/pages/events.html</loc>
-<lastmod>2026-05-28T06:59:24+00:00</lastmod>
+  <loc>https://mementomori001.github.io/Ariribe/pages/board.html</loc>
+  <priority>0.8</priority>
+  <lastmod>2026-05-28T20:10:58+09:00</lastmod>
+  <changefreq>weekly</changefreq>
 </url>
-<url>
-<loc>https://mementomori001.github.io/Ariribe/pages/magic-circles.html</loc>
-<lastmod>2026-05-28T06:59:24+00:00</lastmod>
-</url>
-<url>
-<loc>https://mementomori001.github.io/Ariribe/pages/party.html</loc>
-<lastmod>2026-05-28T06:59:24+00:00</lastmod>
-</url>
-<url>
-<loc>https://mementomori001.github.io/Ariribe/pages/quests.html</loc>
-<lastmod>2026-05-28T06:59:24+00:00</lastmod>
-</url>
-<url>
-<loc>https://mementomori001.github.io/Ariribe/pages/tips.html</loc>
-<lastmod>2026-05-28T06:59:24+00:00</lastmod>
-</url>
+
 </urlset>
