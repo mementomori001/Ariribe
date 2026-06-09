@@ -205,27 +205,27 @@
           <div class="input-row">
             <span class="input-name">木槌</span>
             <span class="input-pt">1 pt</span>
-            <input class="calc-input" type="number" id="ki" min="0" value="0" oninput="calcTsuchi()">
+            <input class="calc-input" type="number" id="ki" min="0" value="" oninput="calcTsuchi()">
           </div>
           <div class="input-row">
             <span class="input-name">鉄槌</span>
             <span class="input-pt">10 pt</span>
-            <input class="calc-input" type="number" id="tetsu" min="0" value="0" oninput="calcTsuchi()">
+            <input class="calc-input" type="number" id="tetsu" min="0" value="" oninput="calcTsuchi()">
           </div>
           <div class="input-row">
             <span class="input-name">鋼槌</span>
             <span class="input-pt">20 pt</span>
-            <input class="calc-input" type="number" id="hagane" min="0" value="0" oninput="calcTsuchi()">
+            <input class="calc-input" type="number" id="hagane" min="0" value="" oninput="calcTsuchi()">
           </div>
           <div class="input-row">
             <span class="input-name">銀槌</span>
             <span class="input-pt">50 pt</span>
-            <input class="calc-input" type="number" id="gin" min="0" value="0" oninput="calcTsuchi()">
+            <input class="calc-input" type="number" id="gin" min="0" value="" oninput="calcTsuchi()">
           </div>
           <div class="input-row">
             <span class="input-name">金槌</span>
             <span class="input-pt" style="color:var(--muted)">0 pt</span>
-            <input class="calc-input" type="number" id="kin" min="0" value="0" oninput="calcTsuchi()">
+            <input class="calc-input" type="number" id="kin" min="0" value="" oninput="calcTsuchi()">
             <span style="font-size:0.78rem;color:var(--muted)">※ポイント計算対象外</span>
           </div>
 
@@ -268,7 +268,7 @@
               <div class="metric-sub" id="remain-sub"></div>
             </div>
             <div class="metric-box">
-              <div class="metric-label">交換報酬の周回数</div>
+              <div class="metric-label">鉄~金槌の周回数</div>
               <div class="metric-value" id="loop-count">—</div>
               <div class="metric-sub">周</div>
             </div>
@@ -475,7 +475,7 @@
         if (!weeklyCheck) return 0;
         const WEEKLY_LOOP_PT = 8000;
         const fullLoops = Math.min(WEEKLY_MAX_LOOPS, Math.floor(pt / WEEKLY_LOOP_PT));
-        const rem = pt - fullLoops * WEEKLY_LOOP_PT; // 端数（max4周を超えた分は切り捨て）
+        const rem = Math.min(pt, WEEKLY_MAX_LOOPS * WEEKLY_LOOP_PT) - fullLoops * WEEKLY_LOOP_PT;
         let count = fullLoops * WEEKLY_THRESHOLDS.length * WEEKLY_TETSU_COUNT;
         for (const th of WEEKLY_THRESHOLDS) {
           if (rem >= th) count += WEEKLY_TETSU_COUNT;
