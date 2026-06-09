@@ -7,6 +7,31 @@
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    .calc-tabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 2px solid var(--line-dark);
+      margin-bottom: 18px;
+    }
+    .calc-tab {
+      padding: 8px 20px;
+      font-family: var(--sans);
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .calc-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+    .calc-tab:hover:not(.active) { color: var(--ink); }
+    .calc-panel { display: none; }
+    .calc-panel.active { display: block; }
+  </style>
 </head>
 <body>
   <header class="site-header" id="siteHeader">
@@ -22,10 +47,19 @@
     <p class="page-hero-desc">キャラクター名をクリックまたはタップすると、スキル詳細が開きます。</p>
   </section>
 
-  <main class="page-content">
+  <main class="main-content">
     <div class="content-column">
       <section class="section">
         <div class="section-header"><h2 class="section-title"><span>CHARACTER</span>キャラクター</h2><div class="section-line"></div></div>
+
+        <div class="calc-tabs">
+          <button class="calc-tab active" onclick="switchTab('ur')">UR</button>
+          <button class="calc-tab" onclick="switchTab('ur+')">UR+</button>
+          <button class="calc-tab" onclick="switchTab('ssr')">SSR</button>
+        </div>
+
+        <!-- UR パネル -->
+        <div id="panel-ur" class="calc-panel active">
         <div class="detail-list">
           <details class="detail-card" id="oscar">
             <summary>オスカー</summary>
@@ -467,6 +501,13 @@
               </div>
             </div>
           </details>
+
+        </div><!-- /.detail-list (UR) -->
+        </div><!-- /#panel-ur -->
+
+        <!-- UR+ パネル -->
+        <div id="panel-ur+" class="calc-panel">
+        <div class="detail-list">
 
           <details class="detail-card" id="character-skill-21">
             <summary>ティオ(黒竜化)</summary>
@@ -943,6 +984,13 @@
             </div>
           </details>
           <!-- character-skills additions end -->
+
+        </div><!-- /.detail-list (UR+) -->
+        </div><!-- /#panel-ur+ -->
+
+        <!-- SSR パネル -->
+        <div id="panel-ssr" class="calc-panel">
+        <div class="detail-list">
           <!-- character-skills basic additions start -->
           <details class="detail-card" id="basic-character-skill-01">
             <summary>クゼ</summary>
@@ -1377,13 +1425,23 @@
             </div>
           </details>
           <!-- character-skills basic additions end -->
-        </div>
+        </div><!-- /.detail-list (SSR) -->
+        </div><!-- /#panel-ssr -->
+
       </section>
     </div>
-
   </main>
 
   <footer class="site-footer"><div class="footer-inner"><div class="footer-logo">ありリベ攻略備忘録</div><p class="footer-copy">© 2026 ありリベ攻略備忘録 / 非公式ファンサイト</p></div></footer>
   <script src="../assets/js/main.js"></script>
+  <script>
+    function switchTab(id) {
+      document.querySelectorAll('.calc-tab').forEach(t => {
+        t.classList.toggle('active', t.getAttribute('onclick') === `switchTab('${id}')`);
+      });
+      document.querySelectorAll('.calc-panel').forEach(p => p.classList.remove('active'));
+      document.getElementById('panel-' + id).classList.add('active');
+    }
+  </script>
 </body>
 </html>
