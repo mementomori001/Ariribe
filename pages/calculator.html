@@ -268,7 +268,7 @@
               <div class="metric-sub" id="remain-sub"></div>
             </div>
             <div class="metric-box">
-              <div class="metric-label">鉄~金槌の周回数</div>
+              <div class="metric-label">交換報酬の周回数</div>
               <div class="metric-value" id="loop-count">—</div>
               <div class="metric-sub">周</div>
             </div>
@@ -329,7 +329,7 @@
           <hr class="calc-hr" style="margin-top:18px">
 
           <div class="section-header" style="margin-top:4px">
-            <h2 class="section-title"><span>PLAN</span>最安値の購入プラン(1か月の場合は1080円パス×7、お試し募集ギフト×2の7760円が最安値です。現在修正中です。)</h2>
+            <h2 class="section-title"><span>PLAN</span>最安値の購入プラン</h2>
           </div>
 
           <div id="plan-list"></div>
@@ -406,7 +406,7 @@
       </section>
       <section class="side-box">
         <h2 class="side-title">注意事項</h2>
-        <p style="color:var(--muted);font-size:0.88rem">ゲームのアップデートで価格・上限が変わる場合があります。必ずゲーム内の情報をご確認ください。</p>
+        <p style="color:var(--muted);font-size:0.88rem">ゲームのアップデートで価格・上限が変わる場合があります。必ずゲーム内の情報をご確認ください。コラボキャラクターの場合は1週で獲得が最安値になります。</p>
       </section>
     </aside>
   </main>
@@ -423,7 +423,6 @@
         <a href="city.html">都市建設</a>
         <a href="divine-arts.html">神術一覧</a>
         <a href="party.html">編成</a>
-        <a href="calculator.html" class="nav-link">ガチャ募集券計算機</a>
         <a href="tips.html">その他お役立ち情報</a>
         <a href="board.html">掲示板</a>
       </nav>
@@ -475,10 +474,13 @@
         if (!weeklyCheck) return 0;
         const WEEKLY_LOOP_PT = 8000;
         const fullLoops = Math.min(WEEKLY_MAX_LOOPS, Math.floor(pt / WEEKLY_LOOP_PT));
-        const rem = Math.min(pt, WEEKLY_MAX_LOOPS * WEEKLY_LOOP_PT) - fullLoops * WEEKLY_LOOP_PT;
         let count = fullLoops * WEEKLY_THRESHOLDS.length * WEEKLY_TETSU_COUNT;
-        for (const th of WEEKLY_THRESHOLDS) {
-          if (rem >= th) count += WEEKLY_TETSU_COUNT;
+        // 4周フルに達していない場合のみ端数を判定
+        if (fullLoops < WEEKLY_MAX_LOOPS) {
+          const rem = pt - fullLoops * WEEKLY_LOOP_PT;
+          for (const th of WEEKLY_THRESHOLDS) {
+            if (rem >= th) count += WEEKLY_TETSU_COUNT;
+          }
         }
         return count;
       }
@@ -649,43 +651,85 @@
         { name: '豪華募集ギフト',   price: 9800, tickets: 120, limitPerWeek: 1386 },
       ].sort((a, b) => (a.price / a.tickets) - (b.price / b.tickets));
 
-      // ── 購入シミュレーション（1枚単位で追跡） ──
-      // ticketsSoFar: 現在の累計券数（無料分スタート）
-      // remaining:    天井まであと何枚必要か
-      // bonus140Applied: 140連ボーナスを受け取ったか
-      let ticketsSoFar    = freeTotal;
-      let bonus140Applied = freeTotal >= BONUS_THRESHOLD; // 無料分だけで達成済みか
-      if (bonus140Applied) ticketsSoFar += BONUS_TICKETS; // 達成済みなら即加算
+      // ── 購入シミュレーション（最安値greedy）──
+      // 余り分を後続パックでカバーするコストとこのパック1回分のコストを比較して
+      // floor/ceilを動的に選択する。
+      let accumulated      = freeTotal;
+      let bonus140Applied  = accumulated >= BONUS_THRESHOLD;
+      if (bonus140Applied) accumulated += BONUS_TICKETS;
 
-      let remaining  = Math.max(0, CEILING - ticketsSoFar);
-      let totalCost  = 0;
-      const planItems = [];
-      let bonusTriggeredBy = null; // どのパックで140連達成したか
+      let remaining        = Math.max(0, CEILING - accumulated);
+      let totalCost        = 0;
+      const planItems      = [];
+      let bonusTriggeredBy = null;
 
-      for (const pack of packs) {
+      for (let pi = 0; pi < packs.length; pi++) {
         if (remaining <= 0) break;
+        const pack = packs[pi];
         const totalLimit = pack.limitPerWeek * weeks;
         if (totalLimit <= 0) continue;
 
-        let buyCount = 0;
-        for (let b = 0; b < totalLimit; b++) {
-          if (remaining <= 0) break;
-          buyCount++;
-          ticketsSoFar += pack.tickets;
-          remaining    -= pack.tickets;
+        // 実効残り（ボーナス未達でこのパックで達成できる場合、ボーナス分を先引き）
+        let effRem = remaining;
+        if (!bonus140Applied) {
+          const n4b = BONUS_THRESHOLD - accumulated;
+          if (n4b <= totalLimit * pack.tickets) effRem = Math.max(0, remaining - BONUS_TICKETS);
+        }
 
-          // 140連ボーナス未適用 & この購入で140連突破
-          if (!bonus140Applied && ticketsSoFar >= BONUS_THRESHOLD) {
+        // 余り枚数を後続パックでカバーするコストを計算
+        const remainder = effRem % pack.tickets;
+        let futureCostForRemainder = Infinity;
+        if (remainder > 0) {
+          let rem2 = remainder, cost2 = 0;
+          for (let fi = pi + 1; fi < packs.length; fi++) {
+            const fp = packs[fi];
+            const flim = fp.limitPerWeek * weeks;
+            if (flim <= 0) continue;
+            const cnt2 = Math.min(flim, Math.ceil(rem2 / fp.tickets));
+            cost2 += cnt2 * fp.price;
+            rem2  -= cnt2 * fp.tickets;
+            if (rem2 <= 0) break;
+          }
+          futureCostForRemainder = rem2 <= 0 ? cost2 : Infinity;
+        }
+
+        // floor: 後続で余りをカバーする方が安い → 後続に任せる
+        // ceil:  このパックの方が安い → このパックで完結
+        let cnt;
+        if (remainder === 0 || futureCostForRemainder < pack.price) {
+          cnt = Math.min(totalLimit, Math.floor(effRem / pack.tickets));
+        } else {
+          cnt = Math.min(totalLimit, Math.ceil(effRem / pack.tickets));
+        }
+
+        // ボーナス未達で0回の場合、このパックでボーナスを取れるなら最低1回
+        if (cnt === 0 && !bonus140Applied && (BONUS_THRESHOLD - accumulated) <= pack.tickets) cnt = 1;
+
+        let buyCount = 0;
+        for (let i = 0; i < cnt; i++) {
+          if (remaining <= 0) break;
+          accumulated += pack.tickets;
+          remaining   -= pack.tickets;
+          buyCount++;
+
+          if (!bonus140Applied && accumulated >= BONUS_THRESHOLD) {
             bonus140Applied  = true;
             bonusTriggeredBy = pack.name;
-            remaining       -= BONUS_TICKETS; // ボーナス分で不足を減らす
+            remaining       -= BONUS_TICKETS;
           }
+          if (remaining <= 0) break;
         }
 
         if (buyCount > 0) {
-          planItems.push({ pack, count: buyCount, got: buyCount * pack.tickets, cost: buyCount * pack.price });
+          planItems.push({
+            pack,
+            count: buyCount,
+            got:   buyCount * pack.tickets,
+            cost:  buyCount * pack.price,
+          });
           totalCost += buyCount * pack.price;
         }
+
       }
 
       // ── 表示用：無料分 + ボーナス表記 ──
