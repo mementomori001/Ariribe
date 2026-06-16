@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>編成チェッカー（PVE用） | ありリベ攻略備忘録</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/party-builder.css">
+</head>
+<body>
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <div class="site-logo">
+      <span class="logo-en">ARIFURE REBELLION SOUL NOTES</span>
+      <a href="../index.html"><h1 class="logo-ja">ありリベ攻略備忘録</h1></a>
+    </div>
+    <nav class="main-nav" id="mainNav">
+      <a href="../index.html" class="nav-link">ホーム</a>
+      <a href="characters.html" class="nav-link">キャラ図鑑</a>
+      <a href="character-skills.html" class="nav-link">キャラスキル一覧</a>
+      <a href="beasts.html" class="nav-link">魔獣一覧</a>
+      <a href="magic-circles.html" class="nav-link">魔法陣一覧</a>
+      <a href="artifacts.html" class="nav-link">アーティファクト一覧</a>
+      <a href="city.html" class="nav-link">都市建設</a>
+      <a href="divine-arts.html" class="nav-link">神術一覧</a>
+      <a href="party.html" class="nav-link">編成</a>
+      <a href="party-builder.html" class="nav-link active">編成チェッカー</a>
+      <a href="tips.html" class="nav-link highlight">その他お役立ち情報</a>
+    </nav>
+  </div>
+</header>
+<section class="page-hero">
+  <p class="page-hero-eyebrow">PARTY BUILDER / PVE</p>
+  <h2 class="page-hero-title">編成チェッカー（PVE用）</h2>
+  <p class="page-hero-desc">キャラと魔法陣を選択して編成を評価。ボス対策・魔法陣一覧も収録。全キャラ覚醒後前提で評価。</p>
+</section>
+<main class="main-content">
+<div class="content-column">
+<section class="section">
+  <div class="tab-btns" id="main-tabs">
+    <button class="tab-btn active" onclick="switchMain('builder',this)">🗡 編成チェッカー</button>
+    <button class="tab-btn" onclick="switchMain('boss',this)">🐉 ボス対策</button>
+    <button class="tab-btn" onclick="switchMain('circles',this)">🔮 魔法陣一覧</button>
+    <button class="tab-btn" onclick="switchMain('stats',this)">📊 ステータス</button>
+  </div>
+
+  <!-- ======= 編成チェッカー ======= -->
+  <div id="main-builder" class="tab-panel active">
+    <div class="pb-note">⚔ <strong>PVE基本</strong>階層後半ではボス以外も非常に強力<strong>無課金ではヴァンドゥル（★27+）＋畑山愛子で不死</strong>が最強の前列構成です。</div>
+
+    <div class="section-header"><h2 class="section-title"><span>STEP1</span>キャラ選択（最大5体）</h2></div>
+    <div class="filter-row">
+      <button class="filter-btn active" onclick="setFilter('all',this)">すべて</button>
+      <button class="filter-btn" onclick="setFilter('ur+',this)">UR+</button>
+      <button class="filter-btn" onclick="setFilter('ur',this)">UR</button>
+      <button class="filter-btn" onclick="setFilter('ssr',this)">SSR</button>
+    </div>
+    <div class="char-pool" id="char-pool"></div>
+
+    <div class="section-header" style="margin-top:16px"><h2 class="section-title"><span>STEP2</span>編成 + 魔法陣設定</h2></div>
+    <p style="font-size:.8rem;color:var(--muted);margin-bottom:8px">各スロットのプルダウンで魔法陣を選択・検索できます。凸数も設定できます。</p>
+    <div class="slot-row" id="slot-grid"></div>
+    <button onclick="clearParty()" style="margin-top:4px;padding:5px 13px;border:1px solid var(--line-dark);background:#f7f7f7;font-family:var(--sans);font-size:.82rem;font-weight:700;cursor:pointer">クリア</button>
+    <div id="excl-warnings" style="margin-top:8px"></div>
+
+    <div class="section-header" style="margin-top:18px"><h2 class="section-title"><span>RESULT</span>編成分析</h2></div>
+    <div id="analysis-area"><p class="empty-msg">キャラを選択すると分析結果が表示されます。</p></div>
+  </div>
+
+  <!-- ======= ボス対策 ======= -->
+  <div id="main-boss" class="tab-panel">
+    <div class="section-header"><h2 class="section-title"><span>BOSS</span>ボスを選択してください</h2></div>
+    <p style="font-size:.82rem;color:var(--muted);margin-bottom:10px">攻略中のボスを選ぶと対策編成が表示されます。</p>
+    <div class="boss-grid" id="boss-grid"></div>
+    <div id="boss-detail"><p class="empty-msg">ボスを選択すると対策が表示されます。</p></div>
+  </div>
+
+  <!-- ======= 魔法陣一覧 ======= -->
+  <div id="main-circles" class="tab-panel">
+    <div class="section-header"><h2 class="section-title"><span>CIRCLE</span>魔法陣一覧</h2></div>
+    <input class="search-bar" id="circle-search" placeholder="魔法陣名・効果で検索..." oninput="renderCircleList()">
+    <div id="circle-list"></div>
+  </div>
+
+  <!-- ======= ステータス ======= -->
+  <div id="main-stats" class="tab-panel">
+    <div class="section-header"><h2 class="section-title"><span>STATUS</span>ステータス解説</h2></div>
+    <p style="font-size:.82rem;color:var(--muted);margin-bottom:10px">間違いがあれば掲示板からご連絡ください。</p>
+    <div style="overflow-x:auto"><table class="stat-table"><thead><tr><th>ステータス</th><th>効果</th></tr></thead><tbody id="stat-tbody"></tbody></table></div>
+  </div>
+</section>
+</div>
+
+<aside class="side-column">
+  <section class="side-box">
+    <h2 class="side-title">PVE攻略の要点</h2>
+    <ul style="font-size:.8rem;color:var(--muted)">
+      <li>何よりも火力が大事</li>
+      <li>無課金最強の火力枠はオスカー</li>
+      <li>無課金ではヴァンドゥル★27+愛子で不死が最強</li>
+    </ul>
+  </section>
+  <section class="side-box">
+    <h2 class="side-title">同時編成できない魔法陣</h2>
+    <ul style="font-size:.8rem;color:var(--muted)">
+      <li>竜焔 ↔ ゾンビ</li>
+      <li>蒼魔 ↔ 氷雪</li>
+      <li>ハロウィン ↔ 裁定</li>
+    </ul>
+  </section>
+  <section class="side-box">
+    <h2 class="side-title">役割の見方</h2>
+    <p style="font-size:.8rem;margin-bottom:4px"><span class="role-badge role-atk">攻撃</span> 主力火力</p>
+    <p style="font-size:.8rem;margin-bottom:4px"><span class="role-badge role-buff">バフ</span> 全体ダメ増加等</p>
+    <p style="font-size:.8rem;margin-bottom:4px"><span class="role-badge role-debuff">デバフ</span> 敵弱体化</p>
+    <p style="font-size:.8rem;margin-bottom:4px"><span class="role-badge role-tank">タンク</span> 前列耐久</p>
+    <p style="font-size:.8rem;margin-bottom:4px"><span class="role-badge role-cc">CC</span> 行動制限</p>
+    <p style="font-size:.8rem;margin-bottom:4px"><span class="role-badge role-dot">DoT</span> 継続ダメージ</p>
+    <p style="font-size:.8rem"><span class="role-badge role-heal">回復</span> 生命値回復</p>
+  </section>
+</aside>
+</main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-logo">ありリベ攻略備忘録</div>
+    <nav class="footer-nav"><a href="../index.html">ホーム</a><a href="party-builder.html">編成チェッカー</a></nav>
+    <p class="footer-copy">© 2026 ありリベ攻略備忘録 / 非公式ファンサイト</p>
+  </div>
+</footer>
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/party-builder.js"></script>
+</body>
+</html>
