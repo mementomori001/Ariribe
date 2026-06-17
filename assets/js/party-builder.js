@@ -196,7 +196,7 @@ const CHARS = [
   tags:['dot_explode','burn_passive','revive_lethal','cc_resist'],
   pveScore:9,
   pveNote:'覚醒後は致死ダメ1回無効+全回復復活。ターン開始時に敵全体に灼熱を付与しDoTを蓄積させる。竜焔/ゾンビ魔法陣でDoT付与のたびにスキルダメ+5%を積み上げる。前列配置も可能。',
-  bestCircles:['竜焔魔法陣','ゾンビ魔法陣','ハロウィン魔法陣'],
+  bestCircles:['竜焔魔法陣','お月見魔法陣','ゾンビ魔法陣','ハロウィン魔法陣'],
   pairWith:['adoru'], synergy:['dot_team','tio_adoru'] },
 
 { id:'shizuku_plus', name:'八重樫雫(覇者)', rarity:'ur+', type:'強靭',
@@ -204,7 +204,7 @@ const CHARS = [
   tags:['counter_70','crit_stack_passive','dmg_reduce_buff_all'],
   pveScore:9,
   pveNote:'スキル発動のたびに味方全体のダメージ軽減+10%（最大5回で+50%）。70%の確率で反撃。ガードも高く前列として非常に堅い。美女魔法陣の八重樫雫の力（撃破時スキル再発動）とのシナジーもある。',
-  bestCircles:['魔眼魔法陣','桜花魔法陣','炉神魔法陣'],
+  bestCircles:['ハロウィン魔法陣','闘神魔法陣','桜花魔法陣','炉神魔法陣'],
   pairWith:[], synergy:['counter_team','buff_team'] },
 
 { id:'shia_plus', name:'シア(覇者)', rarity:'ur+', type:'神鋭',
@@ -212,7 +212,7 @@ const CHARS = [
   tags:['taunt','guard','share_damage_60','revive_lethal'],
   pveScore:10,
   pveNote:'挑発で全攻撃を引き受けダメを60%肩代わり。致死1回無効化。スキル発動で味方ATK+10%。新年/鳳凰魔法陣装備で、被攻撃のたびに主力アタッカーのスキルが追加発動する。PVE前列最上位の一角。',
-  bestCircles:['新年魔法陣','鳳凰魔法陣','炉神魔法陣'],
+  bestCircles:['虚像魔法陣','新年魔法陣','蒼魔魔法陣'],
   pairWith:['sona'], synergy:['tank_front'] },
 
 { id:'yue_plus', name:'ユエ(覇者)', rarity:'ur+', type:'強靭',
@@ -220,7 +220,7 @@ const CHARS = [
   tags:['revive_vampire','crit','bleed','dot_on_atk'],
   pveScore:10,
   pveNote:'HP0で吸血鬼変身→次ターン全回復復活。出血付与（DoT）で竜焔魔法陣と相性が良い。致死ダメージを受けることで本領を発揮。毎ターンスキルを打てる。',
-  bestCircles:['竜焔魔法陣','ハロウィン魔法陣','桜花魔法陣'],
+  bestCircles:['竜焔魔法陣','ゾンビ魔法陣','闘神魔法陣','ハロウィン魔法陣'],
   pairWith:[], synergy:['atk_team'] },
 
 { id:'miledy_plus', name:'ミレディ(姫騎士)', rarity:'ur+', type:'勇猛',
@@ -228,7 +228,7 @@ const CHARS = [
   tags:['knight_light_3','dmg_reduce_all_passive'],
   pveScore:5,
   pveNote:'スキルで後列の敵を攻撃しつつ味方3体に「騎士の光」（ダメ増加+シールド+速度）を付与。全体ダメ軽減も常時あり。後列から全体を強化するバッファー。',
-  bestCircles:['闘神魔法陣','桜花魔法陣','武装魔法陣'],
+  bestCircles:['武装魔法陣','闘神魔法陣','美女魔法陣','天使魔法陣','桜花魔法陣'],
   pairWith:[], synergy:['buff_team'] },
 
 { id:'hestia', name:'ヘスティア', rarity:'ur+', type:'調和',
@@ -236,7 +236,7 @@ const CHARS = [
   tags:['heal_all','dot_reflect','dmg_reduce_all_15'],
   pveScore:6,
   pveNote:'女神領域でDoTを無効化し反射。全体回復+ダメ軽減15%。進化後は戦闘開始即発動。後列で安全に回復し続ける。リューとのシナジーで前列が事実上不死に。',
-  bestCircles:['桜花魔法陣','蒼魔魔法陣','新年魔法陣'],
+  bestCircles:['クリスマス魔法陣','新年魔法陣'],
   pairWith:['ryu'], synergy:['heal_team','ryu_pair'] },
 
 { id:'ryu', name:'リュー', rarity:'ur+', type:'勇猛',
@@ -244,7 +244,7 @@ const CHARS = [
   tags:['buff_erase','hp_ratio_dmg','lethal_immune_hestia','heal_seal'],
   pveScore:9,
   pveNote:'ヘスティア生存時に致死ダメを無効化しHP1で生き残る。ターン終了時に敵全体の最大HP比ダメ+回復封印。バフ剥がしも可能。ヘスティアとの2体でPVEの要になる。',
-  bestCircles:['桜花魔法陣','魔眼魔法陣','蒼魔魔法陣'],
+  bestCircles:['魔眼魔法陣','美女魔法陣'],
   pairWith:['hestia'], synergy:['ryu_pair'] },
 
 { id:'roxie', name:'ロキシー', rarity:'ur+', type:'応援',
@@ -252,7 +252,7 @@ const CHARS = [
   tags:['magic_mark_5','mp_drain','crit_stack','water_shadow'],
   pveScore:5,
   pveNote:'魔導刻印で被ダメ+10%（最大5重）。気力を吸収し敵のスキルを遅延。シルフィエットとの「無言の圧力」シナジーで全体がスキルを無消費発動できる。',
-  bestCircles:['ハロウィン魔法陣','魔眼魔法陣','桜花魔法陣'],
+  bestCircles:['蒼魔魔法陣','魔眼魔法陣','桜花魔法陣'],
   pairWith:['sylph'], synergy:['roxie_sylph'] },
 
 { id:'sylph', name:'シルフィエット', rarity:'ur+', type:'調和',
@@ -276,7 +276,7 @@ const CHARS = [
   tags:['thorn_bind_top3','buff_erase_2','speed_debuff_max'],
   pveScore:5,
   pveNote:'茨の足止めで速度順上位3体をバインド（行動不可）。通常攻撃で最強敵のバフを2つ剥がし根の封鎖を付与。速度デバフも強力。後列でデバフを撒くサポーター。',
-  bestCircles:['桜花魔法陣','蒼魔魔法陣','幻海魔法陣'],
+  bestCircles:['桜花魔法陣','武装魔法陣','剣の舞魔法陣'],
   pairWith:[], synergy:['debuff_team'] },
 
 { id:'aiko_plus', name:'畑山愛子(豊穣神)', rarity:'ur+', type:'調和',
@@ -284,7 +284,7 @@ const CHARS = [
   tags:['all_debuff_20pct','guard_100','partner_immortal_source','debuff_bonus_dmg'],
   pveScore:9,
   pveNote:'ガード+100%・速度+100で非常に高い耐久。通常攻撃で全敵に6種のCC/DoTを各20%確率で付与（凍結・目眩・沈黙・灼熱・毒・出血）。ヴァンドゥルと組むと彼が不死身に。終末魔法陣を持たせて速度最遅調整が定番。',
-  bestCircles:['終末魔法陣','桜花魔法陣','美女魔法陣'],
+  bestCircles:['終末魔法陣','天使魔法陣','美女魔法陣'],
   pairWith:['vand'], synergy:['dot_team','debuff_team','aiko_vand'] },
 
 { id:'meil_plus', name:'メイル(海の解放者)', rarity:'ur+', type:'恩寵',
@@ -292,7 +292,7 @@ const CHARS = [
   tags:['shield_all_hp100','freeze_on_hit','guard_40','atk_debuff_all_30'],
   pveScore:10,
   pveNote:'進化2で開幕即スキル発動→全体に最大HP100%のシールド付与。敵全体ATK-30%常時。ガード+40%。PVE前列の最上位候補。新年/鳳凰/炉神装備で被攻撃のたびに主力アタッカーのスキルを追加発動させる。',
-  bestCircles:['新年魔法陣','鳳凰魔法陣','炉神魔法陣'],
+  bestCircles:['蒼魔魔法陣','闘神魔法陣','終末魔法陣'],
   pairWith:[], synergy:['shield_team','freeze_team'] },
 
 { id:'nointo_plus', name:'ノイント(UR+)', rarity:'ur+', type:'神鋭',
@@ -300,33 +300,33 @@ const CHARS = [
   tags:['cc_skill_x2_high','crit_high','atk_buff_ally'],
   pveScore:6,
   pveNote:'自分/敵がCC状態になるとスキルを高確率で再発動しつつ味方ATKもバフ。CCシナジーに最適。カム・宮崎奈々との組み合わせで爆発的な火力を叩き出す。',
-  bestCircles:['裁定魔法陣','ハロウィン魔法陣','魔眼魔法陣'],
+  bestCircles:['裁定魔法陣','ハロウィン魔法陣','桜花魔法陣','花蓮魔法陣'],
   pairWith:['kam','nana'], synergy:['cc_team','atk_team'] },
 
 { id:'altena_plus', name:'アルテナ(覇者の礼装)', rarity:'ur+', type:'調和',
   roles:['tank','buff'], tags:['lethal_null_7times','revive_front','speed_swap','skill_dmg_immune','all_pen_resist'],
   pveScore:9, pveNote:'パッシブで致死ダメを7回まで無効化（毎ターン開始時にランダム記録と一致すると発動）。進化2で必ず発動。進化3で毎ターン最速敵と速度交換。進化4でスキルダメ1回完全耐性。前列1が倒れると100%（初回以外30%）で全回復復活。全体貫通耐性+30%。',
-  bestCircles:['魔眼魔法陣','桜花魔法陣','炉神魔法陣'], pairWith:[], synergy:['tank_front','buff_team'] },
+  bestCircles:['新年魔法陣','桜花魔法陣','武装魔法陣'], pairWith:[], synergy:['tank_front','buff_team'] },
 
 { id:'remia_plus', name:'レミア(覇者の礼装)', rarity:'ur+', type:'調和',
   roles:['heal','tank','buff','atk'], tags:['two_form','tidal_scale_8','lethal_null_scale','global_revive','fixed_dmg_hp_lost','judgement_debuff'],
   pveScore:8, pveNote:'HP50%以上は深海祈願形態（全体攻撃+全体デバフ/CC解除+祈願付与）、50%未満は深海審判形態（全体攻撃+審判デバフ=受ける回復-50%）。潮汐の鱗2層消費で致死ダメ無効+HP30%回復（毎ターン1回）。ミュウ編成時ミュウも1回のダメージがHP50%超えない効果獲得。進化2で開幕スキル発動。',
-  bestCircles:['天使魔法陣','桜花魔法陣','森の女神魔法陣'], pairWith:['myu'], synergy:['heal_team'] },
+  bestCircles:['桜花魔法陣','天使魔法陣','森の女神魔法陣'], pairWith:['myu'], synergy:['heal_team'] },
 
 { id:'myu_plus', name:'ミュウ(雪のお姫様)', rarity:'ur+', type:'応援',
   roles:['atk','cc','tank'], tags:['freeze_extreme','freeze_chain','ice_statue_15hit','freeze_dmg_bonus_100','ice_shield_2'],
   pveScore:9, pveNote:'全体攻撃+凍結2種（極寒=HP回復不可、枷鎖=気力増減不可）を付与。氷像の耐久値が15回に増加。進化2で凍結状態の敵への全ダメ+100%。進化3で開幕全体に氷霜シールド2層（直接ダメ1回ずつ防ぐ）。進化5で氷像が攻撃受けると100%で攻撃者に凍結付与。通常攻撃でも30%凍結付与。',
-  bestCircles:['幻海魔法陣','魔眼魔法陣','桜花魔法陣'], pairWith:['remia_plus'], synergy:['freeze_team'] },
+  bestCircles:['氷雪魔法陣','闘神魔法陣','桜花魔法陣','武装魔法陣','天使魔法陣'], pairWith:['remia_plus'], synergy:['freeze_team'] },
 
 { id:'kaori_plus', name:'白崎香織(二大女神)', rarity:'ur+', type:'調和',
   roles:['heal','dot','buff','tank'], tags:['poison_200pct','bankiten_jokai','all_debuff_clear','hankei','sei_ten_3','atk_debuff_minus50','guard_40'],
   pveScore:7, pveNote:'全体攻撃+全体に毒（200%/ターン）付与。その後全体の異常状態を解除し看破（次の行動制限無効化）を付与する万天浄界を付与。生存中に全体の追加ダメ-50%（防御結界）。通常攻撃後に全体に聖典（貫通耐性+10%、最大5層）を付与。毒耐性デフォルト100%+ガード40%+ダメ軽減30%。HP20%以下で全回復+ATK+20%。',
-  bestCircles:['ゾンビ魔法陣','桜花魔法陣','終末魔法陣'], pairWith:['saeko','ryutilis'], synergy:['dot_team','heal_team'] },
+  bestCircles:['蒼魔魔法陣','桜花魔法陣','終末魔法陣'], pairWith:['saeko','ryutilis'], synergy:['dot_team','heal_team'] },
 
-{ id:'riria_plus', name:'リリアーナ(聖なる王女)', rarity:'ur+', type:'勇猛',
+{ id:'riria_plus', name:'リリアーナ(聖なる女王)', rarity:'ur+', type:'勇猛',
   roles:['atk','buff','tank'], tags:['shield_huge','kihaku_5','shield_break','taunt_ketsusen','atk_buff_all'],
   pveScore:7, pveNote:'後列攻撃+敵シールド破壊+全体に攻撃力600%のシールド付与。シールド獲得のたびに全体に鼓舞（ダメ+5%・軽減+5%、最大5層）を付与。進化3で鼓舞効果が+10%。進化5で全体に自身最大HP300%のシールド付与。進化2で出血/毒/灼熱耐性+100%。シールドを盾に前列でも戦える。',
-  bestCircles:['豊穣魔法陣','桜花魔法陣','虚像魔法陣'], pairWith:[], synergy:['shield_team','buff_team'] },
+  bestCircles:['武装魔法陣','桜花魔法陣','美女魔法陣'], pairWith:[], synergy:['shield_team','buff_team'] },
 
 // ===== UR =====
 { id:'oscar', name:'オスカー', rarity:'ur', type:'応援',
@@ -342,7 +342,7 @@ const CHARS = [
   tags:['freeze','ice_statue_10hit','heal_all_on_expire','guard'],
   pveScore:8,
   pveNote:'HP0で氷像に変身（ダメージ量に関わらず10回の攻撃に耐える）→5ターン後に残耐久×10%で復活＋全体回復。死亡時に99%で敵全体凍結。前列の盾として最優秀。氷雪魔法陣で氷像耐久値+2〜5。',
-  bestCircles:['魔眼魔法陣','桜花魔法陣','蒼魔魔法陣'],
+  bestCircles:['闘神魔法陣','氷雪魔法陣','桜花魔法陣','蒼魔魔法陣'],
   pairWith:[], synergy:['freeze_team'] },
 
 { id:'remia', name:'レミア', rarity:'ur', type:'調和',
@@ -374,7 +374,7 @@ const CHARS = [
   tags:['debuff_bonus_dmg_60','partner_immortal_source'],
   pveScore:4,
   pveNote:'状態異常1種類につき自身ダメ+60%（最大6種で+360%）。ヴァンドゥルを不死にする。UR+畑山愛子の方が耐久・速度が高く終末魔法陣との相性も良いが、こちらもヴァンドゥルの不死を発動できる。',
-  bestCircles:['終末魔法陣','桜花魔法陣','美女魔法陣'],
+  bestCircles:['終末魔法陣','桜花魔法陣','美女魔法陣','天使魔法陣'],
   pairWith:['vand'], synergy:['dot_team','debuff_team','aiko_vand'] },
 
 { id:'altena', name:'アルテナ', rarity:'ur', type:'調和',
@@ -497,7 +497,7 @@ const CHARS = [
   tags:['front_600pct','atk_stack_self_2t','crit_on_low_hp'],
   pveScore:5,
   pveNote:'前列に600%の分散ダメ。通常攻撃でATK+20%（2ターン）。HP閾値で会心率+10%×4段階。命中+60%で安定。前列配置も可能。',
-  bestCircles:['ハロウィン魔法陣','裁定魔法陣','魔眼魔法陣'],
+  bestCircles:['花蓮魔法陣','魔眼魔法陣'],
   pairWith:[], synergy:['atk_team'] },
 
 { id:'erihi', name:'エリヒド', rarity:'ssr', type:'調和',
@@ -505,7 +505,7 @@ const CHARS = [
   tags:['mp_ally_50pct','mp_on_death'],
   pveScore:3,
   pveNote:'通常攻撃で50%確率で味方1体に気力+50。戦闘不能時に全体気力+14（50%で+36）。純粋なMP補助サポーター。森の女神魔法陣で自身も毎ターン気力を受け取り行動を加速できる。',
-  bestCircles:['森の女神魔法陣','桜花魔法陣','蒼魔魔法陣'],
+  bestCircles:['森の女神魔法陣','桜花魔法陣','美女魔法陣'],
   pairWith:[], synergy:['buff_team'] },
 
 { id:'hospin', name:'ホセ', rarity:'ssr', type:'調和',
@@ -513,7 +513,7 @@ const CHARS = [
   tags:['def_down_all_44','atk_up_all_10','guard','dmg_reduce_8_on_low_hp'],
   pveScore:4,
   pveNote:'通常攻撃で敵全体防御力-44%（3ターン）。スキルで敵ATK-8%+味方ATK+10%。HP50%以下で全体ダメ軽減+8%(5ターン)。通常攻撃で防御デバフを維持し続けることが重要。',
-  bestCircles:['桜花魔法陣','蒼魔魔法陣','武装魔法陣'],
+  bestCircles:['闘神魔法陣','蒼魔魔法陣','武装魔法陣'],
   pairWith:[], synergy:['debuff_team'] },
 
 { id:'sona', name:'ソーナ', rarity:'ssr', type:'神鋭',
@@ -521,7 +521,7 @@ const CHARS = [
   tags:['mp_drain_36','bleed','cc_immune_with_shia','speed_30'],
   pveScore:4,
   pveNote:'スキルで気力-36+出血。通常攻撃でランダム敵1体を攻撃+気力-50+出血。シアがいる場合はダメ軽減+10%＋CC完全免疫。守衛戦でスキルによる強力な全体攻撃を完封できる。',
-  bestCircles:['桜花魔法陣','ハロウィン魔法陣','裁定魔法陣'],
+  bestCircles:['武装魔法陣'],
   pairWith:['shia_plus'], synergy:['debuff_team','dot_team'] },
 
 { id:'freed', name:'フリード', rarity:'ssr', type:'応援',
@@ -529,7 +529,7 @@ const CHARS = [
   tags:['burn_3body','heal_reduce','skill_dmg_60','hp50_atk_bonus'],
   pveScore:4,
   pveNote:'スキルでランダム3体に灼熱+被回復効果-15%。通常攻撃で後列の敵を攻撃+灼熱。自身スキルダメ+60%（パッシブ）。HP50%以下でATK+20%・スキルダメ+20%・気力+50。',
-  bestCircles:['竜焔魔法陣','ゾンビ魔法陣','ハロウィン魔法陣'],
+  bestCircles:['美女魔法陣'],
   pairWith:[], synergy:['dot_team'] },
 
 { id:'nana', name:'宮崎奈々', rarity:'ssr', type:'応援',
@@ -537,7 +537,7 @@ const CHARS = [
   tags:['freeze_75pct_normal','freeze_40pct_skill','freeze_on_low_hp'],
   pveScore:5,
   pveNote:'通常攻撃で75%確率で凍結（2ターン）。スキルで前列の敵に攻撃+40%凍結。HP50%以下で最強敵に凍結2ターン付与。PVE階層攻略の定番CC役。水流魔法陣で凍結付与のたびにATK積み上げも可能。',
-  bestCircles:['幻海魔法陣','美女魔法陣','水流魔法陣'],
+  bestCircles:['幻海魔法陣','美女魔法陣'],
   pairWith:['sarze'], synergy:['freeze_team'] },
 
 { id:'katrea', name:'カトレア', rarity:'ssr', type:'応援',
@@ -545,7 +545,7 @@ const CHARS = [
   tags:['burn_50pct_all','mp_self_50pct','mihail_synergy_cc_resist','burn_cc_17pct'],
   pveScore:3,
   pveNote:'スキルで全体に50%で灼熱付与。通常攻撃で50%確率で自身気力+50。ミハイルがいる場合、自身とミハイルの命中+100%。ミハイルと組むと互いのCC耐性が+100%になる。',
-  bestCircles:['竜焔魔法陣','ゾンビ魔法陣','ハロウィン魔法陣'],
+  bestCircles:['美女魔法陣','武装魔法陣'],
   pairWith:['mihail'], synergy:['dot_team'] },
 
 { id:'kam', name:'カム', rarity:'ssr', type:'恩寵',
@@ -553,7 +553,7 @@ const CHARS = [
   tags:['poison_290pct','stun_75pct','regen_260pct','poison_back_low_hp'],
   pveScore:4,
   pveNote:'スキルで単体に毒付与（毎ターン45%ダメ、6ターン）。通常攻撃で75%確率で目眩（2ターン）。与ダメの260%分HP回復。HP50%以下で後列に毒4ターン付与。妨害役として汎用ボス戦に非常に優秀。',
-  bestCircles:['美女魔法陣','幻海魔法陣','水流魔法陣'],
+  bestCircles:['美女魔法陣','幻海魔法陣','蒼魔魔法陣'],
   pairWith:[], synergy:['dot_team','cc_team'] },
 
 { id:'alfre', name:'アルフレリック', rarity:'ssr', type:'調和',
@@ -561,7 +561,7 @@ const CHARS = [
   tags:['burn','freeze_target','speed','pen_buff_all','cc_resist'],
   pveScore:4,
   pveNote:'スキルで最強敵に灼熱+凍結+速度-（ターン数不明）付与。全体貫通バフ付与。行動制限無効も持つ多機能なサポートアタッカー。',
-  bestCircles:['竜焔魔法陣','桜花魔法陣','蒼魔魔法陣'],
+  bestCircles:['幻海魔法陣','美女魔法陣'],
   pairWith:[], synergy:['dot_team','freeze_team'] },
 
 { id:'adoru', name:'アドゥル', rarity:'ssr', type:'恩寵',
@@ -569,7 +569,7 @@ const CHARS = [
   tags:['hp_recover_50pct','tio_synergy_passive','dmg_reduce_with_tio'],
   pveScore:6,
   pveNote:'ティオ(黒竜化)と組むとダメ軽減+ATK+20%を獲得。HP50%以下で最大HP50%回復。毒耐性あり。ティオ(黒竜化)との2体シナジーが強力で前列でも戦える。',
-  bestCircles:['桜花魔法陣','虚像魔法陣','蒼魔魔法陣'],
+  bestCircles:['花蓮魔法陣','闘神魔法陣','幻海魔法陣'],
   pairWith:['tio_plus'], synergy:['tio_adoru'] },
 
 { id:'hiyama', name:'檜山大介', rarity:'ssr', type:'強靭',
@@ -592,8 +592,8 @@ const CHARS = [
   roles:['atk','cc'],
   tags:['silence','crit_50','skill_chain_50'],
   pveScore:3,
-  pveNote:'50%でスキル再発動。沈黙付与・会心+50%。後列アタッカー。裁定魔法陣で沈黙付与のたびに追加スタックも得られる。',
-  bestCircles:['ハロウィン魔法陣','裁定魔法陣','魔眼魔法陣'],
+  pveNote:'50%でスキル再発動。沈黙付与',
+  bestCircles:['幻海魔法陣','闘神魔轟神','魔眼魔法陣'],
   pairWith:[], synergy:['atk_team'] },
 
 { id:'sakagami', name:'坂上龍太郎', rarity:'ssr', type:'強靭',
@@ -601,7 +601,7 @@ const CHARS = [
   tags:['shield_self_atk100','crit_dmg_stack_18'],
   pveScore:6,
   pveNote:'通常攻撃でATK100%相当のシールドと会心ダメ+18%蓄積。撃破で気力+HP33%+会心ダメ+30%。前列でシールドを積みながら火力も出せる。',
-  bestCircles:['魔眼魔法陣','虚像魔法陣','桜花魔法陣'],
+  bestCircles:['魔眼魔法陣','武装魔法陣','桜花魔法陣'],
   pairWith:[], synergy:['atk_team'] },
 
 { id:'taniguchi', name:'谷口鈴', rarity:'ssr', type:'調和',
@@ -617,7 +617,7 @@ const CHARS = [
   tags:['all_atk_self_dmg','drain_heal_on_low_hp','crit'],
   pveScore:3,
   pveNote:'通常攻撃で全体攻撃するが自身HPの30%固定ダメを受ける。HP70%以下で与ダメの40%回復。スキルでも自傷。ハロウィン/裁定魔法陣で一度倒れても無敵で戦い続ける運用に。',
-  bestCircles:['ハロウィン魔法陣','裁定魔法陣','重力魔法陣'],
+  bestCircles:[],
   pairWith:[], synergy:['atk_team'] },
 
 { id:'sarze', name:'サルゼ', rarity:'ssr', type:'調和',
@@ -625,7 +625,7 @@ const CHARS = [
   tags:['freeze','atk_swap_best','revive_full','burn_immunity_default'],
   pveScore:5,
   pveNote:'凍結+相手ATK-10%+最強ATK味方ATK+10%。灼熱耐性デフォルト100%（黒竜・ティオ戦で重宝）。HP0で全回復復活（1回）。非常に器用なバッファー。',
-  bestCircles:['桜花魔法陣','蒼魔魔法陣','美女魔法陣'],
+  bestCircles:['闘神魔法陣','美女魔法陣'],
   pairWith:['nana'], synergy:['freeze_team'] },
 
 { id:'sugawara', name:'菅原妙子', rarity:'ssr', type:'勇猛',
@@ -633,7 +633,7 @@ const CHARS = [
   tags:['silence_50_normal','silence_all_on_low_hp','mp_50pct_normal'],
   pveScore:3,
   pveNote:'通常攻撃で50%確率で沈黙2ターン。HP50%以下で敵全体に沈黙2ターン。通常50%で自身気力+50。相手のスキルを封じる妨害特化。裁定魔法陣の神鋭タイプ沈黙効果と重複する。',
-  bestCircles:['裁定魔法陣','桜花魔法陣','幻海魔法陣'],
+  bestCircles:['桜花魔法陣','幻海魔法陣'],
   pairWith:[], synergy:['cc_team'] },
 
 { id:'sonobe', name:'園部優花', rarity:'ssr', type:'応援',
@@ -641,7 +641,7 @@ const CHARS = [
   tags:['poison_multi','atk_stack_on_poison','back_atk'],
   pveScore:3,
   pveNote:'後列に毒を広域付与。毒付与のたびATK+3%蓄積。スキルダメ+80%。後列DoTアタッカー。ゾンビ/竜焔でDoT付与のたびにスキルダメを積み上げる。',
-  bestCircles:['ゾンビ魔法陣','竜焔魔法陣','ハロウィン魔法陣'],
+  bestCircles:['お月見魔法陣'],
   pairWith:['kaori','saeko'], synergy:['dot_team'] },
 
 { id:'haruga', name:'ハルガ', rarity:'ssr', type:'恩寵',
@@ -649,7 +649,7 @@ const CHARS = [
   tags:['burn_3body','def_debuff_on_hit','dmg_reduce_30_on_low_hp','hp_def_buff'],
   pveScore:6,
   pveNote:'HP+20%・防御+20%で耐久がある。スキルでランダム3体に灼熱。攻撃受けるたびに相手防御-4%。HP80%以下で全体ダメ軽減+30%（2ターン）。前列でもそこそこ戦える。',
-  bestCircles:['竜焔魔法陣','ゾンビ魔法陣','虚像魔法陣'],
+  bestCircles:['武装魔法陣'],
   pairWith:[], synergy:['dot_team'] },
 
 { id:'tenriv', name:'天之川光輝', rarity:'ssr', type:'勇猛',
@@ -657,7 +657,7 @@ const CHARS = [
   tags:['back_atk_280','crit_stack_normal','skill_chain_on_kill'],
   pveScore:3,
   pveNote:'後列に280%ダメ、撃破でスキル再発動。通常攻撃で後列攻撃+会心率+20%（3ターン）。会心+20%・会心ダメ+50%（パッシブ）。後列アタッカー。虚像UR版とは別キャラ。',
-  bestCircles:['ハロウィン魔法陣','裁定魔法陣','闘神魔法陣'],
+  bestCircles:[],
   pairWith:[], synergy:['atk_team'] },
 
 { id:'fos', name:'フォス', rarity:'ssr', type:'強靭',
@@ -665,7 +665,7 @@ const CHARS = [
   tags:['guard','bleed_on_guard','regen_on_guard','front_atk'],
   pveScore:7,
   pveNote:'ガード+30%。通常攻撃でガード+10%（3ターン）蓄積。ガードのたびに出血付与+自己回復。スキルで前列攻撃+出血。前列タンクとして出血でDoTも出せる。',
-  bestCircles:['魔眼魔法陣','炉神魔法陣','ゾンビ魔法陣'],
+  bestCircles:[],
   pairWith:[], synergy:['tank_front'] },
 
 { id:'mihail', name:'ミハイル', rarity:'ssr', type:'強靭',
@@ -673,7 +673,7 @@ const CHARS = [
   tags:['atk_crit_on_ally_death','cc_resist_with_katrea'],
   pveScore:4,
   pveNote:'味方戦闘不能時に会心+12%・ATK+22%蓄積。カトレアと組むと互いのCC耐性+100%。後列アタッカー。',
-  bestCircles:['ハロウィン魔法陣','裁定魔法陣','闘神魔法陣'],
+  bestCircles:[],
   pairWith:['katrea'], synergy:['buff_team'] },
 
 { id:'kuze', name:'クゼ', rarity:'ssr', type:'強靭',
@@ -697,7 +697,7 @@ const CHARS = [
   tags:['bleed','silence','atk_debuff_20_on_normal','back_atk'],
   pveScore:3,
   pveNote:'スキルで後列に出血+ATK-20%。通常攻撃で後列攻撃+37%沈黙。スキルダメ+20%・貫通+10%。後列デバフアタッカー。裁定魔法陣の神鋭沈黙効果と相性が良い。',
-  bestCircles:['ゾンビ魔法陣','竜焔魔法陣','裁定魔法陣'],
+  bestCircles:[],
   pairWith:[], synergy:['dot_team'] },
 
 { id:'ishtar', name:'イシュタル', rarity:'ssr', type:'神鋭',
@@ -705,7 +705,7 @@ const CHARS = [
   tags:['mp_drain_15_skill','stun_35_normal','atk_stack_on_hit_self'],
   pveScore:3,
   pveNote:'スキルで全体に175%ダメ+15%で気力-15。通常攻撃で気力-50+35%目眩。攻撃受けるたびに自身ATK+3%蓄積。気力ドレイン+目眩で敵の行動を遅らせる後列デバッファー。',
-  bestCircles:['幻海魔法陣','裁定魔法陣','桜花魔法陣'],
+  bestCircles:['幻海魔法陣','桜花魔法陣'],
   pairWith:[], synergy:['debuff_team'] },
 ];
 
@@ -729,34 +729,87 @@ const SYNERGIES = [
 ];
 
 // ボス
+// 階層帯タブ
+const FLOOR_TIERS = [
+  { id:'under9000', label:'9000階層未満' },
+  { id:'10000plus', label:'10000階層以降' },
+];
+ 
+// ボスごとの「詰まる原因」を選択式に変換したもの
+// need: チェックした場合の対策方針 / counters: 実際に対策となるキャラのid（参考。空でも判定可）
+const BOSS_THREAT_LIBRARY = {
+  guard: [
+    { id:'heal', label:'高い回復能力を持つ', need:'妨害(沈黙・CC)役か高火力で押し切る必要があります。', counters:['sona','sugawara','shia_plus'] },
+    { id:'atk_down', label:'攻撃力低下デバフを使う', need:'影響は軽微です。耐久があれば無視して問題ありません。', counters:[] },
+    { id:'time_limit', label:'時間制限（ターン数）で失敗しやすい', need:'高火力アタッカーを増やして決着を早める必要があります。', counters:['oscar','yue','yue_plus'] },
+    { id:'single_target', label:'非常に高威力のスキルを単体に放つ', need:'前列適性の高いタンクに攻撃を集中させる必要があります。', counters:['vand','meil_plus','shia_plus'] },
+    { id:'partial_aoe', label:'一部個体は前列以外も攻撃してくる', need:'宮崎奈々などのCC役で行動を縛ると安定します。', counters:['nana','kam'] },
+  ],
+  dragon: [
+    { id:'burn_dot', label:'灼熱の蓄積によるスリップダメージがある', need:'灼熱耐性・無効を持つキャラがいると安定します。', counters:['sarze','tio_plus'] },
+    { id:'burn_on_hit', label:'攻撃時に灼熱を付与してくる(凍結ハメ不可)', need:'凍結ハメが効かないため、灼熱耐性で受け切る編成が必要です。', counters:['sarze'] },
+    { id:'bleed_variant', label:'出血を付与してくる個体がいる', need:'出血耐性持ちか、同等の耐久編成で対応します。', counters:['tio_plus'] },
+  ],
+  alraune: [
+    { id:'poison_dot', label:'毒の蓄積によるスリップダメージがある', need:'毒耐性・無効を持つキャラがいると安定します。', counters:['kaori','kaori_plus'] },
+    { id:'poison_aoe', label:'ターン開始時に全体へ毒を付与する(凍結ハメ不可)', need:'凍結ハメが効かないため、毒耐性で受け切る編成が必要です。', counters:['kaori','kaori_plus'] },
+  ],
+  hydra: [
+    { id:'poison_burn_dot', label:'毒・灼熱の蓄積がある', need:'両方の耐性、または高い持続火力・耐久が必要です。', counters:['sarze','kaori','kaori_plus'] },
+    { id:'revive_once', label:'戦闘不能後に1度復活する個体がいる', need:'長期戦を見据えた持続火力が必要です。', counters:['oscar'] },
+    { id:'cc_resist_high', label:'高い凍結・行動制限耐性を持つ', need:'凍結ではなく目眩(クゼ等)や毒で対応する必要があります。', counters:['kuze','kam'] },
+  ],
+  general: [
+    { id:'no_dot', label:'継続ダメージ(毒/灼熱/出血)を持たない', need:'特別な耐性は不要です。通常のCC・妨害で十分対応できます。', counters:['nana','kam'] },
+    { id:'standard', label:'特殊な耐性を持たない一般的な敵', need:'宮崎奈々・カムの妨害で十分です。', counters:['nana','kam'] },
+    { id:'specific_known', label:'カトレア・ノイント・ミレディ等の特定ボスである', need:'出血付与等の癖がある場合は黒竜対策編成も参考にしてください。', counters:[] },
+  ],
+  late: [
+    { id:'low_dps', label:'URユエ単体では火力が不足する', need:'オスカーなど高火力アタッカーへの切り替えを検討してください。', counters:['oscar'] },
+    { id:'dot_mgmt', label:'継続ダメージ(毒/灼熱/出血)の耐性管理が必要', need:'毒/灼熱/出血のいずれかに耐性を持つキャラを編成に入れると安定します。', counters:['sarze','kaori','kaori_plus','tio_plus'] },
+  ],
+};
+ 
+// 10000階層以降で共通して気にすべき注意点（ボスに関わらず常時表示）
+const TIER_NOTES = {
+  '10000plus': {
+    title:'10000階層以降 共通の注意点',
+    desc:'URユエ単体の火力では不足しがちです。オスカーをメインアタッカーに切り替え、装備・アーティファクトを引き継ぐ運用を検討してください。継続ダメージ(毒/灼熱/出血)への耐性管理がそれまでの階層より重要になります。',
+  },
+};
+ 
+let currentBossTier = 'under9000';
+let currentBoss = null;
+let bossThreatState = {};
+
 const BOSSES = [
-  { id:'guard', name:'守衛', icon:'🛡', threats:['高い回復能力','攻撃力低下デバフ','時間制限','非常に高い威力のスキル（単体攻撃）'], tip:'守衛の通常攻撃・スキルは全て単体攻撃のためスロット1に耐久役を置けば全ての攻撃をそこに集中させられます。8000階層超えるとユエがワンパンされやすくなります。一部先頭以外も攻撃してくる個体は宮崎奈々で凍結させましょう。',
+  { id:'guard', name:'守衛', icon:'🛡', tiers:['under9000','10000plus'], threats:['高い回復能力','攻撃力低下デバフ','時間制限','非常に高い威力のスキル（単体攻撃）'], tip:'守衛の通常攻撃・スキルは全て単体攻撃のためスロット1に耐久役を置けば全ての攻撃をそこに集中させられます。8000階層超えるとユエがワンパンされやすくなります。一部先頭以外も攻撃してくる個体は宮崎奈々で凍結させましょう。',
     parties:[
       { title:'ヴァンドゥル不死パーティ（★27以上）', members:['1: ヴァンドゥル★27+ / 魔眼魔法陣','2: リューティリス / 武装魔法陣','3: 畑山愛子（速度最遅）/ 終末魔法陣','4: ミレディ / 闘神魔法陣','5: URユエ★30 / 機巧魔法陣'], note:'ヴァンドゥルが全攻撃を受ける。一部先頭以外を攻撃する個体は宮崎奈々で凍結させる。' },
       { title:'守衛対策（毒島冴子あり・10000階層以降）', members:['1: ヴァンドゥル★27+ / 武装魔法陣','2: 毒島冴子 / 魔眼魔法陣','3: 畑山愛子 / 終末魔法陣','4: ミレディ / 闘神魔法陣','5: オスカー / ハロウィン魔法陣'], note:'' },
       { title:'守衛対策（毒島冴子なし・10000階層以降）', members:['1: ヴァンドゥル★27+ / 魔眼魔法陣','2: 白崎香織 / 武装魔法陣','3: 畑山愛子 / 終末魔法陣','4: ミレディ / 闘神魔法陣','5: オスカー / ハロウィン魔法陣'], note:'' },
     ] },
-  { id:'dragon', name:'黒竜・ティオ', icon:'🐉', threats:['灼熱の蓄積によるスリップダメージ','攻撃時に灼熱を付与してくる個体は凍結ハメが効かない'], tip:'灼熱を無効化するサルゼ（灼熱耐性デフォルト100%）をバッファーとして編成するのが有効。リロールや宝石で灼熱耐性100%をつけると安定します。出血を付与してくる黒竜も同パーティで対応可。',
+  { id:'dragon', name:'黒竜・ティオ', icon:'🐉', tiers:['under9000','10000plus'], threats:['灼熱の蓄積によるスリップダメージ','攻撃時に灼熱を付与してくる個体は凍結ハメが効かない'], tip:'灼熱を無効化するサルゼ（灼熱耐性デフォルト100%）をバッファーとして編成するのが有効。リロールや宝石で灼熱耐性100%をつけると安定します。出血を付与してくる黒竜も同パーティで対応可。',
     parties:[
       { title:'灼熱耐性100%用意できる場合', members:['1: ヴァンドゥル★27+ / 魔眼魔法陣','2: ソーナ（灼熱耐性100%必須）/ 武装魔法陣','3: 畑山愛子（灼熱耐性100%必須）/ 終末魔法陣','4: ミレディ / 闘神魔法陣','5: URユエ★30 / 機巧魔法陣'], note:'ソーナで全体スキル攻撃を防ぎ畑山愛子を守ります。' },
       { title:'灼熱耐性100%用意できない場合', members:['1: ヴァンドゥル★27+ / 魔眼魔法陣','2: ミュウ / 武装魔法陣','3: 畑山愛子 / 終末魔法陣','4: サルゼ（灼熱耐性デフォルト100%）/ 闘神魔法陣','5: URユエ★30 / 機巧魔法陣'], note:'道中の攻撃をヴァンドゥルで防ぎミュウをボス戦まで温存。ミュウの氷像でユエを守ります。サルゼは灼熱耐性100%で優秀なバッファー。' },
     ] },
-  { id:'alraune', name:'エセアルラウネ', icon:'🌿', threats:['毒の蓄積によるスリップダメージ','ターン開始時に全体へ毒を付与する個体は凍結ハメが効かない'], tip:'毒を無効化し、ユエの毒を解除できる白崎香織が有効。毒耐性100%をつけると安定します。',
+  { id:'alraune', name:'エセアルラウネ', icon:'🌿', tiers:['under9000','10000plus'], threats:['毒の蓄積によるスリップダメージ','ターン開始時に全体へ毒を付与する個体は凍結ハメが効かない'], tip:'毒を無効化し、ユエの毒を解除できる白崎香織が有効。毒耐性100%をつけると安定します。',
     parties:[
       { title:'毒耐性100%用意できる場合', members:['1: ヴァンドゥル★27+ / 魔眼魔法陣','2: ソーナ（毒耐性100%必須）/ 武装魔法陣','3: 畑山愛子（毒耐性100%必須）/ 終末魔法陣','4: 白崎香織（毒耐性デフォルト100%・ユエの毒除去）/ 闘神魔法陣','5: URユエ★30 / 機巧魔法陣'], note:'白崎香織はデフォルトで毒耐性100%を持ちスキルでユエの毒を除去できます。' },
       { title:'毒耐性100%用意できない場合', members:['1: ヴァンドゥル★27+ / 魔眼魔法陣','2: ミュウ / 武装魔法陣','3: 畑山愛子 / 終末魔法陣','4: 白崎香織 / 闘神魔法陣','5: URユエ★30 / 機巧魔法陣'], note:'ミュウの氷像でボス以外の攻撃からユエを守ります。白崎香織でユエの毒を解除します。' },
     ] },
-  { id:'hydra', name:'ヒュドラ', icon:'🐍', threats:['毒・灼熱の蓄積','一部個体は戦闘不能後に1度復活','高い凍結耐性または行動制限耐性を持つ個体がいる'], tip:'基本は宮崎奈々の凍結で行動を封じて攻略。凍結耐性が高い個体はカム（目眩75%）で対応します。',
+  { id:'hydra', name:'ヒュドラ', icon:'🐍', tiers:['under9000','10000plus'], threats:['毒・灼熱の蓄積','一部個体は戦闘不能後に1度復活','高い凍結耐性または行動制限耐性を持つ個体がいる'], tip:'基本は宮崎奈々の凍結で行動を封じて攻略。凍結耐性が高い個体はカム（目眩75%）で対応します。',
     parties:[
       { title:'凍結耐性900%・ガード100%パターン', members:['1: ヴァンドゥル★27+ / 魔眼魔法陣','2: カム / 武装魔法陣','3: 畑山愛子 / 終末魔法陣','4: クゼ（目眩で行動制限）/ 闘神魔法陣','5: URユエ★30 / 機巧魔法陣'], note:'ヴァンドゥルの固有アーティファクト「魔人のマフラー」で命中を上げてガードを減らすと有効。' },
       { title:'行動制限耐性50%パターン', members:['1: ヴァンドゥル★27+ / 魔眼魔法陣','2: カム / 武装魔法陣','3: 畑山愛子 / 終末魔法陣','4: 宮崎奈々 / 幻海魔法陣','5: URユエ★30 / 機巧魔法陣'], note:'宮崎奈々・カムに行動制限率増加の宝石を装備させると安定します（★15以上）。' },
       { title:'凍結耐性900%（10000階層以降）', members:['1: ヴァンドゥル★27+ / 魔眼魔法陣','2: カム / 武装魔法陣','3: 畑山愛子 / 終末魔法陣','4: クゼ / 闘神魔法陣','5: オスカー / ハロウィン魔法陣'], note:'' },
     ] },
-  { id:'general', name:'汎用・その他ボス', icon:'⚔', threats:['カトレア・ノイント・サソリもどき・ミレディ等','継続ダメージを持たない黒竜・エセアルラウネも含む'], tip:'宮崎奈々・カムで行動を封じれば比較的簡単に突破できます。ノイントが出血を付与してくる場合は黒竜の対策パーティを参考にしてください。',
+  { id:'general', name:'汎用・その他ボス', icon:'⚔', tiers:['under9000','10000plus'], threats:['カトレア・ノイント・サソリもどき・ミレディ等','継続ダメージを持たない黒竜・エセアルラウネも含む'], tip:'宮崎奈々・カムで行動を封じれば比較的簡単に突破できます。ノイントが出血を付与してくる場合は黒竜の対策パーティを参考にしてください。',
     parties:[
       { title:'汎用パーティ（ヴァンドゥル★27以上）', members:['1: ヴァンドゥル★27+ / 魔眼魔法陣','2: カム / 武装魔法陣','3: 畑山愛子 / 終末魔法陣','4: 宮崎奈々 / 幻海魔法陣','5: URユエ★30 / 機巧魔法陣'], note:'カムと宮崎奈々の妨害でボスの行動を封じながらユエで攻撃。' },
     ] },
-  { id:'late', name:'10000階層以降', icon:'🔥', threats:['URユエでは火力が不十分','継続ダメージへの耐性管理が重要'], tip:'無課金の場合、オスカーをメインアタッカーとして採用。装備・アーティファクトをユエから引き継いでください。9600階層あたりからこの編成が必要になる可能性があります。',
+  { id:'late', name:'10000階層以降', icon:'🔥', tiers:['10000plus'], threats:['URユエでは火力が不十分','継続ダメージへの耐性管理が重要'], tip:'無課金の場合、オスカーをメインアタッカーとして採用。装備・アーティファクトをユエから引き継いでください。9600階層あたりからこの編成が必要になる可能性があります。',
     parties:[
       { title:'10000階層以降・基本パーティ', members:['1: ヴァンドゥル★27+ / 魔眼魔法陣','2: カム / 武装魔法陣','3: 畑山愛子（速度最遅・氷槍突き魔獣）/ 美女魔法陣','4: 宮崎奈々 / 闘神魔法陣','5: オスカー / ハロウィン魔法陣'], note:'※畑山愛子を速度最遅に調整し氷槍突きスキルを持つ2凸以上の氷属性魔獣を装備。\n※100階層毎のボス（単体）ではヴァンドゥルを最遅にし氷槍突き魔獣装備。\n※武器：火力重視→オルカン+メツェライ / 行動制限重視→パイルバンカー+シュラゲーン\n※神術：結界→灼熱or猛毒（ボスのDoTに耐性を付与できる方を選択）' },
     ] },
@@ -789,6 +842,7 @@ let currentFilter = 'all';
 function init() {
   renderSlots();
   renderCharPool();
+  renderBossTierTabs();
   renderBossGrid();
   renderCircleList();
   renderStatTable();
@@ -921,7 +975,7 @@ function checkExclusives() {
   const warns = [];
   const used = partyCircles.filter(n=>n!=='なし');
   Object.entries(EXCL_MAP).forEach(([a,b])=>{ if(used.includes(a)&&used.includes(b)&&!warns.some(w=>w.includes(a))) warns.push(`⚠ 「${a}」と「${b}」は同時に装備できません（排他）。`); });
-  party.forEach((c,i)=>{ if(c&&c.id==='yue_plus'&&partyCircles[i]==='機巧魔法陣') warns.push('⚠ ユエ(覇者)に機巧魔法陣は使用できません（URユエ専用）。'); });
+  party.forEach((c,i)=>{ if(c&&c.id==='yue_plus'&&partyCircles[i]==='機巧魔法陣') warns.push('⚠ ユエ(覇者)に機巧魔法陣はあまりお勧めできません（URユエ専用）。'); });
   document.getElementById('excl-warnings').innerHTML = warns.map(w=>`<div class="excl-warn">${w}</div>`).join('');
 }
 
@@ -948,9 +1002,9 @@ function analyze() {
 
   // ヴァンドゥル不死
   const hasVand = filled.some(c=>c.id==='vand');
-  const hasAiko = filled.some(c=>c.id==='aiko'||c.id==='aiko_plus');
+  const hasAiko = filled.some(c=>c.id==='aiko');
   if (hasVand&&hasAiko) checks.push({cls:'ok',title:'✓ ヴァンドゥル不死が成立（★27以上必須）',desc:'畑山愛子が生存している限りヴァンドゥルは致死ダメでもHP1で生き残ります。前列配置で特に効果的です。'});
-  else if (hasVand&&!hasAiko) checks.push({cls:'warn',title:'⚠ ヴァンドゥルの不死が未成立',desc:'畑山愛子（URまたはUR+）がいないためヴァンドゥルの不死スキルが発動しません。前列に置く場合は注意してください。'});
+  else if (hasVand&&!hasAiko) checks.push({cls:'warn',title:'⚠ ヴァンドゥルの不死が未成立',desc:'畑山愛子（UR)がいないためヴァンドゥルの不死スキルが発動しません。前列に置く場合は注意してください。'});
 
   // 火力（PVEでは過多でも問題なし）
   const atkChars = filled.filter(c=>c.roles.includes('atk'));
@@ -962,7 +1016,7 @@ function analyze() {
   if (buffCount===0) checks.push({cls:'warn',title:'△ バフ/デバフなし',desc:'PVEではバフ・デバフが火力に直結します。ミレディ（全体ダメ+蓄積）やホセ（防御-44%）の追加を検討してください。'});
   else checks.push({cls:'ok',title:`✓ バフ${roleCounts.buff}人・デバフ${roleCounts.debuff}人`,desc:'補助が充実しています。'});
 
-  // 魔法陣チェック
+  // 魔法陣チェック（全魔法陣対応版）
   party.forEach((c,i)=>{
     if (!c) return;
     const circleName = partyCircles[i];
@@ -970,35 +1024,58 @@ function analyze() {
     if (circleName==='なし') return;
     const circleData = CIRCLES.find(cd=>cd.name===circleName);
     if (!circleData) return;
-
-    // 終末魔法陣
-    if (circleName==='終末魔法陣') {
-      if (c.id==='aiko_plus'||c.id==='aiko') checks.push({cls:'ok',title:`✓ 終末魔法陣×${c.name}（${rank}）完璧な組み合わせ`,desc:`${c.name}を速度最遅に調整することで終末の陣が雑魚1段目〜ボスまで永続維持されます（${rank}：受けるダメ${rank==='2凸'?'+20%':rank==='4凸'?'+30%':rank==='6凸'?'+40%':'+50%'}）。`});
-      else checks.push({cls:'warn',title:`△ 終末魔法陣を「${c.name}」が装備（${rank}）`,desc:'終末の陣は装備者が倒れると消えます。畑山愛子（速度最遅調整）に装備すると永続します。'});
+ 
+    // 凸数に応じた効果テキスト（未定義の凸があればpveDescにフォールバック）
+    const effectText = (circleData.effects && circleData.effects[rank])
+      ? circleData.effects[rank]
+      : circleData.pveDesc;
+ 
+    // このキャラにとっての推薦度（bestCirclesの中での位置）
+    const bestList = c.bestCircles || [];
+    const bestIndex = bestList.indexOf(circleName);
+ 
+    // ハードルール①：機巧魔法陣はURユエ専用
+    if (circleName==='機巧魔法陣' && c.id!=='yue') {
+      checks.push({
+        cls:'warn',
+        title:`⚠ 機巧魔法陣を「${c.name}」が装備（${rank}）`,
+        desc:`機巧魔法陣の【無詠唱魔法即時発動】はURユエ専用効果です。「${c.name}」が装備した場合、シールド獲得や行動制限無効などの効果（${effectText}）は発動しますが、スキル即時発動の恩恵は得られません。`
+      });
     }
-    // 機巧魔法陣
-    if (circleName==='機巧魔法陣') {
-      if (c.id==='yue') checks.push({cls:'ok',title:`✓ 機巧魔法陣×URユエ（${rank}）最強コンビ`,desc:`${rank}：HP${rank==='2凸'?'50':rank==='4凸'?'70':'70'}%減少→シールド獲得＋無詠唱魔法（スキル即発動）。HP50%以下覚醒と完全に噛み合い、1ターン目から覚醒フルパワーでスキルを発動。`});
+    // ハードルール②：終末魔法陣は装備者の生存が前提
+    else if (circleName==='終末魔法陣' && c.id!=='aiko_plus' && c.id!=='aiko') {
+      checks.push({
+        cls:'warn',
+        title:`△ 終末魔法陣を「${c.name}」が装備（${rank}）`,
+        desc:`${effectText} 終末の陣は装備者が戦闘不能になると消滅します（10凸のみ2ターン後）。倒れにくいキャラ、特に畑山愛子（速度最遅運用）に持たせると雑魚〜ボスまで効果が永続しやすくなります。`
+      });
     }
-    // ハロウィン魔法陣
-    if (circleName==='ハロウィン魔法陣') {
-      if (c.roles.includes('atk')) checks.push({cls:'ok',title:`✓ ハロウィン魔法陣×${c.name}（${rank}）`,desc:`直接ダメを与えるたびに最終ダメ+5%が最大${rank==='2凸'?'10':rank==='4凸'?'20':rank==='6凸'?'30':'40'}層蓄積（最大でスキルダメ+${rank==='2凸'?'50%':rank==='4凸'?'100%':rank==='6凸'?'150%':'200%'}）。初めて致死ダメ時に2ターン完全無敵で戦い続けます。`});
+    // 第1推薦の魔法陣
+    else if (bestIndex===0) {
+      checks.push({
+        cls:'ok',
+        title:`✓ ${circleName}×${c.name}（${rank}）最推薦の組み合わせ`,
+        desc:effectText
+      });
     }
-    // 桜花魔法陣
-    if (circleName==='桜花魔法陣') checks.push({cls:'ok',title:`✓ 桜花魔法陣が編成にあります（${rank}）`,desc:`${rank==='2凸'?'1・2番':rank==='4凸'?'1〜3番':rank==='6凸'?'1〜4番(戦闘終了まで)':'全5番(戦闘終了まで)'}に桜域：受けるダメ${rank==='2凸'?'-20%':rank==='4凸'?'-30%':rank==='6凸'?'-40%':'-50%'}。8000階層以降のワンパン対策に非常に有効。`});
-    // 闘神魔法陣
-    if (circleName==='闘神魔法陣') {
-      const atkMain = filled.filter(c2=>c2.roles.includes('atk')).sort((a,b)=>b.pveScore-a.pveScore)[0];
-      const reRate = rank==='2凸'?'30%':rank==='4凸'?'40%':'60%';
-      checks.push({cls:'ok',title:`✓ 闘神魔法陣が編成にあります（${rank}）`,desc:`${rank==='4凸'||rank==='6凸'||rank==='10凸'?'装備者または最強ATK味方':'装備者'}がスキル発動時に${reRate}でスキルを再発動${rank==='10凸'?'（さらに60%で再発動、最大2回）':''}。${atkMain?atkMain.name+'のスキルが特に恩恵を受けます。':''}`});
+    // 候補にあがっている魔法陣（第1推薦ではないがbestCirclesに含まれる）
+    else if (bestIndex>0) {
+      checks.push({
+        cls:'ok',
+        title:`✓ ${circleName}×${c.name}（${rank}）相性良好な候補`,
+        desc:effectText
+      });
     }
-    // 魔眼魔法陣
-    if (circleName==='魔眼魔法陣') {
-      const critBuff = rank==='2凸'?'会心率+20%・会心ダメ+20%':rank==='4凸'?'会心率+30%・会心ダメ+40%':rank==='6凸'?'会心率+40%・会心ダメ+60%':'会心率+50%・会心ダメ+80%';
-      const mpRegen = rank==='2凸'?'気力+30/ターン':rank==='4凸'?'気力+40・HP20%回復/ターン':'気力+50〜60・HP20%回復/ターン';
-      checks.push({cls:'ok',title:`✓ 魔眼魔法陣が編成にあります（${rank}）`,desc:`気力100時(集中)：装備者+最強ATK味方の${critBuff}。気力不足時(収束)：${mpRegen}。前列ヴァンドゥルに特に相性良い。`});
+    // 推薦リストに入っていない組み合わせ（効果自体は発動するので情報提示のみ）
+    else {
+      checks.push({
+        cls:'warn',
+        title:`△ ${circleName}を「${c.name}」が装備（${rank}）`,
+        desc:`${effectText} このキャラの推薦魔法陣（${bestList.length?bestList.join('・'):'特になし。桜花魔法陣などの汎用枠が無難'}）からは外れていますが、上記の効果自体は通常通り発動します。`
+      });
     }
   });
+
 
   // UR+覇気チェック
   const urpCount = filled.filter(c=>c.rarity==='ur+').length;
@@ -1076,10 +1153,29 @@ function switchResult(id, btn) {
 }
 
 // ---- ボス対策 ----
+// ---- 階層帯タブ ----
+function renderBossTierTabs() {
+  const el = document.getElementById('boss-tier-tabs');
+  if (!el) return;
+  el.innerHTML = FLOOR_TIERS.map(t=>
+    `<button class="filter-btn${currentBossTier===t.id?' active':''}" onclick="setBossTier('${t.id}',this)">${t.label}</button>`
+  ).join('');
+}
+ 
+function setBossTier(tierId, btn) {
+  currentBossTier = tierId;
+  document.querySelectorAll('#boss-tier-tabs .filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  currentBoss = null;
+  document.getElementById('boss-detail').innerHTML = '<p class="empty-msg">ボスを選択すると対策が表示されます。</p>';
+  renderBossGrid();
+}
+ 
+// ---- ボス選択グリッド（階層帯でフィルタ） ----
 function renderBossGrid() {
   const grid = document.getElementById('boss-grid');
   grid.innerHTML = '';
-  BOSSES.forEach(b=>{
+  BOSSES.filter(b => !b.tiers || b.tiers.includes(currentBossTier)).forEach(b=>{
     const btn = document.createElement('button');
     btn.className = 'boss-btn';
     btn.textContent = b.icon+' '+b.name;
@@ -1087,13 +1183,37 @@ function renderBossGrid() {
     grid.appendChild(btn);
   });
 }
-
+ 
+// ---- ボス選択 ----
 function selectBoss(boss, btn) {
   document.querySelectorAll('.boss-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
+  currentBoss = boss;
+  renderBossDetail();
+}
+ 
+// ---- ボス詳細（特徴チェックボックス＋適合判定＋既存の読み物） ----
+function renderBossDetail() {
+  const boss = currentBoss;
+  if (!boss) return;
+  const lib = BOSS_THREAT_LIBRARY[boss.id] || [];
+ 
   let html = `<div class="boss-card"><div class="boss-card-title">${boss.icon} ${boss.name}</div><div class="boss-card-body">`;
-  html += `<strong>詰まる原因</strong><ul style="margin:4px 0 8px;padding-left:1.3em">${boss.threats.map(t=>`<li>${t}</li>`).join('')}</ul>`;
-  html += `<strong>突破のポイント</strong><br>${boss.tip}</div></div>`;
+  html += `<strong>該当する特徴にチェックしてください</strong>`;
+  html += `<div style="margin:8px 0">`;
+  lib.forEach(item=>{
+    const checked = bossThreatState[boss.id+'__'+item.id] ? 'checked' : '';
+    html += `<label style="display:block;font-size:.85rem;margin-bottom:4px;cursor:pointer"><input type="checkbox" ${checked} onchange="toggleBossThreat('${boss.id}','${item.id}',this.checked)"> ${item.label}</label>`;
+  });
+  const unknownChecked = bossThreatState[boss.id+'__unknown'] ? 'checked' : '';
+  html += `<label style="display:block;font-size:.85rem;margin-top:6px;color:var(--muted);cursor:pointer"><input type="checkbox" ${unknownChecked} onchange="toggleBossThreat('${boss.id}','unknown',this.checked)"> 不明（このボスの特徴がよく分からない）</label>`;
+  html += `</div>`;
+  html += `<strong>突破のポイント（一般情報）</strong><br>${boss.tip}</div></div>`;
+ 
+  html += `<div class="section-header" style="margin-top:14px"><h2 class="section-title" style="font-size:1.1rem"><span>FIT</span>現在の編成との適合判定</h2></div>`;
+  html += `<div id="boss-fit-result">${evaluateBossFit(boss)}</div>`;
+ 
+  html += `<div class="section-header" style="margin-top:14px"><h2 class="section-title" style="font-size:1.1rem"><span>TEAM</span>推奨編成例</h2></div>`;
   boss.parties.forEach(p=>{
     html += `<div class="boss-party"><div class="boss-party-title">◆ ${p.title}</div><ol>`;
     p.members.forEach(m=>{ html+=`<li>${m}</li>`; });
@@ -1101,7 +1221,59 @@ function selectBoss(boss, btn) {
     if (p.note) { p.note.split('\n').forEach(n=>{ if(n) html+=`<div class="boss-note">${n}</div>`; }); }
     html += `</div>`;
   });
+ 
   document.getElementById('boss-detail').innerHTML = html;
+}
+ 
+// ---- チェックボックス変更時 ----
+function toggleBossThreat(bossId, threatId, checked) {
+  bossThreatState[bossId+'__'+threatId] = checked;
+  const result = document.getElementById('boss-fit-result');
+  if (result && currentBoss) result.innerHTML = evaluateBossFit(currentBoss);
+}
+ 
+// ---- 適合判定本体 ----
+function evaluateBossFit(boss) {
+  const filled = party.filter(Boolean);
+  const lib = BOSS_THREAT_LIBRARY[boss.id] || [];
+  const unknown = !!bossThreatState[boss.id+'__unknown'];
+  const tierNote = (currentBossTier==='10000plus') ? TIER_NOTES['10000plus'] : null;
+ 
+  let html = '';
+  if (tierNote) {
+    html += `<div class="check-box warn"><div class="check-title">⚠ ${tierNote.title}</div><div class="check-desc">${tierNote.desc}</div></div>`;
+  }
+ 
+  if (!filled.length) {
+    html += `<div class="check-box"><div class="check-title">編成チェッカーでキャラを選択してください</div><div class="check-desc">「🗡 編成チェッカー」タブでキャラを選ぶと、ここでボスとの適合判定が表示されます。</div></div>`;
+    return html;
+  }
+ 
+  if (unknown) {
+    const frontChar = party[0];
+    html += `<div class="check-box"><div class="check-title">？ 特徴不明として判定</div><div class="check-desc">特徴が分からない場合は、毒・灼熱・出血への耐性と高い火力を兼ね備えた汎用編成（ヴァンドゥル＋畑山愛子の不死コンビ、オスカー等の高火力アタッカー）で安定して挑むのが無難です。${frontChar?`現在の前列「${frontChar.name}」は前列適性${frontChar.pveScore}/10です。`:''}</div></div>`;
+    return html;
+  }
+ 
+  const checkedItems = lib.filter(t=>bossThreatState[boss.id+'__'+t.id]);
+  if (!checkedItems.length) {
+    html += `<p class="empty-msg">該当する特徴にチェックを入れると、現在の編成との適合判定が表示されます。</p>`;
+    return html;
+  }
+ 
+  checkedItems.forEach(item=>{
+    const counterChars = (item.counters||[]).map(id=>CHARS.find(c=>c.id===id)).filter(Boolean);
+    const present = counterChars.filter(c=>filled.includes(c));
+    if (present.length) {
+      html += `<div class="check-box ok"><div class="check-title">✓ 「${item.label}」への対策あり</div><div class="check-desc">${present.map(c=>c.name).join('・')}が編成にいます。${item.need}</div></div>`;
+    } else if (counterChars.length) {
+      html += `<div class="check-box warn"><div class="check-title">△ 「${item.label}」への対策が編成内に見当たりません</div><div class="check-desc">${item.need} 候補：${counterChars.map(c=>c.name).join('・')}</div></div>`;
+    } else {
+      html += `<div class="check-box"><div class="check-title">・「${item.label}」について</div><div class="check-desc">${item.need}</div></div>`;
+    }
+  });
+ 
+  return html;
 }
 
 // ---- 魔法陣一覧 ----
