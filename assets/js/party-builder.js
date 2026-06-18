@@ -218,7 +218,7 @@ const CHARS = [
 { id:'yue_plus', name:'ユエ(覇者)', rarity:'ur+', type:'強靭',
   roles:['atk','tank'],
   tags:['revive_vampire','crit','bleed','dot_on_atk'],
-  pveScore:10,
+  pveScore:9,
   pveNote:'HP0で吸血鬼変身→次ターン全回復復活。出血付与（DoT）で竜焔魔法陣と相性が良い。致死ダメージを受けることで本領を発揮。毎ターンスキルを打てる。',
   bestCircles:['竜焔魔法陣','ゾンビ魔法陣','闘神魔法陣','ハロウィン魔法陣'],
   pairWith:[], synergy:['atk_team'] },
@@ -242,7 +242,7 @@ const CHARS = [
 { id:'ryu', name:'リュー', rarity:'ur+', type:'勇猛',
   roles:['atk','debuff','tank'],
   tags:['buff_erase','hp_ratio_dmg','lethal_immune_hestia','heal_seal'],
-  pveScore:9,
+  pveScore:10,
   pveNote:'ヘスティア生存時に致死ダメを無効化しHP1で生き残る。ターン終了時に敵全体の最大HP比ダメ+回復封印。バフ剥がしも可能。ヘスティアとの2体でPVEの要になる。',
   bestCircles:['魔眼魔法陣','美女魔法陣'],
   pairWith:['hestia'], synergy:['ryu_pair'] },
@@ -428,7 +428,7 @@ const CHARS = [
 { id:'vand', name:'ヴァンドゥル', rarity:'ur', type:'勇猛',
   roles:['atk','dot','tank'],
   tags:['bleed','freeze_15pct','stun_15pct','immortal_with_aiko','atk_up_on_stun_ally'],
-  pveScore:9,
+  pveScore:10,
   pveNote:'★27覚醒後、畑山愛子（URまたはUR+）生存中は致死ダメでもHP1で生き残る（不死）。出血+凍結/目眩付与。味方が目眩を付与するたびに自身ATK+14%蓄積。前列不死身運用がPVEの定番。魔眼魔法陣で気力管理をしながら会心ダメも積み上げる。',
   bestCircles:['魔眼魔法陣','桜花魔法陣','蒼魔魔法陣'],
   pairWith:['aiko','aiko_plus'], synergy:['dot_team','aiko_vand'] },
@@ -1296,10 +1296,9 @@ function buildResistSelectHtml(bossId, item) {
     return `<div style="margin:0 0 6px 22px;font-size:.78rem;color:var(--muted)">※編成チェッカーでキャラを選択すると、ここで耐性100%キャラを選べるようになります。</div>`;
   }
  
-  const stateKey = bossId + '__resist__' + item.element;
+  const stateKey = bossId + '__resist__' + item.id;
   let current = bossResistSelect[stateKey];
  
-  // 以前選んでいたキャラが編成から外れていたら選択をリセット
   if (current && current !== 'none' && !filled.some(c => c.id === current)) {
     current = undefined;
   }
@@ -1312,7 +1311,7 @@ function buildResistSelectHtml(bossId, item) {
  
   const elementLabel = { burn:'灼熱', poison:'毒', bleed:'出血' }[item.element] || item.element;
   let html = `<div style="margin:0 0 6px 22px;font-size:.78rem;color:var(--muted)">${elementLabel}耐性100%のキャラ（リロール・宝石で確保した場合も含む）：`;
-  html += `<select onchange="setResistSelect('${bossId}','${item.element}',this.value)" style="font-size:.76rem;padding:1px 3px;border:1px solid var(--line-dark)">`;
+  html += `<select onchange="setResistSelect('${bossId}','${item.id}',this.value)" style="font-size:.76rem;padding:1px 3px;border:1px solid var(--line-dark)">`;
   html += `<option value="none"${current === 'none' ? ' selected' : ''}>いない</option>`;
   filled.forEach(c => {
     const innateTag = (RESIST_100[item.element] || []).includes(c.id) ? '（標準で100%）' : '';
@@ -1323,8 +1322,8 @@ function buildResistSelectHtml(bossId, item) {
 }
  
 // プルダウン変更時
-function setResistSelect(bossId, element, value) {
-  bossResistSelect[bossId + '__resist__' + element] = value;
+function setResistSelect(bossId, itemId, value) {
+  bossResistSelect[bossId + '__resist__' + itemId] = value;
   const result = document.getElementById('boss-fit-result');
   if (result && currentBoss) result.innerHTML = evaluateBossFit(currentBoss);
 }
@@ -1360,7 +1359,7 @@ function evaluateBossFit(boss) {
  
   checkedItems.forEach(item=>{
     if (item.element) {
-      const stateKey = boss.id+'__resist__'+item.element;
+      const stateKey = boss.id+'__resist__'+item.id;
       const selected = bossResistSelect[stateKey] || 'none';
       const elementLabel = {burn:'灼熱',poison:'毒',bleed:'出血'}[item.element] || item.element;
       if (selected !== 'none') {
@@ -1382,6 +1381,8 @@ function evaluateBossFit(boss) {
       html += `<div class="check-box"><div class="check-title">・「${item.label}」について</div><div class="check-desc">${item.need}</div></div>`;
     }
   });
+ 
+  return html;
 }
 
 // ---- 魔法陣一覧 ----
