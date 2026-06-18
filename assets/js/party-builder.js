@@ -746,16 +746,17 @@ const BOSS_THREAT_LIBRARY = {
     { id:'partial_aoe', label:'一部個体は前列以外も攻撃してくる', need:'宮崎奈々などのCC役で行動を縛ると安定します。', counters:['nana','kam'] },
   ],
   dragon: [
-    { id:'burn_dot', label:'灼熱の蓄積によるスリップダメージがある', need:'灼熱耐性・無効を持つキャラがいると安定します。', counters:['sarze','tio_plus'] },
-    { id:'burn_on_hit', label:'攻撃時に灼熱を付与してくる(凍結ハメ不可)', need:'凍結ハメが効かないため、灼熱耐性で受け切る編成が必要です。', counters:['sarze'] },
-    { id:'bleed_variant', label:'出血を付与してくる個体がいる', need:'出血耐性持ちか、同等の耐久編成で対応します。', counters:['tio_plus'] },
+    { id:'burn_dot', label:'灼熱の蓄積によるスリップダメージがある', element:'burn', need:'灼熱耐性100%のキャラがいると安定します。', counters:['sarze','tio_plus'] },
+    { id:'burn_on_hit', label:'攻撃時に灼熱を付与してくる(凍結ハメ不可)', element:'burn', need:'凍結ハメが効かないため、灼熱耐性100%で受け切る必要があります。', counters:['sarze'] },
+    { id:'bleed_variant', label:'出血を付与してくる個体がいる', element:'bleed', need:'出血耐性100%のキャラがいると安定します。', counters:['tio_plus'] },
   ],
   alraune: [
-    { id:'poison_dot', label:'毒の蓄積によるスリップダメージがある', need:'毒耐性・無効を持つキャラがいると安定します。', counters:['kaori','kaori_plus'] },
-    { id:'poison_aoe', label:'ターン開始時に全体へ毒を付与する(凍結ハメ不可)', need:'凍結ハメが効かないため、毒耐性で受け切る編成が必要です。', counters:['kaori','kaori_plus'] },
+    { id:'poison_dot', label:'毒の蓄積によるスリップダメージがある', element:'poison', need:'毒耐性100%のキャラがいると安定します。', counters:['kaori','kaori_plus'] },
+    { id:'poison_aoe', label:'ターン開始時に全体へ毒を付与する(凍結ハメ不可)', element:'poison', need:'凍結ハメが効かないため、毒耐性100%で受け切る必要があります。', counters:['kaori','kaori_plus'] },
   ],
   hydra: [
-    { id:'poison_burn_dot', label:'毒・灼熱の蓄積がある', need:'両方の耐性、または高い持続火力・耐久が必要です。', counters:['sarze','kaori','kaori_plus'] },
+    { id:'poison_dot_hydra', label:'毒の蓄積がある', element:'poison', need:'毒耐性100%のキャラがいると安定します。', counters:['kaori','kaori_plus'] },
+    { id:'burn_dot_hydra', label:'灼熱の蓄積がある', element:'burn', need:'灼熱耐性100%のキャラがいると安定します。', counters:['sarze','tio_plus'] },
     { id:'revive_once', label:'戦闘不能後に1度復活する個体がいる', need:'長期戦を見据えた持続火力が必要です。', counters:['oscar'] },
     { id:'cc_resist_high', label:'高い凍結・行動制限耐性を持つ', need:'凍結ではなく目眩(クゼ等)や毒で対応する必要があります。', counters:['kuze','kam'] },
   ],
@@ -781,6 +782,15 @@ const TIER_NOTES = {
 let currentBossTier = 'under9000';
 let currentBoss = null;
 let bossThreatState = {};
+
+// 灼熱／毒／出血耐性100%が確認できているキャラ（手動メンテ用。編集しやすいよう配列のみ）
+const RESIST_100 = {
+  burn:   ['sarze','tio_plus','riria_plus'],
+  poison: ['kaori','kaori_plus','tio_plus','riria_plus'],
+  bleed:  ['yue','tio_plus','riria_plus'],
+};
+ 
+let bossResistSelect = {};
 
 const BOSSES = [
   { id:'guard', name:'守衛', icon:'🛡', tiers:['under9000','10000plus'], threats:['高い回復能力','攻撃力低下デバフ','時間制限','非常に高い威力のスキル（単体攻撃）'], tip:'守衛の通常攻撃・スキルは全て単体攻撃のためスロット1に耐久役を置けば全ての攻撃をそこに集中させられます。8000階層超えるとユエがワンパンされやすくなります。一部先頭以外も攻撃してくる個体は宮崎奈々で凍結させましょう。',
@@ -838,14 +848,56 @@ let party = [null,null,null,null,null];
 let partyCircles = ['なし','なし','なし','なし','なし'];
 let partyRanks = ['2凸','2凸','2凸','2凸','2凸'];
 let currentFilter = 'all';
+const BUILD_STORAGE_KEY = 'ariribe_party_build_v1';
+ 
+// 現在の編成・魔法陣・凸数をlocalStorageに保存
+function saveBuildToStorage() {
+  try {
+    const data = {
+      partyIds: party.map(c => c ? c.id : null),
+      partyCircles: partyCircles.slice(),
+      partyRanks: partyRanks.slice(),
+    };
+    localStorage.setItem(BUILD_STORAGE_KEY, JSON.stringify(data));
+  } catch (e) {
+    // プライベートブラウズ等でlocalStorageが使えない場合は何もしない
+  }
+}
+ 
+// 保存されている編成を読み込んでpartyなどに反映
+function loadBuildFromStorage() {
+  try {
+    const raw = localStorage.getItem(BUILD_STORAGE_KEY);
+    if (!raw) return;
+    const data = JSON.parse(raw);
+    if (!data || !Array.isArray(data.partyIds)) return;
+ 
+    party = data.partyIds.map(id => id ? (CHARS.find(c => c.id === id) || null) : null);
+    while (party.length < 5) party.push(null);
+    party = party.slice(0, 5);
+ 
+    if (Array.isArray(data.partyCircles)) {
+      partyCircles = data.partyCircles.slice(0, 5);
+      while (partyCircles.length < 5) partyCircles.push('なし');
+    }
+    if (Array.isArray(data.partyRanks)) {
+      partyRanks = data.partyRanks.slice(0, 5);
+      while (partyRanks.length < 5) partyRanks.push('2凸');
+    }
+  } catch (e) {
+    // 保存データが壊れていた場合は無視して通常起動する
+  }
+}
 
 function init() {
+  loadBuildFromStorage();
   renderSlots();
   renderCharPool();
   renderBossTierTabs();
   renderBossGrid();
   renderCircleList();
   renderStatTable();
+  analyze();
 }
 
 function switchMain(id, btn) {
@@ -968,6 +1020,7 @@ function clearParty() {
   renderSlots(); renderCharPool();
   document.getElementById('analysis-area').innerHTML='<p class="empty-msg">キャラを選択すると分析結果が表示されます。</p>';
   document.getElementById('excl-warnings').innerHTML='';
+  saveBuildToStorage();
 }
 
 // ---- 排他チェック ----
@@ -981,6 +1034,8 @@ function checkExclusives() {
 
 // ---- 分析 ----
 function analyze() {
+  saveBuildToStorage();
+  if (currentBoss) renderBossDetail();
   const filled = party.filter(Boolean);
   if (!filled.length) { document.getElementById('analysis-area').innerHTML='<p class="empty-msg">キャラを選択すると分析結果が表示されます。</p>'; return; }
 
@@ -1204,6 +1259,7 @@ function renderBossDetail() {
   lib.forEach(item=>{
     const checked = bossThreatState[boss.id+'__'+item.id] ? 'checked' : '';
     html += `<label style="display:block;font-size:.85rem;margin-bottom:4px;cursor:pointer"><input type="checkbox" ${checked} onchange="toggleBossThreat('${boss.id}','${item.id}',this.checked)"> ${item.label}</label>`;
+    html += buildResistSelectHtml(boss.id, item);
   });
   const unknownChecked = bossThreatState[boss.id+'__unknown'] ? 'checked' : '';
   html += `<label style="display:block;font-size:.85rem;margin-top:6px;color:var(--muted);cursor:pointer"><input type="checkbox" ${unknownChecked} onchange="toggleBossThreat('${boss.id}','unknown',this.checked)"> 不明（このボスの特徴がよく分からない）</label>`;
@@ -1228,6 +1284,47 @@ function renderBossDetail() {
 // ---- チェックボックス変更時 ----
 function toggleBossThreat(bossId, threatId, checked) {
   bossThreatState[bossId+'__'+threatId] = checked;
+  const result = document.getElementById('boss-fit-result');
+  if (result && currentBoss) result.innerHTML = evaluateBossFit(currentBoss);
+}
+
+// 耐性100%キャラの選択UIを生成（element指定がある項目にだけ表示される）
+function buildResistSelectHtml(bossId, item) {
+  if (!item.element) return '';
+  const filled = party.filter(Boolean);
+  if (!filled.length) {
+    return `<div style="margin:0 0 6px 22px;font-size:.78rem;color:var(--muted)">※編成チェッカーでキャラを選択すると、ここで耐性100%キャラを選べるようになります。</div>`;
+  }
+ 
+  const stateKey = bossId + '__resist__' + item.element;
+  let current = bossResistSelect[stateKey];
+ 
+  // 以前選んでいたキャラが編成から外れていたら選択をリセット
+  if (current && current !== 'none' && !filled.some(c => c.id === current)) {
+    current = undefined;
+  }
+  if (current === undefined) {
+    const innate = RESIST_100[item.element] || [];
+    const auto = filled.find(c => innate.includes(c.id));
+    current = auto ? auto.id : 'none';
+  }
+  bossResistSelect[stateKey] = current;
+ 
+  const elementLabel = { burn:'灼熱', poison:'毒', bleed:'出血' }[item.element] || item.element;
+  let html = `<div style="margin:0 0 6px 22px;font-size:.78rem;color:var(--muted)">${elementLabel}耐性100%のキャラ（リロール・宝石で確保した場合も含む）：`;
+  html += `<select onchange="setResistSelect('${bossId}','${item.element}',this.value)" style="font-size:.76rem;padding:1px 3px;border:1px solid var(--line-dark)">`;
+  html += `<option value="none"${current === 'none' ? ' selected' : ''}>いない</option>`;
+  filled.forEach(c => {
+    const innateTag = (RESIST_100[item.element] || []).includes(c.id) ? '（標準で100%）' : '';
+    html += `<option value="${c.id}"${current === c.id ? ' selected' : ''}>${c.name}${innateTag}</option>`;
+  });
+  html += `</select></div>`;
+  return html;
+}
+ 
+// プルダウン変更時
+function setResistSelect(bossId, element, value) {
+  bossResistSelect[bossId + '__resist__' + element] = value;
   const result = document.getElementById('boss-fit-result');
   if (result && currentBoss) result.innerHTML = evaluateBossFit(currentBoss);
 }
@@ -1262,6 +1359,19 @@ function evaluateBossFit(boss) {
   }
  
   checkedItems.forEach(item=>{
+    if (item.element) {
+      const stateKey = boss.id+'__resist__'+item.element;
+      const selected = bossResistSelect[stateKey] || 'none';
+      const elementLabel = {burn:'灼熱',poison:'毒',bleed:'出血'}[item.element] || item.element;
+      if (selected !== 'none') {
+        const rc = CHARS.find(x=>x.id===selected);
+        html += `<div class="check-box ok"><div class="check-title">✓ 「${item.label}」への対策あり</div><div class="check-desc">${rc?rc.name:selected}が${elementLabel}耐性100%でこの脅威に対応できます。</div></div>`;
+      } else {
+        const innateNames = (RESIST_100[item.element]||[]).map(id=>CHARS.find(c=>c.id===id)).filter(Boolean).map(c=>c.name).join('・');
+        html += `<div class="check-box warn"><div class="check-title">△ 「${item.label}」への${elementLabel}耐性100%キャラが編成内にいません</div><div class="check-desc">${item.need} リロール・宝石でいずれかのキャラに${elementLabel}耐性100%を確保するか、${innateNames?innateNames+'のように標準で100%になるキャラを編成すると楽です。':'対応できるキャラを編成してください。'}</div></div>`;
+      }
+      return;
+    }
     const counterChars = (item.counters||[]).map(id=>CHARS.find(c=>c.id===id)).filter(Boolean);
     const present = counterChars.filter(c=>filled.includes(c));
     if (present.length) {
@@ -1272,8 +1382,6 @@ function evaluateBossFit(boss) {
       html += `<div class="check-box"><div class="check-title">・「${item.label}」について</div><div class="check-desc">${item.need}</div></div>`;
     }
   });
- 
-  return html;
 }
 
 // ---- 魔法陣一覧 ----
