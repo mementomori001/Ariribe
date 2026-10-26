@@ -794,3 +794,37 @@ ul { margin: 0; padding-left: 1.25em; }
     white-space: normal;
   }
 }
+
+/* サイトリニューアルのお知らせ */
+.renewal-notice {
+  max-width: var(--max);
+  margin: 14px auto 0;
+  padding: 16px 22px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+}
+
+.renewal-notice h2 {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.renewal-notice-content p {
+  margin: 0;
+}
+
+.renewal-notice-content p + p {
+  margin-top: 8px;
+}
+
+@media (max-width: 640px) {
+  .renewal-notice {
+    margin-left: 14px;
+    margin-right: 14px;
+    padding: 14px;
+  }
+}
