@@ -51,7 +51,7 @@
       title: '便利機能・コミュニティ',
       items: [
         { view: 'calculators', icon: '🧮', title: '育成コスト計算機', sub: '★上げ欠片・魔法陣凸・Lv金貨' },
-        { view: 'party', icon: '🛡', title: '5体編成シミュレーター', sub: '性格バフ・役割の自動計算' },
+        { view: 'party', icon: '🛡', title: '5体編成シミュレーター（準備中）', sub: '現在再設計中' },
         { view: 'forum', icon: '💬', title: '攻略掲示板', sub: '質問スレ・GitHub Discussions' },
         { view: 'daily', icon: '☑', title: '毎日やることチェック', sub: '日課・週課・解放階層リスト' }
       ]
@@ -255,9 +255,9 @@
           <div class="sidebar-block">
             <div class="section-label"><span>便利機能</span></div>
             <button class="sidebar-list-item" data-nav="calculators"><span>育成コスト計算機</span><span style="color:var(--text-muted);">→</span></button>
-            <button class="sidebar-list-item" data-nav="party"><span>5体編成シミュレーター</span><span style="color:var(--text-muted);">→</span></button>
+            <button class="sidebar-list-item" data-nav="party"><span>5体編成シミュレーター（準備中）</span><span style="color:var(--text-muted);">→</span></button>
             <button class="sidebar-list-item" data-nav="daily"><span>毎日やること・解放階層</span><span style="color:var(--text-muted);">→</span></button>
-            <button class="sidebar-list-item" data-nav="forum"><span>攻略掲示板（Giscus対応）</span><span class="mono" style="color:var(--text-muted);">${state.threads.length}件 →</span></button>
+            <button class="sidebar-list-item" data-nav="forum"><span>攻略掲示板（GitHub Discussions）</span><span style="color:var(--text-muted);">→</span></button>
           </div>
         </aside>
       </div>
@@ -479,12 +479,7 @@
       </div>
       <div class="filter-strip">
         <input type="search" class="clean-input" id="circle-search" style="flex:1;min-width:200px;" placeholder="魔法陣名・スキル効果（シールド、復活、目眩など）..." value="${esc(q)}">
-        <div class="pill-group">
-          <button class="pill ${source === 'ALL' ? 'active' : ''}" data-circle-pri="ALL">すべて</button>
-          <button class="pill ${source === 'SHOP' ? 'active' : ''}" data-circle-pri="SHOP">栄光商店</button>
-          <button class="pill ${source === 'SELECT' ? 'active' : ''}" data-circle-pri="SELECT">セレクト箱</button>
-          <button class="pill ${source === 'EVENT' ? 'active' : ''}" data-circle-pri="EVENT">イベント・異界</button>
-        </div>
+
       </div>
       <div class="table-wrap">
         <table class="clean-table">
@@ -716,25 +711,11 @@
   }
 
   function renderPartyBuilder() {
-    const characters = state.data.characters || [];
     return `
       <div class="breadcrumb"><button data-nav="home">トップ</button> / <span>便利機能</span> / <span>5体編成シミュレーター</span></div>
-      <h1 style="margin:0 0 6px;font-size:24px;">5体編成シミュレーター（性格バフ自動計算）</h1>
-      <p style="margin:0 0 16px;color:var(--text-sub);">1〜5番のスロットにキャラクターを選択すると、発生する性格バフ（編成人数バフ）を自動計算します。</p>
-      <div class="callout"><strong>発動中の性格バフ:</strong> ${esc(computePartySynergy())}</div>
-      <div class="formation-strip" style="margin-top:16px;">
-        ${state.partySlots.map((cid, idx) => {
-          const ch = characters.find(x => x.id === cid) || characters[0];
-          return `
-            <div class="formation-slot">
-              <div class="mono" style="font-size:11px;color:var(--accent);font-weight:700;">SLOT 0${idx + 1}</div>
-              <select class="clean-input" data-party-slot="${idx}" style="width:100%;margin:6px 0;font-size:12.5px;padding:5px 7px;">
-                ${characters.map(opt => `<option value="${esc(opt.id)}" ${opt.id === cid ? 'selected' : ''}>${esc(opt.name)} (${esc(opt.attr)})</option>`).join('')}
-              </select>
-              ${ch ? `<div style="font-size:12px;color:var(--text-sub);">${esc(ch.roles[0] || ch.type)}</div><div style="margin-top:6px;"><button class="btn-soft" style="padding:3px 8px;font-size:11.5px;" data-open-char="${esc(ch.id)}">キャラ詳細 →</button></div>` : ''}
-            </div>
-          `;
-        }).join('')}
+      <div class="card" style="padding:28px;text-align:center;">
+        <h1 style="margin:0 0 10px;font-size:22px;">5体編成シミュレーター（準備中）</h1>
+        <p style="margin:0;color:var(--text-sub);">現在、再設計中です。公開までしばらくお待ちください。</p>
       </div>
     `;
   }
@@ -770,66 +751,13 @@
 
   /* ---- Forum ---- */
   function renderForum() {
-    const cats = ['ALL', '階層攻略', '魔法陣相談', '編成共有', '雑談'];
-    const filtered = state.threads.filter(t => state.forumCat === 'ALL' || t.cat === state.forumCat);
     return `
       <div class="breadcrumb"><button data-nav="home">トップ</button> / <span>便利機能</span> / <span>攻略掲示板</span></div>
-      <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px;margin-bottom:16px;">
-        <div><h1 style="margin:0 0 4px;font-size:24px;">攻略掲示板・質問スレッド</h1><p style="margin:0;color:var(--text-sub);">サーバー不要のローカル掲示板と、GitHub Discussions (Giscus) 連携の両対応です。</p></div>
-        <div class="pill-group">
-          <button class="pill ${state.forumMode === 'local' ? 'active' : ''}" data-forum-mode="local">ローカル掲示板</button>
-          <button class="pill ${state.forumMode === 'giscus' ? 'active' : ''}" data-forum-mode="giscus">GitHub Discussions (Giscus)</button>
-        </div>
+      <div style="margin-bottom:16px;">
+        <h1 style="margin:0 0 4px;font-size:24px;">攻略掲示板</h1>
+        <p style="margin:0;color:var(--text-sub);">GitHub Discussions と連携したコメント欄です。誤記の報告や攻略メモの共有にご利用ください。</p>
       </div>
-      ${state.forumMode === 'local' ? `
-        <div class="home-columns">
-          <div>
-            <div class="filter-strip">
-              <div class="pill-group">${cats.map(c => `<button class="pill ${state.forumCat === c ? 'active' : ''}" data-forum-cat="${c}">${c === 'ALL' ? 'すべて' : c}</button>`).join('')}</div>
-              <button class="btn-soft" id="export-threads-btn" style="margin-left:auto;">JSON書き出し</button>
-            </div>
-            ${filtered.map(t => `
-              <div class="thread-item">
-                <button class="upvote-btn" data-like-thread="${esc(t.id)}" type="button"><span>▲</span><span>${t.likes || 0}</span></button>
-                <div>
-                  <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px;"><span class="tag">${esc(t.cat)}</span><strong style="font-size:15.5px;">${esc(t.title)}</strong></div>
-                  <div style="font-size:12px;color:var(--text-muted);margin-bottom:6px;">${esc(t.author)} ・ ${esc(t.date)}</div>
-                  <p style="margin:0 0 10px;font-size:13.5px;">${esc(t.body)}</p>
-                  ${(t.replies || []).map((r, ri) => `<div style="background:var(--bg-soft);padding:8px 12px;border-radius:6px;margin-bottom:6px;font-size:13px;"><span class="mono" style="color:var(--accent);">[${ri + 2}]</span> <strong>${esc(r.author)}</strong> <span style="color:var(--text-muted);font-size:11.5px;">(${esc(r.date)})</span>: ${esc(r.text)}</div>`).join('')}
-                  <form class="reply-form" data-reply-id="${esc(t.id)}" style="display:flex;gap:8px;margin-top:8px;">
-                    <input type="text" name="replyText" class="clean-input" style="flex:1;" placeholder="返信を書く…" required>
-                    <button type="submit" class="btn-soft">返信</button>
-                  </form>
-                </div>
-              </div>
-            `).join('')}
-          </div>
-          <aside>
-            <div class="section-label"><span>新規スレッド投稿</span></div>
-            <form id="new-thread-form" style="display:flex;flex-direction:column;gap:10px;margin-top:12px;">
-              <select name="cat" class="clean-input"><option value="階層攻略">階層攻略（詰まり相談）</option><option value="魔法陣相談">魔法陣・育成相談</option><option value="編成共有">編成共有</option><option value="雑談">雑談・備忘録</option></select>
-              <input type="text" name="author" class="clean-input" placeholder="名前（例：s11_錬成師）" required>
-              <input type="text" name="title" class="clean-input" placeholder="タイトル" required>
-              <textarea name="body" rows="4" class="clean-input" placeholder="現在の階層や相談内容…" required></textarea>
-              <button type="submit" class="btn-primary">投稿する</button>
-            </form>
-          </aside>
-        </div>
-      ` : `
-        <div style="padding-top:8px;">
-          <div id="giscus-mount" style="padding-top:4px;">${state.giscus.repo && state.giscus.repoId ? '読み込み中…' : '<span style="color:var(--text-muted);">※ repo と repoId を設定するとここにGitHub Discussionsスレッドが表示されます。</span>'}</div>
-          <details style="margin-top:20px;">
-            <summary style="cursor:pointer;font-size:12px;color:var(--text-muted);">Giscus連携設定を変更</summary>
-            <form id="giscus-cfg-form" class="grid-2" style="margin-top:12px;">
-              <input type="text" name="repo" class="clean-input" placeholder="owner/repo" value="${esc(state.giscus.repo)}">
-              <input type="text" name="repoId" class="clean-input" placeholder="data-repo-id" value="${esc(state.giscus.repoId)}">
-              <input type="text" name="category" class="clean-input" placeholder="カテゴリ名 (General)" value="${esc(state.giscus.category)}">
-              <input type="text" name="categoryId" class="clean-input" placeholder="data-category-id" value="${esc(state.giscus.categoryId)}">
-              <div style="grid-column:1/-1;"><button type="submit" class="btn-primary">Giscusを読み込む</button></div>
-            </form>
-          </details>
-        </div>
-      `}
+      <div id="giscus-mount" style="padding-top:4px;">読み込み中…</div>
     `;
   }
 
