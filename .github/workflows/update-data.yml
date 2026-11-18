@@ -1,0 +1,49 @@
+name: Update AriRebe Game Data
+
+on:
+  schedule:
+    - cron: '30 15 * * *' # 毎日 00:30 JST に自動チェック
+  workflow_dispatch:
+    inputs:
+      build_id:
+        description: 'G123 ビルド番号'
+        required: false
+        default: '83860'
+      config_hash:
+        description: 'config.<hash>.json のハッシュ'
+        required: false
+        default: '0b0bb'
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run data updater
+        run: |
+          python3 scripts/update_data.py \
+            --build-id "${{ github.event.inputs.build_id || '83860' }}" \
+            --config-hash "${{ github.event.inputs.config_hash || '0b0bb' }}" \
+            --data-dir "data"
+
+      - name: Commit and push if changed
+        run: |
+          if [ -n "$(git status --porcelain data/)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add data/
+            git commit -m "chore: auto-update game data"
+            git push
+          else
+            echo "No data changes."
+          fi
