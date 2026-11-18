@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mementomori001.github.io/Ariribe/sitemap.xml

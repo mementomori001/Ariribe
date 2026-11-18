@@ -1,161 +1,65 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ありリベ攻略備忘録</title>
-  <meta name="description" content="ありふれた職業で世界最強 リベリオンソウル（ありリベ）の攻略備忘録。キャラ図鑑、魔獣、魔法陣、アーティファクト、都市建設、編成などを整理しています。">
-  <meta name="keywords" content="ありりべ,ありふれた職業で世界最強 リベリオンソウル, 攻略, 魔獣, スキル, パーティー, アーティファクト, 魔法陣, 都市建設, 神術, 掲示板, お役立ち情報, キャラ, ガチャポイント, UR+, 課金, ariribe, ポイント計算, ポイント, 最安値">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <title>ありリベ攻略・備忘録 | ありふれた職業で世界最強 リベリオンソウル</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Noto+Sans+JP:wght@400;500;600;700;800&family=Shippori+Mincho:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
-  <header class="site-header" id="siteHeader">
+  <header class="site-header">
     <div class="header-inner">
-      <div class="site-logo">
-        <span class="logo-en">ARIFURE REBELLION SOUL NOTES</span>
-        <a href="index.html"><h1 class="logo-ja">ありリベ攻略備忘録</h1></a>
+      <div class="site-brand" id="brand-home" role="button" tabindex="0">
+        <span class="brand-dot"></span>
+        <span class="brand-name">ありリベ攻略・備忘録</span>
       </div>
-      <nav class="main-nav" id="mainNav">
-        <a href="index.html" class="nav-link active">ホーム</a>
-        <a href="pages/characters.html" class="nav-link">キャラ図鑑</a>
-        <a href="pages/character-skills.html" class="nav-link">キャラスキル一覧</a>
-        <a href="pages/beasts.html" class="nav-link">魔獣一覧</a>
-        <a href="pages/magic-circles.html" class="nav-link">魔法陣一覧</a>
-        <a href="pages/artifacts.html" class="nav-link">アーティファクト一覧</a>
-        <a href="pages/city.html" class="nav-link">都市建設</a><a href="pages/divine-arts.html" class="nav-link">神術一覧</a>
-        <a href="pages/party.html" class="nav-link">編成</a>
-        <a href="pages/calculator.html" class="nav-link">ガチャ募集券計算機</a>
-        <a href="pages/tips.html" class="nav-link">その他お役立ち情報</a>
-      <a href="pages/board.html" class="nav-link">掲示板</a></nav>
+
+      <nav class="nav-links" aria-label="メインナビゲーション">
+        <button class="nav-link active" data-nav="home">トップ</button>
+        <button class="nav-link" data-nav="articles">攻略記事</button>
+        <button class="nav-link" data-mega-toggle="db" type="button">データベース <span class="nav-caret">▾</span></button>
+        <button class="nav-link" data-mega-toggle="tools" type="button">便利機能 <span class="nav-caret">▾</span></button>
+      </nav>
+
+      <div class="header-tools">
+        <button class="search-pill" id="search-trigger" type="button">
+          <span>🔍 検索</span>
+          <span class="kbd" style="font-size:11px;">Ctrl+K</span>
+        </button>
+        <button class="theme-btn" id="theme-toggle" type="button">🌙 暗転</button>
+      </div>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <p class="hero-eyebrow">HOME</p>
-      <h2 class="hero-title">
-        <span class="hero-title-main">ありふれた職業で世界最強</span>
-        <span class="hero-title-accent">リベリオンソウル</span>
-        <span class="hero-title-sub">攻略備忘録</span>
-      </h2>
-      <p class="hero-desc">このサイトは、ありリベを遊びながら確認した情報を分類して残していくための個人用攻略ノートです。まずは各カテゴリの入口を作り、今後少しずつ内容を増やしていきます。</p>
-      <div class="hero-buttons">
-        <a href="pages/character-skills.html" class="btn btn-primary">キャラスキル一覧へ</a>
-        <a href="pages/magic-circles.html" class="btn">魔法陣を見る</a>
-      </div>
-    </div>
-  </section>
-
-  <div class="notice-bar">
-    <span class="notice-label">更新</span>
-    <span>お知らせを追加しました</span>
+  <!-- PlayStation.com-style Mega-Menu Drawer -->
+  <div class="mega-drawer" id="mega-drawer" role="region" aria-label="サブメニュー">
+    <div class="mega-inner" id="mega-inner"></div>
   </div>
 
-  <section class="renewal-notice" aria-labelledby="renewal-notice-title">
-    <h2 id="renewal-notice-title">     サイトリニューアルのお知らせ</h2>
-    <div class="renewal-notice-content">
-      <!-- お知らせ本文をこの下に自由に記入してください -->
-      <p>   2027年3月末ごろからサイトリニューアルを行います。変更予定は下記のとおりです。</p>
-      <p>   新たに追加された要素の追加</p>
-      <p>   新SPキャラクターの追加</p>
-      <p>   一部サイトデザインの変更。</p>
-    </div>
-  </section>
-
-  <main class="main-content">
-    <div class="content-column">
-      <section class="section">
-        <div class="section-header">
-          <h2 class="section-title"><span>MENU</span>メニュー</h2>
-          <div class="section-line"></div>
-        </div>
-        <ul class="category-list">
-          <li><a href="pages/characters.html">キャラ図鑑</a></li>
-          <li><a href="pages/character-skills.html">キャラスキル一覧</a></li>
-          <li><a href="pages/beasts.html">魔獣一覧</a></li>
-          <li><a href="pages/magic-circles.html">魔法陣一覧</a></li>
-          <li><a href="pages/artifacts.html">アーティファクト一覧</a></li>
-          <li><a href="pages/city.html">都市建設</a></li>
-          <li><a href="pages/divine-arts.html">神術一覧</a></li>
-          <li><a href="pages/party.html">編成</a></li>
-          <li><a href="pages/calculator.html" class="nav-link">ガチャ募集券計算機</a></li>
-          <li><a href="pages/tips.html">その他お役立ち情報</a></li>
-          <li><a href="pages/board.html">掲示板</a></li>
-        </ul>
-      </section>
-
-      <section class="section">
-        <div class="section-header">
-          <h2 class="section-title"><span>INTRO</span>まえがき</h2>
-          <div class="section-line"></div>
-        </div>
-        <p>ありリベはキャラクター育成だけでなく、魔獣、魔法陣、アーティファクト、編成の組み合わせで迷う場面が多いゲームだと思います。</p>
-        <p>この備忘録では実際に遊んでいて「あとで見返したい」と感じたことを項目ごとに整理していきます。断定できない部分は無理に言い切らず、確認できた範囲から更新します。</p>
-        <p>初心者の方から上級者の方まで幅広く利用できる、有益なサイトを目指します。</p>
-      
-    </div>
-
-    <aside class="side-column">
-      <section class="side-box update-scroll-box">
-        <h2 class="side-title">最近の更新</h2>
-        <ul class="update-scroll-list">
-          <li>2026-10-26 サイトリニューアルのお知らせを追加しました。</li>
-          <li>2026-06-18 パーティー編成チェッカーをより使いやすく変更しました。</li>
-          <li>2026-06-18 魔法陣ページに検索機能を追加しました。</li>
-          <li>2026-06-17 パーティー編成適正チェッカーの一部ユーザーへの公開をしました。</li>
-          <li>2026-06-16 一部軽微な変更</li>
-          <li>2026-06-13 UR+アルテナ,UR+レミアを追加。</li>
-          <li>2026-06-12 編成について一部変更</li>
-          <li>2026-06-11 ガチャ最安値計算機の挙動を変更しました。</li>
-          <li>2026-06-09 キャラクタースキルを見やすく分類しました。</li>
-          <li>2026-06-09 ガチャポイント、募集券計算機を追加。</li>
-          <li>2026-05-31 最新の魔法陣を追加。UR+キャラクターを1体追加。(現時点ではあと2体)</li>
-          <li>2026-05-28 SSRキャラクターの一部表記の誤りを修正、オススメSSRキャラクターを「編成」に追加</li>
-          <li>2026-05-28 一部魔法陣追加、編成を編集</li>
-	        <li>2026-05-27 お役立ち情報に情報を追加</li>
-	        <li>2026-05-27 SSRキャラクターのスキル一覧、都市建設、神術一覧を追加</li>
-	        <li>2026-05-27 キャラクター一覧、キャラクタースキル、魔獣、アーティファクト、魔法陣一覧、掲示板を追加。</li>
-          <li>2026-05-26 レイアウトを備忘録型に変更</li>
-          <li>2026-05-26 カテゴリ構成を整理</li>
-        </ul>
-      </section>
-      <section class="side-box">
-        <h2 class="side-title">作成予定</h2>
-        <ul>
-          <li>一部UR+キャラクター5凸以降</li>
-          <li>魔獣スキル一覧</li>
-          <li>新要素の追加</li>
-          <li>編成チェッカーの修正</li>
-        </ul>
-      </section>
-      <section class="side-box">
-        <h2 class="side-title">このサイトについて</h2>
-        <p>非公式の攻略備忘録です。ゲーム内アップデートで内容が変わる場合があります。</p>
-      </section>
-    </aside>
+  <main class="page-wrap" id="app-root">
+    <div style="padding:40px 0;color:var(--text-muted);">読み込み中…</div>
   </main>
 
   <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-logo">ありリベ攻略備忘録</div>
-      <nav class="footer-nav">
-        <a href="index.html">ホーム</a>
-        <a href="pages/characters.html">キャラ図鑑</a>
-        <a href="pages/beasts.html">魔獣一覧</a>
-        <a href="pages/magic-circles.html">魔法陣一覧</a>
-        <a href="pages/artifacts.html">アーティファクト一覧</a>
-        <a href="pages/city.html">都市建設</a>
-        <a href="pages/divine-arts.html">神術一覧</a>
-        <a href="pages/party.html">編成</a>
-        <a href="pages/calculator.html">ガチャ募集券計算機</a>
-        <a href="pages/tips.html">その他お役立ち情報</a>
-        <a href="pages/board.html">掲示板</a>
-      </nav>
-      <p class="footer-copy">© 2026 ありリベ攻略備忘録 / 非公式ファンサイト</p>
-    </div>
+    <span>ありふれた職業で世界最強 リベリオンソウル（ありリベ）非公式攻略・備忘録サイト</span>
+    <span>GitHub Pages 無料ホスティング &amp; GitHub Discussions (Giscus) 対応</span>
   </footer>
-  <script src="assets/js/main.js"></script>
+
+  <!-- Global Search Modal -->
+  <div class="modal-backdrop" id="search-modal" role="dialog" aria-modal="true">
+    <div class="cmd-panel">
+      <div style="display:flex;align-items:center;padding:12px 16px;border-bottom:1px solid var(--border);gap:10px;">
+        <span style="color:var(--text-muted);">🔍</span>
+        <input type="search" id="global-search-input" style="border:none;background:transparent;flex:1;font-size:14.5px;outline:none;" placeholder="記事・キャラ・魔法陣・魔獣・AFで検索 (↑↓ / Enter)">
+        <button class="btn-soft" data-close-modal type="button" style="padding:4px 9px;">ESC</button>
+      </div>
+      <div id="global-search-results" style="max-height:56vh;overflow-y:auto;"></div>
+    </div>
+  </div>
+
+  <script src="./assets/app.js"></script>
 </body>
 </html>
