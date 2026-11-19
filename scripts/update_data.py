@@ -191,6 +191,40 @@ def update_sp_jj(chars: list, b_jj: bytes, loc: dict) -> int:
         lst = by_char.setdefault(cid, [])
         lst.append({"lv": len(lst) + 1, "desc": des_ja})
 
+    # Also parse hero_jj_jj_des_<hid5><lv> (e.g. hero_jj_jj_des_672015..6720110 for Aura & Mare)
+    char_ids = {c.get("id") for c in chars}
+    jj_jj_seen = set()
+    for m in re.finditer(rb"hero_jj_jj_des_(\d+)", b_jj):
+        klen = b_jj[m.start() - 1]
+        dkey = b_jj[m.start() : m.start() + klen].decode("utf-8", errors="ignore")
+        if not dkey.startswith("hero_jj_jj_des_"):
+            continue
+        code = dkey[len("hero_jj_jj_des_") :]
+        if not code.isdigit() or len(code) < 6 or code in jj_jj_seen:
+            continue
+        jj_jj_seen.add(code)
+        des_ja = loc.get(dkey, "")
+        if not des_ja:
+            continue
+        pref = code[:5]
+        lv_str = code[5:]
+        cid = f"hero-{pref}"
+        if cid not in char_ids:
+            unmapped.append((code, des_ja[:40]))
+            continue
+        lv_num = int(lv_str)
+        lst = by_char.setdefault(cid, [])
+        if all(item["lv"] != lv_num for item in lst):
+            lst.append({"lv": lv_num, "desc": des_ja})
+        else:
+            for item in lst:
+                if item["lv"] == lv_num:
+                    item["desc"] = des_ja
+                    break
+
+    for cid, lst in by_char.items():
+        lst.sort(key=lambda x: x["lv"])
+
     if unmapped:
         print(f"Unmapped hero_jj entries ({len(unmapped)}): {unmapped[:10]}")
 
