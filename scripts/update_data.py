@@ -1,18 +1,20 @@
 #!/usr/bin/env python3
 """
 AriRebe Wiki 自動データ更新スクリプト
-ゲームサーバー（またはローカルの --local-dir）から Localize.json と config.<hash>.json、
-および各種 .bin を取得して data/characters.json・data/magic_circles.json・data/systems.json を更新する。
+ゲームサーバー（またはローカルの --local-dir）から最新の build_id / config.<hash>.json / Localize.json
+および各種 .bin を自動取得して data/characters.json・data/systems.json を更新する。
 依存ライブラリなし（Python 3 標準ライブラリのみ）。
 """
 import argparse
 import json
 import os
 import re
-import sys
 import urllib.request
 
 BASE_HOST = "https://arifure.pro.g123-cpp.com"
+GAME_PORTAL = "https://h5.g123.jp/game/arifure?lang=ja"
+DEFAULT_BUILD_ID = "84237"
+DEFAULT_CONFIG_HASH = "0b0bb"
 B64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
 
 
@@ -34,8 +36,34 @@ def fetch_bytes(url: str) -> bytes:
         return resp.read()
 
 
+def detect_build_id(fallback: str) -> str:
+    try:
+        html = fetch_bytes(GAME_PORTAL).decode("utf-8", errors="ignore")
+        m = re.search(r"arifure\.pro\.g123-cpp\.com/(\d{4,7})/", html)
+        if m:
+            print(f"Auto-detected build_id: {m.group(1)}")
+            return m.group(1)
+    except Exception as e:
+        print(f"build_id auto-detect skipped ({e}); using {fallback}")
+    return fallback
+
+
+def detect_config_hash(build_id: str, fallback: str) -> str:
+    try:
+        idx_html = fetch_bytes(f"{BASE_HOST}/{build_id}/index.html").decode("utf-8", errors="ignore")
+        m_set = re.search(r"src/settings\.[0-9a-f]+\.js", idx_html)
+        if m_set:
+            settings_js = fetch_bytes(f"{BASE_HOST}/{build_id}/{m_set.group(0)}").decode("utf-8", errors="ignore")
+            m_res = re.search(r'["\']?resources["\']?\s*:\s*["\']([0-9a-f]{5,8})["\']', settings_js)
+            if m_res:
+                print(f"Auto-detected config_hash: {m_res.group(1)}")
+                return m_res.group(1)
+    except Exception as e:
+        print(f"config_hash auto-detect failed ({e}); using {fallback}")
+    return fallback
+
+
 def resolve_bin_map(cfg: dict) -> dict:
-    """config.<hash>.json から gameConfigBin/<name> -> (uuid, native_hash) を解決"""
     uuids = cfg.get("uuids", [])
     paths = cfg.get("paths", {})
     native_list = cfg.get("versions", {}).get("native", [])
@@ -72,7 +100,6 @@ def load_bin(name: str, bin_map: dict, build_id: str, local_dir: str | None) -> 
 
 
 def update_sp_jj(chars: list, b_jj: bytes, loc: dict) -> int:
-    """SP星昇華 (hero_jj) を更新。アウラ&マーレ等の新規追加レベルも検出する。"""
     SP_JJ_ID_MAP = {}
     for s in list(range(1, 6)) + list(range(26, 31)):
         SP_JJ_ID_MAP[s] = "albedo"
@@ -86,18 +113,20 @@ def update_sp_jj(chars: list, b_jj: bytes, loc: dict) -> int:
         SP_JJ_ID_MAP[s] = "shizuku-sp"
     SP_JJ_ID_MAP[6750210] = "shizuku-sp"
 
-    # 追加解禁（例: アウラ&マーレ 6〜10）に対応するため、Localizeキーからキャラ名を推定
     NAME_HINTS = [
         ("アルベド", "albedo"),
         ("シャルティア", "shalltear"),
         ("アウラ", "aura-mare"),
         ("マーレ", "aura-mare"),
+        ("パートナー", "aura-mare"),
+        ("双子", "aura-mare"),
         ("ティオ", "tio-sp"),
         ("雫", "shizuku-sp"),
     ]
 
     jj_seen = set()
     by_char = {}
+    unmapped = []
     for m in re.finditer(rb"hero_jj_des_(\d+)", b_jj):
         klen = b_jj[m.start() - 1]
         dkey = b_jj[m.start() : m.start() + klen].decode("utf-8", errors="ignore")
@@ -120,9 +149,13 @@ def update_sp_jj(chars: list, b_jj: bytes, loc: dict) -> int:
                     cid = target_cid
                     break
         if not cid:
+            unmapped.append((sid_str, des_ja[:40]))
             continue
         lst = by_char.setdefault(cid, [])
         lst.append({"lv": len(lst) + 1, "desc": des_ja})
+
+    if unmapped:
+        print(f"Unmapped hero_jj entries ({len(unmapped)}): {unmapped[:10]}")
 
     updated = 0
     for c in chars:
@@ -135,7 +168,6 @@ def update_sp_jj(chars: list, b_jj: bytes, loc: dict) -> int:
 
 
 def update_help_docs(systems: dict, b_help: bytes, loc: dict) -> int:
-    """help.bin から公式ヘルプ仕様を更新"""
     seen = set()
     docs = []
     for m in re.finditer(rb"help_name_(\d+)", b_help):
@@ -159,8 +191,8 @@ def update_help_docs(systems: dict, b_help: bytes, loc: dict) -> int:
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--build-id", default="83860", help="G123 ビルド番号 (例: 83860)")
-    ap.add_argument("--config-hash", default="0b0bb", help="config.<hash>.json のハッシュ")
+    ap.add_argument("--build-id", default="", help="G123 ビルド番号 (空なら自動検出/デフォルト84237)")
+    ap.add_argument("--config-hash", default="", help="config.<hash>.json のハッシュ (空なら自動検出)")
     ap.add_argument("--data-dir", default="data", help="Wiki の data ディレクトリ")
     ap.add_argument("--local-dir", default=None, help="ローカルテスト用ディレクトリ")
     args = ap.parse_args()
@@ -169,9 +201,12 @@ def main():
         loc = json.load(open(os.path.join(args.local_dir, "Localize.json"), encoding="utf-8"))
         cfg_fn = next(f for f in os.listdir(args.local_dir) if f.startswith("config.") and f.endswith(".json"))
         cfg = json.load(open(os.path.join(args.local_dir, cfg_fn), encoding="utf-8"))
+        build_id = DEFAULT_BUILD_ID
     else:
-        loc_url = f"{BASE_HOST}/{args.build_id}/g123/i18n/ja/texts/Localize.json"
-        cfg_url = f"{BASE_HOST}/{args.build_id}/assets/resources/config.{args.config_hash}.json"
+        build_id = args.build_id.strip() or detect_build_id(DEFAULT_BUILD_ID)
+        cfg_hash = args.config_hash.strip() or detect_config_hash(build_id, DEFAULT_CONFIG_HASH)
+        loc_url = f"{BASE_HOST}/{build_id}/g123/i18n/ja/texts/Localize.json"
+        cfg_url = f"{BASE_HOST}/{build_id}/assets/resources/config.{cfg_hash}.json"
         print(f"Fetching {loc_url}")
         loc = json.loads(fetch_bytes(loc_url).decode("utf-8"))
         print(f"Fetching {cfg_url}")
@@ -186,14 +221,14 @@ def main():
     systems = json.load(open(sys_path, encoding="utf-8"))
 
     changed = False
-    b_jj = load_bin("hero_jj", bin_map, args.build_id, args.local_dir)
+    b_jj = load_bin("hero_jj", bin_map, build_id, args.local_dir)
     if b_jj:
         n_sp = update_sp_jj(chars, b_jj, loc)
         if n_sp:
             print(f"Updated SP evolutions for {n_sp} characters.")
             changed = True
 
-    b_help = load_bin("help", bin_map, args.build_id, args.local_dir)
+    b_help = load_bin("help", bin_map, build_id, args.local_dir)
     if b_help:
         n_help = update_help_docs(systems, b_help, loc)
         if n_help:
