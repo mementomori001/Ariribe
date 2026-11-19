@@ -1035,7 +1035,10 @@
       if (item.attributes && item.attributes.length) {
         body += `<div class="skill-item"><strong>補正ステータス</strong><div style="margin-top:4px;">${item.attributes.map(a => `${esc(a.name_ja)}: ${esc(a.base)} 〜 ${esc(a.max)}`).join('<br>')}</div></div>`;
       }
-      if (item.desc || item.note) body += `<p style="margin-top:10px;color:var(--text-muted);white-space:pre-line;">${esc(item.desc || item.note)}</p>`;
+      if (item.desc) {
+        body += `<div class="skill-item" style="margin-top:10px;"><strong>専用効果・補足</strong><div style="margin-top:4px;white-space:pre-line;">${esc(item.desc)}</div></div>`;
+      }
+      if (item.note) body += `<p style="margin-top:10px;color:var(--text-muted);white-space:pre-line;">${esc(item.note)}</p>`;
       if (item.extraSkills && item.extraSkills.length) {
         body += `<div class="skill-item" style="margin-top:10px;"><strong>鍛造・精錬テキスト</strong><div style="margin-top:4px;max-height:200px;overflow-y:auto;font-size:12.5px;">${item.extraSkills.slice(0, 20).map(s => esc(s.text_ja)).join('<br>')}</div></div>`;
       }
