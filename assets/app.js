@@ -9,13 +9,14 @@
   const state = {
     view: 'home',
     openMega: null, // 'db' | 'tools' | null
-    data: { characters: [], magicCircles: [], articles: [], systems: {} },
+    data: { characters: [], magicCircles: [], articles: [], systems: {}, i18n: { meta: {}, items: [] } },
     articleCat: 'ALL',
     articleId: 'floor-stuck-guide',
     charId: null,
     circleId: null,
     charFilter: { q: '', attr: 'ALL', rarity: 'ALL' },
     circleFilter: { q: '', source: 'ALL', previewTier: '2' },
+    i18nFilter: { q: '', cat: 'ALL' },
     charTab: 'skills',
     charAwakened: true,
     circleTier: 4,
@@ -44,7 +45,8 @@
         { view: 'shinjutsu', icon: '✨', title: '神術', sub: '時序・結界・超級神術' },
         { view: 'divineEquips', icon: '👑', title: '神装備', sub: '神装セット・Lv別効果' },
         { view: 'glossary', icon: '📖', title: '公式ヘルプ仕様', sub: 'ゲーム内仕様解説の検索' },
-        { view: 'weapons', icon: '🔫', title: '武器・適正石', sub: 'ハジメ武器7種・適正石11属性' }
+        { view: 'weapons', icon: '🔫', title: '武器・適正石', sub: 'ハジメ武器7種・適正石11属性' },
+        { view: 'i18n', icon: '🌐', title: '固有名詞対応表（日/韓/英）', sub: 'キャラ・魔法陣・用語の多言語対訳' }
       ]
     },
     tools: {
@@ -66,13 +68,14 @@
 
   async function loadAllData() {
     if (window.__INLINE_DATA__) { state.data = window.__INLINE_DATA__; return; }
-    const [characters, magicCircles, articles, systems] = await Promise.all([
+    const [characters, magicCircles, articles, systems, i18n] = await Promise.all([
       fetch('./data/characters.json').then(r => r.json()),
       fetch('./data/magic_circles.json').then(r => r.json()),
       fetch('./data/articles.json').then(r => r.json()),
-      fetch('./data/systems.json').then(r => r.json())
+      fetch('./data/systems.json').then(r => r.json()),
+      fetch('./data/i18n_glossary.json').then(r => r.json()).catch(() => ({ meta: {}, items: [] }))
     ]);
-    state.data = { characters, magicCircles, articles, systems };
+    state.data = { characters, magicCircles, articles, systems, i18n };
   }
 
   function applyTheme(theme) {
@@ -133,7 +136,7 @@
     if (opts.circleId) state.circleId = opts.circleId;
     if (opts.articleId) state.articleId = opts.articleId;
 
-    const dbViews = ['characters', 'char-detail', 'circles', 'circle-detail', 'beasts', 'artifacts', 'kourei', 'shinjutsu', 'weapons'];
+    const dbViews = ['characters', 'char-detail', 'circles', 'circle-detail', 'beasts', 'artifacts', 'kourei', 'shinjutsu', 'divineEquips', 'glossary', 'weapons', 'i18n'];
     const toolViews = ['calculators', 'party', 'forum', 'daily'];
     document.querySelectorAll('.nav-link[data-nav]').forEach(b => {
       const target = b.dataset.nav;
@@ -207,6 +210,7 @@
           <button class="quick-link-pill" data-nav="circles">魔法陣 (${magicCircles.length})</button>
           <button class="quick-link-pill" data-nav="beasts">魔獣</button>
           <button class="quick-link-pill" data-nav="artifacts">アーティファクト</button>
+          <button class="quick-link-pill" data-nav="i18n">🌐 固有名詞対応表</button>
           <button class="quick-link-pill" data-nav="calculators">計算機</button>
           <button class="quick-link-pill" data-nav="forum">掲示板</button>
         </div>
@@ -250,6 +254,7 @@
             <button class="sidebar-list-item" data-nav="kourei"><span>煌霊</span><span class="mono" style="color:var(--text-muted);">${(systems.kourei || []).length}種 →</span></button>
             <button class="sidebar-list-item" data-nav="shinjutsu"><span>神術</span><span class="mono" style="color:var(--text-muted);">${(systems.spirits || []).length}種 →</span></button>
             <button class="sidebar-list-item" data-nav="weapons"><span>武器・適正石</span><span class="mono" style="color:var(--text-muted);">比較表 →</span></button>
+            <button class="sidebar-list-item" data-nav="i18n"><span>🌐 固有名詞対応表（日/韓/英）</span><span class="mono" style="color:var(--text-muted);">${(state.data.i18n?.items || []).length}語 →</span></button>
           </div>
 
           <div class="sidebar-block">
@@ -586,6 +591,74 @@
     `;
   }
 
+  function getFilteredI18n() {
+    const items = state.data.i18n?.items || [];
+    const q = (state.i18nFilter.q || '').trim().toLowerCase();
+    const cat = state.i18nFilter.cat || 'ALL';
+    return items.filter(it => {
+      if (cat !== 'ALL' && it.category !== cat) return false;
+      if (!q) return true;
+      return (it.ja || '').toLowerCase().includes(q)
+        || (it.ko || '').toLowerCase().includes(q)
+        || (it.en || '').toLowerCase().includes(q)
+        || (it.zh || '').toLowerCase().includes(q)
+        || (it.sub || '').toLowerCase().includes(q);
+    });
+  }
+
+  function renderI18nRows(list, hasZh) {
+    return list.map(it => {
+      const linkAttr = it.linkView === 'char-detail' ? `data-open-char="${esc(it.linkId)}"`
+        : it.linkView === 'circle-detail' ? `data-open-circle="${esc(it.linkId)}"`
+        : it.linkView ? `data-nav="${esc(it.linkView)}"` : '';
+      const jaCell = linkAttr
+        ? `<button type="button" ${linkAttr} style="background:none;border:none;padding:0;text-align:left;font-weight:700;color:var(--link);cursor:pointer;">${esc(it.ja)}</button>`
+        : `<strong>${esc(it.ja)}</strong>`;
+      const copyBtn = (val) => val
+        ? `<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;"><span>${esc(val)}</span><button type="button" class="btn-soft" data-copy-text="${esc(val)}" style="padding:2px 7px;font-size:11px;flex-shrink:0;" title="コピー">📋</button></div>`
+        : `<span style="color:var(--text-muted);">-</span>`;
+      return `<tr>
+        <td><span class="tag">${esc(it.category)}</span>${it.sub ? `<div style="font-size:11.5px;color:var(--text-muted);margin-top:2px;">${esc(it.sub)}</div>` : ''}</td>
+        <td>${jaCell}</td>
+        <td>${copyBtn(it.ko)}</td>
+        <td>${copyBtn(it.en)}</td>
+        ${hasZh ? `<td>${copyBtn(it.zh)}</td>` : ''}
+      </tr>`;
+    }).join('') || `<tr><td colspan="${hasZh ? 5 : 4}" style="text-align:center;padding:24px;color:var(--text-muted);">該当する固有名詞が見つかりません。</td></tr>`;
+  }
+
+  function renderI18nGlossary() {
+    const items = state.data.i18n?.items || [];
+    const hasZh = Boolean(state.data.i18n?.meta?.hasZh);
+    const cats = ['ALL', ...Array.from(new Set(items.map(x => x.category)))];
+    const list = getFilteredI18n();
+    return `
+      <div class="breadcrumb"><button data-nav="home">トップ</button> / <span>データベース</span> / <span>固有名詞対応表（日/韓/英）</span></div>
+      <h1 style="margin:0 0 6px;font-size:24px;">固有名詞対応表（<span id="i18n-count">${list.length}</span> / ${items.length}語）</h1>
+      <p style="margin:0 0 14px;color:var(--text-sub);">日本語・韓国語・英語のどの言語からでも検索できます。韓国語・英語セルの 📋 ボタンでそのままコピーでき、海外プレイヤーとのチャットや翻訳時の齟齬を防げます。</p>
+      <div class="filter-strip" style="margin-bottom:12px;">
+        <input type="search" class="clean-input" id="i18n-search" style="flex:1;min-width:240px;" placeholder="日本語 / 한국어 / English で検索（例: 闘神魔法陣、War God、투신）..." value="${esc(state.i18nFilter.q)}">
+      </div>
+      <div class="pill-group" style="margin-bottom:14px;flex-wrap:wrap;">
+        ${cats.map(c => `<button class="pill ${state.i18nFilter.cat === c ? 'active' : ''}" data-i18n-cat="${esc(c)}">${c === 'ALL' ? 'すべて' : esc(c)}</button>`).join('')}
+      </div>
+      <div class="table-wrap">
+        <table class="clean-table">
+          <thead>
+            <tr>
+              <th style="width:150px;">カテゴリ</th>
+              <th>日本語</th>
+              <th>韓国語 (한국어)</th>
+              <th>英語 (English)</th>
+              ${hasZh ? '<th>中国語 (中文)</th>' : ''}
+            </tr>
+          </thead>
+          <tbody id="i18n-tbody">${renderI18nRows(list, hasZh)}</tbody>
+        </table>
+      </div>
+    `;
+  }
+
   function renderGlossary() {
     const q = (state.glossaryQuery || '').trim().toLowerCase();
     const helps = (state.data.systems.helpDocs || []).filter(h => !q || h.title.toLowerCase().includes(q) || h.doc.toLowerCase().includes(q));
@@ -803,7 +876,14 @@
     state.data.magicCircles.forEach(m => { if (!q || m.name.toLowerCase().includes(q) || m.note.toLowerCase().includes(q)) items.push({ kind: '魔法陣', label: m.name, sub: m.source.split('/')[0].trim(), action: () => { closeModals(); navTo('circle-detail', { circleId: m.id }); } }); });
     (state.data.systems.beasts || []).forEach(b => { if (!q || b.name.toLowerCase().includes(q) || b.role.toLowerCase().includes(q)) items.push({ kind: '魔獣', label: `${b.name} (${b.rarity})`, sub: b.role, action: () => { closeModals(); navTo('beasts'); } }); });
     (state.data.systems.artifacts || []).forEach(a => { if (!q || a.name.toLowerCase().includes(q) || a.effect.toLowerCase().includes(q)) items.push({ kind: 'AF', label: a.name, sub: a.effect, action: () => { closeModals(); navTo('artifacts'); } }); });
-    return items.slice(0, 12);
+    if (q) {
+      (state.data.i18n?.items || []).forEach(it => {
+        if ((it.ja || '').toLowerCase().includes(q) || (it.ko || '').toLowerCase().includes(q) || (it.en || '').toLowerCase().includes(q) || (it.zh || '').toLowerCase().includes(q)) {
+          items.push({ kind: '対訳', label: `${it.ja} / ${it.en || it.ko}`, sub: `${it.category}・${it.ko}`, action: () => { closeModals(); state.i18nFilter.q = query.trim(); navTo('i18n'); } });
+        }
+      });
+    }
+    return items.slice(0, 14);
   }
 
   function renderGlobalSearch(query) {
@@ -859,6 +939,30 @@
     }
     root.querySelectorAll('[data-char-attr]').forEach(b => { b.onclick = () => { state.charFilter.attr = b.dataset.charAttr; render(); }; });
     root.querySelectorAll('[data-char-rarity]').forEach(b => { b.onclick = () => { state.charFilter.rarity = b.dataset.charRarity; render(); }; });
+    const i18nSearch = document.getElementById('i18n-search');
+    if (i18nSearch) {
+      let composing = false;
+      const updateI18nTableOnly = () => {
+        state.i18nFilter.q = i18nSearch.value;
+        const list = getFilteredI18n();
+        const hasZh = Boolean(state.data.i18n?.meta?.hasZh);
+        const tbody = document.getElementById('i18n-tbody');
+        const cnt = document.getElementById('i18n-count');
+        if (tbody) {
+          tbody.innerHTML = renderI18nRows(list, hasZh);
+          tbody.querySelectorAll('[data-open-char]').forEach(el => { el.onclick = () => navTo('char-detail', { charId: el.dataset.openChar }); });
+          tbody.querySelectorAll('[data-open-circle]').forEach(el => { el.onclick = () => navTo('circle-detail', { circleId: el.dataset.openCircle }); });
+          tbody.querySelectorAll('[data-nav]').forEach(el => { el.onclick = () => navTo(el.dataset.nav); });
+          bindCopyButtons(tbody);
+        }
+        if (cnt) cnt.textContent = String(list.length);
+      };
+      i18nSearch.addEventListener('compositionstart', () => { composing = true; });
+      i18nSearch.addEventListener('compositionend', () => { composing = false; updateI18nTableOnly(); });
+      i18nSearch.addEventListener('input', () => { if (!composing) updateI18nTableOnly(); });
+    }
+    root.querySelectorAll('[data-i18n-cat]').forEach(b => { b.onclick = () => { state.i18nFilter.cat = b.dataset.i18nCat; render(); }; });
+    bindCopyButtons(root);
     root.querySelectorAll('[data-glossary-tab]').forEach(b => { b.onclick = () => { state.glossaryTab = b.dataset.glossaryTab; render(); }; });
     const gSearch = document.getElementById('glossary-search');
     if (gSearch) gSearch.oninput = (e) => { state.glossaryQuery = e.target.value; render(); const el = document.getElementById('glossary-search'); if (el) { el.focus(); el.setSelectionRange(el.value.length, el.value.length); } };
@@ -949,6 +1053,20 @@
     }
   }
 
+  function bindCopyButtons(container) {
+    container.querySelectorAll('[data-copy-text]').forEach(btn => {
+      btn.onclick = async () => {
+        const txt = btn.dataset.copyText || '';
+        try {
+          await navigator.clipboard.writeText(txt);
+          const orig = btn.textContent;
+          btn.textContent = '✓';
+          setTimeout(() => { btn.textContent = orig; }, 1200);
+        } catch (_) {}
+      };
+    });
+  }
+
   function render() {
     const root = document.getElementById('app-root');
     if (!root) return;
@@ -965,6 +1083,7 @@
     else if (state.view === 'shinjutsu') root.innerHTML = renderShinjutsu();
     else if (state.view === 'divineEquips') root.innerHTML = renderDivineEquips();
     else if (state.view === 'glossary') root.innerHTML = renderGlossary();
+    else if (state.view === 'i18n') root.innerHTML = renderI18nGlossary();
     else if (state.view === 'weapons') root.innerHTML = renderWeapons();
     else if (state.view === 'calculators') root.innerHTML = renderCalculators();
     else if (state.view === 'party') root.innerHTML = renderPartyBuilder();

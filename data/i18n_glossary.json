@@ -1,0 +1,6615 @@
+{
+  "meta": {
+    "updatedAt": "2026-11-19",
+    "total": 681,
+    "languages": [
+      {
+        "code": "ja",
+        "label": "日本語"
+      },
+      {
+        "code": "ko",
+        "label": "한국어 (韓国語)"
+      },
+      {
+        "code": "en",
+        "label": "English (英語)"
+      },
+      {
+        "code": "zh",
+        "label": "中文 (中国語)"
+      }
+    ],
+    "hasZh": true
+  },
+  "items": [
+    {
+      "id": "yue-urplus",
+      "category": "キャラクター",
+      "sub": "UR+ / 神属性",
+      "ja": "ユエ（覇者の礼装）",
+      "ko": "유에(패권자의 예복)",
+      "en": "UR+ Yue",
+      "zh": "月(霸者禮裝)",
+      "linkView": "char-detail",
+      "linkId": "yue-urplus"
+    },
+    {
+      "id": "shizuku-urplus",
+      "category": "キャラクター",
+      "sub": "UR+ / 神属性",
+      "ja": "八重樫雫（覇者の礼装）",
+      "ko": "야에가시 시즈쿠(패권자의 예복)",
+      "en": "Shizuku Yaegashi (Conqueror's Attire)",
+      "zh": "八重樫雫(霸者禮裝)",
+      "linkView": "char-detail",
+      "linkId": "shizuku-urplus"
+    },
+    {
+      "id": "miledi-urplus",
+      "category": "キャラクター",
+      "sub": "UR+ / 神属性",
+      "ja": "ミレディ（姫騎士）",
+      "ko": "밀레디(공주 기사)",
+      "en": "Miledi (Princess Knight)",
+      "zh": "密雷迪(姬騎士)",
+      "linkView": "char-detail",
+      "linkId": "miledi-urplus"
+    },
+    {
+      "id": "myu-urplus",
+      "category": "キャラクター",
+      "sub": "UR+ / 神属性",
+      "ja": "ミュウ（雪のお姫様）",
+      "ko": "뮤 (눈의 공주)",
+      "en": "Myu (Snow Princess)",
+      "zh": "繆(雪之公主)",
+      "linkView": "char-detail",
+      "linkId": "myu-urplus"
+    },
+    {
+      "id": "shea-urplus",
+      "category": "キャラクター",
+      "sub": "UR+ / 神属性",
+      "ja": "シア（覇者の礼装）",
+      "ko": "시아(패권자의 예복)",
+      "en": "UR+Shea",
+      "zh": "希雅(霸者禮裝)",
+      "linkView": "char-detail",
+      "linkId": "shea-urplus"
+    },
+    {
+      "id": "tio-urplus",
+      "category": "キャラクター",
+      "sub": "UR+ / 神属性",
+      "ja": "ティオ（黒竜化）",
+      "ko": "티오(흑룡화)",
+      "en": "Tio (Black Dragon)",
+      "zh": "緹奧（黑龍化）",
+      "linkView": "char-detail",
+      "linkId": "tio-urplus"
+    },
+    {
+      "id": "noint-urplus",
+      "category": "キャラクター",
+      "sub": "UR+ / 神属性",
+      "ja": "ノイント（黒鎧）",
+      "ko": "노인트(흑갑)",
+      "en": "Noint (Black Armor)",
+      "zh": "諾因(黑鎧)",
+      "linkView": "char-detail",
+      "linkId": "noint-urplus"
+    },
+    {
+      "id": "liliana-urplus",
+      "category": "キャラクター",
+      "sub": "UR+ / 神属性",
+      "ja": "リリアーナ（聖なる王女）",
+      "ko": "릴리아나(성스러운 여왕)",
+      "en": "Liliana (Holy Queen)",
+      "zh": "莉莉安娜(神聖女王)",
+      "linkView": "char-detail",
+      "linkId": "liliana-urplus"
+    },
+    {
+      "id": "melle-urplus",
+      "category": "キャラクター",
+      "sub": "UR+ / 神属性",
+      "ja": "メイル（海の解放者）",
+      "ko": "메일(바다의 해방자)",
+      "en": "Meiru (Liberator of the Sea)",
+      "zh": "梅兒(海之解放者)",
+      "linkView": "char-detail",
+      "linkId": "melle-urplus"
+    },
+    {
+      "id": "kaori-urplus",
+      "category": "キャラクター",
+      "sub": "UR+ / 神属性",
+      "ja": "白崎香織（二大女神）",
+      "ko": "시라사키 카오리(2대 여신)",
+      "en": "Kaori Shirasaki (Two Great Goddesses)",
+      "zh": "白崎香織(二大女神)",
+      "linkView": "char-detail",
+      "linkId": "kaori-urplus"
+    },
+    {
+      "id": "aiko-urplus",
+      "category": "キャラクター",
+      "sub": "UR+ / 神属性",
+      "ja": "畑山愛子（豊穣神）",
+      "ko": "하타야마 아이코(풍작의 여신)",
+      "en": "Aiko Hatayama (Fertility God)",
+      "zh": "畑山愛子(豐穰神)",
+      "linkView": "char-detail",
+      "linkId": "aiko-urplus"
+    },
+    {
+      "id": "yue-ur",
+      "category": "キャラクター",
+      "sub": "UR / 幻属性",
+      "ja": "ユエ",
+      "ko": "유에",
+      "en": "Yue",
+      "zh": "月",
+      "linkView": "char-detail",
+      "linkId": "yue-ur"
+    },
+    {
+      "id": "oscar-ur",
+      "category": "キャラクター",
+      "sub": "UR / 心属性",
+      "ja": "オスカー",
+      "ko": "오스카",
+      "en": "Oscar",
+      "zh": "奧斯卡",
+      "linkView": "char-detail",
+      "linkId": "oscar-ur"
+    },
+    {
+      "id": "myu-ur",
+      "category": "キャラクター",
+      "sub": "UR / 心属性",
+      "ja": "ミュウ",
+      "ko": "뮤",
+      "en": "Myu",
+      "zh": "繆",
+      "linkView": "char-detail",
+      "linkId": "myu-ur"
+    },
+    {
+      "id": "ryutilis-ur",
+      "category": "キャラクター",
+      "sub": "UR / 幻属性",
+      "ja": "リューティリス",
+      "ko": "류티리스",
+      "en": "Lyutillis",
+      "zh": "琉堤莉絲",
+      "linkView": "char-detail",
+      "linkId": "ryutilis-ur"
+    },
+    {
+      "id": "liliana-ur",
+      "category": "キャラクター",
+      "sub": "UR / 幻属性",
+      "ja": "リリアーナ",
+      "ko": "릴리아나",
+      "en": "Liliana",
+      "zh": "莉莉安娜",
+      "linkView": "char-detail",
+      "linkId": "liliana-ur"
+    },
+    {
+      "id": "miledi-ur",
+      "category": "キャラクター",
+      "sub": "UR / 彩属性",
+      "ja": "ミレディ",
+      "ko": "밀레디",
+      "en": "Miledi",
+      "zh": "密雷迪",
+      "linkView": "char-detail",
+      "linkId": "miledi-ur"
+    },
+    {
+      "id": "vandull-ur",
+      "category": "キャラクター",
+      "sub": "UR / 彩属性",
+      "ja": "ヴァンドゥル",
+      "ko": "반드르",
+      "en": "Vandre",
+      "zh": "班度",
+      "linkView": "char-detail",
+      "linkId": "vandull-ur"
+    },
+    {
+      "id": "altena-ur",
+      "category": "キャラクター",
+      "sub": "UR / 幻属性",
+      "ja": "アルテナ",
+      "ko": "알테나",
+      "en": "Altina",
+      "zh": "艾爾媞娜",
+      "linkView": "char-detail",
+      "linkId": "altena-ur"
+    },
+    {
+      "id": "sarze-ssr",
+      "category": "キャラクター",
+      "sub": "SSR / 夢属性",
+      "ja": "サルゼ",
+      "ko": "사르제",
+      "en": "Salze",
+      "zh": "薩爾傑",
+      "linkView": "char-detail",
+      "linkId": "sarze-ssr"
+    },
+    {
+      "id": "nana-ssr",
+      "category": "キャラクター",
+      "sub": "SSR / 心属性",
+      "ja": "宮崎奈々",
+      "ko": "미야자키 나나",
+      "en": "Nana Miyazaki",
+      "zh": "宮崎奈奈",
+      "linkView": "char-detail",
+      "linkId": "nana-ssr"
+    },
+    {
+      "id": "kouki-shadow-ur",
+      "category": "キャラクター",
+      "sub": "UR / 心属性",
+      "ja": "天之河光輝（虚像）",
+      "ko": "아마노가와 코우키(허상)",
+      "en": "Kouki Amanogawa (Fake)",
+      "zh": "天之河光輝(幻影)",
+      "linkView": "char-detail",
+      "linkId": "kouki-shadow-ur"
+    },
+    {
+      "id": "remya-ur",
+      "category": "キャラクター",
+      "sub": "UR / 心属性",
+      "ja": "レミア",
+      "ko": "레미아",
+      "en": "Remia",
+      "zh": "蕾蜜雅",
+      "linkView": "char-detail",
+      "linkId": "remya-ur"
+    },
+    {
+      "id": "hero-13401",
+      "category": "キャラクター",
+      "sub": "SR / -属性",
+      "ja": "ビィズ",
+      "ko": "비즈",
+      "en": "Bize",
+      "zh": "比茲",
+      "linkView": "char-detail",
+      "linkId": "hero-13401"
+    },
+    {
+      "id": "hero-13501",
+      "category": "キャラクター",
+      "sub": "SR / -属性",
+      "ja": "ハウリア族・子供",
+      "ko": "하우리아족 아이",
+      "en": "Haulia child",
+      "zh": "郝里亞幼年",
+      "linkView": "char-detail",
+      "linkId": "hero-13501"
+    },
+    {
+      "id": "hero-13601",
+      "category": "キャラクター",
+      "sub": "SR / -属性",
+      "ja": "パル",
+      "ko": "팔",
+      "en": "Par",
+      "zh": "帕魯",
+      "linkView": "char-detail",
+      "linkId": "hero-13601"
+    },
+    {
+      "id": "hero-14301",
+      "category": "キャラクター",
+      "sub": "SSR / -属性",
+      "ja": "カトレア",
+      "ko": "카틀레아",
+      "en": "Cattleya",
+      "zh": "嘉德麗雅",
+      "linkView": "char-detail",
+      "linkId": "hero-14301"
+    },
+    {
+      "id": "hero-14302",
+      "category": "キャラクター",
+      "sub": "SSR / -属性",
+      "ja": "アルフレリック",
+      "ko": "알프레릭",
+      "en": "Ulfric",
+      "zh": "艾爾夫雷利克",
+      "linkView": "char-detail",
+      "linkId": "hero-14302"
+    },
+    {
+      "id": "hero-14401",
+      "category": "キャラクター",
+      "sub": "SSR / -属性",
+      "ja": "モナ",
+      "ko": "모나",
+      "en": "Mona",
+      "zh": "茉娜",
+      "linkView": "char-detail",
+      "linkId": "hero-14401"
+    },
+    {
+      "id": "hero-14402",
+      "category": "キャラクター",
+      "sub": "SSR / -属性",
+      "ja": "グゼ",
+      "ko": "구제",
+      "en": "Guze",
+      "zh": "格傑",
+      "linkView": "char-detail",
+      "linkId": "hero-14402"
+    },
+    {
+      "id": "hero-14501",
+      "category": "キャラクター",
+      "sub": "SSR / -属性",
+      "ja": "ウィル",
+      "ko": "윌",
+      "en": "Will",
+      "zh": "威爾",
+      "linkView": "char-detail",
+      "linkId": "hero-14501"
+    },
+    {
+      "id": "hero-14601",
+      "category": "キャラクター",
+      "sub": "SSR / -属性",
+      "ja": "カム",
+      "ko": "카무",
+      "en": "Cam",
+      "zh": "卡姆",
+      "linkView": "char-detail",
+      "linkId": "hero-14601"
+    },
+    {
+      "id": "hero-15301",
+      "category": "キャラクター",
+      "sub": "UR / -属性",
+      "ja": "畑山愛子",
+      "ko": "하타야마 아이코",
+      "en": "Aiko Hatayama",
+      "zh": "畑山愛子",
+      "linkView": "char-detail",
+      "linkId": "hero-15301"
+    },
+    {
+      "id": "hero-15601",
+      "category": "キャラクター",
+      "sub": "UR / -属性",
+      "ja": "シア",
+      "ko": "시아",
+      "en": "Shea",
+      "zh": "希雅",
+      "linkView": "char-detail",
+      "linkId": "hero-15601"
+    },
+    {
+      "id": "hero-15602",
+      "category": "キャラクター",
+      "sub": "SSR / -属性",
+      "ja": "フリード",
+      "ko": "프리드",
+      "en": "Freid",
+      "zh": "弗利德",
+      "linkView": "char-detail",
+      "linkId": "hero-15602"
+    },
+    {
+      "id": "hero-23101",
+      "category": "キャラクター",
+      "sub": "SR / -属性",
+      "ja": "中野信治",
+      "ko": "나카노 신지",
+      "en": "Shinji Nakano",
+      "zh": "中野信治",
+      "linkView": "char-detail",
+      "linkId": "hero-23101"
+    },
+    {
+      "id": "hero-23301",
+      "category": "キャラクター",
+      "sub": "SR / -属性",
+      "ja": "清水幸利",
+      "ko": "시미즈 유키토시",
+      "en": "Yukitoshi Shimizu",
+      "zh": "清水幸利",
+      "linkView": "char-detail",
+      "linkId": "hero-23301"
+    },
+    {
+      "id": "hero-23401",
+      "category": "キャラクター",
+      "sub": "SR / -属性",
+      "ja": "ハンセン",
+      "ko": "한센",
+      "en": "Hansen",
+      "zh": "漢森",
+      "linkView": "char-detail",
+      "linkId": "hero-23401"
+    },
+    {
+      "id": "hero-23501",
+      "category": "キャラクター",
+      "sub": "SR / -属性",
+      "ja": "玉井淳史",
+      "ko": "타마이 아츠시",
+      "en": "Atsushi Tamai",
+      "zh": "玉井淳史",
+      "linkView": "char-detail",
+      "linkId": "hero-23501"
+    },
+    {
+      "id": "hero-24101",
+      "category": "キャラクター",
+      "sub": "SSR / -属性",
+      "ja": "ミハイル",
+      "ko": "미하일",
+      "en": "Mikhail",
+      "zh": "米哈伊爾",
+      "linkView": "char-detail",
+      "linkId": "hero-24101"
+    },
+    {
+      "id": "hero-24301",
+      "category": "キャラクター",
+      "sub": "SSR / -属性",
+      "ja": "マオ",
+      "ko": "마오",
+      "en": "Mao",
+      "zh": "馬歐",
+      "linkView": "char-detail",
+      "linkId": "hero-24301"
+    },
+    {
+      "id": "hero-24302",
+      "category": "キャラクター",
+      "sub": "SSR / -属性",
+      "ja": "エリヒド",
+      "ko": "에리히드",
+      "en": "Eliheid",
+      "zh": "艾力西德",
+      "linkView": "char-detail",
+      "linkId": "hero-24302"
+    },
+    {
+      "id": "hero-24303",
+      "category": "キャラクター",
+      "sub": "SSR / -属性",
+      "ja": "イシュタル",
+      "ko": "이슈타르",
+      "en": "Ishtar",
+      "zh": "伊什塔爾",
+      "linkView": "char-detail",
+      "linkId": "hero-24303"
+    },
+    {
+      "id": "hero-24401",
+      "category": "キャラクター",
+      "sub": "SSR / -属性",
+      "ja": "ランズィ",
+      "ko": "란지",
+      "en": "Lanzwi",
+      "zh": "朗基",
+      "linkView": "char-detail",
+      "linkId": "hero-24401"
+    },
+    {
+      "id": "hero-24501",
+      "category": "キャラクター",
+      "sub": "SSR / -属性",
+      "ja": "ホセ",
+      "ko": "호세",
+      "en": "Jose",
+      "zh": "何塞",
+      "linkView": "char-detail",
+      "linkId": "hero-24501"
+    },
+    {
+      "id": "hero-25201",
+      "category": "キャラクター",
+      "sub": "UR / -属性",
+      "ja": "白崎香織",
+      "ko": "시라사키 카오리",
+      "en": "Kaori Shirasaki",
+      "zh": "白崎香織",
+      "linkView": "char-detail",
+      "linkId": "hero-25201"
+    },
+    {
+      "id": "hero-25301",
+      "category": "キャラクター",
+      "sub": "UR / -属性",
+      "ja": "ノイント",
+      "ko": "노인트",
+      "en": "Noint",
+      "zh": "諾因",
+      "linkView": "char-detail",
+      "linkId": "hero-25301"
+    },
+    {
+      "id": "hero-25601",
+      "category": "キャラクター",
+      "sub": "SSR / -属性",
+      "ja": "天之河光輝",
+      "ko": "아마노가와 코우키",
+      "en": "Kouki Amanogawa",
+      "zh": "天之河光輝",
+      "linkView": "char-detail",
+      "linkId": "hero-25601"
+    },
+    {
+      "id": "hero-333",
+      "category": "キャラクター",
+      "sub": "SR / -属性",
+      "ja": "斎藤良樹",
+      "ko": "사이토 요시키",
+      "en": "Yoshiki Saitou",
+      "zh": "齋藤良樹",
+      "linkView": "char-detail",
+      "linkId": "hero-333"
+    },
+    {
+      "id": "hero-433",
+      "category": "キャラクター",
+      "sub": "SR / -属性",
+      "ja": "ニア",
+      "ko": "니아",
+      "en": "Nia",
+      "zh": "妮亞",
+      "linkView": "char-detail",
+      "linkId": "hero-433"
+    },
+    {
+      "id": "hero-733",
+      "category": "キャラクター",
+      "sub": "SR / -属性",
+      "ja": "近藤礼一",
+      "ko": "콘도 레이이치",
+      "en": "Reiichi Kondou",
+      "zh": "近藤禮一",
+      "linkView": "char-detail",
+      "linkId": "hero-733"
+    },
+    {
+      "id": "hero-833",
+      "category": "キャラクター",
+      "sub": "SR / -属性",
+      "ja": "遠藤浩介",
+      "ko": "엔도 코스케",
+      "en": "Kousuke Endou",
+      "zh": "遠藤浩介",
+      "linkView": "char-detail",
+      "linkId": "hero-833"
+    },
+    {
+      "id": "hero-1333",
+      "category": "キャラクター",
+      "sub": "SSR / -属性",
+      "ja": "ハルガ",
+      "ko": "하르가",
+      "en": "Kharga",
+      "zh": "哈爾加",
+      "linkView": "char-detail",
+      "linkId": "hero-1333"
+    },
+    {
+      "id": "hero-1633",
+      "category": "キャラクター",
+      "sub": "SSR / -属性",
+      "ja": "園部優花",
+      "ko": "소노베 유카",
+      "en": "Yuuka Sonobe",
+      "zh": "園部優花",
+      "linkView": "char-detail",
+      "linkId": "hero-1633"
+    },
+    {
+      "id": "hero-1634",
+      "category": "キャラクター",
+      "sub": "SSR / -属性",
+      "ja": "アドゥル",
+      "ko": "아둘",
+      "en": "Adul",
+      "zh": "愛德爾",
+      "linkView": "char-detail",
+      "linkId": "hero-1634"
+    },
+    {
+      "id": "hero-1635",
+      "category": "キャラクター",
+      "sub": "SSR / -属性",
+      "ja": "フォス",
+      "ko": "포스",
+      "en": "Foss",
+      "zh": "佛斯",
+      "linkView": "char-detail",
+      "linkId": "hero-1635"
+    },
+    {
+      "id": "hero-1733",
+      "category": "キャラクター",
+      "sub": "SSR / -属性",
+      "ja": "檜山大介",
+      "ko": "히야마 다이스케",
+      "en": "Daisuke Hiyama",
+      "zh": "檜山大介",
+      "linkView": "char-detail",
+      "linkId": "hero-1733"
+    },
+    {
+      "id": "hero-1833",
+      "category": "キャラクター",
+      "sub": "SSR / -属性",
+      "ja": "坂上龍太郎",
+      "ko": "사카가미 류타로",
+      "en": "Ryutarou Sakagami",
+      "zh": "坂上龍太郎",
+      "linkView": "char-detail",
+      "linkId": "hero-1833"
+    },
+    {
+      "id": "hero-2333",
+      "category": "キャラクター",
+      "sub": "UR / -属性",
+      "ja": "ナイズ",
+      "ko": "나이즈",
+      "en": "Naiz",
+      "zh": "奈茲",
+      "linkView": "char-detail",
+      "linkId": "hero-2333"
+    },
+    {
+      "id": "hero-2633",
+      "category": "キャラクター",
+      "sub": "UR / -属性",
+      "ja": "ティオ",
+      "ko": "티오",
+      "en": "Tio",
+      "zh": "緹奧",
+      "linkView": "char-detail",
+      "linkId": "hero-2633"
+    },
+    {
+      "id": "hero-2733",
+      "category": "キャラクター",
+      "sub": "UR / -属性",
+      "ja": "八重樫雫",
+      "ko": "야에가시 시즈쿠",
+      "en": "Shizuku Yaegashi",
+      "zh": "八重樫雫",
+      "linkView": "char-detail",
+      "linkId": "hero-2733"
+    },
+    {
+      "id": "hero-10433",
+      "category": "キャラクター",
+      "sub": "SR / -属性",
+      "ja": "リーマン",
+      "ko": "리만",
+      "en": "Lehman",
+      "zh": "里曼",
+      "linkView": "char-detail",
+      "linkId": "hero-10433"
+    },
+    {
+      "id": "hero-10733",
+      "category": "キャラクター",
+      "sub": "SR / -属性",
+      "ja": "イルワ",
+      "ko": "이루와",
+      "en": "Ilwer",
+      "zh": "伊爾瓦",
+      "linkView": "char-detail",
+      "linkId": "hero-10733"
+    },
+    {
+      "id": "hero-10833",
+      "category": "キャラクター",
+      "sub": "SR / -属性",
+      "ja": "ロア",
+      "ko": "로어",
+      "en": "Loa",
+      "zh": "洛亞",
+      "linkView": "char-detail",
+      "linkId": "hero-10833"
+    },
+    {
+      "id": "hero-11433",
+      "category": "キャラクター",
+      "sub": "SSR / -属性",
+      "ja": "谷口鈴",
+      "ko": "타니구치 스즈",
+      "en": "Suzu Taniguchi",
+      "zh": "谷口鈴",
+      "linkView": "char-detail",
+      "linkId": "hero-11433"
+    },
+    {
+      "id": "hero-11434",
+      "category": "キャラクター",
+      "sub": "SSR / -属性",
+      "ja": "ソーナ",
+      "ko": "소나",
+      "en": "Sona",
+      "zh": "索娜",
+      "linkView": "char-detail",
+      "linkId": "hero-11434"
+    },
+    {
+      "id": "hero-11533",
+      "category": "キャラクター",
+      "sub": "SSR / -属性",
+      "ja": "中村恵里",
+      "ko": "나카무라 에리",
+      "en": "Eri Nakamura",
+      "zh": "中村惠里",
+      "linkView": "char-detail",
+      "linkId": "hero-11533"
+    },
+    {
+      "id": "hero-11733",
+      "category": "キャラクター",
+      "sub": "SSR / -属性",
+      "ja": "メルド",
+      "ko": "멜드",
+      "en": "Meld",
+      "zh": "梅爾德",
+      "linkView": "char-detail",
+      "linkId": "hero-11733"
+    },
+    {
+      "id": "hero-11833",
+      "category": "キャラクター",
+      "sub": "SSR / -属性",
+      "ja": "菅原妙子",
+      "ko": "스가와라 타에코",
+      "en": "Taeko Sugawara",
+      "zh": "菅原妙子",
+      "linkView": "char-detail",
+      "linkId": "hero-11833"
+    },
+    {
+      "id": "hero-12434",
+      "category": "キャラクター",
+      "sub": "UR / -属性",
+      "ja": "メイル",
+      "ko": "메일",
+      "en": "Meiru",
+      "zh": "梅兒",
+      "linkView": "char-detail",
+      "linkId": "hero-12434"
+    },
+    {
+      "id": "hero-12533",
+      "category": "キャラクター",
+      "sub": "UR / -属性",
+      "ja": "ラウス",
+      "ko": "라우스",
+      "en": "Laus",
+      "zh": "勞斯",
+      "linkView": "char-detail",
+      "linkId": "hero-12533"
+    },
+    {
+      "id": "hero-12834",
+      "category": "キャラクター",
+      "sub": "UR / -属性",
+      "ja": "毒島冴子",
+      "ko": "부스지마 사에코",
+      "en": "Saeko Busujima",
+      "zh": "毒島冴子",
+      "linkView": "char-detail",
+      "linkId": "hero-12834"
+    },
+    {
+      "id": "hero-12835",
+      "category": "キャラクター",
+      "sub": "UR / -属性",
+      "ja": "高城沙耶",
+      "ko": "타카기 사야",
+      "en": "Saya Takagi",
+      "zh": "高城沙耶",
+      "linkView": "char-detail",
+      "linkId": "hero-12835"
+    },
+    {
+      "id": "hero-23434",
+      "category": "キャラクター",
+      "sub": "UR+ / -属性",
+      "ja": "ヘスティア",
+      "ko": "헤스티아",
+      "en": "Hestia",
+      "zh": "赫斯緹雅",
+      "linkView": "char-detail",
+      "linkId": "hero-23434"
+    },
+    {
+      "id": "hero-23833",
+      "category": "キャラクター",
+      "sub": "UR+ / -属性",
+      "ja": "リュー",
+      "ko": "류",
+      "en": "Ryu",
+      "zh": "琉",
+      "linkView": "char-detail",
+      "linkId": "hero-23833"
+    },
+    {
+      "id": "hero-56102",
+      "category": "キャラクター",
+      "sub": "UR+ / -属性",
+      "ja": "ロキシー",
+      "ko": "록시",
+      "en": "Roxy",
+      "zh": "洛琪希",
+      "linkView": "char-detail",
+      "linkId": "hero-56102"
+    },
+    {
+      "id": "hero-23437",
+      "category": "キャラクター",
+      "sub": "UR+ / -属性",
+      "ja": "シルフィエット",
+      "ko": "실피에트",
+      "en": "Sylphiette",
+      "zh": "希露菲葉特",
+      "linkView": "char-detail",
+      "linkId": "hero-23437"
+    },
+    {
+      "id": "hero-56603",
+      "category": "キャラクター",
+      "sub": "UR+ / -属性",
+      "ja": "エリナリーゼ",
+      "ko": "엘리나리제",
+      "en": "Elinalise",
+      "zh": "艾莉娜麗潔",
+      "linkView": "char-detail",
+      "linkId": "hero-56603"
+    },
+    {
+      "id": "hero-23435",
+      "category": "キャラクター",
+      "sub": "UR+ / -属性",
+      "ja": "リリアーナ(聖なる女王)",
+      "ko": "릴리아나(성스러운 여왕)",
+      "en": "Liliana (Holy Queen)",
+      "zh": "莉莉安娜(神聖女王)",
+      "linkView": "char-detail",
+      "linkId": "hero-23435"
+    },
+    {
+      "id": "hero-23534",
+      "category": "キャラクター",
+      "sub": "UR+ / -属性",
+      "ja": "リューティリス(覇者の礼装)",
+      "ko": "류티리스(패권자의 예복)",
+      "en": "Lyutillis (Conqueror's Attire)",
+      "zh": "琉堤莉絲(霸者禮裝)",
+      "linkView": "char-detail",
+      "linkId": "hero-23534"
+    },
+    {
+      "id": "hero-23438",
+      "category": "キャラクター",
+      "sub": "UR+ / -属性",
+      "ja": "アルテナ(覇者の礼装)",
+      "ko": "알테나(패권자의 예복)",
+      "en": "Altina (Conqueror's Attire)",
+      "zh": "艾爾媞娜(霸者禮裝)",
+      "linkView": "char-detail",
+      "linkId": "hero-23438"
+    },
+    {
+      "id": "hero-56207",
+      "category": "キャラクター",
+      "sub": "UR+ / -属性",
+      "ja": "レミア(覇者の礼装)",
+      "ko": "레미아(패권자의 예복)",
+      "en": "Remia (Conqueror's Attire)",
+      "zh": "蕾蜜雅(霸者禮裝)",
+      "linkView": "char-detail",
+      "linkId": "hero-56207"
+    },
+    {
+      "id": "hero-67501",
+      "category": "キャラクター",
+      "sub": "SP / -属性",
+      "ja": "アルベド",
+      "ko": "알베도",
+      "en": "Albedo",
+      "zh": "雅兒貝德",
+      "linkView": "char-detail",
+      "linkId": "hero-67501"
+    },
+    {
+      "id": "hero-1765",
+      "category": "キャラクター",
+      "sub": "SP / -属性",
+      "ja": "シャルティア",
+      "ko": "샤르티아",
+      "en": "Shalltear",
+      "zh": "夏提雅",
+      "linkView": "char-detail",
+      "linkId": "hero-1765"
+    },
+    {
+      "id": "hero-67201",
+      "category": "キャラクター",
+      "sub": "SP / -属性",
+      "ja": "アウラ&マーレ",
+      "ko": "아우라&마레",
+      "en": "Aura&Mare",
+      "zh": "亞烏菈&馬雷",
+      "linkView": "char-detail",
+      "linkId": "hero-67201"
+    },
+    {
+      "id": "hero-1565",
+      "category": "キャラクター",
+      "sub": "SP / -属性",
+      "ja": "ティオ(竜の巫女)",
+      "ko": "티오(용의 무녀)",
+      "en": "Tio (Dragon's Miko)",
+      "zh": "緹奧(龍之巫女)",
+      "linkView": "char-detail",
+      "linkId": "hero-1565"
+    },
+    {
+      "id": "hero-1966",
+      "category": "キャラクター",
+      "sub": "SP / -属性",
+      "ja": "八重樫雫(鬼の剣客)",
+      "ko": "야에가시 시즈쿠(귀신 검객)",
+      "en": "Shizuku Yaegashi (Oni Swordmaster)",
+      "zh": "八重樫雫(鬼之劍客)",
+      "linkView": "char-detail",
+      "linkId": "hero-1966"
+    },
+    {
+      "id": "kikou",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "機巧魔法陣",
+      "ko": "기교 마법진",
+      "en": "Gearforged Magic Circle",
+      "zh": "精巧魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "kikou"
+    },
+    {
+      "id": "kennomai",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "剣の舞魔法陣",
+      "ko": "검의 춤 마법진",
+      "en": "Blade Requiem Magic Circle",
+      "zh": "鎮魂劍庭魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "kennomai"
+    },
+    {
+      "id": "toushin",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "闘神魔法陣",
+      "ko": "투신 마법진",
+      "en": "War God Magic Circle",
+      "zh": "戰神魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "toushin"
+    },
+    {
+      "id": "busou",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "武装魔法陣",
+      "ko": "무장 마법진",
+      "en": "Arsenal Magic Circle",
+      "zh": "武裝魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "busou"
+    },
+    {
+      "id": "hisui",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "翡翠魔法陣",
+      "ko": "비취 마법진",
+      "en": "Jade Magic Circle",
+      "zh": "翡翠魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "hisui"
+    },
+    {
+      "id": "kyozou",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "虚像魔法陣",
+      "ko": "허상 마법진",
+      "en": "Fictional Magic Circle",
+      "zh": "幻影魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "kyozou"
+    },
+    {
+      "id": "karen",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "花蓮魔法陣",
+      "ko": "화련 마법진",
+      "en": "Hualien Magic Circle",
+      "zh": "蓮花魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "karen"
+    },
+    {
+      "id": "magan",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "魔眼魔法陣",
+      "ko": "마안 마법진",
+      "en": "Hexeye Magic Circle",
+      "zh": "魔眼魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "magan"
+    },
+    {
+      "id": "halloween",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "ハロウィン魔法陣",
+      "ko": "할로윈 마법진",
+      "en": "Halloween Magic Circle",
+      "zh": "萬聖節魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "halloween"
+    },
+    {
+      "id": "shinnen",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "新年魔法陣",
+      "ko": "새해 마법진",
+      "en": "New Year Magic Circle",
+      "zh": "新年魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "shinnen"
+    },
+    {
+      "id": "juurei",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "獣霊魔法陣",
+      "ko": "수령 마법진",
+      "en": "Beast Spirit Magic Circle",
+      "zh": "獸靈魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "juurei"
+    },
+    {
+      "id": "bijo",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "美女魔法陣",
+      "ko": "히로인 마법진",
+      "en": "Beauty Magic Circle",
+      "zh": "美女魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "bijo"
+    },
+    {
+      "id": "houou",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "鳳凰魔法陣",
+      "ko": "봉황 마법진",
+      "en": "Phoenix Magic Circle",
+      "zh": "鳳凰魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "houou"
+    },
+    {
+      "id": "otsukimi",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "お月見魔法陣",
+      "ko": "달맞이 마법진",
+      "en": "Moon Viewing Magic Circle",
+      "zh": "賞月魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "otsukimi"
+    },
+    {
+      "id": "ryuuen",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "竜焔魔法陣",
+      "ko": "용염 마법진",
+      "en": "Dragon Flame Magic Circle",
+      "zh": "龍焰魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "ryuuen"
+    },
+    {
+      "id": "zombie",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "ゾンビ魔法陣",
+      "ko": "좀비 마법진",
+      "en": "Wailing Magic Circle",
+      "zh": "殭屍魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "zombie"
+    },
+    {
+      "id": "unsho",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "雲翔魔法陣",
+      "ko": "운상 마법진",
+      "en": "Skysoar Magic Circle",
+      "zh": "雲翔魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "unsho"
+    },
+    {
+      "id": "genkai",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "幻海魔法陣",
+      "ko": "환해 마법진",
+      "en": "Illusory Ocean Circle",
+      "zh": "幻海魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "genkai"
+    },
+    {
+      "id": "shuumatsu",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "終末魔法陣",
+      "ko": "종말 마법진",
+      "en": "Apocalypse Magic Circle",
+      "zh": "終焉魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "shuumatsu"
+    },
+    {
+      "id": "sasori",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "天蠍魔法陣",
+      "ko": "천갈궁 마법진",
+      "en": "Scorpio Magic Circle",
+      "zh": "天蠍魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "sasori"
+    },
+    {
+      "id": "roshin",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "炉神魔法陣",
+      "ko": "노신 마법진",
+      "en": "Furnace God Magic Circle",
+      "zh": "爐神魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "roshin"
+    },
+    {
+      "id": "shippuu",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "疾風魔法陣",
+      "ko": "질풍 마법진",
+      "en": "Gale Wind Magic Circle",
+      "zh": "疾風魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "shippuu"
+    },
+    {
+      "id": "touji",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "湯治魔法陣",
+      "ko": "온천 힐링 마법진",
+      "en": "Hot Spring Magic Circle",
+      "zh": "湯治魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "touji"
+    },
+    {
+      "id": "christmas",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "クリスマス魔法陣",
+      "ko": "크리스마스 마법진",
+      "en": "Xmas Magic Circle",
+      "zh": "聖誕節魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "christmas"
+    },
+    {
+      "id": "souma",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "蒼魔魔法陣",
+      "ko": "창마 마법진",
+      "en": "Azure Demon Magic Circle",
+      "zh": "蒼魔魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "souma"
+    },
+    {
+      "id": "doronuma",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "泥沼魔法陣",
+      "ko": "진흙탕 마법진",
+      "en": "Quagmire Magic Circle",
+      "zh": "泥沼魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "doronuma"
+    },
+    {
+      "id": "kouken",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "紅剣魔法陣",
+      "ko": "홍검 마법진",
+      "en": "Crimson Blade Magic Circle",
+      "zh": "紅劍魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "kouken"
+    },
+    {
+      "id": "kaen",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "火炎魔法陣",
+      "ko": "화염 마법진",
+      "en": "Flame Magic Circle",
+      "zh": "火焰魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "kaen"
+    },
+    {
+      "id": "suiryuu",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "水流魔法陣",
+      "ko": "수류 마법진",
+      "en": "Water Magic Circle",
+      "zh": "水流魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "suiryuu"
+    },
+    {
+      "id": "juuryoku",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "重力魔法陣",
+      "ko": "중력 마법진",
+      "en": "Gravity Magic Circle",
+      "zh": "重力魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "juuryoku"
+    },
+    {
+      "id": "konpaku",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "魂魄魔法陣",
+      "ko": "혼백 마법진",
+      "en": "Spirit Magic Circle",
+      "zh": "魂魄魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "konpaku"
+    },
+    {
+      "id": "circle-10001",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "自然魔法陣",
+      "ko": "자연 마법진",
+      "en": "Natural Magic Circle",
+      "zh": "自然魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "circle-10001"
+    },
+    {
+      "id": "circle-10003",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "旋風魔法陣",
+      "ko": "선풍 마법진",
+      "en": "Hurricane Magic Circle",
+      "zh": "旋風魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "circle-10003"
+    },
+    {
+      "id": "circle-20029",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "天使魔法陣",
+      "ko": "천사 마법진",
+      "en": "Angel Magic Circle",
+      "zh": "天使魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "circle-20029"
+    },
+    {
+      "id": "circle-20030",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "桜花魔法陣",
+      "ko": "벚꽃 마법진",
+      "en": "Cherry Blossom Magic Circle",
+      "zh": "櫻花魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "circle-20030"
+    },
+    {
+      "id": "circle-20031",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "豊穣魔法陣",
+      "ko": "풍요 마법진",
+      "en": "Harvest Magic Circle",
+      "zh": "豐穰魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "circle-20031"
+    },
+    {
+      "id": "circle-20032",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "氷雪魔法陣",
+      "ko": "빙설 마법진",
+      "en": "Ice Snow Magic Circle",
+      "zh": "冰雪魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "circle-20032"
+    },
+    {
+      "id": "circle-20033",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "森の女神魔法陣",
+      "ko": "숲의 여신 마법진",
+      "en": "Forest Goddess Magic Circle",
+      "zh": "森林女神魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "circle-20033"
+    },
+    {
+      "id": "circle-20034",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "裁定魔法陣",
+      "ko": "재정 마법진",
+      "en": "Judgment Magic Circle",
+      "zh": "裁定魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "circle-20034"
+    },
+    {
+      "id": "circle-20035",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "幽霊船魔法陣",
+      "ko": "유령선 마법진",
+      "en": "Ghost Ship Magic Circle",
+      "zh": "幽靈船魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "circle-20035"
+    },
+    {
+      "id": "circle-20036",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "統括魔法陣",
+      "ko": "통괄 마법진",
+      "en": "Master Magic Circle",
+      "zh": "總管魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "circle-20036"
+    },
+    {
+      "id": "circle-20037",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "星砂魔法陣",
+      "ko": "별모래 마법진",
+      "en": "Star Sand Magic Circle",
+      "zh": "星砂魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "circle-20037"
+    },
+    {
+      "id": "circle-20038",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "深紅魔法陣",
+      "ko": "진홍 마법진",
+      "en": "Crimson Magic Circle",
+      "zh": "深紅魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "circle-20038"
+    },
+    {
+      "id": "circle-20039",
+      "category": "魔法陣",
+      "sub": "",
+      "ja": "金色星芒魔法陣",
+      "ko": "금색 성망 마법진",
+      "en": "Golden Starburst Magic Circle",
+      "zh": "金色星芒魔法陣",
+      "linkView": "circle-detail",
+      "linkId": "circle-20039"
+    },
+    {
+      "id": "beast_0",
+      "category": "魔獣",
+      "sub": "UR+ / 全体凍結・魔獣戦争アタッカー",
+      "ja": "氷竜",
+      "ko": "빙룡",
+      "en": "Ice Dragon",
+      "zh": "冰霜飛龍",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_1",
+      "category": "魔獣",
+      "sub": "UR+ / 全体目眩・シールド",
+      "ja": "ダイヘドア",
+      "ko": "다이헤도어",
+      "en": "Diheadoar",
+      "zh": "戴黑德爾",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_2",
+      "category": "魔獣",
+      "sub": "UR+ / 行動制限・開眼",
+      "ja": "毒サソリ",
+      "ko": "독 전갈",
+      "en": "Poison Scorpion",
+      "zh": "毒蠍",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_3",
+      "category": "魔獣",
+      "sub": "UR / 氷属性速度バフ・全体凍結",
+      "ja": "フロストワーウルフ",
+      "ko": "프로스트 워울프",
+      "en": "Frost Werewolf",
+      "zh": "冰霜戰狼",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_4",
+      "category": "魔獣",
+      "sub": "UR / 全体目眩・タワーHP比例ダメ",
+      "ja": "ハイペリア",
+      "ko": "하이페리아",
+      "en": "Hyperia",
+      "zh": "海柏利亞",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_5",
+      "category": "魔獣",
+      "sub": "UR / 行動制限耐性付与",
+      "ja": "二尾狼",
+      "ko": "두 꼬리 늑대",
+      "en": "Two-tailed Wolf",
+      "zh": "雙尾狼",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_7",
+      "category": "魔獣",
+      "sub": "SR / ステータス補正",
+      "ja": "フロストタートル(SR)",
+      "ko": "프로스트 터틀(SR)",
+      "en": "Frost Turtle (SR)",
+      "zh": "冰霜巨龜(SR)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_8",
+      "category": "魔獣",
+      "sub": "SSR / ステータス補正",
+      "ja": "フロストタートル(SSR)",
+      "ko": "프로스트 터틀(SSR)",
+      "en": "Frost Turtle (SSR)",
+      "zh": "冰霜巨龜(SSR)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_9",
+      "category": "魔獣",
+      "sub": "UR / 凛風衝撃",
+      "ja": "フロストタートル(UR)",
+      "ko": "프로스트 터틀(UR)",
+      "en": "Frost Turtle (UR)",
+      "zh": "冰霜巨龜(UR)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_10",
+      "category": "魔獣",
+      "sub": "UR+ / 捕食衝動",
+      "ja": "蹴りウサギ-パウロ(UR+)",
+      "ko": "발차기 토끼-파울로(UR+)",
+      "en": "Kickmaster Rabbit - Paulo (UR+)",
+      "zh": "踢腿兔-保羅(UR+)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_11",
+      "category": "魔獣",
+      "sub": "UR+ / 狼群のリーダー",
+      "ja": "氷原の白狼(UR+)",
+      "ko": "빙원의 백랑(UR+)",
+      "en": "Frozen Tundra Wolf (UR+)",
+      "zh": "冰原白狼(UR+)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_12",
+      "category": "魔獣",
+      "sub": "UR+ / 武器精通",
+      "ja": "コキュートス(UR+)",
+      "ko": "코퀴토스(UR+)",
+      "en": "Cocytus (UR+)",
+      "zh": "科塞特斯(UR+)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_13",
+      "category": "魔獣",
+      "sub": "SR / ステータス補正",
+      "ja": "マグマ牛(SR)",
+      "ko": "마그마 소(SR)",
+      "en": "Magma Ox (SR)",
+      "zh": "岩漿牛(SR)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_14",
+      "category": "魔獣",
+      "sub": "SSR / ステータス補正",
+      "ja": "マグマ牛(SSR)",
+      "ko": "마그마 소(SSR)",
+      "en": "Magma Ox (SSR)",
+      "zh": "岩漿牛(SSR)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_15",
+      "category": "魔獣",
+      "sub": "UR / 火山の怒り",
+      "ja": "マグマ牛(UR)",
+      "ko": "마그마 소(UR)",
+      "en": "Magma Ox (UR)",
+      "zh": "岩漿牛(UR)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_16",
+      "category": "魔獣",
+      "sub": "SSR / ステータス補正",
+      "ja": "サバイバルカー(SSR)",
+      "ko": "서바이벌카(SSR)",
+      "en": "Survival Car (SSR)",
+      "zh": "生存車(SSR)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_17",
+      "category": "魔獣",
+      "sub": "UR / 猪突猛進",
+      "ja": "サバイバルカー(UR)",
+      "ko": "서바이벌카(UR)",
+      "en": "Survival Car (UR)",
+      "zh": "生存車(UR)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_18",
+      "category": "魔獣",
+      "sub": "UR+ / 猪突猛進",
+      "ja": "サバイバルカー(UR+)",
+      "ko": "서바이벌카(UR+)",
+      "en": "Survival Car (UR+)",
+      "zh": "生存車(UR+)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_19",
+      "category": "魔獣",
+      "sub": "- / 万全の備え",
+      "ja": "ガネーシャ馬車",
+      "ko": "가네샤 마차",
+      "en": "Ganesha Carriage (UR+)",
+      "zh": "迦尼薩馬車",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_20",
+      "category": "魔獣",
+      "sub": "UR+ / 火山噴火",
+      "ja": "フレイムウルフ(UR+)",
+      "ko": "플레임 울프(UR+)",
+      "en": "Flame Wolf (UR+)",
+      "zh": "火焰狼(UR+)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_21",
+      "category": "魔獣",
+      "sub": "UR+ / 悪魔の諸相",
+      "ja": "デミウルゴス(UR+)",
+      "ko": "데미우르고스(UR+)",
+      "en": "Demiurge (UR+)",
+      "zh": "迪米烏哥斯(UR+)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_22",
+      "category": "魔獣",
+      "sub": "SR / ステータス補正",
+      "ja": "虫人(SR)",
+      "ko": "곤충 인간(SR)",
+      "en": "Insectoid (SR)",
+      "zh": "蟲人(SR)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_23",
+      "category": "魔獣",
+      "sub": "SSR / ステータス補正",
+      "ja": "虫人(SSR)",
+      "ko": "곤충 인간(SSR)",
+      "en": "Insectoid (SSR)",
+      "zh": "蟲人(SSR)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_24",
+      "category": "魔獣",
+      "sub": "UR / ステータス補正",
+      "ja": "虫人(UR)",
+      "ko": "곤충 인간(UR)",
+      "en": "Insectoid (UR)",
+      "zh": "蟲人(UR)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_25",
+      "category": "魔獣",
+      "sub": "SR / ステータス補正",
+      "ja": "四眼狼(SR)",
+      "ko": "사안랑(SR)",
+      "en": "Four-Eyed Wolf (SR)",
+      "zh": "四眼狼(SR)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_26",
+      "category": "魔獣",
+      "sub": "SSR / ステータス補正",
+      "ja": "四眼狼(SSR)",
+      "ko": "사안랑(SSR)",
+      "en": "Four-Eyed Wolf (SSR)",
+      "zh": "四眼狼(SSR)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_27",
+      "category": "魔獣",
+      "sub": "UR+ / 破邪の光",
+      "ja": "四眼狼(UR+)",
+      "ko": "사안랑(UR+)",
+      "en": "Four-Eyed Wolf (UR+)",
+      "zh": "四眼狼(UR+)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_28",
+      "category": "魔獣",
+      "sub": "- / 風追う翼",
+      "ja": "翼竜",
+      "ko": "익룡",
+      "en": "Dragon",
+      "zh": "龍",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_29",
+      "category": "魔獣",
+      "sub": "SR / ステータス補正",
+      "ja": "爪熊(SR)",
+      "ko": "발톱 곰(SR)",
+      "en": "Claw Bear (SR)",
+      "zh": "爪熊(SR)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_30",
+      "category": "魔獣",
+      "sub": "SSR / ステータス補正",
+      "ja": "爪熊(SSR)",
+      "ko": "발톱 곰(SSR)",
+      "en": "Claw Bear (SSR)",
+      "zh": "爪熊(SSR)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_31",
+      "category": "魔獣",
+      "sub": "UR / 血塗の爪",
+      "ja": "爪熊(UR)",
+      "ko": "발톱 곰(UR)",
+      "en": "Claw Bear (UR)",
+      "zh": "爪熊(UR)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_32",
+      "category": "魔獣",
+      "sub": "SR / ステータス補正",
+      "ja": "キメラ(SR)",
+      "ko": "키메라(SR)",
+      "en": "Chimera (SR)",
+      "zh": "喀邁拉(SR)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_33",
+      "category": "魔獣",
+      "sub": "SSR / ステータス補正",
+      "ja": "キメラ(SSR)",
+      "ko": "키메라(SSR)",
+      "en": "Chimera (SSR)",
+      "zh": "喀邁拉(SSR)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_34",
+      "category": "魔獣",
+      "sub": "UR+ / 闇の掌握",
+      "ja": "キメラ(UR+)",
+      "ko": "키메라(UR+)",
+      "en": "Chimera (UR+)",
+      "zh": "喀邁拉(UR+)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_35",
+      "category": "魔獣",
+      "sub": "SR / ステータス補正",
+      "ja": "アプソド(SR)",
+      "ko": "앱소드(SR)",
+      "en": "Absod (SR)",
+      "zh": "亞布索得(SR)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_36",
+      "category": "魔獣",
+      "sub": "SSR / ステータス補正",
+      "ja": "アプソド(SSR)",
+      "ko": "앱소드(SSR)",
+      "en": "Absod (SSR)",
+      "zh": "亞布索得(SSR)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_37",
+      "category": "魔獣",
+      "sub": "UR / ステータス補正",
+      "ja": "アプソド(UR)",
+      "ko": "앱소드(UR)",
+      "en": "Absod (UR)",
+      "zh": "亞布索得(UR)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_38",
+      "category": "魔獣",
+      "sub": "SSR / ステータス補正",
+      "ja": "ジーク(SSR)",
+      "ko": "지크(SSR)",
+      "en": "Zeke (SSR)",
+      "zh": "吉克(SSR)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_39",
+      "category": "魔獣",
+      "sub": "UR / 護主の忠犬",
+      "ja": "ジーク(UR)",
+      "ko": "지크(UR)",
+      "en": "Zeke (UR)",
+      "zh": "吉克(UR)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_40",
+      "category": "魔獣",
+      "sub": "UR+ / 護主の忠犬",
+      "ja": "ジーク(UR+)",
+      "ko": "지크(UR+)",
+      "en": "Zeke (UR+)",
+      "zh": "吉克(UR+)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_41",
+      "category": "魔獣",
+      "sub": "UR+ / 稜晶の甲殻",
+      "ja": "蹴りウサギ-タルハンド(UR+)",
+      "ko": "발차기 토끼-탈핸드(UR+)",
+      "en": "Kickmaster Rabbit - Talhand (UR+ )",
+      "zh": "踢腿兔-塔爾韓德(UR+)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_42",
+      "category": "魔獣",
+      "sub": "UR+ / 雷霆万鈞",
+      "ja": "鋼鉄の巨竜(UR+)",
+      "ko": "강철 거룡(UR+)",
+      "en": "Steel Giant Dragon (UR+)",
+      "zh": "鋼鐵巨龍(UR+)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_43",
+      "category": "魔獣",
+      "sub": "- / ステータス補正",
+      "ja": "トレント（SSR）",
+      "ko": "트렌트(SSR)",
+      "en": "Treant (SSR)",
+      "zh": "樹人（SSR）",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_44",
+      "category": "魔獣",
+      "sub": "UR / オークの祝福",
+      "ja": "トレント(UR)",
+      "ko": "트렌트(UR)",
+      "en": "Treant (UR)",
+      "zh": "樹人（UR）",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_45",
+      "category": "魔獣",
+      "sub": "UR+ / 万物の長",
+      "ja": "トレント(UR+)",
+      "ko": "트렌트(UR+)",
+      "en": "Treant (UR+)",
+      "zh": "樹人(UR+)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_46",
+      "category": "魔獣",
+      "sub": "SSR / ステータス補正",
+      "ja": "幻影蜘蛛(SSR)",
+      "ko": "환영 거미(SSR)",
+      "en": "Phantom Spider (SSR)",
+      "zh": "幻影蜘蛛(SSR)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_47",
+      "category": "魔獣",
+      "sub": "UR / 不気味な毒霧",
+      "ja": "幻影蜘蛛(UR)",
+      "ko": "환영 거미(UR)",
+      "en": "Phantom Spider (UR)",
+      "zh": "幻影蜘蛛(UR)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_48",
+      "category": "魔獣",
+      "sub": "UR+ / 幻惑の霧",
+      "ja": "幻影蜘蛛(UR+)",
+      "ko": "환영 거미(UR+)",
+      "en": "Phantom Spider (UR+)",
+      "zh": "幻影蜘蛛(UR+)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_49",
+      "category": "魔獣",
+      "sub": "SSR / ステータス補正",
+      "ja": "マンドラゴラ(SSR)",
+      "ko": "만드라고라(SSR)",
+      "en": "Mandragora (SSR)",
+      "zh": "曼德拉草(SSR)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_50",
+      "category": "魔獣",
+      "sub": "UR / 花香満開",
+      "ja": "マンドラゴラ(UR)",
+      "ko": "만드라고라(UR)",
+      "en": "Mandragora (UR)",
+      "zh": "曼德拉草(UR)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "beast_51",
+      "category": "魔獣",
+      "sub": "UR+ / 清香安寧",
+      "ja": "マンドラゴラ(UR+)",
+      "ko": "만드라고라(UR+)",
+      "en": "Mandragora (UR+)",
+      "zh": "曼德拉草(UR+)",
+      "linkView": "beasts"
+    },
+    {
+      "id": "af_0",
+      "category": "アーティファクト",
+      "sub": "N",
+      "ja": "クワ",
+      "ko": "괭이",
+      "en": "Hoe",
+      "zh": "鋤頭",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_1",
+      "category": "アーティファクト",
+      "sub": "N",
+      "ja": "モリ",
+      "ko": "작살",
+      "en": "Harpoon",
+      "zh": "魚叉",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_2",
+      "category": "アーティファクト",
+      "sub": "N",
+      "ja": "木の棒",
+      "ko": "나무 막대기",
+      "en": "Wooden Stick",
+      "zh": "木棍",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_3",
+      "category": "アーティファクト",
+      "sub": "N",
+      "ja": "短剣",
+      "ko": "단검",
+      "en": "Dagger",
+      "zh": "短劍",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_4",
+      "category": "アーティファクト",
+      "sub": "R",
+      "ja": "斧",
+      "ko": "도끼",
+      "en": "Axe",
+      "zh": "斧頭",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_5",
+      "category": "アーティファクト",
+      "sub": "R",
+      "ja": "鎌",
+      "ko": "낫",
+      "en": "Scythe",
+      "zh": "鎌刀",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_6",
+      "category": "アーティファクト",
+      "sub": "R",
+      "ja": "熊の爪",
+      "ko": "곰의 발톱",
+      "en": "Bear Claw",
+      "zh": "熊爪",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_7",
+      "category": "アーティファクト",
+      "sub": "R",
+      "ja": "魔除けの蹄",
+      "ko": "퇴마의 발굽",
+      "en": "Talisman Hoof",
+      "zh": "除魔之蹄",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_8",
+      "category": "アーティファクト",
+      "sub": "R",
+      "ja": "迷宮守護者の剣",
+      "ko": "미궁 수호자의 검",
+      "en": "Guardian Sword",
+      "zh": "迷宮守護者之劍",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_9",
+      "category": "アーティファクト",
+      "sub": "R",
+      "ja": "迷宮守護者の盾",
+      "ko": "미궁 수호자의 방패",
+      "en": "Guardian Shield",
+      "zh": "迷宮守護者之盾",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_10",
+      "category": "アーティファクト",
+      "sub": "SR",
+      "ja": "狼のマント",
+      "ko": "늑대의 망토",
+      "en": "Wolf Cloak",
+      "zh": "狼之斗篷",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_11",
+      "category": "アーティファクト",
+      "sub": "SR",
+      "ja": "和紙扇",
+      "ko": "화지선",
+      "en": "Washi Fan",
+      "zh": "和紙扇",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_12",
+      "category": "アーティファクト",
+      "sub": "SR",
+      "ja": "投術師の短剣",
+      "ko": "투술사의 단검",
+      "en": "Acrobat's Dagger",
+      "zh": "投術師的短劍",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_13",
+      "category": "アーティファクト",
+      "sub": "SR",
+      "ja": "降霊術師の杖",
+      "ko": "강령술사의 지팡이",
+      "en": "Necromancer's Staff",
+      "zh": "降靈術師之杖",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_14",
+      "category": "アーティファクト",
+      "sub": "SR",
+      "ja": "オスカーの傘",
+      "ko": "오스카의 우산",
+      "en": "Oscar's Umbrella",
+      "zh": "奧斯卡的雨傘",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_15",
+      "category": "アーティファクト",
+      "sub": "SR",
+      "ja": "竜腰鎖",
+      "ko": "용요쇄",
+      "en": "Dragon Chain",
+      "zh": "龍腰鎖",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_16",
+      "category": "アーティファクト",
+      "sub": "SR",
+      "ja": "拳士の籠手",
+      "ko": "권사의 권갑",
+      "en": "Monk's Gauntlet",
+      "zh": "拳士的手套",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_17",
+      "category": "アーティファクト",
+      "sub": "SR",
+      "ja": "シルクマント",
+      "ko": "실크 망토",
+      "en": "Silk Cloak",
+      "zh": "絲質斗篷",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_18",
+      "category": "アーティファクト",
+      "sub": "SR",
+      "ja": "操鞭師の鞭",
+      "ko": "조편사의 채찍",
+      "en": "Whip Master's Whip",
+      "zh": "操鞭師的鞭子",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_19",
+      "category": "アーティファクト",
+      "sub": "SR",
+      "ja": "ナイトプレート",
+      "ko": "나이트 플레이트",
+      "en": "Knight Plate",
+      "zh": "騎士盔甲",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_20",
+      "category": "アーティファクト",
+      "sub": "SR",
+      "ja": "法王の杖",
+      "ko": "법왕의 지팡이",
+      "en": "Pope's Staff",
+      "zh": "法王之杖",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_21",
+      "category": "アーティファクト",
+      "sub": "SR",
+      "ja": "腰袋",
+      "ko": "허리 주머니",
+      "en": "Waist Pack",
+      "zh": "腰包",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_22",
+      "category": "アーティファクト",
+      "sub": "SSR",
+      "ja": "オルニス",
+      "ko": "오르니스",
+      "en": "Ornis",
+      "zh": "歐爾尼斯",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_23",
+      "category": "アーティファクト",
+      "sub": "SSR",
+      "ja": "宝物庫",
+      "ko": "보물 창고",
+      "en": "Treasure Trove",
+      "zh": "寶物庫",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_24",
+      "category": "アーティファクト",
+      "sub": "SSR",
+      "ja": "念話石",
+      "ko": "염화석",
+      "en": "Telepathy Stone",
+      "zh": "心電感應石",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_25",
+      "category": "アーティファクト",
+      "sub": "SSR",
+      "ja": "オルクスの証",
+      "ko": "오르크스의 증표",
+      "en": "Orcus's Proof",
+      "zh": "奧爾庫司之證",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_26",
+      "category": "アーティファクト",
+      "sub": "SSR",
+      "ja": "グリューエンの証",
+      "ko": "그류엔의 증표",
+      "en": "Gruen Token",
+      "zh": "古盧恩之證",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_27",
+      "category": "アーティファクト",
+      "sub": "SSR",
+      "ja": "素敵なカップ",
+      "ko": "아름다운 잔",
+      "en": "Lovely Cup",
+      "zh": "漂亮的茶杯",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_28",
+      "category": "アーティファクト",
+      "sub": "SSR",
+      "ja": "貝殻のペンダント",
+      "ko": "조개껍질 펜던트",
+      "en": "Shell Pendant",
+      "zh": "貝殼項鍊",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_29",
+      "category": "アーティファクト",
+      "sub": "SSR",
+      "ja": "バーンの証",
+      "ko": "번의 증표",
+      "en": "Barn's Proof",
+      "zh": "巴恩之證",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_30",
+      "category": "アーティファクト",
+      "sub": "SSR",
+      "ja": "黒隷鞭",
+      "ko": "흑례편",
+      "en": "Obsidian Dominator",
+      "zh": "黑鞭子",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_31",
+      "category": "アーティファクト",
+      "sub": "SSR",
+      "ja": "杖",
+      "ko": "지팡이",
+      "en": "Staff",
+      "zh": "魔杖",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_32",
+      "category": "アーティファクト",
+      "sub": "SSR",
+      "ja": "ドリュッケン",
+      "ko": "드뤼켄",
+      "en": "Drucken",
+      "zh": "德盧肯",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_33",
+      "category": "アーティファクト",
+      "sub": "SSR",
+      "ja": "魔人のマフラー",
+      "ko": "마인의 머플러",
+      "en": "Demon's Scarf",
+      "zh": "魔人的圍巾",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_34",
+      "category": "アーティファクト",
+      "sub": "SSR",
+      "ja": "王妃のティアラ",
+      "ko": "왕비의 왕관",
+      "en": "Queen's Tiara",
+      "zh": "王妃的王冠",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_35",
+      "category": "アーティファクト",
+      "sub": "SSR",
+      "ja": "ライセンの証",
+      "ko": "라이센의 증표",
+      "en": "Reisen's Proof",
+      "zh": "密雷迪之證",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_36",
+      "category": "アーティファクト",
+      "sub": "SSR",
+      "ja": "黒刀",
+      "ko": "흑도",
+      "en": "Black Katana",
+      "zh": "黑刀",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_37",
+      "category": "アーティファクト",
+      "sub": "SSR",
+      "ja": "白鯨",
+      "ko": "백경",
+      "en": "White Whale",
+      "zh": "白鯨",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_38",
+      "category": "アーティファクト",
+      "sub": "SSR",
+      "ja": "メルジーネの証",
+      "ko": "메르지네의 증표",
+      "en": "Melusine's Proof",
+      "zh": "梅爾基涅之證",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_39",
+      "category": "アーティファクト",
+      "sub": "SSR",
+      "ja": "森人の冠",
+      "ko": "삼인족의 왕관",
+      "en": "Fey's corolla",
+      "zh": "森人之冠",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_40",
+      "category": "アーティファクト",
+      "sub": "SSR",
+      "ja": "黒のリボン",
+      "ko": "검은 리본",
+      "en": "Black Ribbon",
+      "zh": "黑色蝴蝶結",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_41",
+      "category": "アーティファクト",
+      "sub": "SSR",
+      "ja": "双大剣",
+      "ko": "쌍대검",
+      "en": "Twin Claymores",
+      "zh": "雙大劍",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_42",
+      "category": "アーティファクト",
+      "sub": "SSR",
+      "ja": "使徒の兜",
+      "ko": "사도의 투구",
+      "en": "Apostle's Helm",
+      "zh": "使徒頭盔",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_43",
+      "category": "アーティファクト",
+      "sub": "SSR",
+      "ja": "使徒の翼",
+      "ko": "사도의 날개",
+      "en": "Apostle Wings",
+      "zh": "使徒之翼",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_44",
+      "category": "アーティファクト",
+      "sub": "SSR",
+      "ja": "漆黒の聖剣",
+      "ko": "칠흑의 성검",
+      "en": "Darkblade Divinity",
+      "zh": "漆黑聖劍",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_45",
+      "category": "アーティファクト",
+      "sub": "UR",
+      "ja": "導越の羅針盤",
+      "ko": "도월의 나침반",
+      "en": "Compass of Eternal Paths",
+      "zh": "導越之羅盤",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_46",
+      "category": "アーティファクト",
+      "sub": "UR",
+      "ja": "クリスタルキー",
+      "ko": "크리스털 키",
+      "en": "Crystal Key",
+      "zh": "水晶鑰匙",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_47",
+      "category": "アーティファクト",
+      "sub": "UR",
+      "ja": "存在否定の鎖",
+      "ko": "존재 부정의 사슬",
+      "en": "Existence-Denying Chain",
+      "zh": "否定存在之鎖",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_48",
+      "category": "アーティファクト",
+      "sub": "UR",
+      "ja": "神殺しの弾丸",
+      "ko": "신을 죽이는 탄환",
+      "en": "Godpiercer Bullets",
+      "zh": "弑神之子彈",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_49",
+      "category": "アーティファクト",
+      "sub": "UR",
+      "ja": "血盟の刃",
+      "ko": "혈맹의 칼날",
+      "en": "Oath Bloodedge",
+      "zh": "血盟之刃",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_50",
+      "category": "アーティファクト",
+      "sub": "UR",
+      "ja": "聖剣",
+      "ko": "성검",
+      "en": "Holy Sword",
+      "zh": "聖劍",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_51",
+      "category": "アーティファクト",
+      "sub": "UR",
+      "ja": "紅い籠手",
+      "ko": "붉은 권갑",
+      "en": "Red Gauntlet",
+      "zh": "紅色護手",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_52",
+      "category": "アーティファクト",
+      "sub": "UR",
+      "ja": "機巧機関",
+      "ko": "기교장치",
+      "en": "Machina Core",
+      "zh": "精巧裝置",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_53",
+      "category": "アーティファクト",
+      "sub": "UR",
+      "ja": "魔の宝珠",
+      "ko": "마의 보주",
+      "en": "Arcane Orb",
+      "zh": "魔之寶珠",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_54",
+      "category": "アーティファクト",
+      "sub": "UR",
+      "ja": "古のジンバル",
+      "ko": "고대 짐벌",
+      "en": "Ancient Gimbal",
+      "zh": "遠古穩定器",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_55",
+      "category": "アーティファクト",
+      "sub": "UR",
+      "ja": "神聖な枝",
+      "ko": "신성한 가지",
+      "en": "Sacred Branch",
+      "zh": "聖潔之枝",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_56",
+      "category": "アーティファクト",
+      "sub": "UR",
+      "ja": "ライトキューブ",
+      "ko": "라이트 큐브",
+      "en": "Light Cube",
+      "zh": "光之方塊",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_57",
+      "category": "アーティファクト",
+      "sub": "UR",
+      "ja": "界越の矢",
+      "ko": "계월의 화살",
+      "en": "Realmbreak Arrow",
+      "zh": "破界之箭",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_58",
+      "category": "アーティファクト",
+      "sub": "UR",
+      "ja": "極·漆黒の聖剣",
+      "ko": "극 · 칠흑의 성검",
+      "en": "SP Darkblade Divinity",
+      "zh": "極·漆黑聖劍",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_59",
+      "category": "アーティファクト",
+      "sub": "UR",
+      "ja": "極·ユエのリボン",
+      "ko": "극 · 유에의 리본",
+      "en": "SP Yue's Ribbon",
+      "zh": "極·月的緞帶",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_60",
+      "category": "アーティファクト",
+      "sub": "UR",
+      "ja": "アメジストの髪飾り",
+      "ko": "자수정 머리장식",
+      "en": "Amethyst Hair Ornament",
+      "zh": "紫水晶髮飾",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_61",
+      "category": "アーティファクト",
+      "sub": "UR",
+      "ja": "極·使徒の翼",
+      "ko": "극 · 사도의 날개",
+      "en": "SP Apostle Wings",
+      "zh": "極·使徒之翼",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_62",
+      "category": "アーティファクト",
+      "sub": "UR",
+      "ja": "電動ドリル",
+      "ko": "전동 드릴",
+      "en": "Electric Drill",
+      "zh": "電鑽",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_63",
+      "category": "アーティファクト",
+      "sub": "UR",
+      "ja": "ネイルガン",
+      "ko": "네일건",
+      "en": "Nail Gun",
+      "zh": "釘槍",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_64",
+      "category": "アーティファクト",
+      "sub": "UR",
+      "ja": "極·ライセンの証",
+      "ko": "극 · 라이센의 증표",
+      "en": "SP Reisen's Token",
+      "zh": "極·萊森之證",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_65",
+      "category": "アーティファクト",
+      "sub": "UR+",
+      "ja": "神結晶の指輪",
+      "ko": "신결정의 반지",
+      "en": "Holy Crystal Ring",
+      "zh": "神結晶指環",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_66",
+      "category": "アーティファクト",
+      "sub": "UR+",
+      "ja": "吸血鬼の翼",
+      "ko": "흡혈귀의 날개",
+      "en": "Vampire's Wings",
+      "zh": "吸血鬼之翼",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_67",
+      "category": "アーティファクト",
+      "sub": "UR+",
+      "ja": "ヘスティア・ナイフ",
+      "ko": "헤스티아 나이프",
+      "en": "Hestia's Blade",
+      "zh": "赫斯緹雅之刃",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_68",
+      "category": "アーティファクト",
+      "sub": "UR+",
+      "ja": "アルヴス・ユースティティア",
+      "ko": "알브스 유스티티아",
+      "en": "Alvs Justitia",
+      "zh": "精靈正義女神",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_69",
+      "category": "アーティファクト",
+      "sub": "UR+",
+      "ja": "氷晶の核",
+      "ko": "빙정의 핵",
+      "en": "Ice Crystal's Core",
+      "zh": "冰晶核心",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_70",
+      "category": "アーティファクト",
+      "sub": "UR+",
+      "ja": "ロキシーの杖",
+      "ko": "록시의 지팡이",
+      "en": "Roxy's Staff",
+      "zh": "洛琪希的魔杖",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_71",
+      "category": "アーティファクト",
+      "sub": "UR+",
+      "ja": "無言のサングラス",
+      "ko": "무언의 선글라스",
+      "en": "Silent Sunglasses",
+      "zh": "沉默的墨鏡",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_72",
+      "category": "アーティファクト",
+      "sub": "UR+",
+      "ja": "エリナリーゼの武具",
+      "ko": "엘리나리제의 무구",
+      "en": "Elinalise's Equipment",
+      "zh": "艾莉娜麗潔的武具",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_73",
+      "category": "アーティファクト",
+      "sub": "UR+",
+      "ja": "女神の王冠",
+      "ko": "여신의 왕관",
+      "en": "Goddess's Crown",
+      "zh": "女神的王冠",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_74",
+      "category": "アーティファクト",
+      "sub": "UR+",
+      "ja": "権威の象徴",
+      "ko": "권위의 상징",
+      "en": "Symbol of Authority",
+      "zh": "權威的象徵",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_75",
+      "category": "アーティファクト",
+      "sub": "UR+",
+      "ja": "暴虐の双剣",
+      "ko": "포학의 쌍검",
+      "en": "Tyrant Swords",
+      "zh": "暴虐雙劍",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_76",
+      "category": "アーティファクト",
+      "sub": "UR+",
+      "ja": "豊穣の籠",
+      "ko": "풍요의 바구니",
+      "en": "Basket of Fertility",
+      "zh": "豐穰之籠",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_77",
+      "category": "アーティファクト",
+      "sub": "UR+",
+      "ja": "深藍の宝珠",
+      "ko": "심람의 보주",
+      "en": "Deep Blue Orb",
+      "zh": "深藍寶珠",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_78",
+      "category": "アーティファクト",
+      "sub": "UR+",
+      "ja": "大樹の王笏",
+      "ko": "거목의 왕홀",
+      "en": "Great Tree's Scepter",
+      "zh": "大樹權杖",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_79",
+      "category": "アーティファクト",
+      "sub": "UR+",
+      "ja": "指導者の剣",
+      "ko": "지도자의 검",
+      "en": "Leader's Sword",
+      "zh": "指導者之劍",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_80",
+      "category": "アーティファクト",
+      "sub": "UR+",
+      "ja": "碧海の宝杖",
+      "ko": "푸른 바다의 보물 지팡이",
+      "en": "Azure Sea Staff",
+      "zh": "碧海寶杖",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_81",
+      "category": "アーティファクト",
+      "sub": "UR+",
+      "ja": "ギンヌンガガプ",
+      "ko": "긴눙가가프",
+      "en": "Ginnungagap",
+      "zh": "地獄深淵",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_82",
+      "category": "アーティファクト",
+      "sub": "UR+",
+      "ja": "スポイトランス",
+      "ko": "스포이트 랜스",
+      "en": "Pipette Lance",
+      "zh": "滴管長槍",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_83",
+      "category": "アーティファクト",
+      "sub": "UR+",
+      "ja": "スタッフ・オブ・アインズ・ウール・ゴウン",
+      "ko": "SoAOG",
+      "en": "SoAOG",
+      "zh": "SoAOG",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_84",
+      "category": "アーティファクト",
+      "sub": "UR+",
+      "ja": "神託の冠",
+      "ko": "신탁의 관",
+      "en": "Divine Oracle's Crown",
+      "zh": "神託之冠",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_85",
+      "category": "アーティファクト",
+      "sub": "UR+",
+      "ja": "薄明の鬼面",
+      "ko": "박명의 귀면",
+      "en": "Twilight Oni Mask",
+      "zh": "薄明的鬼面",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "spirit_0",
+      "category": "神術",
+      "sub": "特級",
+      "ja": "灼熱",
+      "ko": "작열",
+      "en": "Burn",
+      "zh": "灼燒",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_1",
+      "category": "神術",
+      "sub": "特級",
+      "ja": "猛毒",
+      "ko": "맹독",
+      "en": "Poison",
+      "zh": "劇毒",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_2",
+      "category": "神術",
+      "sub": "特級",
+      "ja": "神聖",
+      "ko": "신성",
+      "en": "Sacred",
+      "zh": "神聖",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_3",
+      "category": "神術",
+      "sub": "特級",
+      "ja": "強硬",
+      "ko": "강경",
+      "en": "Tough",
+      "zh": "強硬",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_4",
+      "category": "神術",
+      "sub": "超級",
+      "ja": "回復封殺",
+      "ko": "회복 봉쇄",
+      "en": "Heal Block",
+      "zh": "恢復封鎖",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_5",
+      "category": "神術",
+      "sub": "超級",
+      "ja": "沈黙封殺",
+      "ko": "침묵 봉쇄",
+      "en": "Silence Block",
+      "zh": "沉默封殺",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_6",
+      "category": "神術",
+      "sub": "超級",
+      "ja": "凍結封殺",
+      "ko": "동결 봉쇄",
+      "en": "Freeze Block",
+      "zh": "凍結封鎖",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_7",
+      "category": "神術",
+      "sub": "超級",
+      "ja": "目眩封殺",
+      "ko": "스턴 봉쇄",
+      "en": "Stun Block",
+      "zh": "眩暈封殺",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_8",
+      "category": "神術",
+      "sub": "超級",
+      "ja": "奮戦",
+      "ko": "분전",
+      "en": "Grit",
+      "zh": "越戰越勇",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_9",
+      "category": "神術",
+      "sub": "超級",
+      "ja": "カカシ",
+      "ko": "허수아비",
+      "en": "Scarecrow",
+      "zh": "稻草人",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_10",
+      "category": "神術",
+      "sub": "超級",
+      "ja": "血族の絆",
+      "ko": "혈족의 유대",
+      "en": "Bloodline Bond",
+      "zh": "血族羈絆",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_11",
+      "category": "神術",
+      "sub": "特級",
+      "ja": "荊棘",
+      "ko": "가시",
+      "en": "Thorn",
+      "zh": "荊棘",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_12",
+      "category": "神術",
+      "sub": "特級",
+      "ja": "毒針",
+      "ko": "독침",
+      "en": "Poison Needle",
+      "zh": "毒針",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_13",
+      "category": "神術",
+      "sub": "特級",
+      "ja": "亀",
+      "ko": "거북",
+      "en": "Turtle",
+      "zh": "烏龜",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_14",
+      "category": "神術",
+      "sub": "特級",
+      "ja": "アドレナリン",
+      "ko": "아드레날린",
+      "en": "Adrenaline",
+      "zh": "腎上腺素",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_15",
+      "category": "神術",
+      "sub": "高級",
+      "ja": "再生",
+      "ko": "재생",
+      "en": "Recover",
+      "zh": "再生",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_16",
+      "category": "神術",
+      "sub": "高級",
+      "ja": "衝撃",
+      "ko": "충격",
+      "en": "Impact",
+      "zh": "衝擊",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_17",
+      "category": "神術",
+      "sub": "高級",
+      "ja": "爆破",
+      "ko": "폭파",
+      "en": "Blast",
+      "zh": "爆破",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_18",
+      "category": "神術",
+      "sub": "高級",
+      "ja": "保護",
+      "ko": "보호",
+      "en": "Protection",
+      "zh": "保護",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_19",
+      "category": "神術",
+      "sub": "超級",
+      "ja": "堅牢共鳴",
+      "ko": "견고 공명",
+      "en": "Sturdy Resonance",
+      "zh": "堅牢共鳴",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_20",
+      "category": "神術",
+      "sub": "超級",
+      "ja": "献祭",
+      "ko": "헌제",
+      "en": "Sacrifice",
+      "zh": "獻祭",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_21",
+      "category": "神術",
+      "sub": "超級",
+      "ja": "剣盾",
+      "ko": "검방패",
+      "en": "Sword & Shield",
+      "zh": "劍盾",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_22",
+      "category": "神術",
+      "sub": "特級",
+      "ja": "奉納",
+      "ko": "봉납",
+      "en": "Devotion",
+      "zh": "奉納",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_23",
+      "category": "神術",
+      "sub": "特級",
+      "ja": "強運",
+      "ko": "행운",
+      "en": "Good Fortune",
+      "zh": "強運",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_24",
+      "category": "神術",
+      "sub": "特級",
+      "ja": "清浄",
+      "ko": "청정",
+      "en": "Cleanse",
+      "zh": "清淨",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_25",
+      "category": "神術",
+      "sub": "特級",
+      "ja": "盾破壊",
+      "ko": "방패 파괴",
+      "en": "Shield Break",
+      "zh": "盾牌破壞",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_26",
+      "category": "神術",
+      "sub": "高級",
+      "ja": "祝福",
+      "ko": "축복",
+      "en": "Blessing",
+      "zh": "祝福",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_27",
+      "category": "神術",
+      "sub": "高級",
+      "ja": "貢献",
+      "ko": "공헌",
+      "en": "Contribution",
+      "zh": "貢獻",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_28",
+      "category": "神術",
+      "sub": "高級",
+      "ja": "暗影",
+      "ko": "암영",
+      "en": "Shadow",
+      "zh": "暗影",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_29",
+      "category": "神術",
+      "sub": "高級",
+      "ja": "怨念",
+      "ko": "원념",
+      "en": "Grudge",
+      "zh": "怨念",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_30",
+      "category": "神術",
+      "sub": "中級",
+      "ja": "回復",
+      "ko": "회복",
+      "en": "Heal",
+      "zh": "恢復",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_31",
+      "category": "神術",
+      "sub": "中級",
+      "ja": "復讐",
+      "ko": "복수",
+      "en": "Revenge",
+      "zh": "復仇",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_32",
+      "category": "神術",
+      "sub": "中級",
+      "ja": "弱体化",
+      "ko": "약화",
+      "en": "Weaken",
+      "zh": "弱化",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_33",
+      "category": "神術",
+      "sub": "中級",
+      "ja": "支援",
+      "ko": "지원",
+      "en": "Support",
+      "zh": "支援",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "kourei_0",
+      "category": "煌霊",
+      "sub": "SR (アタッカー、バフ)",
+      "ja": "紫晶幻蝶",
+      "ko": "자정환접",
+      "en": "Violet Butterfly",
+      "zh": "紫晶幻蝶",
+      "linkView": "kourei"
+    },
+    {
+      "id": "kourei_1",
+      "category": "煌霊",
+      "sub": "SR (アタッカー、バフ)",
+      "ja": "朱の跳鼠",
+      "ko": "붉은 도약의 쥐",
+      "en": "Vermilion Jerboa",
+      "zh": "朱紅跳鼠",
+      "linkView": "kourei"
+    },
+    {
+      "id": "kourei_2",
+      "category": "煌霊",
+      "sub": "SR (アタッカー、バフ)",
+      "ja": "疾風の翼鳥",
+      "ko": "질풍의 익조",
+      "en": "Bird of Gale",
+      "zh": "疾風翼鳥",
+      "linkView": "kourei"
+    },
+    {
+      "id": "kourei_3",
+      "category": "煌霊",
+      "sub": "SSR (アタッカー、デバフ)",
+      "ja": "黄昏の忠犬",
+      "ko": "황혼의 충견",
+      "en": "Faithful Dog",
+      "zh": "黃昏忠犬",
+      "linkView": "kourei"
+    },
+    {
+      "id": "kourei_4",
+      "category": "煌霊",
+      "sub": "SSR (アタッカー、バフ)",
+      "ja": "漆黒の猫",
+      "ko": "칠흑의 고양이",
+      "en": "Black Cat",
+      "zh": "漆黑貓",
+      "linkView": "kourei"
+    },
+    {
+      "id": "kourei_5",
+      "category": "煌霊",
+      "sub": "SSR (アタッカー、バフ)",
+      "ja": "翠甲亀",
+      "ko": "취갑 거북",
+      "en": "Jade Turtle",
+      "zh": "翠甲龜",
+      "linkView": "kourei"
+    },
+    {
+      "id": "kourei_6",
+      "category": "煌霊",
+      "sub": "UR (アタッカー、デバフ)",
+      "ja": "閃光の猛虎",
+      "ko": "섬광의 맹호",
+      "en": "Flash Tiger",
+      "zh": "閃光猛虎",
+      "linkView": "kourei"
+    },
+    {
+      "id": "kourei_7",
+      "category": "煌霊",
+      "sub": "UR (アタッカー、行動制限耐性)",
+      "ja": "神速の烈鷹",
+      "ko": "신속의 매",
+      "en": "Fierce Hawk",
+      "zh": "神速烈鷹",
+      "linkView": "kourei"
+    },
+    {
+      "id": "kourei_8",
+      "category": "煌霊",
+      "sub": "UR (アタッカー、ダメージ増加)",
+      "ja": "幻惑の海王",
+      "ko": "현혹의 해왕",
+      "en": "Illusive Jellyfish",
+      "zh": "幻惑海王",
+      "linkView": "kourei"
+    },
+    {
+      "id": "kourei_9",
+      "category": "煌霊",
+      "sub": "UR (アタッカー、バフ)",
+      "ja": "終焉の牙狼",
+      "ko": "종언의 늑대",
+      "en": "Doom Wolf",
+      "zh": "終焉牙狼",
+      "linkView": "kourei"
+    },
+    {
+      "id": "kourei_10",
+      "category": "煌霊",
+      "sub": "UR+ (アタッカー、範囲ダメージ、バフ)",
+      "ja": "氷滅の鳳凰",
+      "ko": "빙멸의 봉황",
+      "en": "Ice Phoenix",
+      "zh": "冰滅鳳凰",
+      "linkView": "kourei"
+    },
+    {
+      "id": "kourei_11",
+      "category": "煌霊",
+      "sub": "UR+ (タンク、範囲ダメージ、バフ)",
+      "ja": "銀嶺の獣王",
+      "ko": "은령의 수왕",
+      "en": "Silver Beast King",
+      "zh": "銀嶺獸王",
+      "linkView": "kourei"
+    },
+    {
+      "id": "kourei_12",
+      "category": "煌霊",
+      "sub": "UR+ (灼熱の魂、範囲ダメージ、ダメージ増加)",
+      "ja": "金の獅子王",
+      "ko": "황금 사자왕",
+      "en": "Golden Lion King",
+      "zh": "金之獅子王",
+      "linkView": "kourei"
+    },
+    {
+      "id": "kourei_13",
+      "category": "煌霊",
+      "sub": "UR+ (デバフ、灼熱、範囲攻撃)",
+      "ja": "蒼穹の幻鯨",
+      "ko": "창궁의 환상 고래",
+      "en": "Phantom Whale",
+      "zh": "蒼穹幻鯨",
+      "linkView": "kourei"
+    },
+    {
+      "id": "weapon_0",
+      "category": "武器",
+      "sub": "驚異的な威力の12発のロケットランチャー。",
+      "ja": "オルカン",
+      "ko": "오르칸",
+      "en": "Orkan",
+      "zh": "奧爾康",
+      "linkView": "weapons"
+    },
+    {
+      "id": "weapon_1",
+      "category": "武器",
+      "sub": "高さ2.5メートルのパイルバンカー。電磁加速機能を備えている。",
+      "ja": "パイルバンカー",
+      "ko": "파일 벙커",
+      "en": "Pile Bunker",
+      "zh": "樁錨",
+      "linkView": "weapons"
+    },
+    {
+      "id": "weapon_2",
+      "category": "武器",
+      "sub": "2丁の全長35センチの6連発リボルバー式拳銃。電磁加速機能を備え、その威力は対戦車ライフルに匹敵する。",
+      "ja": "ドンナー・シュラーク",
+      "ko": "돈나&슈라크",
+      "en": "Donner & Schlag",
+      "zh": "多納爾・舒拉克",
+      "linkView": "weapons"
+    },
+    {
+      "id": "weapon_3",
+      "category": "武器",
+      "sub": "6連ガトリング、口径30ミリ。射速は1分間に12000発に達し、電磁加速機能を備えている。",
+      "ja": "メツェライ",
+      "ko": "메체라이",
+      "en": "Metzeleis",
+      "zh": "梅傑萊",
+      "linkView": "weapons"
+    },
+    {
+      "id": "weapon_4",
+      "category": "武器",
+      "sub": "全長3メートルの単発反物資スナイパーライフル。電磁加速機能を備えている。",
+      "ja": "シュラーゲン",
+      "ko": "슈라겐",
+      "en": "Schlagen",
+      "zh": "修拉簡",
+      "linkView": "weapons"
+    },
+    {
+      "id": "weapon_5",
+      "category": "武器",
+      "sub": "中心に転送門を備え、他の武器と組み合わせて離れた敵を攻撃できる。",
+      "ja": "円月輪",
+      "ko": "원월륜",
+      "en": "Chakrams",
+      "zh": "圓月輪",
+      "linkView": "weapons"
+    },
+    {
+      "id": "weapon_6",
+      "category": "武器",
+      "sub": "浮遊する十字架型の武器。弾丸の発射、盾としての使用、または結界の設置が可能。",
+      "ja": "クロスビット",
+      "ko": "크로스 비트",
+      "en": "Cross Bits",
+      "zh": "十字浮游砲",
+      "linkView": "weapons"
+    },
+    {
+      "id": "divine_0",
+      "category": "神装備",
+      "sub": "4部位",
+      "ja": "鎮魂の神力･風",
+      "ko": "진혼의 신력·풍",
+      "en": "Repressive Power: Wind",
+      "zh": "鎮魂神力･風",
+      "linkView": "divineEquips"
+    },
+    {
+      "id": "divine_1",
+      "category": "神装備",
+      "sub": "4部位",
+      "ja": "幻海の神力･水",
+      "ko": "환해의 신력·수",
+      "en": "Sea God Power: Water",
+      "zh": "幻海神力･水",
+      "linkView": "divineEquips"
+    },
+    {
+      "id": "divine_2",
+      "category": "神装備",
+      "sub": "4部位",
+      "ja": "災厄の神力･地",
+      "ko": "재액의 신력·지",
+      "en": "Calamitous Power: Earth",
+      "zh": "災厄神力･地",
+      "linkView": "divineEquips"
+    },
+    {
+      "id": "divine_3",
+      "category": "神装備",
+      "sub": "4部位",
+      "ja": "破滅の神力･火",
+      "ko": "파멸의 신력·화",
+      "en": "Ruinous Power: Fire",
+      "zh": "毀滅神力･火",
+      "linkView": "divineEquips"
+    },
+    {
+      "id": "divine_4",
+      "category": "神装備",
+      "sub": "4部位",
+      "ja": "裂地の力･地",
+      "ko": "대지 균열의 힘·지",
+      "en": "Earthshatter: Earth",
+      "zh": "裂地之力･地",
+      "linkView": "divineEquips"
+    },
+    {
+      "id": "baoshi_0",
+      "category": "宝石",
+      "sub": "",
+      "ja": "耐性宝石",
+      "ko": "내성 보석",
+      "en": "RES Jewel",
+      "zh": "抗性寶石"
+    },
+    {
+      "id": "baoshi_1",
+      "category": "宝石",
+      "sub": "",
+      "ja": "制限宝石",
+      "ko": "제한 보석",
+      "en": "Limit Jewel",
+      "zh": "控制寶石"
+    },
+    {
+      "id": "baoshi_2",
+      "category": "宝石",
+      "sub": "",
+      "ja": "技増宝石",
+      "ko": "기증 보석",
+      "en": "Skill Boost Jewel",
+      "zh": "技增寶石"
+    },
+    {
+      "id": "baoshi_3",
+      "category": "宝石",
+      "sub": "",
+      "ja": "技減宝石",
+      "ko": "기감 보석",
+      "en": "Skill RED Jewel",
+      "zh": "技減寶石"
+    },
+    {
+      "id": "baoshi_4",
+      "category": "宝石",
+      "sub": "",
+      "ja": "回復宝石",
+      "ko": "회복 보석",
+      "en": "Heal Jewel",
+      "zh": "治療寶石"
+    },
+    {
+      "id": "baoshi_5",
+      "category": "宝石",
+      "sub": "",
+      "ja": "被回復宝石",
+      "ko": "피회복 보석",
+      "en": "Heal Taken Jewel",
+      "zh": "受療寶石"
+    },
+    {
+      "id": "baoshi_6",
+      "category": "宝石",
+      "sub": "",
+      "ja": "炎傷宝石",
+      "ko": "염상 보석",
+      "en": "Burn DMG Jewel",
+      "zh": "炎傷寶石"
+    },
+    {
+      "id": "baoshi_7",
+      "category": "宝石",
+      "sub": "",
+      "ja": "毒傷宝石",
+      "ko": "독상 보석",
+      "en": "Poison DMG Jewel",
+      "zh": "毒傷寶石"
+    },
+    {
+      "id": "baoshi_8",
+      "category": "宝石",
+      "sub": "",
+      "ja": "血傷宝石",
+      "ko": "혈상 보석",
+      "en": "Bleed DMG Jewel",
+      "zh": "血傷寶石"
+    },
+    {
+      "id": "baoshi_9",
+      "category": "宝石",
+      "sub": "",
+      "ja": "追炎宝石",
+      "ko": "추염 보석",
+      "en": "Burn Boost Jewel",
+      "zh": "追炎寶石"
+    },
+    {
+      "id": "baoshi_10",
+      "category": "宝石",
+      "sub": "",
+      "ja": "追毒宝石",
+      "ko": "추독 보석",
+      "en": "Poison Boost Jewel",
+      "zh": "追毒寶石"
+    },
+    {
+      "id": "baoshi_11",
+      "category": "宝石",
+      "sub": "",
+      "ja": "追血宝石",
+      "ko": "추혈 보석",
+      "en": "Bleed Boost Jewel",
+      "zh": "追血寶石"
+    },
+    {
+      "id": "baoshi_12",
+      "category": "宝石",
+      "sub": "",
+      "ja": "追凍宝石",
+      "ko": "추동 보석",
+      "en": "Frozen Jewel",
+      "zh": "追凍寶石"
+    },
+    {
+      "id": "baoshi_13",
+      "category": "宝石",
+      "sub": "",
+      "ja": "追撃宝石",
+      "ko": "추격 보석",
+      "en": "Pursuit Jewel",
+      "zh": "追擊寶石"
+    },
+    {
+      "id": "baoshi_14",
+      "category": "宝石",
+      "sub": "",
+      "ja": "追憶宝石",
+      "ko": "추억 보석",
+      "en": "Memory Jewel",
+      "zh": "追憶寶石"
+    },
+    {
+      "id": "baoshi_15",
+      "category": "宝石",
+      "sub": "",
+      "ja": "血抗宝石",
+      "ko": "혈항 보석",
+      "en": "Blood RES Jewel",
+      "zh": "血抗寶石"
+    },
+    {
+      "id": "baoshi_16",
+      "category": "宝石",
+      "sub": "",
+      "ja": "炎抗宝石",
+      "ko": "염항 보석",
+      "en": "Burn RES Jewel",
+      "zh": "炎抗寶石"
+    },
+    {
+      "id": "baoshi_17",
+      "category": "宝石",
+      "sub": "",
+      "ja": "耐毒宝石",
+      "ko": "내독 보석",
+      "en": "Poison RES Jewel",
+      "zh": "抗毒寶石"
+    },
+    {
+      "id": "baoshi_18",
+      "category": "宝石",
+      "sub": "",
+      "ja": "吸血宝石",
+      "ko": "흡혈 보석",
+      "en": "Lifesteal Jewel",
+      "zh": "吸血寶石"
+    },
+    {
+      "id": "baoshi_19",
+      "category": "宝石",
+      "sub": "",
+      "ja": "引毒宝石",
+      "ko": "인독 보석",
+      "en": "Poison Jewel",
+      "zh": "引毒寶石"
+    },
+    {
+      "id": "baoshi_20",
+      "category": "宝石",
+      "sub": "",
+      "ja": "引炎宝石",
+      "ko": "인염 보석",
+      "en": "Flame Jewel",
+      "zh": "引炎寶石"
+    },
+    {
+      "id": "baoshi_21",
+      "category": "宝石",
+      "sub": "",
+      "ja": "敵魔宝石",
+      "ko": "적마 보석",
+      "en": "Enemy Mag. Jewel",
+      "zh": "敵魔寶石"
+    },
+    {
+      "id": "baoshi_22",
+      "category": "宝石",
+      "sub": "",
+      "ja": "敵補宝石",
+      "ko": "적보 보석",
+      "en": "Enemy Sup Jewel",
+      "zh": "敵補寶石"
+    },
+    {
+      "id": "baoshi_23",
+      "category": "宝石",
+      "sub": "",
+      "ja": "敵占宝石",
+      "ko": "적점 보석",
+      "en": "Enemy Occupy Jewel",
+      "zh": "敵占寶石"
+    },
+    {
+      "id": "baoshi_24",
+      "category": "宝石",
+      "sub": "",
+      "ja": "敵守宝石",
+      "ko": "적수 보석",
+      "en": "Enemy DEF Jewel",
+      "zh": "敵守寶石"
+    },
+    {
+      "id": "baoshi_25",
+      "category": "宝石",
+      "sub": "",
+      "ja": "敵戦宝石",
+      "ko": "적전 보석",
+      "en": "Enemy Jewel",
+      "zh": "敵戰寶石"
+    },
+    {
+      "id": "baoshi_26",
+      "category": "宝石",
+      "sub": "",
+      "ja": "敵勇宝石",
+      "ko": "적용 보석",
+      "en": "Enemy Jewel",
+      "zh": "敵勇寶石"
+    },
+    {
+      "id": "baoshi_27",
+      "category": "宝石",
+      "sub": "",
+      "ja": "攻撃宝石",
+      "ko": "공격 보석",
+      "en": "ATK Jewel",
+      "zh": "攻擊寶石"
+    },
+    {
+      "id": "baoshi_28",
+      "category": "宝石",
+      "sub": "",
+      "ja": "防御宝石",
+      "ko": "방어 보석",
+      "en": "DEF Jewel",
+      "zh": "防禦寶石"
+    },
+    {
+      "id": "baoshi_29",
+      "category": "宝石",
+      "sub": "",
+      "ja": "生命宝石",
+      "ko": "생명 보석",
+      "en": "HP Jewel",
+      "zh": "生命寶石"
+    },
+    {
+      "id": "baoshi_30",
+      "category": "宝石",
+      "sub": "",
+      "ja": "速度宝石",
+      "ko": "속도 보석",
+      "en": "SPD Jewel",
+      "zh": "速度寶石"
+    },
+    {
+      "id": "buff_showname_ac",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "暗流",
+      "ko": "암류",
+      "en": "Undercurrent",
+      "zh": "暗流"
+    },
+    {
+      "id": "buff_showname_addspeed",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "速度増加",
+      "ko": "속도 증가",
+      "en": "SPD +",
+      "zh": "速度增加"
+    },
+    {
+      "id": "buff_showname_aizhiwen",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "愛のキス",
+      "ko": "사랑의 입맞춤",
+      "en": "Love's Kiss",
+      "zh": "愛之吻"
+    },
+    {
+      "id": "buff_showname_atkdrop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "攻撃力減少",
+      "ko": "공격력 감소",
+      "en": "ATK -",
+      "zh": "攻擊力減少"
+    },
+    {
+      "id": "buff_showname_atkpro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "攻撃力増加",
+      "ko": "공격력 증가",
+      "en": "ATK +",
+      "zh": "攻擊力增加"
+    },
+    {
+      "id": "buff_showname_avengingfire",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "復讐の炎",
+      "ko": "복수의 불꽃",
+      "en": "Revenge Flame",
+      "zh": "復仇之焰"
+    },
+    {
+      "id": "buff_showname_bagua",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "八卦",
+      "ko": "팔괘",
+      "en": "Divination",
+      "zh": "八卦"
+    },
+    {
+      "id": "buff_showname_banartifact",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "アーティファクト焼却スキル",
+      "ko": "아티팩트 소각 스킬",
+      "en": "Artifact Incineration Skill",
+      "zh": "神器燒毀技能"
+    },
+    {
+      "id": "buff_showname_baojidrop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "会心率減少",
+      "ko": "치명률 감소",
+      "en": "CRT -",
+      "zh": "暴擊率減少"
+    },
+    {
+      "id": "buff_showname_baojipro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "会心率増加",
+      "ko": "치명타 확률 증가",
+      "en": "CRT +",
+      "zh": "暴擊率增加"
+    },
+    {
+      "id": "buff_showname_baopobiaoji",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "爆破マーク",
+      "ko": "폭파 표식",
+      "en": "Explosion Mark",
+      "zh": "爆破標記"
+    },
+    {
+      "id": "buff_showname_baoshangdrop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "会心ダメージ軽減",
+      "ko": "치명 데미지 경감",
+      "en": "CRT DMG RED",
+      "zh": "暴傷減輕"
+    },
+    {
+      "id": "buff_showname_baoshangpro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "会心ダメージ増加",
+      "ko": "치명 데미지 증가",
+      "en": "CRT DMG +",
+      "zh": "暴擊增傷"
+    },
+    {
+      "id": "buff_showname_bdrs",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "守勢",
+      "ko": "수세",
+      "en": "Defensive Stance",
+      "zh": "守勢"
+    },
+    {
+      "id": "buff_showname_beifengxian",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "奉納",
+      "ko": "봉납",
+      "en": "Devotion",
+      "zh": "奉納"
+    },
+    {
+      "id": "buff_showname_beishui",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "背水",
+      "ko": "배수",
+      "en": "Last Stand",
+      "zh": "背水"
+    },
+    {
+      "id": "buff_showname_bianfu",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "コウモリ出撃",
+      "ko": "박쥐 출격",
+      "en": "Bat Strike",
+      "zh": "蝙蝠出擊"
+    },
+    {
+      "id": "buff_showname_bingdong",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "凍結",
+      "ko": "동결",
+      "en": "Freeze",
+      "zh": "凍結"
+    },
+    {
+      "id": "buff_showname_bingdongatkpro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "凍結特攻",
+      "ko": "동결 특공",
+      "en": "DMG to Frozen Target +",
+      "zh": "凍結特攻"
+    },
+    {
+      "id": "buff_showname_bingdongdkpro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "被凍結確率低下",
+      "ko": "동결될 확률 감소",
+      "en": "Chance to be Frozen -",
+      "zh": "被凍結機率降低"
+    },
+    {
+      "id": "buff_showname_bingdongdpsdrop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "凍結ダメージ軽減",
+      "ko": "동결 데미지 경감",
+      "en": "Freeze DMG RED -",
+      "zh": "凍結減傷"
+    },
+    {
+      "id": "buff_showname_bkht",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "氷鎧防御",
+      "ko": "빙갑 방어",
+      "en": "Ice Armor DEF",
+      "zh": "冰鎧防禦"
+    },
+    {
+      "id": "buff_showname_boaizhiwen",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "博愛のキス",
+      "ko": "박애의 입맞춤",
+      "en": "Kiss of Philanthropy",
+      "zh": "博愛之吻"
+    },
+    {
+      "id": "buff_showname_bshd",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "フロストシールド",
+      "ko": "프로스트 실드",
+      "en": "Frost Shield",
+      "zh": "冰霜護盾"
+    },
+    {
+      "id": "buff_showname_bxs",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "変身術",
+      "ko": "변신술",
+      "en": "Transformation",
+      "zh": "變身術"
+    },
+    {
+      "id": "buff_showname_byll",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "氷獄牢籠",
+      "ko": "빙옥 새장",
+      "en": "Icebound Cage",
+      "zh": "冰獄牢籠"
+    },
+    {
+      "id": "buff_showname_cangbai",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "蒼白",
+      "ko": "창백",
+      "en": "Pale",
+      "zh": "蒼白"
+    },
+    {
+      "id": "buff_showname_chanrao",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "足止めの荊",
+      "ko": "속박의 가시",
+      "en": "Immobilizing Thorns",
+      "zh": "定身之荊"
+    },
+    {
+      "id": "buff_showname_chaofeng",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "挑発",
+      "ko": "도발",
+      "en": "Taunt",
+      "zh": "挑釁"
+    },
+    {
+      "id": "buff_showname_chaofeng_jz",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "挑発-決戦",
+      "ko": "도발-결전",
+      "en": "Taunt-Final",
+      "zh": "挑釁-決戰"
+    },
+    {
+      "id": "buff_showname_chenge",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "呪縛転身",
+      "ko": "주박 전신",
+      "en": "Cursed Transformation",
+      "zh": "咒縛轉身"
+    },
+    {
+      "id": "buff_showname_chenmo",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "沈黙",
+      "ko": "침묵",
+      "en": "Silence",
+      "zh": "沉默"
+    },
+    {
+      "id": "buff_showname_chenmoatkpro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "沈黙特攻",
+      "ko": "침묵 특공",
+      "en": "DMG to Silence Target +",
+      "zh": "沉默特攻"
+    },
+    {
+      "id": "buff_showname_chenmodkpro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "沈黙耐性",
+      "ko": "침묵 내성",
+      "en": "Silence RES",
+      "zh": "沉默抗性"
+    },
+    {
+      "id": "buff_showname_chenmodpsdrop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "沈黙ダメージ軽減",
+      "ko": "침묵 데미지 경감",
+      "en": "Silence DMG RED",
+      "zh": "沉默減傷"
+    },
+    {
+      "id": "buff_showname_chongneng",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "チャージ",
+      "ko": "충전",
+      "en": "Top-UP",
+      "zh": "蓄力"
+    },
+    {
+      "id": "buff_showname_chouhen",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "ヘイト",
+      "ko": "헤이트",
+      "en": "Hate",
+      "zh": "仇恨值"
+    },
+    {
+      "id": "buff_showname_controlpro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "行動制限命中率増加",
+      "ko": "행동제한 명중률 증가",
+      "en": "CC ACC +",
+      "zh": "限制行動命中率增加"
+    },
+    {
+      "id": "buff_showname_curedrop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "回復量減少",
+      "ko": "회복량 감소",
+      "en": "Heal -",
+      "zh": "恢復量減少"
+    },
+    {
+      "id": "buff_showname_curehudun",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "シールド",
+      "ko": "실드",
+      "en": "Shield",
+      "zh": "護盾"
+    },
+    {
+      "id": "buff_showname_curepro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "回復量増加",
+      "ko": "회복량 증가",
+      "en": "Healing +",
+      "zh": "恢復量增加"
+    },
+    {
+      "id": "buff_showname_cxzl",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "潮汐の鱗",
+      "ko": "조석의 비늘",
+      "en": "Tide Scale",
+      "zh": "潮汐之鱗"
+    },
+    {
+      "id": "buff_showname_dadang1",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "パートナー",
+      "ko": "파트너",
+      "en": "Partner",
+      "zh": "搭檔"
+    },
+    {
+      "id": "buff_showname_defdrop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "防御力低下",
+      "ko": "방어력 감소",
+      "en": "DEF -",
+      "zh": "防禦力減少"
+    },
+    {
+      "id": "buff_showname_defenddrop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "防御力減少(%)",
+      "ko": "방어력 감소(%)",
+      "en": "DEF - (%)",
+      "zh": "防禦力降低(%)"
+    },
+    {
+      "id": "buff_showname_defendpro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "防御力",
+      "ko": "방어력",
+      "en": "DEF",
+      "zh": "防禦力"
+    },
+    {
+      "id": "buff_showname_defpro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "防御力増加",
+      "ko": "방어력 증가",
+      "en": "DEF +",
+      "zh": "防禦力增加"
+    },
+    {
+      "id": "buff_showname_delspeed",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "速度減少",
+      "ko": "속도 감소",
+      "en": "SPD -",
+      "zh": "速度降低"
+    },
+    {
+      "id": "buff_showname_dodgepro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "回避率上昇",
+      "ko": "회피율 상승",
+      "en": "EVA rate increases",
+      "zh": "閃避率提升"
+    },
+    {
+      "id": "buff_showname_dotdpspro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "継続ダメージ増加",
+      "ko": "지속 데미지 증가",
+      "en": "continuous DMG +",
+      "zh": "持續增傷"
+    },
+    {
+      "id": "buff_showname_dpsdrop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "ダメージ軽減",
+      "ko": "데미지 경감",
+      "en": "DMG RED",
+      "zh": "傷害減少"
+    },
+    {
+      "id": "buff_showname_dpspro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "ダメージ増加",
+      "ko": "데미지 증가",
+      "en": "DMG +",
+      "zh": "增傷"
+    },
+    {
+      "id": "buff_showname_dragonfire",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "竜焔",
+      "ko": "용염",
+      "en": "Dragon Flame",
+      "zh": "龍焰"
+    },
+    {
+      "id": "buff_showname_duotianshi",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "堕天使",
+      "ko": "타천사",
+      "en": "Fallen Angel",
+      "zh": "墮天使"
+    },
+    {
+      "id": "buff_showname_duzhu",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "幻影蜘蛛",
+      "ko": "환영 거미",
+      "en": "Phantom Spider",
+      "zh": "幻影蜘蛛"
+    },
+    {
+      "id": "buff_showname_earth",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "土元素",
+      "ko": "흙 원소",
+      "en": "Earth Element",
+      "zh": "土元素"
+    },
+    {
+      "id": "buff_showname_fanjipro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "反撃ダメージ増加",
+      "ko": "반격 데미지 증가",
+      "en": "Counterattack DMG Bonus",
+      "zh": "反擊增傷"
+    },
+    {
+      "id": "buff_showname_fantanabnormal",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "異常状態反射",
+      "ko": "상태 이상 반사",
+      "en": "Abnormal Status Reflection",
+      "zh": "異常狀態反射"
+    },
+    {
+      "id": "buff_showname_finaldpsdrop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "最終ダメージ減少",
+      "ko": "최종 데미지 감소",
+      "en": "Final DMG -",
+      "zh": "最終傷害減少"
+    },
+    {
+      "id": "buff_showname_finaldpspro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "最終ダメージ増加",
+      "ko": "최종 데미지 증가",
+      "en": "Final DMG +",
+      "zh": "最終增傷"
+    },
+    {
+      "id": "buff_showname_fire",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "火元素",
+      "ko": "불 원소",
+      "en": "Fire Element",
+      "zh": "火元素"
+    },
+    {
+      "id": "buff_showname_fjshdkpro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "追加ダメージ耐性",
+      "ko": "추가 데미지 내성",
+      "en": "Extra DMG RES",
+      "zh": "額外傷害抗性"
+    },
+    {
+      "id": "buff_showname_fromatkpro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "チームメイトの攻撃を獲得",
+      "ko": "팀원의 공격을 획득",
+      "en": "Get teammate's ATK",
+      "zh": "獲得隊友攻擊"
+    },
+    {
+      "id": "buff_showname_frombaojipro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "味方の会心率を獲得",
+      "ko": "아군의 치명타 확률을 획득",
+      "en": "Gain Ally's CRT Rate",
+      "zh": "獲得我方的暴擊率"
+    },
+    {
+      "id": "buff_showname_frombaoshangpro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "味方の会心ダメージを獲得",
+      "ko": "아군의 치명 데미지를 획득",
+      "en": "Gain Ally's CRT DMG",
+      "zh": "獲得我方的暴傷"
+    },
+    {
+      "id": "buff_showname_fromdpspro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "味方のダメージ加算を獲得",
+      "ko": "아군의 데미지 보너스 획득",
+      "en": "Gain Ally's DMG Bonus",
+      "zh": "獲得我方的傷害加成"
+    },
+    {
+      "id": "buff_showname_fuhuo",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "復活",
+      "ko": "부활",
+      "en": "Revival",
+      "zh": "復活"
+    },
+    {
+      "id": "buff_showname_fuyun",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "福運",
+      "ko": "행운",
+      "en": "Good Fortune",
+      "zh": "福運"
+    },
+    {
+      "id": "buff_showname_fzsh",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "風の守護",
+      "ko": "바람의 수호",
+      "en": "Wind's Guardian",
+      "zh": "風之守護"
+    },
+    {
+      "id": "buff_showname_gandian",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "感電",
+      "ko": "감전",
+      "en": "Electrify",
+      "zh": "觸電"
+    },
+    {
+      "id": "buff_showname_gedangdrop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "ガード減少",
+      "ko": "가드 감소",
+      "en": "Guard -",
+      "zh": "防禦減少"
+    },
+    {
+      "id": "buff_showname_gedangextdrop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "ガードの追加ダメージ軽減が増加",
+      "ko": "가드의 추가 데미지 경감이 증가",
+      "en": "Guard's Extra DMG DMG RED +",
+      "zh": "格擋額外減傷增加"
+    },
+    {
+      "id": "buff_showname_gedangpro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "ガード増加",
+      "ko": "가드 증가",
+      "en": "Guard +",
+      "zh": "防禦增加"
+    },
+    {
+      "id": "buff_showname_gedangvalpro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "ガード効率アップ",
+      "ko": "가드 효율 상승",
+      "en": "Guard Efficiency Up",
+      "zh": "格擋效率提升"
+    },
+    {
+      "id": "buff_showname_gongsheng",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "共生",
+      "ko": "공생",
+      "en": "Symbiosis",
+      "zh": "共生"
+    },
+    {
+      "id": "buff_showname_guangbi",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "騎士の光-光の壁",
+      "ko": "기사의 빛-빛의 벽",
+      "en": "Knight's Light - Light Wall",
+      "zh": "騎士之光-光之壁"
+    },
+    {
+      "id": "buff_showname_gxfs",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "根の封鎖",
+      "ko": "뿌리의 봉쇄",
+      "en": "Root Blockade",
+      "zh": "根須封鎖"
+    },
+    {
+      "id": "buff_showname_gzel",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "変身",
+      "ko": "변신",
+      "en": "Transformation",
+      "zh": "變身"
+    },
+    {
+      "id": "buff_showname_haishenhudun",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "海神の盾",
+      "ko": "해신의 방패",
+      "en": "Sea God's Shield",
+      "zh": "海神之盾"
+    },
+    {
+      "id": "buff_showname_hbly",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "寒氷領域",
+      "ko": "빙한의 영역",
+      "en": "Frigid Domain",
+      "zh": "寒冰領域"
+    },
+    {
+      "id": "buff_showname_hd2myfjsh",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "追加ダメージ無効化",
+      "ko": "추가 데미지 무효화",
+      "en": "Extra DMG Immune",
+      "zh": "免疫額外傷害"
+    },
+    {
+      "id": "buff_showname_heilong",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "黒竜",
+      "ko": "흑룡",
+      "en": "Black Dragon",
+      "zh": "黑龍"
+    },
+    {
+      "id": "buff_showname_heilongzhili",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "黒竜の力",
+      "ko": "흑룡의 힘",
+      "en": "Black Dragon's Power",
+      "zh": "黑龍之力"
+    },
+    {
+      "id": "buff_showname_hengxingpingzhang",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "星の障壁",
+      "ko": "별의 장벽",
+      "en": "Star Barrier",
+      "zh": "星之障壁"
+    },
+    {
+      "id": "buff_showname_hpdpro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "生命値減少",
+      "ko": "생명력 감소",
+      "en": "HP -",
+      "zh": "生命值減少"
+    },
+    {
+      "id": "buff_showname_hppro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "生命値増加",
+      "ko": "생명력 증가",
+      "en": "HP Boost",
+      "zh": "生命值增加"
+    },
+    {
+      "id": "buff_showname_hsjh",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "海神の加護",
+      "ko": "해신의 가호",
+      "en": "Sea God's Blessing",
+      "zh": "海神加護"
+    },
+    {
+      "id": "buff_showname_huanhun",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "還魂",
+      "ko": "환혼",
+      "en": "Resurrection",
+      "zh": "還魂"
+    },
+    {
+      "id": "buff_showname_huayao",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "エセアルラウネ",
+      "ko": "아르라우네",
+      "en": "Alraune wannabe",
+      "zh": "花妖"
+    },
+    {
+      "id": "buff_showname_hudundelete",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "シールド無効",
+      "ko": "실드 무효",
+      "en": "Shield Ignore",
+      "zh": "護盾無效"
+    },
+    {
+      "id": "buff_showname_hudunpro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "シールド量増加",
+      "ko": "실드량 증가",
+      "en": "Shield +",
+      "zh": "護盾量增加"
+    },
+    {
+      "id": "buff_showname_hushenzhou",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "悪魔の盾",
+      "ko": "악마의 방패",
+      "en": "Demon Shield",
+      "zh": "魔人族之盾"
+    },
+    {
+      "id": "buff_showname_hydmgreducepro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "護衛シールドのダメージ軽減が増加",
+      "ko": "호위 실드의 데미지 경감 증가",
+      "en": "Escort Shield's DMG RED +",
+      "zh": "護衛護盾的減傷增加"
+    },
+    {
+      "id": "buff_showname_inspire",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "鼓舞",
+      "ko": "고무",
+      "en": "Cheer",
+      "zh": "鼓舞"
+    },
+    {
+      "id": "buff_showname_invisible",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "ステルス",
+      "ko": "스텔스",
+      "en": "Stealth",
+      "zh": "潛行"
+    },
+    {
+      "id": "buff_showname_jdld",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "絶対零度",
+      "ko": "절대영도",
+      "en": "Absolute Zero",
+      "zh": "絕對零度"
+    },
+    {
+      "id": "buff_showname_jianyi",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "剣の極意",
+      "ko": "검의 극의",
+      "en": "Sword Mastery",
+      "zh": "劍之極意"
+    },
+    {
+      "id": "buff_showname_jianzhige",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "剣の庇護",
+      "ko": "검의 비호",
+      "en": "Sword's Aegis",
+      "zh": "劍之庇護"
+    },
+    {
+      "id": "buff_showname_jiasuo",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "凍結-枷鎖",
+      "ko": "동결-쇠사슬",
+      "en": "Freeze - Shackles",
+      "zh": "凍結-枷鎖"
+    },
+    {
+      "id": "buff_showname_jiejie",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "結界",
+      "ko": "결계",
+      "en": "Barrier",
+      "zh": "結界"
+    },
+    {
+      "id": "buff_showname_jihan",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "凍結-極寒",
+      "ko": "동결-극한",
+      "en": "Freeze-SP",
+      "zh": "凍結-極寒"
+    },
+    {
+      "id": "buff_showname_jinggu",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "拘束",
+      "ko": "구속",
+      "en": "Restrict",
+      "zh": "拘束"
+    },
+    {
+      "id": "buff_showname_jingjie",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "警戒",
+      "ko": "경계",
+      "en": "Alert",
+      "zh": "警戒"
+    },
+    {
+      "id": "buff_showname_jingzhundrop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "命中減少",
+      "ko": "명중 감소",
+      "en": "ACC -",
+      "zh": "命中減少"
+    },
+    {
+      "id": "buff_showname_jingzhunpro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "命中増加",
+      "ko": "명중 증가",
+      "en": "ACC +",
+      "zh": "命中增加"
+    },
+    {
+      "id": "buff_showname_jinliao",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "回復禁止",
+      "ko": "회복 금지",
+      "en": "Block Heal",
+      "zh": "禁止恢復"
+    },
+    {
+      "id": "buff_showname_jlyj",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "雷霆の印",
+      "ko": "뇌정의 인장",
+      "en": "Thunderbolt Mark",
+      "zh": "雷霆印記"
+    },
+    {
+      "id": "buff_showname_job1adddpspro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "応援系から受けるダメージが増加",
+      "ko": "응원 타입에게 받는 데미지 증가",
+      "en": "DMG Taken from Support Type +",
+      "zh": "受到應援系的傷害增加"
+    },
+    {
+      "id": "buff_showname_job1dpsdrop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "応援系に与えるダメージが減少",
+      "ko": "응원 타입에게 입히는 데미지 감소",
+      "en": "DMG to Support Type -",
+      "zh": "對應援系造成的傷害減少"
+    },
+    {
+      "id": "buff_showname_job1dpspro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "応援系に与えるダメージが増加",
+      "ko": "응원 타입에게 입히는 데미지 증가",
+      "en": "DMG to Support Type +",
+      "zh": "對應援系造成的傷害增加"
+    },
+    {
+      "id": "buff_showname_job2adddpspro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "調和系から受けるダメージが増加",
+      "ko": "조화 타입에게 받는 데미지 증가",
+      "en": "DMG Taken from Harmony Type +",
+      "zh": "受到調和系的傷害增加"
+    },
+    {
+      "id": "buff_showname_job2dpsdrop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "調和系に与えるダメージが減少",
+      "ko": "조화 타입에게 입히는 데미지 경감",
+      "en": "DMG to Harmony Type -",
+      "zh": "對調和系造成的傷害減少"
+    },
+    {
+      "id": "buff_showname_job2dpspro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "調和系に与えるダメージが増加",
+      "ko": "조화 타입에게 입히는 데미지 증가",
+      "en": "DMG to Harmony Type +",
+      "zh": "對調和系造成的傷害增加"
+    },
+    {
+      "id": "buff_showname_job3adddpspro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "神鋭系から受けるダメージが増加",
+      "ko": "신예 타입에게 받는 데미지 증가",
+      "en": "DMG Taken from Divine Type +",
+      "zh": "受到神銳系的傷害增加"
+    },
+    {
+      "id": "buff_showname_job3dpsdrop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "神鋭系に与えるダメージが減少",
+      "ko": "신예 타입에게 입히는 데미지 감소",
+      "en": "DMG to Divine Type -",
+      "zh": "對神銳系造成的傷害減少"
+    },
+    {
+      "id": "buff_showname_job3dpspro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "神鋭系に与えるダメージが増加",
+      "ko": "신예 타입에게 입히는 데미지 증가",
+      "en": "DMG to Divine Type +",
+      "zh": "對神銳系造成的傷害增加"
+    },
+    {
+      "id": "buff_showname_job4adddpspro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "恩寵系から受けるダメージが増加",
+      "ko": "은총 타입에게 받는 데미지 증가",
+      "en": "DMG Taken from Grace Type +",
+      "zh": "受到恩寵系的傷害增加"
+    },
+    {
+      "id": "buff_showname_job4dpsdrop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "恩寵系に与えるダメージが減少",
+      "ko": "은총 타입에게 입히는 데미지 감소",
+      "en": "DMG to Grace Type -",
+      "zh": "對恩寵系造成的傷害減少"
+    },
+    {
+      "id": "buff_showname_job4dpspro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "恩寵系に与えるダメージが増加",
+      "ko": "은총 타입에게 입히는 데미지 증가",
+      "en": "DMG to Grace Type +",
+      "zh": "對恩寵系造成的傷害增加"
+    },
+    {
+      "id": "buff_showname_job5adddpspro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "強靭系から受けるダメージが増加",
+      "ko": "강인 타입에게 받는 데미지 증가",
+      "en": "DMG Taken from Resilient Type +",
+      "zh": "受到強韌系的傷害增加"
+    },
+    {
+      "id": "buff_showname_job5dpsdrop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "強靭系に与えるダメージが増加",
+      "ko": "강인 타입에게 입히는 데미지 증가",
+      "en": "DMG to Resilient Type +",
+      "zh": "對強韌系造成的傷害減少"
+    },
+    {
+      "id": "buff_showname_job6adddpspro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "勇猛系から受けるダメージが増加",
+      "ko": "용맹 타입에게 받는 데미지 증가",
+      "en": "DMG Taken from Valor Type +",
+      "zh": "受到勇猛系的傷害增加"
+    },
+    {
+      "id": "buff_showname_job6dpsdrop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "勇猛系に与えるダメージが減少",
+      "ko": "용맹 타입에게 입히는 데미지 감소",
+      "en": "DMG to Valor Type -",
+      "zh": "對勇猛系造成的傷害減少"
+    },
+    {
+      "id": "buff_showname_job6dpspro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "勇猛系に与えるダメージが増加",
+      "ko": "용맹 타입에게 입히는 데미지 증가",
+      "en": "DMG to Valor Type +",
+      "zh": "對勇猛系造成的傷害增加"
+    },
+    {
+      "id": "buff_showname_juhua",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "騎士の光-巨大化",
+      "ko": "기사의 빛-거대화",
+      "en": "Knight's Light - Giant Form",
+      "zh": "騎士之光-巨大化"
+    },
+    {
+      "id": "buff_showname_jyyz",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "君馭圧制",
+      "ko": "군주의 압제",
+      "en": "Sovereign Domination",
+      "zh": "君馭壓制"
+    },
+    {
+      "id": "buff_showname_kongzhikangxin",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "行動制限耐性",
+      "ko": "행동제한 내성",
+      "en": "CC Resist",
+      "zh": "行動制限耐性"
+    },
+    {
+      "id": "buff_showname_kuangbao",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "バーサーク",
+      "ko": "버서크",
+      "en": "Berserk",
+      "zh": "狂戰士"
+    },
+    {
+      "id": "buff_showname_light",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "光元素",
+      "ko": "빛 원소",
+      "en": "Light Element",
+      "zh": "光元素"
+    },
+    {
+      "id": "buff_showname_liuxue",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "出血",
+      "ko": "출혈",
+      "en": "Bleed",
+      "zh": "出血"
+    },
+    {
+      "id": "buff_showname_liuxueatkpro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "出血特攻",
+      "ko": "출혈 특공",
+      "en": "Bleed Boost",
+      "zh": "出血特攻"
+    },
+    {
+      "id": "buff_showname_liuxuedkpro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "出血耐性",
+      "ko": "출혈 내성",
+      "en": "Bleed RES",
+      "zh": "出血抗性"
+    },
+    {
+      "id": "buff_showname_liuxuedpsdrop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "出血ダメージ低下",
+      "ko": "출혈 데미지 감소",
+      "en": "Bleed DMG -",
+      "zh": "出血傷害降低"
+    },
+    {
+      "id": "buff_showname_liuxuedpspro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "出血ダメージ増加",
+      "ko": "출혈 데미지 증가",
+      "en": "Bleed DMG +",
+      "zh": "出血增傷"
+    },
+    {
+      "id": "buff_showname_liuxuepro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "出血命中率増加",
+      "ko": "출혈 명중률 증가",
+      "en": "Bleed ACC +",
+      "zh": "出血命中率增加"
+    },
+    {
+      "id": "buff_showname_longhun",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "翼竜の魂",
+      "ko": "익룡의 혼",
+      "en": "Dragon Soul",
+      "zh": "龍魂"
+    },
+    {
+      "id": "buff_showname_longlin",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "翼竜の鱗",
+      "ko": "익룡의 비늘",
+      "en": "Dragon Scale",
+      "zh": "龍鱗"
+    },
+    {
+      "id": "buff_showname_longshi",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "龍勢",
+      "ko": "용세",
+      "en": "Dragon Surge",
+      "zh": "龍勢"
+    },
+    {
+      "id": "buff_showname_longyan",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "龍の炎",
+      "ko": "용의 불꽃",
+      "en": "Dragon's Flame",
+      "zh": "龍之炎"
+    },
+    {
+      "id": "buff_showname_maifu",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "絶望の印",
+      "ko": "절망의 인장",
+      "en": "Mark of Despair",
+      "zh": "絕望之印"
+    },
+    {
+      "id": "buff_showname_maxhpback",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "毎ターン最大生命値分の生命値を回復",
+      "ko": "매 턴마다 최대 생명력만큼의 생명력을 회복",
+      "en": "Heal HP equal to max HP every turn.",
+      "zh": "每回合恢復最大生命值的生命值。"
+    },
+    {
+      "id": "buff_showname_maxhpreduce",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "風の侵蝕",
+      "ko": "바람의 침식",
+      "en": "Wind's Erosion",
+      "zh": "風之侵蝕"
+    },
+    {
+      "id": "buff_showname_mdky",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "魔導刻印",
+      "ko": "마도 각인",
+      "en": "Arcane Sigil",
+      "zh": "魔導刻印"
+    },
+    {
+      "id": "buff_showname_mdzf",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "魔導増幅",
+      "ko": "마도 증폭",
+      "en": "Magical Enhance",
+      "zh": "魔導增幅"
+    },
+    {
+      "id": "buff_showname_meihuo",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "洗脳",
+      "ko": "세뇌",
+      "en": "Brainwash",
+      "zh": "洗腦"
+    },
+    {
+      "id": "buff_showname_miankongdrop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "行動制限耐性減少",
+      "ko": "행동제한 내성 감소",
+      "en": "CC Resist -",
+      "zh": "限制行動抗性減少"
+    },
+    {
+      "id": "buff_showname_miankongpro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "行動制限耐性増加",
+      "ko": "행동 제한 내성 증가",
+      "en": "CC Resist +",
+      "zh": "限制行動抗性增加"
+    },
+    {
+      "id": "buff_showname_miansi",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "不死",
+      "ko": "불사",
+      "en": "Undead",
+      "zh": "不死"
+    },
+    {
+      "id": "buff_showname_modifybuff",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "アニメーション効果",
+      "ko": "연출 효과",
+      "en": "Dynamic Effect",
+      "zh": "動畫效果"
+    },
+    {
+      "id": "buff_showname_moren",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "魔刃",
+      "ko": "마력 칼날",
+      "en": "Demon Blade",
+      "zh": "魔刃"
+    },
+    {
+      "id": "buff_showname_moshouattr",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "魔獣加算ステータス",
+      "ko": "마수 보너스 능력치",
+      "en": "Beast Bonus Status",
+      "zh": "魔獸加成能力值"
+    },
+    {
+      "id": "buff_showname_msjt",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "魔術マスタリ",
+      "ko": "마술 마스터리",
+      "en": "Magic Mastery",
+      "zh": "魔術精通"
+    },
+    {
+      "id": "buff_showname_msskillpro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "魔獣スキルダメージ増加",
+      "ko": "마수 스킬 데미지 증가",
+      "en": "Beast Skill DMG +",
+      "zh": "魔獸技能增傷"
+    },
+    {
+      "id": "buff_showname_mydot",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "継続ダメージ無効化",
+      "ko": "지속 데미지 무효화",
+      "en": "Immune to DoT",
+      "zh": "免疫持續傷害"
+    },
+    {
+      "id": "buff_showname_nextbaojipro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "次の攻撃の会心率が上昇する",
+      "ko": "다음 공격의 치명타 확률이 상승한다.",
+      "en": "CRT rate of the next ATK increases.",
+      "zh": "下次攻擊的暴擊率會提升"
+    },
+    {
+      "id": "buff_showname_normalpro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "通常攻撃ダメージ増加",
+      "ko": "일반 공격 데미지 증가",
+      "en": "Basic ATK DMG +",
+      "zh": "普通攻擊增傷"
+    },
+    {
+      "id": "buff_showname_normalskillpro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "通常攻撃ダメージ加算",
+      "ko": "일반 공격 데미지 보너스",
+      "en": "Basic ATK DMG Bonus",
+      "zh": "普通攻擊傷害加成"
+    },
+    {
+      "id": "buff_showname_nsjh",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "女神の加護",
+      "ko": "여신의 가호",
+      "en": "Goddess's Blessing",
+      "zh": "女神加護"
+    },
+    {
+      "id": "buff_showname_nsly",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "女神領域",
+      "ko": "여신 영역",
+      "en": "Goddess Domain",
+      "zh": "女神領域"
+    },
+    {
+      "id": "buff_showname_nuhuo",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "怒りの炎",
+      "ko": "분노의 불꽃",
+      "en": "Flame of Rage",
+      "zh": "憤怒之炎"
+    },
+    {
+      "id": "buff_showname_nuqidmgreduce",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "気力ダメージ増加が低下",
+      "ko": "기력 데미지 증가치 감소",
+      "en": "SP DMG Bonus decreases",
+      "zh": "怒氣增傷降低"
+    },
+    {
+      "id": "buff_showname_nuqidrop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "気力回復低下",
+      "ko": "기력 회복 저하",
+      "en": "SP Recover -",
+      "zh": "怒氣恢復降低"
+    },
+    {
+      "id": "buff_showname_nuqihuifu",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "気力回復",
+      "ko": "기력 회복",
+      "en": "SP Recover",
+      "zh": "怒氣恢復"
+    },
+    {
+      "id": "buff_showname_nuqipro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "気力回復増加",
+      "ko": "기력 회복 증가",
+      "en": "SP Recover +",
+      "zh": "怒氣恢復增加"
+    },
+    {
+      "id": "buff_showname_nwhw",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "炉神護衛",
+      "ko": "노신 호위",
+      "en": "Furnace Guardian",
+      "zh": "爐神護衛"
+    },
+    {
+      "id": "buff_showname_onepro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "単体ダメージ増加",
+      "ko": "단일 데미지 증가",
+      "en": "Single DMG +",
+      "zh": "單體增傷"
+    },
+    {
+      "id": "buff_showname_onlynormal",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "通常攻撃しかできない",
+      "ko": "일반 공격만 발동 가능",
+      "en": "Can only use Basic ATK",
+      "zh": "只能進行普通攻擊"
+    },
+    {
+      "id": "buff_showname_pihu",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "庇護",
+      "ko": "비호",
+      "en": "Protection",
+      "zh": "庇護"
+    },
+    {
+      "id": "buff_showname_pojiadrop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "貫通減少",
+      "ko": "관통 감소",
+      "en": "Breach -",
+      "zh": "貫通減少"
+    },
+    {
+      "id": "buff_showname_pojiapro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "貫通増加",
+      "ko": "관통 증가",
+      "en": "Breach +",
+      "zh": "貫通增加"
+    },
+    {
+      "id": "buff_showname_pojie",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "破界",
+      "ko": "파계",
+      "en": "Breaker",
+      "zh": "破界"
+    },
+    {
+      "id": "buff_showname_pvpdpspro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "PvPダメージ増加",
+      "ko": "PvP 데미지 증가",
+      "en": "PvP DMG +",
+      "zh": "PvP增傷"
+    },
+    {
+      "id": "buff_showname_pvphudun2pro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "護衛シールド増加",
+      "ko": "호위 실드 수치가 증가",
+      "en": "Escort Shield+",
+      "zh": "護衛護盾增加"
+    },
+    {
+      "id": "buff_showname_pvpjianshang",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "PvPダメージ減少",
+      "ko": "PvP 데미지 감소",
+      "en": "PvP DMG -",
+      "zh": "PvP減傷"
+    },
+    {
+      "id": "buff_showname_qingshi",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "侵食",
+      "ko": "침식",
+      "en": "Corrosion",
+      "zh": "侵蝕"
+    },
+    {
+      "id": "buff_showname_qiyuan",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "祈願",
+      "ko": "기원",
+      "en": "Wish",
+      "zh": "祈願"
+    },
+    {
+      "id": "buff_showname_qiyuanpro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "祈願強化",
+      "ko": "기원 강화",
+      "en": "Wish Boost",
+      "zh": "祈願強化"
+    },
+    {
+      "id": "buff_showname_qszl",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "騎士の力",
+      "ko": "기사의 힘",
+      "en": "Knight's Power",
+      "zh": "騎士之力"
+    },
+    {
+      "id": "buff_showname_sangshi",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "ゾンビ",
+      "ko": "좀비",
+      "en": "Zombie",
+      "zh": "殭屍"
+    },
+    {
+      "id": "buff_showname_sangshizhili",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "ゾンビの力",
+      "ko": "좀비의 힘",
+      "en": "Zombie Power",
+      "zh": "殭屍之力"
+    },
+    {
+      "id": "buff_showname_sbyj",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "妖精の印",
+      "ko": "요정의 인장",
+      "en": "Fairy’s Crest",
+      "zh": "妖精之印"
+    },
+    {
+      "id": "buff_showname_shds",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "霜痕凍傷",
+      "ko": "서리 동상",
+      "en": "Frostbite",
+      "zh": "霜痕凍傷"
+    },
+    {
+      "id": "buff_showname_shengdian",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "聖典",
+      "ko": "성전",
+      "en": "Sacred Tome",
+      "zh": "聖典"
+    },
+    {
+      "id": "buff_showname_shenghua",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "昇華",
+      "ko": "승화",
+      "en": "Evolution",
+      "zh": "昇華"
+    },
+    {
+      "id": "buff_showname_shenghuo",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "聖火",
+      "ko": "성화",
+      "en": "Sacred Flame",
+      "zh": "聖火"
+    },
+    {
+      "id": "buff_showname_shengji",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "犠牲",
+      "ko": "희생",
+      "en": "Sacrifice",
+      "zh": "犧牲"
+    },
+    {
+      "id": "buff_showname_shengjianzhili",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "聖剣の力",
+      "ko": "성검의 힘",
+      "en": "Holy Sword's Power",
+      "zh": "聖劍之力"
+    },
+    {
+      "id": "buff_showname_shenpan",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "審判",
+      "ko": "심판",
+      "en": "Referee",
+      "zh": "審判"
+    },
+    {
+      "id": "buff_showname_shenpanpro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "審判強化",
+      "ko": "심판 강화",
+      "en": "Referee Boost",
+      "zh": "審判強化"
+    },
+    {
+      "id": "buff_showname_shenwei",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "覇気",
+      "ko": "패기",
+      "en": "Arrogant",
+      "zh": "霸氣"
+    },
+    {
+      "id": "buff_showname_shield",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "防爆盾",
+      "ko": "방폭 방패",
+      "en": "Anti-Explosion Shield",
+      "zh": "防爆盾"
+    },
+    {
+      "id": "buff_showname_shihua",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "石化",
+      "ko": "석화",
+      "en": "Petrify",
+      "zh": "石化"
+    },
+    {
+      "id": "buff_showname_shipo",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "看破",
+      "ko": "간파",
+      "en": "Perception",
+      "zh": "看破"
+    },
+    {
+      "id": "buff_showname_shoulijian",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "手裏剣",
+      "ko": "수리검",
+      "en": "Throwing Knives",
+      "zh": "手裏劍"
+    },
+    {
+      "id": "buff_showname_shouling",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "獣霊シールド",
+      "ko": "수령 실드",
+      "en": "Beast Spirit Shield",
+      "zh": "獸靈護盾"
+    },
+    {
+      "id": "buff_showname_shouyu",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "防御",
+      "ko": "방어",
+      "en": "DEF",
+      "zh": "防禦"
+    },
+    {
+      "id": "buff_showname_shuanghen",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "霜痕",
+      "ko": "서리의 흔적",
+      "en": "Frost Mark",
+      "zh": "霜痕"
+    },
+    {
+      "id": "buff_showname_shuiying",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "水影",
+      "ko": "수영",
+      "en": "Water Shadow",
+      "zh": "水影"
+    },
+    {
+      "id": "buff_showname_shujing",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "トレント",
+      "ko": "트렌트",
+      "en": "Treant",
+      "zh": "樹人"
+    },
+    {
+      "id": "buff_showname_skilldpsdrop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "スキルダメージ減少",
+      "ko": "스킬 데미지 감소",
+      "en": "Skill DMG -",
+      "zh": "技能傷害減少"
+    },
+    {
+      "id": "buff_showname_skilldpspro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "スキルダメージ増加",
+      "ko": "스킬 데미지 증가",
+      "en": "Skill DMG +",
+      "zh": "技能傷害增加"
+    },
+    {
+      "id": "buff_showname_sleep",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "睡眠",
+      "ko": "수면",
+      "en": "Sleep",
+      "zh": "睡眠"
+    },
+    {
+      "id": "buff_showname_smsd",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "天使の庇護",
+      "ko": "천사의 비호",
+      "en": "Angel's Protection",
+      "zh": "天使庇護"
+    },
+    {
+      "id": "buff_showname_solo",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "一騎打ち",
+      "ko": "일기토",
+      "en": "Duel",
+      "zh": "單挑"
+    },
+    {
+      "id": "buff_showname_ssstop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "領域スキルが無効",
+      "ko": "영역 스킬 무효",
+      "en": "Area Skill is disabled",
+      "zh": "領域技能無效"
+    },
+    {
+      "id": "buff_showname_sszl",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "水聖の力",
+      "ko": "수성의 힘",
+      "en": "Water Saint's Power",
+      "zh": "水聖之力"
+    },
+    {
+      "id": "buff_showname_suishen",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "歳神の加護",
+      "ko": "세신의 가호",
+      "en": "God's Blessing",
+      "zh": "歲神的佑護"
+    },
+    {
+      "id": "buff_showname_suoxiao",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "縮小",
+      "ko": "축소",
+      "en": "Shrink",
+      "zh": "縮小"
+    },
+    {
+      "id": "buff_showname_swxg",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "死の宣告",
+      "ko": "죽음의 선고",
+      "en": "Death Sentence",
+      "zh": "死亡宣告"
+    },
+    {
+      "id": "buff_showname_syff",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "深淵の風縛",
+      "ko": "심연의 바람 속박",
+      "en": "Abyss's Wind Shackles",
+      "zh": "深淵風縛"
+    },
+    {
+      "id": "buff_showname_syns",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "深淵の瞳",
+      "ko": "심연의 눈동자",
+      "en": "Abyssal Eyes",
+      "zh": "深淵之瞳"
+    },
+    {
+      "id": "buff_showname_sysh",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "深淵の守護",
+      "ko": "심연의 수호",
+      "en": "Abyss's Guard",
+      "zh": "深淵守護"
+    },
+    {
+      "id": "buff_showname_szxl",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "聖なる誘惑",
+      "ko": "성스러운 유혹",
+      "en": "Holy Temptation",
+      "zh": "神聖誘惑"
+    },
+    {
+      "id": "buff_showname_targetlimit_drop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "攻撃対象減少",
+      "ko": "공격 대상 감소",
+      "en": "ATK Target RED",
+      "zh": "攻擊對象減少"
+    },
+    {
+      "id": "buff_showname_temporarybaoji",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "次の攻撃は必ず会心になる",
+      "ko": "다음 공격은 반드시 치명이 발생한다.",
+      "en": "The next ATK is guaranteed to be a CRT.",
+      "zh": "下次攻擊必定暴擊"
+    },
+    {
+      "id": "buff_showname_temporaryxppro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "次のスキルダメージが上昇する",
+      "ko": "다음 스킬의 데미지가 상승한다.",
+      "en": "The next Skill's DMG increases.",
+      "zh": "下次技能傷害提升"
+    },
+    {
+      "id": "buff_showname_tiebi",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "確率ダメージ軽減",
+      "ko": "확률 데미지 경감",
+      "en": "Chance-based DMG RED",
+      "zh": "機率減傷"
+    },
+    {
+      "id": "buff_showname_tlec",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "脱皮厄祓",
+      "ko": "탈피액불",
+      "en": "Shed Misfortune",
+      "zh": "脫皮厄祓"
+    },
+    {
+      "id": "buff_showname_tongge",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "同格",
+      "ko": "동격",
+      "en": "Equal Standing",
+      "zh": "同級"
+    },
+    {
+      "id": "buff_showname_tongku",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "苦痛",
+      "ko": "고통",
+      "en": "Pain",
+      "zh": "痛苦"
+    },
+    {
+      "id": "buff_showname_tongxin",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "味方のダメージ負担する",
+      "ko": "아군의 데미지를 부담한다.",
+      "en": "Take damage for allies.",
+      "zh": "承受我方的傷害"
+    },
+    {
+      "id": "buff_showname_truedamagepro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "固定ダメージ増加",
+      "ko": "고정 데미지 증가",
+      "en": "Fixed DMG Bonus",
+      "zh": "固定傷害增加"
+    },
+    {
+      "id": "buff_showname_tymy",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "統率の魔眼",
+      "ko": "통솔의 마안",
+      "en": "Command's Evil Eye",
+      "zh": "統率魔眼"
+    },
+    {
+      "id": "buff_showname_unbaojidrop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "会心耐性低下",
+      "ko": "치명 내성 저하",
+      "en": "CRT RES -",
+      "zh": "暴擊抗性降低"
+    },
+    {
+      "id": "buff_showname_unbaojipro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "会心耐性",
+      "ko": "치명 내성",
+      "en": "CRT RES",
+      "zh": "暴擊抗性"
+    },
+    {
+      "id": "buff_showname_undercuredrop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "被回復量減少",
+      "ko": "받는 치유량 감소",
+      "en": "Healing Received -",
+      "zh": "受到恢復量減少"
+    },
+    {
+      "id": "buff_showname_undercurepro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "被回復量増加",
+      "ko": "받는 치유량 증가",
+      "en": "Healing Received +",
+      "zh": "受到恢復量增加"
+    },
+    {
+      "id": "buff_showname_undotdpsdrop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "被継続ダメージ増加",
+      "ko": "받는 지속 데미지 증가",
+      "en": "Received continuous DMG +",
+      "zh": "持續傷害增加"
+    },
+    {
+      "id": "buff_showname_undpsdrop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "ダメージ軽減減少",
+      "ko": "데미지 경감 감소",
+      "en": "DMG RED -",
+      "zh": "減傷減少"
+    },
+    {
+      "id": "buff_showname_undpspro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "ダメージ軽減増加",
+      "ko": "데미지 경감 증가",
+      "en": "DMG RED +",
+      "zh": "減傷增加"
+    },
+    {
+      "id": "buff_showname_unfinaldps",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "最終ダメージ軽減",
+      "ko": "최종 데미지 경감",
+      "en": "Final DMG RED",
+      "zh": "最終減傷"
+    },
+    {
+      "id": "buff_showname_unfinaldpsdrop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "最終ダメージ軽減ダウン",
+      "ko": "최종 데미지 경감 감소",
+      "en": "Final DMG RED Down",
+      "zh": "最終減傷降低"
+    },
+    {
+      "id": "buff_showname_unfinaldpspro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "最終ダメージ軽減増加",
+      "ko": "최종 데미지 경감 증가",
+      "en": "Final DMG RED increase",
+      "zh": "最終減傷提升"
+    },
+    {
+      "id": "buff_showname_unkiuxuedpupro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "灼熱ダメージ耐性低下",
+      "ko": "작열 데미지 내성 감소",
+      "en": "Burn DMG RES -",
+      "zh": "灼燒傷害抗性降低"
+    },
+    {
+      "id": "buff_showname_unliuxuedpspro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "出血ダメージ軽減",
+      "ko": "출혈 데미지 경감",
+      "en": "Bleed DMG RED",
+      "zh": "出血減傷"
+    },
+    {
+      "id": "buff_showname_unliuxuedrop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "出血ダメージ耐性低下",
+      "ko": "출혈 데미지 내성 저하",
+      "en": "Bleed DMG RES -",
+      "zh": "出血傷害抗性降低"
+    },
+    {
+      "id": "buff_showname_unpassive",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "パッシブスキル無効",
+      "ko": "패시브 스킬 무효",
+      "en": "Passive Skill Disabled",
+      "zh": "被動技能失效"
+    },
+    {
+      "id": "buff_showname_unpojia",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "貫通耐性",
+      "ko": "관통 내성",
+      "en": "Breach RES",
+      "zh": "貫通抗性"
+    },
+    {
+      "id": "buff_showname_unpojiadrop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "貫通耐性低下",
+      "ko": "관통 내성 저하",
+      "en": "Breach RES Down",
+      "zh": "貫通抗性降低"
+    },
+    {
+      "id": "buff_showname_unpojiapro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "貫通耐性増加",
+      "ko": "관통 내성 증가",
+      "en": "Breach RES +",
+      "zh": "貫通抗性提升"
+    },
+    {
+      "id": "buff_showname_unskilldpsdrop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "スキルダメージ軽減低下",
+      "ko": "스킬 데미지 경감 감소",
+      "en": "Skill DMG RED Down",
+      "zh": "技能減傷降低"
+    },
+    {
+      "id": "buff_showname_unskilldpspro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "スキルダメージ軽減",
+      "ko": "스킬 데미지 경감",
+      "en": "Skill DMG RED",
+      "zh": "技能傷害減免"
+    },
+    {
+      "id": "buff_showname_unxuanyundpspro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "目眩ダメージ軽減",
+      "ko": "스턴 데미지 경감",
+      "en": "Stun DMG RED",
+      "zh": "眩暈減傷"
+    },
+    {
+      "id": "buff_showname_unzhongdudpsdrop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "毒で受けるダメージが増加",
+      "ko": "독으로 받는 데미지 증가",
+      "en": "Poison DMG Taken +",
+      "zh": "受到中毒的傷害增加"
+    },
+    {
+      "id": "buff_showname_unzhongdudpspro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "毒ダメージ耐性",
+      "ko": "독 데미지 내성",
+      "en": "Poison DMG RES",
+      "zh": "中毒傷害抗性"
+    },
+    {
+      "id": "buff_showname_unzhongdudrop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "毒ダメージ耐性低下",
+      "ko": "독 데미지 내성 감소",
+      "en": "Poison DMG RES -",
+      "zh": "中毒傷害抗性降低"
+    },
+    {
+      "id": "buff_showname_unzhuoshaodpspro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "灼熱ダメージ軽減",
+      "ko": "작열 데미지 경감",
+      "en": "Burn DMG RED",
+      "zh": "灼燒減傷"
+    },
+    {
+      "id": "buff_showname_water",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "水元素",
+      "ko": "물 원소",
+      "en": "Water Element",
+      "zh": "水元素"
+    },
+    {
+      "id": "buff_showname_wind",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "風元素",
+      "ko": "바람 원소",
+      "en": "Wind Element",
+      "zh": "風元素"
+    },
+    {
+      "id": "buff_showname_xhyy",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "真紅の愉悦",
+      "ko": "진홍의 유열",
+      "en": "Crimson Delight",
+      "zh": "深紅愉悅"
+    },
+    {
+      "id": "buff_showname_xinghong",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "深紅",
+      "ko": "진홍",
+      "en": "Crimson",
+      "zh": "深紅"
+    },
+    {
+      "id": "buff_showname_xixue",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "吸収",
+      "ko": "흡혈",
+      "en": "Absorb",
+      "zh": "吸血"
+    },
+    {
+      "id": "buff_showname_xixue2",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "生命吸収",
+      "ko": "생명 흡수",
+      "en": "HP Absorb",
+      "zh": "生命吸收"
+    },
+    {
+      "id": "buff_showname_xlfp",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "チャージ反撃",
+      "ko": "차지 반격",
+      "en": "Charge Counterattack",
+      "zh": "蓄力反擊"
+    },
+    {
+      "id": "buff_showname_xnhd",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "脱皮",
+      "ko": "탈피",
+      "en": "Molting",
+      "zh": "蛻皮"
+    },
+    {
+      "id": "buff_showname_xpskillpro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "スキルダメージ",
+      "ko": "스킬 데미지",
+      "en": "Skill DMG",
+      "zh": "技能傷害"
+    },
+    {
+      "id": "buff_showname_xuanyun",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "目眩",
+      "ko": "스턴",
+      "en": "Stun",
+      "zh": "眩暈"
+    },
+    {
+      "id": "buff_showname_xuanyunatkpro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "目眩特攻",
+      "ko": "스턴 특공",
+      "en": "DMG to Stun Target +",
+      "zh": "眩暈特攻"
+    },
+    {
+      "id": "buff_showname_xuanyundkpro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "目眩耐性",
+      "ko": "스턴 내성",
+      "en": "Stun RES",
+      "zh": "眩暈抗性"
+    },
+    {
+      "id": "buff_showname_xuechang",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "血の代償",
+      "ko": "피의 대가",
+      "en": "Blood Price",
+      "zh": "血之代償"
+    },
+    {
+      "id": "buff_showname_xuemaipro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "血脈上限アップ",
+      "ko": "혈맥 상한 증가",
+      "en": "Bloodline Limit Up",
+      "zh": "血脈上限提升"
+    },
+    {
+      "id": "buff_showname_xuenu",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "血の奴隷",
+      "ko": "피의 노예",
+      "en": "Blood's Slave",
+      "zh": "血之奴隸"
+    },
+    {
+      "id": "buff_showname_xuewu",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "血舞",
+      "ko": "혈무",
+      "en": "Blood Dance",
+      "zh": "血舞"
+    },
+    {
+      "id": "buff_showname_xunjie",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "騎士の光-迅速",
+      "ko": "기사의 빛-신속",
+      "en": "Knight's Light - Quickness",
+      "zh": "騎士之光-迅速"
+    },
+    {
+      "id": "buff_showname_xuruo",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "虚弱",
+      "ko": "쇠약",
+      "en": "Weakened",
+      "zh": "虛弱"
+    },
+    {
+      "id": "buff_showname_xyhm",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "意図的な破壊",
+      "ko": "의도적인 파괴",
+      "en": "Intentional Destruction",
+      "zh": "蓄意破壞"
+    },
+    {
+      "id": "buff_showname_xyhm1",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "深紅乱舞",
+      "ko": "진홍 난무",
+      "en": "Crimson Dance",
+      "zh": "深紅亂舞"
+    },
+    {
+      "id": "buff_showname_xyhm2",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "真祖威圧",
+      "ko": "진조 위압",
+      "en": "Ancestor's Oppression",
+      "zh": "真祖威壓"
+    },
+    {
+      "id": "buff_showname_xyhm3",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "髄吸一撃",
+      "ko": "흡골의 일격",
+      "en": "Draining Strike",
+      "zh": "吸髓一擊"
+    },
+    {
+      "id": "buff_showname_xyhm4",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "紅血戒律",
+      "ko": "홍혈 계율",
+      "en": "Blood Commandment",
+      "zh": "紅血戒律"
+    },
+    {
+      "id": "buff_showname_ycsh",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "負傷遅延",
+      "ko": "부상 지연",
+      "en": "Delayed HP Loss",
+      "zh": "負傷延遲"
+    },
+    {
+      "id": "buff_showname_ycsh_xy",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "遅延ダメージ",
+      "ko": "지연 데미지",
+      "en": "Delayed DMG",
+      "zh": "延遲傷害"
+    },
+    {
+      "id": "buff_showname_yds",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "银盾閃",
+      "ko": "은순섬",
+      "en": "Silver Shield Flash",
+      "zh": "銀盾閃"
+    },
+    {
+      "id": "buff_showname_ydxf",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "シールドチャージ",
+      "ko": "실드 차지",
+      "en": "Shield charge",
+      "zh": "護盾蓄力"
+    },
+    {
+      "id": "buff_showname_yhjy",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "月華剣の極意",
+      "ko": "월화검의 극의",
+      "en": "Moonlight Sword's SP",
+      "zh": "月華劍之極意"
+    },
+    {
+      "id": "buff_showname_yisui",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "脆弱",
+      "ko": "취약",
+      "en": "Vulnerable",
+      "zh": "脆弱"
+    },
+    {
+      "id": "buff_showname_youlingzhili",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "幽霊の力",
+      "ko": "유령의 힘",
+      "en": "Ghost Power",
+      "zh": "幽靈之力"
+    },
+    {
+      "id": "buff_showname_yuanhu",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "援護",
+      "ko": "지원",
+      "en": "Support",
+      "zh": "援護"
+    },
+    {
+      "id": "buff_showname_yushou",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "御獣",
+      "ko": "마수의 힘",
+      "en": "Divine Beast",
+      "zh": "御獸"
+    },
+    {
+      "id": "buff_showname_zhanyi",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "戦意",
+      "ko": "전의",
+      "en": "Battle Spirit",
+      "zh": "戰意"
+    },
+    {
+      "id": "buff_showname_zhiliaozhuanyi",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "回復転移",
+      "ko": "회복 전이",
+      "en": "Heal Transfer",
+      "zh": "恢復轉移"
+    },
+    {
+      "id": "buff_showname_zhongdu",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "毒",
+      "ko": "독",
+      "en": "Poison",
+      "zh": "毒"
+    },
+    {
+      "id": "buff_showname_zhongduatkpro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "毒特攻",
+      "ko": "독 특공",
+      "en": "DMG to Poison Target +",
+      "zh": "中毒特攻"
+    },
+    {
+      "id": "buff_showname_zhongdudkdrop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "毒耐性低下",
+      "ko": "독 내성 감소",
+      "en": "Poison RES Down",
+      "zh": "中毒抗性降低"
+    },
+    {
+      "id": "buff_showname_zhongdudkpro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "毒耐性",
+      "ko": "독 내성",
+      "en": "Poison RES",
+      "zh": "中毒抗性"
+    },
+    {
+      "id": "buff_showname_zhongdudpsdrop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "毒ダメージ軽減",
+      "ko": "독 데미지 경감",
+      "en": "Poison DMG -",
+      "zh": "中毒減傷"
+    },
+    {
+      "id": "buff_showname_zhongdudpspro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "毒ダメージ増加",
+      "ko": "독 데미지 증가",
+      "en": "Poison DMG +",
+      "zh": "中毒增傷"
+    },
+    {
+      "id": "buff_showname_zhongdupro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "毒の命中が増加",
+      "ko": "독의 명중이 증가",
+      "en": "Poison's ACC +",
+      "zh": "中毒的命中率增加"
+    },
+    {
+      "id": "buff_showname_zhongzi",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "種",
+      "ko": "씨앗",
+      "en": "Seed",
+      "zh": "種子"
+    },
+    {
+      "id": "buff_showname_zhuangtaikangxin",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "デバフ耐性",
+      "ko": "디버프 내성",
+      "en": "Debuff RES",
+      "zh": "減益抗性"
+    },
+    {
+      "id": "buff_showname_zhuanzhu",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "集中",
+      "ko": "집중",
+      "en": "Concentration",
+      "zh": "集中"
+    },
+    {
+      "id": "buff_showname_zhuohun",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "灼魂",
+      "ko": "작열혼",
+      "en": "Scorching Soul",
+      "zh": "灼魂"
+    },
+    {
+      "id": "buff_showname_zhuoshao",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "灼熱",
+      "ko": "작열",
+      "en": "Burn",
+      "zh": "灼燒"
+    },
+    {
+      "id": "buff_showname_zhuoshaoatkpro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "灼熱特攻",
+      "ko": "작열 특공",
+      "en": "DMG to Burn Target +",
+      "zh": "灼燒特攻"
+    },
+    {
+      "id": "buff_showname_zhuoshaodkdrop",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "灼熱耐性低下",
+      "ko": "작열 내성 감소",
+      "en": "Burn RES Down",
+      "zh": "灼燒抗性降低"
+    },
+    {
+      "id": "buff_showname_zhuoshaodkpro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "灼熱耐性",
+      "ko": "작열 내성",
+      "en": "Burn RES",
+      "zh": "灼燒抗性"
+    },
+    {
+      "id": "buff_showname_zhuoshaodpspro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "灼熱ダメージ増加",
+      "ko": "작열 데미지 증가",
+      "en": "Burn DMG +",
+      "zh": "灼燒增傷"
+    },
+    {
+      "id": "buff_showname_zhuoshaopro",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "灼熱の命中率増加",
+      "ko": "작열의 명중률 증가",
+      "en": "Burn ACC +",
+      "zh": "灼燒的命中率增加"
+    },
+    {
+      "id": "buff_showname_zjws",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "主君の威勢",
+      "ko": "주군의 위세",
+      "en": "Lord's Might",
+      "zh": "主君威勢"
+    },
+    {
+      "id": "buff_showname_zlxs",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "真竜顕現",
+      "ko": "진룡 현현",
+      "en": "True Dragon Manifestation",
+      "zh": "真龍顯現"
+    },
+    {
+      "id": "Chapter_0",
+      "category": "迷宮・コンテンツ",
+      "sub": "迷宮名",
+      "ja": "オルクス大迷宮",
+      "ko": "오르크스 대미궁",
+      "en": "The Great Orcus Labyrinth",
+      "zh": "奧爾庫司大迷宮"
+    },
+    {
+      "id": "Chapter_2",
+      "category": "迷宮・コンテンツ",
+      "sub": "迷宮名",
+      "ja": "ライセン大迷宮",
+      "ko": "라이센 대미궁",
+      "en": "The Great Reisen Labyrinth",
+      "zh": "萊森大迷宮"
+    },
+    {
+      "id": "Chapter_3",
+      "category": "迷宮・コンテンツ",
+      "sub": "迷宮名",
+      "ja": "グリューエン大火山",
+      "ko": "그류엔 대화산",
+      "en": "The Grand Gruen Volcano",
+      "zh": "古盧恩大火山"
+    },
+    {
+      "id": "Chapter_4",
+      "category": "迷宮・コンテンツ",
+      "sub": "迷宮名",
+      "ja": "メルジーネ海底遺跡",
+      "ko": "메르지네 해저 유적",
+      "en": "The Sunken Ruins of Melusine",
+      "zh": "梅爾基涅海底遺跡"
+    },
+    {
+      "id": "Chapter_5",
+      "category": "迷宮・コンテンツ",
+      "sub": "迷宮名",
+      "ja": "神山大迷宮",
+      "ko": "신산 대미궁",
+      "en": "The Divine Mountain Labyrinth",
+      "zh": "神山大迷宮"
+    },
+    {
+      "id": "Chapter_6",
+      "category": "迷宮・コンテンツ",
+      "sub": "迷宮名",
+      "ja": "ハルツィナ樹海",
+      "ko": "하르치나 수해",
+      "en": "Haltsina Sea of Trees",
+      "zh": "哈爾崔那樹海"
+    },
+    {
+      "id": "Chapter_7",
+      "category": "迷宮・コンテンツ",
+      "sub": "迷宮名",
+      "ja": "シュネー雪原",
+      "ko": "슈네 설원",
+      "en": "Schnee Snow Fields",
+      "zh": "修尼雪原"
+    },
+    {
+      "id": "core_adou",
+      "category": "迷宮・コンテンツ",
+      "sub": "コンテンツ",
+      "ja": "魔物迎撃戦",
+      "ko": "마물 요격전",
+      "en": "Monster Interception",
+      "zh": "魔物迎擊戰"
+    },
+    {
+      "id": "core_Daily_Assistant_name_11",
+      "category": "迷宮・コンテンツ",
+      "sub": "コンテンツ",
+      "ja": "魔獣戦争",
+      "ko": "마수 전쟁",
+      "en": "War of Beasts",
+      "zh": "魔獸戰爭"
+    },
+    {
+      "id": "core_gongnengyugao_12",
+      "category": "迷宮・コンテンツ",
+      "sub": "コンテンツ",
+      "ja": "競技場",
+      "ko": "투기장",
+      "en": "Arena",
+      "zh": "競技場"
+    },
+    {
+      "id": "core_gonghui_11",
+      "category": "迷宮・コンテンツ",
+      "sub": "コンテンツ",
+      "ja": "ギルド",
+      "ko": "길드",
+      "en": "Guild",
+      "zh": "公會"
+    },
+    {
+      "id": "core_jdcc_xzzb_txt_tab_1_8",
+      "category": "迷宮・コンテンツ",
+      "sub": "システム",
+      "ja": "アーティファクト",
+      "ko": "아티팩트",
+      "en": "Artifact",
+      "zh": "神器"
+    },
+    {
+      "id": "core_mofazhen_xz1_txt_zt_5",
+      "category": "迷宮・コンテンツ",
+      "sub": "システム",
+      "ja": "魔法陣",
+      "ko": "마법진",
+      "en": "Magic Circle",
+      "zh": "魔法陣"
+    },
+    {
+      "id": "core_shenshu",
+      "category": "迷宮・コンテンツ",
+      "sub": "システム",
+      "ja": "神術",
+      "ko": "신술",
+      "en": "Divine Art",
+      "zh": "神術"
+    },
+    {
+      "id": "core_yingling_1",
+      "category": "迷宮・コンテンツ",
+      "sub": "システム",
+      "ja": "煌霊",
+      "ko": "황령",
+      "en": "Radiant Spirit",
+      "zh": "煌靈"
+    },
+    {
+      "id": "core_atk",
+      "category": "迷宮・コンテンツ",
+      "sub": "ステータス",
+      "ja": "攻撃力",
+      "ko": "공격력",
+      "en": "ATK",
+      "zh": "攻擊力"
+    },
+    {
+      "id": "core_hp",
+      "category": "迷宮・コンテンツ",
+      "sub": "ステータス",
+      "ja": "生命値",
+      "ko": "생명력",
+      "en": "HP",
+      "zh": "生命值"
+    },
+    {
+      "id": "core_def",
+      "category": "迷宮・コンテンツ",
+      "sub": "ステータス",
+      "ja": "防御力",
+      "ko": "방어",
+      "en": "DEF",
+      "zh": "防禦力"
+    },
+    {
+      "id": "core_speed",
+      "category": "迷宮・コンテンツ",
+      "sub": "ステータス",
+      "ja": "速度",
+      "ko": "속도",
+      "en": "SPD",
+      "zh": "速度"
+    },
+    {
+      "id": "core_baojipro",
+      "category": "迷宮・コンテンツ",
+      "sub": "ステータス",
+      "ja": "会心率",
+      "ko": "치명타 확률",
+      "en": "CRT",
+      "zh": "暴擊率"
+    },
+    {
+      "id": "core_baoshangpro",
+      "category": "迷宮・コンテンツ",
+      "sub": "ステータス",
+      "ja": "会心ダメージ",
+      "ko": "치명 데미지",
+      "en": "CRT DMG",
+      "zh": "暴傷"
+    },
+    {
+      "id": "core_attr_name_16",
+      "category": "迷宮・コンテンツ",
+      "sub": "ステータス",
+      "ja": "ダメージ軽減",
+      "ko": "데미지 경감",
+      "en": "DMG RED",
+      "zh": "減傷"
+    }
+  ]
+}
