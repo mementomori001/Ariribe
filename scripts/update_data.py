@@ -139,26 +139,26 @@ def load_bin(name: str, bin_map: dict, build_id: str, local_dir: str | None) -> 
 def update_sp_jj(chars: list, b_jj: bytes, loc: dict) -> int:
     SP_JJ_ID_MAP = {}
     for s in list(range(1, 6)) + list(range(26, 31)):
-        SP_JJ_ID_MAP[s] = "albedo"
+        SP_JJ_ID_MAP[s] = "hero-67501"
     for s in list(range(6, 10)) + list(range(31, 36)):
-        SP_JJ_ID_MAP[s] = "shalltear"
+        SP_JJ_ID_MAP[s] = "hero-1765"
     for s in range(11, 16):
-        SP_JJ_ID_MAP[s] = "aura-mare"
+        SP_JJ_ID_MAP[s] = "hero-67201"
     for s in range(16, 26):
-        SP_JJ_ID_MAP[s] = "tio-sp"
+        SP_JJ_ID_MAP[s] = "hero-1565"
     for s in range(675021, 6750210):
-        SP_JJ_ID_MAP[s] = "shizuku-sp"
-    SP_JJ_ID_MAP[6750210] = "shizuku-sp"
+        SP_JJ_ID_MAP[s] = "hero-1966"
+    SP_JJ_ID_MAP[6750210] = "hero-1966"
 
     NAME_HINTS = [
-        ("アルベド", "albedo"),
-        ("シャルティア", "shalltear"),
-        ("アウラ", "aura-mare"),
-        ("マーレ", "aura-mare"),
-        ("パートナー", "aura-mare"),
-        ("双子", "aura-mare"),
-        ("ティオ", "tio-sp"),
-        ("雫", "shizuku-sp"),
+        ("アルベド", "hero-67501"),
+        ("シャルティア", "hero-1765"),
+        ("アウラ", "hero-67201"),
+        ("マーレ", "hero-67201"),
+        ("パートナー", "hero-67201"),
+        ("双子", "hero-67201"),
+        ("ティオ", "hero-1565"),
+        ("雫", "hero-1966"),
     ]
 
     jj_seen = set()
