@@ -31,7 +31,14 @@ def decode_cocos_uuid(u: str) -> str:
 
 
 def fetch_bytes(url: str) -> bytes:
-    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    req = urllib.request.Request(
+        url,
+        headers={
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+            "Referer": "https://h5.g123.jp/",
+            "Origin": "https://h5.g123.jp",
+        },
+    )
     with urllib.request.urlopen(req, timeout=30) as resp:
         return resp.read()
 
@@ -50,14 +57,44 @@ def detect_build_id(fallback: str) -> str:
 
 def detect_config_hash(build_id: str, fallback: str) -> str:
     try:
-        idx_html = fetch_bytes(f"{BASE_HOST}/{build_id}/index.html").decode("utf-8", errors="ignore")
-        m_set = re.search(r"src/settings\.[0-9a-f]+\.js", idx_html)
-        if m_set:
-            settings_js = fetch_bytes(f"{BASE_HOST}/{build_id}/{m_set.group(0)}").decode("utf-8", errors="ignore")
-            m_res = re.search(r'["\']?resources["\']?\s*:\s*["\']([0-9a-f]{5,8})["\']', settings_js)
-            if m_res:
-                print(f"Auto-detected config_hash: {m_res.group(1)}")
-                return m_res.group(1)
+        idx_url = f"{BASE_HOST}/{build_id}/index.html"
+        idx_html = fetch_bytes(idx_url).decode("utf-8", errors="ignore")
+        # 1) index.html 内に直接書かれている場合
+        m_direct = re.search(r"config\.([0-9a-f]{5,8})\.json", idx_html)
+        if m_direct:
+            print(f"Auto-detected config_hash from index.html: {m_direct.group(1)}")
+            return m_direct.group(1)
+
+        # 2) <script src="..."> や設定JS・JSONを広く探索
+        candidates = re.findall(r'["\']([^"\']*(?:settings|main|application|system)[^"\']*\.(?:js|json))["\']', idx_html)
+        # よくある Cocos パスも予備候補に追加
+        for extra in ["src/settings.json", "src/settings.js", "main.js", "application.js"]:
+            if extra not in candidates:
+                candidates.append(extra)
+
+        print(f"Inspecting index.html scripts/configs: {candidates[:10]}")
+        for rel in candidates:
+            rel_clean = rel.lstrip("./")
+            js_url = rel if rel.startswith("http") else f"{BASE_HOST}/{build_id}/{rel_clean}"
+            try:
+                body = fetch_bytes(js_url).decode("utf-8", errors="ignore")
+            except Exception:
+                continue
+            for pat in [
+                r'bundleVers\s*[:=]\s*\{[^}]*?["\']?resources["\']?\s*:\s*["\']([0-9a-f]{5,8})["\']',
+                r'["\']resources["\']\s*:\s*["\']([0-9a-f]{5,8})["\']',
+                r'config\.([0-9a-f]{5,8})\.json',
+            ]:
+                m_res = re.search(pat, body)
+                if m_res:
+                    print(f"Auto-detected config_hash from {rel_clean}: {m_res.group(1)}")
+                    return m_res.group(1)
+            # settings.json / main.js 内にさらに別ファイル参照がある場合
+            sub_refs = re.findall(r'["\']([^"\']*(?:settings|application)[^"\']*\.(?:js|json))["\']', body)
+            for srel in sub_refs[:5]:
+                s_clean = srel.lstrip("./")
+                if s_clean not in candidates:
+                    candidates.append(s_clean)
     except Exception as e:
         print(f"config_hash auto-detect failed ({e}); using {fallback}")
     return fallback
@@ -191,7 +228,7 @@ def update_help_docs(systems: dict, b_help: bytes, loc: dict) -> int:
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--build-id", default="", help="G123 ビルド番号 (空なら自動検出/デフォルト84237)")
+    ap.add_argument("--build-id", default="", help="G123 ビルド番号 (空なら自動検出/既定84237)")
     ap.add_argument("--config-hash", default="", help="config.<hash>.json のハッシュ (空なら自動検出)")
     ap.add_argument("--data-dir", default="data", help="Wiki の data ディレクトリ")
     ap.add_argument("--local-dir", default=None, help="ローカルテスト用ディレクトリ")
