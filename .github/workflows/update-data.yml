@@ -6,13 +6,13 @@ on:
   workflow_dispatch:
     inputs:
       build_id:
-        description: 'G123 ビルド番号'
+        description: 'G123 ビルド番号 (空欄で自動/既定84237)'
         required: false
-        default: '83860'
+        default: ''
       config_hash:
-        description: 'config.<hash>.json のハッシュ'
+        description: 'config.<hash>.json のハッシュ (空欄で自動検出)'
         required: false
-        default: '0b0bb'
+        default: ''
 
 permissions:
   contents: write
@@ -32,8 +32,8 @@ jobs:
       - name: Run data updater
         run: |
           python3 scripts/update_data.py \
-            --build-id "${{ github.event.inputs.build_id || '83860' }}" \
-            --config-hash "${{ github.event.inputs.config_hash || '0b0bb' }}" \
+            --build-id "${{ github.event.inputs.build_id }}" \
+            --config-hash "${{ github.event.inputs.config_hash }}" \
             --data-dir "data"
 
       - name: Commit and push if changed
