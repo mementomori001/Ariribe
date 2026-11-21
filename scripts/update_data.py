@@ -260,6 +260,63 @@ def update_help_docs(systems: dict, b_help: bytes, loc: dict) -> int:
     return 0
 
 
+
+
+def _norm_name(s: str) -> str:
+    s = str(s or "").strip()
+    s = s.replace("（", "(").replace("）", ")").replace("・", "･").replace("　", " ")
+    return re.sub(r"\s+", "", s)
+
+
+def _strip_tags(s: str) -> str:
+    return re.sub(r"<[^>]+>", "", str(s or "")).strip()
+
+
+def update_element_resonance(chars: list, loc: dict) -> int:
+    # Build lookup from hero_id (5 digits) -> normalized name & character object
+    by_id = {c.get("id"): c for c in chars if c.get("id")}
+    by_norm = {_norm_name(c.get("name")): c for c in chars if c.get("name")}
+
+    grouped = {}
+    for k in sorted(loc.keys()):
+        if not k.startswith("hero_element_skill_name_"):
+            continue
+        code = k[len("hero_element_skill_name_") :]
+        if not code.isdigit() or len(code) < 6:
+            continue
+        hid = code[:-1]
+        slot = code[-1]
+        grouped.setdefault(hid, []).append((int(slot), k))
+
+    updated = 0
+    for hid, slots in grouped.items():
+        target = by_id.get(f"hero-{hid}")
+        if not target:
+            jname = loc.get(f"hero_hero_hero_name_{hid}") or loc.get(f"hero_name_{hid}") or ""
+            target = by_norm.get(_norm_name(jname))
+        if not target:
+            continue
+
+        slots.sort(key=lambda x: x[0])
+        el_list = []
+        for slot_num, name_key in slots:
+            skill_name = _strip_tags(loc.get(name_key, ""))
+            if not skill_name:
+                continue
+            for lv in range(1, 10):
+                doc_key = f"hero_element_skill_doc_{hid}{slot_num}{lv}"
+                if doc_key not in loc:
+                    continue
+                desc = _strip_tags(loc.get(doc_key, ""))
+                if desc:
+                    el_list.append({"name": skill_name, "desc": desc})
+
+        if el_list and len(el_list) >= len(target.get("elementResonance") or []) and el_list != target.get("elementResonance"):
+            target["elementResonance"] = el_list
+            updated += 1
+    return updated
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--build-id", default="", help="G123 ビルド番号 (空なら自動検出/既定84237)")
@@ -298,6 +355,11 @@ def main():
         if n_sp:
             print(f"Updated SP evolutions for {n_sp} characters.")
             changed = True
+
+    n_el = update_element_resonance(chars, loc)
+    if n_el:
+        print(f"Updated elementResonance for {n_el} characters.")
+        changed = True
 
     b_help = load_bin("help", bin_map, build_id, args.local_dir)
     if b_help:
