@@ -632,6 +632,10 @@ def update_beasts(systems: dict, b_ms: bytes, loc: dict) -> int:
     return added
 
 
+ARTIFACT_RARITY_LABELS = {2: "R", 3: "SR", 4: "SSR", 5: "UR", 6: "UR+", 7: "SP"}
+ARTIFACT_ID_PREFIX_RARITY = {"1": "R", "2": "SR", "3": "SSR", "4": "UR", "5": "UR+", "6": "SP"}
+
+
 def update_artifacts(systems: dict, b_art: bytes, b_attr: bytes | None, loc: dict) -> int:
     artifacts = systems.setdefault("artifacts", [])
     by_name = {_norm_name(a.get("name")): a for a in artifacts if a.get("name")}
@@ -645,12 +649,17 @@ def update_artifacts(systems: dict, b_art: bytes, b_attr: bytes | None, loc: dic
 
     art_matches = list(re.finditer(rb"artifact_name_\d+", b_art))
     art_chunks = {}
+    art_rarities = {}
     for i, m in enumerate(art_matches):
         klen = b_art[m.start() - 1]
         nkey = b_art[m.start() : m.start() + klen].decode("utf-8", errors="ignore")
         if not nkey.startswith("artifact_name_"):
             continue
         aid = nkey[len("artifact_name_") :]
+        if aid not in art_rarities and m.start() >= 2:
+            rcode = b_art[m.start() - 2]
+            if rcode in ARTIFACT_RARITY_LABELS:
+                art_rarities[aid] = ARTIFACT_RARITY_LABELS[rcode]
         end = art_matches[i + 1].start() if i + 1 < len(art_matches) else len(b_art)
         art_chunks.setdefault(aid, []).append(b_art[m.start() : end])
 
@@ -669,12 +678,20 @@ def update_artifacts(systems: dict, b_art: bytes, b_attr: bytes | None, loc: dic
                 parts.append(f"【{sname}】{texts[-1]}")
         return " / ".join(parts)
 
+    def _combine_note(aid: str) -> str:
+        des_ja = _strip_tags(loc.get(f"artifact_des_{aid}", ""))
+        jz_note = _build_jz_note(aid)
+        if des_ja and jz_note and jz_note not in des_ja:
+            return f"{des_ja} / {jz_note}"
+        return des_ja or jz_note
+
     added = 0
     for aid, chunks in art_chunks.items():
         name_ja = (loc.get(f"artifact_name_{aid}") or "").strip()
         if not name_ja or "テスト" in name_ja:
             continue
-        des_ja = _strip_tags(loc.get(f"artifact_des_{aid}", "")) or _build_jz_note(aid)
+        rarity = art_rarities.get(aid) or (ARTIFACT_ID_PREFIX_RARITY.get(aid[0], "-") if len(aid) >= 4 else "-")
+        note_ja = _combine_note(aid)
         attr_by_key = {}
         for ch in chunks:
             for m_tok in re.finditer(rb"[a-z][a-z0-9_]{1,20}", ch):
@@ -694,25 +711,33 @@ def update_artifacts(systems: dict, b_art: bytes, b_attr: bytes | None, loc: dic
             eff_parts.append(f"{k_ja} {fmt(vals[0])}〜{fmt(vals[-1])}")
         existing_art = by_name.get(_norm_name(name_ja))
         if existing_art:
+            art_changed = False
+            if existing_art.get("rarity") in ("", "-", None) and rarity != "-":
+                existing_art["rarity"] = rarity
+                art_changed = True
             if not existing_art.get("attributes") and attrs_out:
                 existing_art["attributes"] = attrs_out
-                if not existing_art.get("effect") and eff_parts:
-                    existing_art["effect"] = " / ".join(eff_parts)
-                if not existing_art.get("note") and des_ja:
-                    existing_art["note"] = des_ja
+                art_changed = True
+            if not existing_art.get("effect") and eff_parts:
+                existing_art["effect"] = " / ".join(eff_parts)
+                art_changed = True
+            if not existing_art.get("note") and note_ja:
+                existing_art["note"] = note_ja
+                art_changed = True
+            if art_changed:
                 added += 1
             continue
         artifacts.append({
             "name": name_ja,
-            "rarity": "-",
+            "rarity": rarity,
             "cost": "-",
             "effect": " / ".join(eff_parts),
-            "note": des_ja,
+            "note": note_ja,
             "attributes": attrs_out,
         })
         by_name[_norm_name(name_ja)] = artifacts[-1]
         added += 1
-        print(f"Added new artifact: {name_ja}")
+        print(f"Added new artifact: {name_ja} ({rarity})")
 
     # Fallback: also scan Localize.json for artifact_name_<aid> not yet in artifact.bin (e.g. 6022)
     for k in sorted(loc.keys()):
@@ -724,18 +749,19 @@ def update_artifacts(systems: dict, b_art: bytes, b_attr: bytes | None, loc: dic
         name_ja = (loc.get(k) or "").strip()
         if not name_ja or "テスト" in name_ja or _norm_name(name_ja) in by_name:
             continue
-        des_ja = _strip_tags(loc.get(f"artifact_des_{aid}", "")) or _build_jz_note(aid)
+        rarity = ARTIFACT_ID_PREFIX_RARITY.get(aid[0], "-") if len(aid) >= 4 else "-"
+        note_ja = _combine_note(aid)
         artifacts.append({
             "name": name_ja,
-            "rarity": "-",
+            "rarity": rarity,
             "cost": "-",
             "effect": "",
-            "note": des_ja,
+            "note": note_ja,
             "attributes": [],
         })
         by_name[_norm_name(name_ja)] = artifacts[-1]
         added += 1
-        print(f"Added new artifact (from Localize): {name_ja}")
+        print(f"Added new artifact (from Localize): {name_ja} ({rarity})")
     return added
 
 
