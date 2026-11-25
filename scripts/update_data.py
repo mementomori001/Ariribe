@@ -632,8 +632,8 @@ def update_beasts(systems: dict, b_ms: bytes, loc: dict) -> int:
     return added
 
 
-ARTIFACT_RARITY_LABELS = {2: "R", 3: "SR", 4: "SSR", 5: "UR", 6: "UR+", 7: "SP"}
-ARTIFACT_ID_PREFIX_RARITY = {"1": "R", "2": "SR", "3": "SSR", "4": "UR", "5": "UR+", "6": "SP"}
+ARTIFACT_RARITY_LABELS = {2: "R", 3: "SR", 4: "SSR", 5: "UR", 6: "UR+", 7: "UR+"}
+ARTIFACT_ID_PREFIX_RARITY = {"1": "R", "2": "SR", "3": "SSR", "4": "UR", "5": "UR+", "6": "UR+"}
 
 
 def update_artifacts(systems: dict, b_art: bytes, b_attr: bytes | None, loc: dict) -> int:
@@ -678,6 +678,20 @@ def update_artifacts(systems: dict, b_art: bytes, b_attr: bytes | None, loc: dic
                 parts.append(f"【{sname}】{texts[-1]}")
         return " / ".join(parts)
 
+    def _build_refining(aid: str) -> list:
+        out = []
+        for idx in range(1, 6):
+            sname = loc.get(f"artifact_jz_name_{aid}00{idx}", "").strip()
+            slot = f"0{idx}"
+            levels = []
+            for lv in range(2, 7):
+                t = _strip_tags(loc.get(f"artifact_jz_text_{aid}{slot}00{lv}", ""))
+                if t and t != "なし":
+                    levels.append(t)
+            if sname or levels:
+                out.append({"slot": idx, "name": sname, "levels": levels})
+        return out
+
     def _combine_note(aid: str) -> str:
         des_ja = _strip_tags(loc.get(f"artifact_des_{aid}", ""))
         jz_note = _build_jz_note(aid)
@@ -709,32 +723,41 @@ def update_artifacts(systems: dict, b_art: bytes, b_attr: bytes | None, loc: dic
             fmt = (lambda v: f"{v/10.0:g}%") if "pro" in k else str
             attrs_out.append({"key": k, "name_ja": k_ja, "base": fmt(vals[0]), "max": fmt(vals[-1]), "values": [fmt(v) for v in vals]})
             eff_parts.append(f"{k_ja} {fmt(vals[0])}〜{fmt(vals[-1])}")
+        jz_note = _build_jz_note(aid)
+        refining = _build_refining(aid)
+        eff_str = " / ".join(eff_parts) or jz_note
         existing_art = by_name.get(_norm_name(name_ja))
         if existing_art:
             art_changed = False
-            if existing_art.get("rarity") in ("", "-", None) and rarity != "-":
+            if existing_art.get("rarity") in ("", "-", "SP", None) and rarity != "-":
                 existing_art["rarity"] = rarity
                 art_changed = True
             if not existing_art.get("attributes") and attrs_out:
                 existing_art["attributes"] = attrs_out
                 art_changed = True
-            if not existing_art.get("effect") and eff_parts:
-                existing_art["effect"] = " / ".join(eff_parts)
+            if not existing_art.get("effect") and eff_str:
+                existing_art["effect"] = eff_str
                 art_changed = True
             if not existing_art.get("note") and note_ja:
                 existing_art["note"] = note_ja
                 art_changed = True
+            if refining and not existing_art.get("refining"):
+                existing_art["refining"] = refining
+                art_changed = True
             if art_changed:
                 added += 1
             continue
-        artifacts.append({
+        art_obj = {
             "name": name_ja,
             "rarity": rarity,
             "cost": "-",
-            "effect": " / ".join(eff_parts),
+            "effect": eff_str,
             "note": note_ja,
             "attributes": attrs_out,
-        })
+        }
+        if refining:
+            art_obj["refining"] = refining
+        artifacts.append(art_obj)
         by_name[_norm_name(name_ja)] = artifacts[-1]
         added += 1
         print(f"Added new artifact: {name_ja} ({rarity})")
@@ -751,27 +774,39 @@ def update_artifacts(systems: dict, b_art: bytes, b_attr: bytes | None, loc: dic
             continue
         rarity = ARTIFACT_ID_PREFIX_RARITY.get(aid[0], "-") if len(aid) >= 4 else "-"
         note_ja = _combine_note(aid)
+        jz_note = _build_jz_note(aid)
+        eff_str = jz_note or _strip_tags(loc.get(f"artifact_des_{aid}", ""))
+        refining = _build_refining(aid)
         existing_art = by_name.get(_norm_name(name_ja))
         if existing_art:
             art_changed = False
-            if existing_art.get("rarity") in ("", "-", None) and rarity != "-":
+            if existing_art.get("rarity") in ("", "-", "SP", None) and rarity != "-":
                 existing_art["rarity"] = rarity
+                art_changed = True
+            if not existing_art.get("effect") and eff_str:
+                existing_art["effect"] = eff_str
                 art_changed = True
             if not existing_art.get("note") and note_ja:
                 existing_art["note"] = note_ja
+                art_changed = True
+            if refining and not existing_art.get("refining"):
+                existing_art["refining"] = refining
                 art_changed = True
             if art_changed:
                 added += 1
                 print(f"Updated artifact (from Localize): {name_ja} ({rarity})")
             continue
-        artifacts.append({
+        art_obj = {
             "name": name_ja,
             "rarity": rarity,
             "cost": "-",
-            "effect": "",
+            "effect": eff_str,
             "note": note_ja,
             "attributes": [],
-        })
+        }
+        if refining:
+            art_obj["refining"] = refining
+        artifacts.append(art_obj)
         by_name[_norm_name(name_ja)] = artifacts[-1]
         added += 1
         print(f"Added new artifact (from Localize): {name_ja} ({rarity})")
