@@ -1,7 +1,7 @@
 {
   "meta": {
     "updatedAt": "2026-11-25",
-    "total": 696,
+    "total": 698,
     "languages": [
       {
         "code": "ja",
@@ -2843,6 +2843,26 @@
       "ko": "박명의 귀면",
       "en": "Twilight Oni Mask",
       "zh": "薄明的鬼面",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_86",
+      "category": "アーティファクト",
+      "sub": "-",
+      "ja": "勇者の聖剣",
+      "ko": "용사의 성검",
+      "en": "Hero's Holy Sword",
+      "zh": "勇者的聖劍",
+      "linkView": "artifacts"
+    },
+    {
+      "id": "af_87",
+      "category": "アーティファクト",
+      "sub": "-",
+      "ja": "紅月の飾紐",
+      "ko": "붉은 달의 장식띠",
+      "en": "",
+      "zh": "紅月頭飾",
       "linkView": "artifacts"
     },
     {
