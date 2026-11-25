@@ -1,7 +1,7 @@
 {
   "meta": {
     "updatedAt": "2026-11-25",
-    "total": 681,
+    "total": 684,
     "languages": [
       {
         "code": "ja",
@@ -979,6 +979,17 @@
       "zh": "八重樫雫(鬼之劍客)",
       "linkView": "char-detail",
       "linkId": "hero-1966"
+    },
+    {
+      "id": "hero-67503",
+      "category": "キャラクター",
+      "sub": "SP / 無上属性",
+      "ja": "ユエ(吸血姫)",
+      "ko": "유에(흡혈희)",
+      "en": "Supreme Yue",
+      "zh": "月(吸血姬)",
+      "linkView": "char-detail",
+      "linkId": "hero-67503"
     },
     {
       "id": "kikou",
@@ -4146,6 +4157,15 @@
       "zh": "速度降低"
     },
     {
+      "id": "buff_showname_des",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "竜血の真祖",
+      "ko": "용혈의 진조",
+      "en": "",
+      "zh": "龍血真祖"
+    },
+    {
       "id": "buff_showname_dodgepro",
       "category": "バフ・状態異常",
       "sub": "戦闘効果",
@@ -6097,6 +6117,15 @@
       "ko": "쇠약",
       "en": "Weakened",
       "zh": "虛弱"
+    },
+    {
+      "id": "buff_showname_xxnp",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "血の傀儡",
+      "ko": "피의 꼭두각시",
+      "en": "",
+      "zh": "血之傀儡"
     },
     {
       "id": "buff_showname_xyhm",
