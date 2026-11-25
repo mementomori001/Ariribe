@@ -436,6 +436,167 @@ def add_new_heroes(chars: list, b_hero: bytes, b_skill: bytes | None, loc: dict)
     return added
 
 
+
+
+def _strip_tags_flat(s: str) -> str:
+    return re.sub(r"\s*\n+\s*", "", _strip_tags(s)).strip()
+
+
+def update_magic_circles(circles: list, b_mf: bytes, b_mfs: bytes, loc: dict) -> int:
+    STAR_TO_TIER = {1: "2", 2: "4", 3: "6", 4: "10"}
+    mf_stars = {}
+    star_seen = set()
+    for m in re.finditer(rb"skilldes_(\d+)", b_mfs):
+        klen = b_mfs[m.start() - 1]
+        skey = b_mfs[m.start() : m.start() + klen].decode("utf-8", errors="ignore")
+        if not skey.startswith("skilldes_") or skey.endswith("_vice") or skey in star_seen:
+            continue
+        star_seen.add(skey)
+        code = skey[len("skilldes_") :]
+        if len(code) < 7 or not code.isdigit():
+            continue
+        fid, star_lv = code[:-2], int(code[-2:])
+        if star_lv not in STAR_TO_TIER:
+            continue
+        desc = _strip_tags_flat(loc.get(skey, ""))
+        vice = _strip_tags_flat(loc.get(f"{skey}_vice", ""))
+        if desc:
+            txt = f"{desc}\n【副効果】{vice}" if vice else desc
+            mf_stars.setdefault(fid, {})[STAR_TO_TIER[star_lv]] = txt
+
+    by_name = {_norm_name(c.get("name")): c for c in circles if c.get("name")}
+    mf_seen = set()
+    updated = 0
+    for m in re.finditer(rb"mofazhen_name_\d+", b_mf):
+        klen = b_mf[m.start() - 1]
+        nkey = b_mf[m.start() : m.start() + klen].decode("utf-8", errors="ignore")
+        if not nkey.startswith("mofazhen_name_") or nkey in mf_seen:
+            continue
+        mf_seen.add(nkey)
+        fid = nkey[len("mofazhen_name_") :]
+        name_ja = (loc.get(nkey) or "").strip()
+        if not name_ja or "テスト" in name_ja:
+            continue
+        tiers = mf_stars.get(fid, {})
+        if not tiers:
+            continue
+        existing = by_name.get(_norm_name(name_ja))
+        if not existing:
+            circles.append({
+                "id": f"mf-{fid}",
+                "name": name_ja,
+                "source": "",
+                "statType": "",
+                "priority": "",
+                "bestStop": "",
+                "tags": [],
+                "note": "",
+                "tiers": tiers,
+            })
+            by_name[_norm_name(name_ja)] = circles[-1]
+            updated += 1
+            print(f"Added new magic circle: {name_ja}")
+        else:
+            def _tkey(d): return {k: re.sub(r"\s+", "", v) for k, v in (d or {}).items()}
+            if _tkey(existing.get("tiers")) != _tkey(tiers) and len(tiers) >= len(existing.get("tiers") or {}):
+                existing["tiers"] = tiers
+                updated += 1
+    return updated
+
+
+def update_beasts(systems: dict, b_ms: bytes, loc: dict) -> int:
+    beasts = systems.setdefault("beasts", [])
+    by_name = {_norm_name(b.get("name")): b for b in beasts if b.get("name")}
+    ms_seen = set()
+    added = 0
+    for m in re.finditer(rb"moshou_name_\d+", b_ms):
+        klen = b_ms[m.start() - 1]
+        nkey = b_ms[m.start() : m.start() + klen].decode("utf-8", errors="ignore")
+        if not nkey.startswith("moshou_name_") or nkey in ms_seen:
+            continue
+        ms_seen.add(nkey)
+        mid = nkey[len("moshou_name_") :]
+        name_ja = (loc.get(nkey) or "").strip()
+        base_name = re.sub(r"\((?:SR|SSR|UR\+?)\)$", "", name_ja).strip()
+        if not name_ja or "テスト" in name_ja or _norm_name(name_ja) in by_name or _norm_name(base_name) in by_name:
+            continue
+        sk_name = _strip_tags(loc.get(f"moshou_skillname_{mid}", ""))
+        sk_desc = _strip_tags(loc.get(f"moshou_skilldesc_{mid}", ""))
+        note = f"{sk_name}: {sk_desc}" if sk_name and sk_desc else sk_desc
+        beasts.append({
+            "name": name_ja,
+            "rarity": "-",
+            "attr": "-",
+            "role": "",
+            "note": note,
+            "skillName": sk_name,
+            "skillDesc": sk_desc,
+        })
+        by_name[_norm_name(name_ja)] = beasts[-1]
+        added += 1
+        print(f"Added new beast: {name_ja}")
+    return added
+
+
+def update_artifacts(systems: dict, b_art: bytes, b_attr: bytes | None, loc: dict) -> int:
+    artifacts = systems.setdefault("artifacts", [])
+    by_name = {_norm_name(a.get("name")): a for a in artifacts if a.get("name")}
+    known_attrs = {m.group(1).decode("ascii") for m in re.finditer(rb"intr_([a-z0-9_]+)", b_attr)} if b_attr else set()
+
+    def _read_var_int(buf, idx):
+        b0 = buf[idx]
+        if b0 < 0x80: return b0, idx + 1
+        if b0 < 0xC0: return ((b0 & 0x3F) << 8) | buf[idx + 1], idx + 2
+        return ((b0 & 0x3F) << 16) | (buf[idx + 1] << 8) | buf[idx + 2], idx + 3
+
+    art_matches = list(re.finditer(rb"artifact_name_\d+", b_art))
+    art_chunks = {}
+    for i, m in enumerate(art_matches):
+        klen = b_art[m.start() - 1]
+        nkey = b_art[m.start() : m.start() + klen].decode("utf-8", errors="ignore")
+        if not nkey.startswith("artifact_name_"):
+            continue
+        aid = nkey[len("artifact_name_") :]
+        end = art_matches[i + 1].start() if i + 1 < len(art_matches) else len(b_art)
+        art_chunks.setdefault(aid, []).append(b_art[m.start() : end])
+
+    added = 0
+    for aid, chunks in art_chunks.items():
+        name_ja = (loc.get(f"artifact_name_{aid}") or "").strip()
+        if not name_ja or "テスト" in name_ja or _norm_name(name_ja) in by_name:
+            continue
+        des_ja = _strip_tags(loc.get(f"artifact_des_{aid}", ""))
+        attr_by_key = {}
+        for ch in chunks:
+            for m_tok in re.finditer(rb"[a-z][a-z0-9_]{1,20}", ch):
+                t = m_tok.group(0).decode("ascii", errors="ignore")
+                if t not in known_attrs or (m_tok.start() > 0 and ch[m_tok.start() - 1] != len(t)):
+                    continue
+                if m_tok.end() < len(ch):
+                    rv, _ = _read_var_int(ch, m_tok.end())
+                    attr_by_key.setdefault(t, []).append(rv)
+        attrs_out = []
+        eff_parts = []
+        for k, vals in attr_by_key.items():
+            base_k = k[:-1] if k.endswith("x") and k[:-1] in known_attrs else k
+            k_ja = loc.get(f"intr_{base_k}") or loc.get(f"attr_name_{base_k}") or base_k
+            fmt = (lambda v: f"{v/10.0:g}%") if "pro" in k else str
+            attrs_out.append({"key": k, "name_ja": k_ja, "base": fmt(vals[0]), "max": fmt(vals[-1]), "values": [fmt(v) for v in vals]})
+            eff_parts.append(f"{k_ja} {fmt(vals[0])}〜{fmt(vals[-1])}")
+        artifacts.append({
+            "name": name_ja,
+            "rarity": "-",
+            "cost": "-",
+            "effect": " / ".join(eff_parts),
+            "note": des_ja,
+            "attributes": attrs_out,
+        })
+        by_name[_norm_name(name_ja)] = artifacts[-1]
+        added += 1
+        print(f"Added new artifact: {name_ja}")
+    return added
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--build-id", default="", help="G123 ビルド番号 (空なら自動検出/既定84237)")
@@ -495,11 +656,39 @@ def main():
             print(f"Updated helpDocs: {n_help} entries.")
             changed = True
 
+    mc_path = os.path.join(args.data_dir, "magic_circles.json")
+    circles = json.load(open(mc_path, encoding="utf-8")) if os.path.exists(mc_path) else []
+    b_mf = load_bin("mofazhen", bin_map, build_id, args.local_dir)
+    b_mfs = load_bin("mofazhen_star", bin_map, build_id, args.local_dir)
+    if b_mf and b_mfs and circles:
+        n_mc = update_magic_circles(circles, b_mf, b_mfs, loc)
+        if n_mc:
+            print(f"Updated magic_circles: {n_mc} entries.")
+            changed = True
+
+    b_ms = load_bin("moshou", bin_map, build_id, args.local_dir)
+    if b_ms:
+        n_ms = update_beasts(systems, b_ms, loc)
+        if n_ms:
+            print(f"Added {n_ms} new beasts.")
+            changed = True
+
+    b_art = load_bin("artifact", bin_map, build_id, args.local_dir)
+    b_attr = load_bin("heroattr", bin_map, build_id, args.local_dir)
+    if b_art:
+        n_art = update_artifacts(systems, b_art, b_attr, loc)
+        if n_art:
+            print(f"Added {n_art} new artifacts.")
+            changed = True
+
     if changed:
         with open(chars_path, "w", encoding="utf-8") as f:
             json.dump(chars, f, ensure_ascii=False, indent=2)
         with open(sys_path, "w", encoding="utf-8") as f:
             json.dump(systems, f, ensure_ascii=False, indent=2)
+        if circles:
+            with open(mc_path, "w", encoding="utf-8") as f:
+                json.dump(circles, f, ensure_ascii=False, indent=2)
         print("Saved updated JSON files.")
     else:
         print("No changes detected.")
