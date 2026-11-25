@@ -1,7 +1,7 @@
 {
   "meta": {
     "updatedAt": "2026-11-25",
-    "total": 684,
+    "total": 696,
     "languages": [
       {
         "code": "ja",
@@ -3183,6 +3183,126 @@
       "ko": "지원",
       "en": "Support",
       "zh": "支援",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_34",
+      "category": "神術",
+      "sub": "超級",
+      "ja": "一騎打ち",
+      "ko": "일기토",
+      "en": "Duel",
+      "zh": "單挑",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_35",
+      "category": "神術",
+      "sub": "超級",
+      "ja": "拘束",
+      "ko": "구속",
+      "en": "Restrict",
+      "zh": "束縛",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_36",
+      "category": "神術",
+      "sub": "超級",
+      "ja": "復活封殺",
+      "ko": "부활 봉쇄",
+      "en": "Revive Block",
+      "zh": "復活封鎖",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_37",
+      "category": "神術",
+      "sub": "超級",
+      "ja": "光の加護",
+      "ko": "빛의 가호",
+      "en": "Light's Blessing",
+      "zh": "聖光加護",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_38",
+      "category": "神術",
+      "sub": "超級",
+      "ja": "衝撃吸収",
+      "ko": "충격 흡수",
+      "en": "Impact Absorb",
+      "zh": "衝擊吸收",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_39",
+      "category": "神術",
+      "sub": "超級",
+      "ja": "緩衝結界",
+      "ko": "완충 결계",
+      "en": "Barrier of Buffering",
+      "zh": "緩衝結界",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_40",
+      "category": "神術",
+      "sub": "超級",
+      "ja": "雄叫び",
+      "ko": "우렁찬 외침",
+      "en": "Roar",
+      "zh": "咆哮",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_41",
+      "category": "神術",
+      "sub": "超級",
+      "ja": "反傷の盾",
+      "ko": "반상의 방패",
+      "en": "Shield of Counter Damage",
+      "zh": "反傷護盾",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_42",
+      "category": "神術",
+      "sub": "その他",
+      "ja": "行動制限",
+      "ko": "행동제한",
+      "en": "CC",
+      "zh": "限制行動",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_43",
+      "category": "神術",
+      "sub": "その他",
+      "ja": "耐性",
+      "ko": "내성",
+      "en": "RES",
+      "zh": "抗性",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_44",
+      "category": "神術",
+      "sub": "その他",
+      "ja": "属性",
+      "ko": "속성",
+      "en": "Affinity",
+      "zh": "屬性",
+      "linkView": "shinjutsu"
+    },
+    {
+      "id": "spirit_45",
+      "category": "神術",
+      "sub": "その他",
+      "ja": "癒し",
+      "ko": "치유",
+      "en": "Healing",
+      "zh": "療癒",
       "linkView": "shinjutsu"
     },
     {
