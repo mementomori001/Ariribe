@@ -228,12 +228,40 @@ def update_sp_jj(chars: list, b_jj: bytes, loc: dict) -> int:
     for cid, lst in by_char.items():
         lst.sort(key=lambda x: x["lv"])
 
+    # Fallback: also scan loc directly for hero_jj_jj_des_<hid5><lv> (e.g. 675031..6750310)
+    for dkey, des_ja in loc.items():
+        if not dkey.startswith("hero_jj_jj_des_"):
+            continue
+        code = dkey[len("hero_jj_jj_des_") :]
+        if not code.isdigit() or len(code) < 6 or code in jj_jj_seen:
+            continue
+        jj_jj_seen.add(code)
+        if not des_ja:
+            continue
+        pref = code[:5]
+        lv_str = code[5:]
+        cid = f"hero-{pref}"
+        if cid not in char_ids:
+            continue
+        lv_num = int(lv_str)
+        lst = by_char.setdefault(cid, [])
+        if all(item["lv"] != lv_num for item in lst):
+            lst.append({"lv": lv_num, "desc": des_ja})
+        else:
+            for item in lst:
+                if item["lv"] == lv_num:
+                    item["desc"] = des_ja
+                    break
+
+    for cid, lst in by_char.items():
+        lst.sort(key=lambda x: x["lv"])
+
     if unmapped:
         print(f"Unmapped hero_jj entries ({len(unmapped)}): {unmapped[:10]}")
 
     updated = 0
     for c in chars:
-        if c.get("rarity") == "SP" and c.get("id") in by_char:
+        if c.get("id") in by_char and (c.get("rarity") == "SP" or any(k.startswith(f"hero_jj_jj_des_{c.get('id', '').replace('hero-', '')}") for k in jj_jj_seen)):
             new_ev = by_char[c["id"]]
             if len(new_ev) >= len(c.get("evolutions") or []) and new_ev != c.get("evolutions"):
                 c["evolutions"] = new_ev
@@ -340,17 +368,26 @@ def _parse_heroskill_map(b_skill: bytes, loc: dict) -> dict:
         "activename", "passive1name", "passive2name", "passive3name", "passive4name",
     ]
     out = {}
-    headers = list(re.finditer(rb"\x00{8,}\xc0", b_skill))
-    for h_idx, hm in enumerate(headers):
+    headers_by_pos = {}
+    for hm in re.finditer(rb"\x00{8,}\xc0", b_skill):
         pos = hm.end()
-        if pos + 4 > len(b_skill):
-            continue
-        hid = _decode_id_before_len(b_skill, pos + 2) if not (b_skill[pos] == 0xF0 and (b_skill[pos + 1] & 0xC0) == 0xC0) else (
-            ((b_skill[pos + 1] & 0x3F) << 16) | (b_skill[pos + 2] << 8) | b_skill[pos + 3]
-        )
-        chunk_end = headers[h_idx + 1].start() if h_idx + 1 < len(headers) else len(b_skill)
-        if h_idx + 1 < len(headers):
-            chunk_end = headers[h_idx + 1].start()
+        if pos + 4 <= len(b_skill):
+            hid = (
+                ((b_skill[pos + 1] & 0x3F) << 16) | (b_skill[pos + 2] << 8) | b_skill[pos + 3]
+                if (b_skill[pos] == 0xF0 and (b_skill[pos + 1] & 0xC0) == 0xC0)
+                else _decode_id_before_len(b_skill, pos + 2)
+            )
+            headers_by_pos[pos] = hid
+    for m in re.finditer(rb"([\xc1-\xcf]..)[\x01-\x0f]\x01\x01\xf0", b_skill):
+        b = m.group(1)
+        headers_by_pos.setdefault(m.start(), ((b[0] & 0x3F) << 16) | (b[1] << 8) | b[2])
+    for m in re.finditer(rb"([\x80-\xbf].)[\x01-\x0f]\x01\x01[\xd0-\xff]", b_skill):
+        b = m.group(1)
+        headers_by_pos.setdefault(m.start(), ((b[0] & 0x3F) << 8) | b[1])
+
+    sorted_headers = sorted(headers_by_pos.items())
+    for h_idx, (pos, hid) in enumerate(sorted_headers):
+        chunk_end = sorted_headers[h_idx + 1][0] if h_idx + 1 < len(sorted_headers) else len(b_skill)
         hero_chunk = b_skill[pos:chunk_end]
         tier_matches = list(re.finditer(rb"hero_hero_skill_activedes1_([0-9_]+)", hero_chunk))
         for t_idx, tm in enumerate(tier_matches):
@@ -378,6 +415,35 @@ def add_new_heroes(chars: list, b_hero: bytes, b_skill: bytes | None, loc: dict)
     existing_names = {_norm_name(c.get("name")) for c in chars if c.get("name")}
     skills_map = _parse_heroskill_map(b_skill, loc) if b_skill else {}
 
+    def _find_skills_from_loc(name_ja: str) -> dict:
+        norm_target = _norm_name(name_ja)
+        if not norm_target:
+            return {}
+        matched_sids = set()
+        for k, v in loc.items():
+            if not k.startswith("hero_hero_skill_"):
+                continue
+            if norm_target in _norm_name(v):
+                m_sid = re.search(r"_(\d+)$", k)
+                if m_sid:
+                    matched_sids.add(m_sid.group(1))
+        if len(matched_sids) != 1:
+            return {}
+        sid_str = next(iter(matched_sids))
+        skills_obj = {}
+        for slot_key, n_f, d_f in [
+            ("main", "activename", "activedes1"),
+            ("p1", "passive1name", "passive1des"),
+            ("p2", "passive2name", "passive2des"),
+            ("p3", "passive3name", "passive3des"),
+            ("p4", "passive4name", "passive4des"),
+        ]:
+            sname = _strip_tags(loc.get(f"hero_hero_skill_{n_f}_{sid_str}", ""))
+            sdesc = _strip_tags(loc.get(f"hero_hero_skill_{d_f}_{sid_str}", ""))
+            if sname or sdesc:
+                skills_obj[slot_key] = {"name": sname, "before": sdesc, "after": sdesc}
+        return skills_obj
+
     h_matches = [m.start() for m in re.finditer(rb"hero_hero_hero_name_", b_hero)]
     added = 0
     for i, pos in enumerate(h_matches):
@@ -396,22 +462,25 @@ def add_new_heroes(chars: list, b_hero: bytes, b_skill: bytes | None, loc: dict)
         cid = f"hero-{hid}"
         if cid in existing_ids or _norm_name(name_ja) in existing_names:
             ex_c = next((c for c in chars if c.get("id") == cid or _norm_name(c.get("name")) == _norm_name(name_ja)), None)
-            if ex_c and not ex_c.get("skills") and hid in skills_map:
-                tiers = skills_map.get(hid, [])
-                first_t, last_t = (tiers[0] if tiers else {}), (tiers[-1] if tiers else {})
+            if ex_c and not ex_c.get("skills"):
                 skills_obj = {}
-                for slot_key, n_f, d_f in [
-                    ("main", "activename", "activedes1"),
-                    ("p1", "passive1name", "passive1des"),
-                    ("p2", "passive2name", "passive2des"),
-                    ("p3", "passive3name", "passive3des"),
-                    ("p4", "passive4name", "passive4des"),
-                ]:
-                    sname = last_t.get(n_f) or first_t.get(n_f) or ""
-                    sbefore = first_t.get(d_f) or ""
-                    safter = last_t.get(d_f) or sbefore
-                    if sname or safter:
-                        skills_obj[slot_key] = {"name": sname, "before": sbefore, "after": safter}
+                if hid in skills_map:
+                    tiers = skills_map.get(hid, [])
+                    first_t, last_t = (tiers[0] if tiers else {}), (tiers[-1] if tiers else {})
+                    for slot_key, n_f, d_f in [
+                        ("main", "activename", "activedes1"),
+                        ("p1", "passive1name", "passive1des"),
+                        ("p2", "passive2name", "passive2des"),
+                        ("p3", "passive3name", "passive3des"),
+                        ("p4", "passive4name", "passive4des"),
+                    ]:
+                        sname = last_t.get(n_f) or first_t.get(n_f) or ""
+                        sbefore = first_t.get(d_f) or ""
+                        safter = last_t.get(d_f) or sbefore
+                        if sname or safter:
+                            skills_obj[slot_key] = {"name": sname, "before": sbefore, "after": safter}
+                else:
+                    skills_obj = _find_skills_from_loc(name_ja)
                 if skills_obj:
                     ex_c["skills"] = skills_obj
                     added += 1
@@ -434,6 +503,8 @@ def add_new_heroes(chars: list, b_hero: bytes, b_skill: bytes | None, loc: dict)
             safter = last_t.get(d_f) or sbefore
             if sname or safter:
                 skills_obj[slot_key] = {"name": sname, "before": sbefore, "after": safter}
+        if not skills_obj:
+            skills_obj = _find_skills_from_loc(name_ja)
 
         chars.append({
             "id": cid,
