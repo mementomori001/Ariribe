@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updatedAt": "2026-11-19",
+    "updatedAt": "2026-11-25",
     "total": 681,
     "languages": [
       {
@@ -279,7 +279,7 @@
     {
       "id": "hero-13401",
       "category": "キャラクター",
-      "sub": "SR / -属性",
+      "sub": "SR / 彩属性",
       "ja": "ビィズ",
       "ko": "비즈",
       "en": "Bize",
@@ -290,7 +290,7 @@
     {
       "id": "hero-13501",
       "category": "キャラクター",
-      "sub": "SR / -属性",
+      "sub": "SR / 幻属性",
       "ja": "ハウリア族・子供",
       "ko": "하우리아족 아이",
       "en": "Haulia child",
@@ -301,7 +301,7 @@
     {
       "id": "hero-13601",
       "category": "キャラクター",
-      "sub": "SR / -属性",
+      "sub": "SR / 幻属性",
       "ja": "パル",
       "ko": "팔",
       "en": "Par",
@@ -312,7 +312,7 @@
     {
       "id": "hero-14301",
       "category": "キャラクター",
-      "sub": "SSR / -属性",
+      "sub": "SSR / 夢属性",
       "ja": "カトレア",
       "ko": "카틀레아",
       "en": "Cattleya",
@@ -323,7 +323,7 @@
     {
       "id": "hero-14302",
       "category": "キャラクター",
-      "sub": "SSR / -属性",
+      "sub": "SSR / 夢属性",
       "ja": "アルフレリック",
       "ko": "알프레릭",
       "en": "Ulfric",
@@ -334,7 +334,7 @@
     {
       "id": "hero-14401",
       "category": "キャラクター",
-      "sub": "SSR / -属性",
+      "sub": "SSR / 心属性",
       "ja": "モナ",
       "ko": "모나",
       "en": "Mona",
@@ -345,7 +345,7 @@
     {
       "id": "hero-14402",
       "category": "キャラクター",
-      "sub": "SSR / -属性",
+      "sub": "SSR / 心属性",
       "ja": "グゼ",
       "ko": "구제",
       "en": "Guze",
@@ -356,7 +356,7 @@
     {
       "id": "hero-14501",
       "category": "キャラクター",
-      "sub": "SSR / -属性",
+      "sub": "SSR / 心属性",
       "ja": "ウィル",
       "ko": "윌",
       "en": "Will",
@@ -367,7 +367,7 @@
     {
       "id": "hero-14601",
       "category": "キャラクター",
-      "sub": "SSR / -属性",
+      "sub": "SSR / 夢属性",
       "ja": "カム",
       "ko": "카무",
       "en": "Cam",
@@ -378,7 +378,7 @@
     {
       "id": "hero-15301",
       "category": "キャラクター",
-      "sub": "UR / -属性",
+      "sub": "UR / 夢属性",
       "ja": "畑山愛子",
       "ko": "하타야마 아이코",
       "en": "Aiko Hatayama",
@@ -389,7 +389,7 @@
     {
       "id": "hero-15601",
       "category": "キャラクター",
-      "sub": "UR / -属性",
+      "sub": "UR / 夢属性",
       "ja": "シア",
       "ko": "시아",
       "en": "Shea",
@@ -400,7 +400,7 @@
     {
       "id": "hero-15602",
       "category": "キャラクター",
-      "sub": "SSR / -属性",
+      "sub": "SSR / 彩属性",
       "ja": "フリード",
       "ko": "프리드",
       "en": "Freid",
@@ -411,7 +411,7 @@
     {
       "id": "hero-23101",
       "category": "キャラクター",
-      "sub": "SR / -属性",
+      "sub": "SR / 彩属性",
       "ja": "中野信治",
       "ko": "나카노 신지",
       "en": "Shinji Nakano",
@@ -422,7 +422,7 @@
     {
       "id": "hero-23301",
       "category": "キャラクター",
-      "sub": "SR / -属性",
+      "sub": "SR / 心属性",
       "ja": "清水幸利",
       "ko": "시미즈 유키토시",
       "en": "Yukitoshi Shimizu",
@@ -433,7 +433,7 @@
     {
       "id": "hero-23401",
       "category": "キャラクター",
-      "sub": "SR / -属性",
+      "sub": "SR / 幻属性",
       "ja": "ハンセン",
       "ko": "한센",
       "en": "Hansen",
@@ -444,7 +444,7 @@
     {
       "id": "hero-23501",
       "category": "キャラクター",
-      "sub": "SR / -属性",
+      "sub": "SR / 彩属性",
       "ja": "玉井淳史",
       "ko": "타마이 아츠시",
       "en": "Atsushi Tamai",
@@ -455,7 +455,7 @@
     {
       "id": "hero-24101",
       "category": "キャラクター",
-      "sub": "SSR / -属性",
+      "sub": "SSR / 夢属性",
       "ja": "ミハイル",
       "ko": "미하일",
       "en": "Mikhail",
@@ -466,7 +466,7 @@
     {
       "id": "hero-24301",
       "category": "キャラクター",
-      "sub": "SSR / -属性",
+      "sub": "SSR / 心属性",
       "ja": "マオ",
       "ko": "마오",
       "en": "Mao",
@@ -477,7 +477,7 @@
     {
       "id": "hero-24302",
       "category": "キャラクター",
-      "sub": "SSR / -属性",
+      "sub": "SSR / 幻属性",
       "ja": "エリヒド",
       "ko": "에리히드",
       "en": "Eliheid",
@@ -488,7 +488,7 @@
     {
       "id": "hero-24303",
       "category": "キャラクター",
-      "sub": "SSR / -属性",
+      "sub": "SSR / 夢属性",
       "ja": "イシュタル",
       "ko": "이슈타르",
       "en": "Ishtar",
@@ -499,7 +499,7 @@
     {
       "id": "hero-24401",
       "category": "キャラクター",
-      "sub": "SSR / -属性",
+      "sub": "SSR / 彩属性",
       "ja": "ランズィ",
       "ko": "란지",
       "en": "Lanzwi",
@@ -510,7 +510,7 @@
     {
       "id": "hero-24501",
       "category": "キャラクター",
-      "sub": "SSR / -属性",
+      "sub": "SSR / 彩属性",
       "ja": "ホセ",
       "ko": "호세",
       "en": "Jose",
@@ -521,7 +521,7 @@
     {
       "id": "hero-25201",
       "category": "キャラクター",
-      "sub": "UR / -属性",
+      "sub": "UR / 幻属性",
       "ja": "白崎香織",
       "ko": "시라사키 카오리",
       "en": "Kaori Shirasaki",
@@ -532,7 +532,7 @@
     {
       "id": "hero-25301",
       "category": "キャラクター",
-      "sub": "UR / -属性",
+      "sub": "UR / 夢属性",
       "ja": "ノイント",
       "ko": "노인트",
       "en": "Noint",
@@ -543,7 +543,7 @@
     {
       "id": "hero-25601",
       "category": "キャラクター",
-      "sub": "SSR / -属性",
+      "sub": "SSR / 夢属性",
       "ja": "天之河光輝",
       "ko": "아마노가와 코우키",
       "en": "Kouki Amanogawa",
@@ -554,7 +554,7 @@
     {
       "id": "hero-333",
       "category": "キャラクター",
-      "sub": "SR / -属性",
+      "sub": "SR / 夢属性",
       "ja": "斎藤良樹",
       "ko": "사이토 요시키",
       "en": "Yoshiki Saitou",
@@ -565,7 +565,7 @@
     {
       "id": "hero-433",
       "category": "キャラクター",
-      "sub": "SR / -属性",
+      "sub": "SR / 心属性",
       "ja": "ニア",
       "ko": "니아",
       "en": "Nia",
@@ -576,7 +576,7 @@
     {
       "id": "hero-733",
       "category": "キャラクター",
-      "sub": "SR / -属性",
+      "sub": "SR / 夢属性",
       "ja": "近藤礼一",
       "ko": "콘도 레이이치",
       "en": "Reiichi Kondou",
@@ -587,7 +587,7 @@
     {
       "id": "hero-833",
       "category": "キャラクター",
-      "sub": "SR / -属性",
+      "sub": "SR / 夢属性",
       "ja": "遠藤浩介",
       "ko": "엔도 코스케",
       "en": "Kousuke Endou",
@@ -598,7 +598,7 @@
     {
       "id": "hero-1333",
       "category": "キャラクター",
-      "sub": "SSR / -属性",
+      "sub": "SSR / 心属性",
       "ja": "ハルガ",
       "ko": "하르가",
       "en": "Kharga",
@@ -609,7 +609,7 @@
     {
       "id": "hero-1633",
       "category": "キャラクター",
-      "sub": "SSR / -属性",
+      "sub": "SSR / 幻属性",
       "ja": "園部優花",
       "ko": "소노베 유카",
       "en": "Yuuka Sonobe",
@@ -620,7 +620,7 @@
     {
       "id": "hero-1634",
       "category": "キャラクター",
-      "sub": "SSR / -属性",
+      "sub": "SSR / 彩属性",
       "ja": "アドゥル",
       "ko": "아둘",
       "en": "Adul",
@@ -631,7 +631,7 @@
     {
       "id": "hero-1635",
       "category": "キャラクター",
-      "sub": "SSR / -属性",
+      "sub": "SSR / 幻属性",
       "ja": "フォス",
       "ko": "포스",
       "en": "Foss",
@@ -642,7 +642,7 @@
     {
       "id": "hero-1733",
       "category": "キャラクター",
-      "sub": "SSR / -属性",
+      "sub": "SSR / 彩属性",
       "ja": "檜山大介",
       "ko": "히야마 다이스케",
       "en": "Daisuke Hiyama",
@@ -653,7 +653,7 @@
     {
       "id": "hero-1833",
       "category": "キャラクター",
-      "sub": "SSR / -属性",
+      "sub": "SSR / 夢属性",
       "ja": "坂上龍太郎",
       "ko": "사카가미 류타로",
       "en": "Ryutarou Sakagami",
@@ -664,7 +664,7 @@
     {
       "id": "hero-2333",
       "category": "キャラクター",
-      "sub": "UR / -属性",
+      "sub": "UR / 彩属性",
       "ja": "ナイズ",
       "ko": "나이즈",
       "en": "Naiz",
@@ -675,7 +675,7 @@
     {
       "id": "hero-2633",
       "category": "キャラクター",
-      "sub": "UR / -属性",
+      "sub": "UR / 彩属性",
       "ja": "ティオ",
       "ko": "티오",
       "en": "Tio",
@@ -686,7 +686,7 @@
     {
       "id": "hero-2733",
       "category": "キャラクター",
-      "sub": "UR / -属性",
+      "sub": "UR / 夢属性",
       "ja": "八重樫雫",
       "ko": "야에가시 시즈쿠",
       "en": "Shizuku Yaegashi",
@@ -697,7 +697,7 @@
     {
       "id": "hero-10433",
       "category": "キャラクター",
-      "sub": "SR / -属性",
+      "sub": "SR / 彩属性",
       "ja": "リーマン",
       "ko": "리만",
       "en": "Lehman",
@@ -708,7 +708,7 @@
     {
       "id": "hero-10733",
       "category": "キャラクター",
-      "sub": "SR / -属性",
+      "sub": "SR / 心属性",
       "ja": "イルワ",
       "ko": "이루와",
       "en": "Ilwer",
@@ -719,7 +719,7 @@
     {
       "id": "hero-10833",
       "category": "キャラクター",
-      "sub": "SR / -属性",
+      "sub": "SR / 幻属性",
       "ja": "ロア",
       "ko": "로어",
       "en": "Loa",
@@ -730,7 +730,7 @@
     {
       "id": "hero-11433",
       "category": "キャラクター",
-      "sub": "SSR / -属性",
+      "sub": "SSR / 心属性",
       "ja": "谷口鈴",
       "ko": "타니구치 스즈",
       "en": "Suzu Taniguchi",
@@ -741,7 +741,7 @@
     {
       "id": "hero-11434",
       "category": "キャラクター",
-      "sub": "SSR / -属性",
+      "sub": "SSR / 幻属性",
       "ja": "ソーナ",
       "ko": "소나",
       "en": "Sona",
@@ -752,7 +752,7 @@
     {
       "id": "hero-11533",
       "category": "キャラクター",
-      "sub": "SSR / -属性",
+      "sub": "SSR / 夢属性",
       "ja": "中村恵里",
       "ko": "나카무라 에리",
       "en": "Eri Nakamura",
@@ -763,7 +763,7 @@
     {
       "id": "hero-11733",
       "category": "キャラクター",
-      "sub": "SSR / -属性",
+      "sub": "SSR / 幻属性",
       "ja": "メルド",
       "ko": "멜드",
       "en": "Meld",
@@ -774,7 +774,7 @@
     {
       "id": "hero-11833",
       "category": "キャラクター",
-      "sub": "SSR / -属性",
+      "sub": "SSR / 彩属性",
       "ja": "菅原妙子",
       "ko": "스가와라 타에코",
       "en": "Taeko Sugawara",
@@ -785,7 +785,7 @@
     {
       "id": "hero-12434",
       "category": "キャラクター",
-      "sub": "UR / -属性",
+      "sub": "UR / 心属性",
       "ja": "メイル",
       "ko": "메일",
       "en": "Meiru",
@@ -796,7 +796,7 @@
     {
       "id": "hero-12533",
       "category": "キャラクター",
-      "sub": "UR / -属性",
+      "sub": "UR / 彩属性",
       "ja": "ラウス",
       "ko": "라우스",
       "en": "Laus",
@@ -807,7 +807,7 @@
     {
       "id": "hero-12834",
       "category": "キャラクター",
-      "sub": "UR / -属性",
+      "sub": "UR / 幻属性",
       "ja": "毒島冴子",
       "ko": "부스지마 사에코",
       "en": "Saeko Busujima",
@@ -818,7 +818,7 @@
     {
       "id": "hero-12835",
       "category": "キャラクター",
-      "sub": "UR / -属性",
+      "sub": "UR / 彩属性",
       "ja": "高城沙耶",
       "ko": "타카기 사야",
       "en": "Saya Takagi",
@@ -829,7 +829,7 @@
     {
       "id": "hero-23434",
       "category": "キャラクター",
-      "sub": "UR+ / -属性",
+      "sub": "UR+ / 異界属性",
       "ja": "ヘスティア",
       "ko": "헤스티아",
       "en": "Hestia",
@@ -840,7 +840,7 @@
     {
       "id": "hero-23833",
       "category": "キャラクター",
-      "sub": "UR+ / -属性",
+      "sub": "UR+ / 異界属性",
       "ja": "リュー",
       "ko": "류",
       "en": "Ryu",
@@ -851,7 +851,7 @@
     {
       "id": "hero-56102",
       "category": "キャラクター",
-      "sub": "UR+ / -属性",
+      "sub": "UR+ / 異界属性",
       "ja": "ロキシー",
       "ko": "록시",
       "en": "Roxy",
@@ -862,7 +862,7 @@
     {
       "id": "hero-23437",
       "category": "キャラクター",
-      "sub": "UR+ / -属性",
+      "sub": "UR+ / 異界属性",
       "ja": "シルフィエット",
       "ko": "실피에트",
       "en": "Sylphiette",
@@ -873,7 +873,7 @@
     {
       "id": "hero-56603",
       "category": "キャラクター",
-      "sub": "UR+ / -属性",
+      "sub": "UR+ / 異界属性",
       "ja": "エリナリーゼ",
       "ko": "엘리나리제",
       "en": "Elinalise",
@@ -884,7 +884,7 @@
     {
       "id": "hero-23435",
       "category": "キャラクター",
-      "sub": "UR+ / -属性",
+      "sub": "UR+ / 神属性",
       "ja": "リリアーナ(聖なる女王)",
       "ko": "릴리아나(성스러운 여왕)",
       "en": "Liliana (Holy Queen)",
@@ -895,7 +895,7 @@
     {
       "id": "hero-23534",
       "category": "キャラクター",
-      "sub": "UR+ / -属性",
+      "sub": "UR+ / 神属性",
       "ja": "リューティリス(覇者の礼装)",
       "ko": "류티리스(패권자의 예복)",
       "en": "Lyutillis (Conqueror's Attire)",
@@ -906,7 +906,7 @@
     {
       "id": "hero-23438",
       "category": "キャラクター",
-      "sub": "UR+ / -属性",
+      "sub": "UR+ / 神属性",
       "ja": "アルテナ(覇者の礼装)",
       "ko": "알테나(패권자의 예복)",
       "en": "Altina (Conqueror's Attire)",
@@ -917,7 +917,7 @@
     {
       "id": "hero-56207",
       "category": "キャラクター",
-      "sub": "UR+ / -属性",
+      "sub": "UR+ / 神属性",
       "ja": "レミア(覇者の礼装)",
       "ko": "레미아(패권자의 예복)",
       "en": "Remia (Conqueror's Attire)",
@@ -928,7 +928,7 @@
     {
       "id": "hero-67501",
       "category": "キャラクター",
-      "sub": "SP / -属性",
+      "sub": "SP / 無上属性",
       "ja": "アルベド",
       "ko": "알베도",
       "en": "Albedo",
@@ -939,7 +939,7 @@
     {
       "id": "hero-1765",
       "category": "キャラクター",
-      "sub": "SP / -属性",
+      "sub": "SP / 無上属性",
       "ja": "シャルティア",
       "ko": "샤르티아",
       "en": "Shalltear",
@@ -950,7 +950,7 @@
     {
       "id": "hero-67201",
       "category": "キャラクター",
-      "sub": "SP / -属性",
+      "sub": "SP / 無上属性",
       "ja": "アウラ&マーレ",
       "ko": "아우라&마레",
       "en": "Aura&Mare",
@@ -961,7 +961,7 @@
     {
       "id": "hero-1565",
       "category": "キャラクター",
-      "sub": "SP / -属性",
+      "sub": "SP / 無上属性",
       "ja": "ティオ(竜の巫女)",
       "ko": "티오(용의 무녀)",
       "en": "Tio (Dragon's Miko)",
@@ -972,7 +972,7 @@
     {
       "id": "hero-1966",
       "category": "キャラクター",
-      "sub": "SP / -属性",
+      "sub": "SP / 無上属性",
       "ja": "八重樫雫(鬼の剣客)",
       "ko": "야에가시 시즈쿠(귀신 검객)",
       "en": "Shizuku Yaegashi (Oni Swordmaster)",

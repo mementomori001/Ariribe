@@ -396,6 +396,8 @@ table.clean-table tbody tr.clickable:hover { background: var(--bg-soft); }
 .attr-夢 { color: var(--violet); background: rgba(109, 40, 217, 0.09); }
 .attr-彩 { color: var(--emerald); background: rgba(4, 120, 87, 0.09); }
 .attr-幻 { color: var(--accent); background: var(--accent-soft); }
+.attr-異界 { color: #b45309; background: rgba(180, 83, 9, 0.1); }
+.attr-無上 { color: #be123c; background: rgba(190, 18, 60, 0.1); }
 
 /* ---- Tier Rows (Prydwen Clean) ---- */
 .tier-band {

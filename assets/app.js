@@ -372,7 +372,7 @@
       <p style="margin:0 0 14px;color:var(--text-sub);">行をクリックすると、覚醒前/覚醒後のスキル変化とUR+進化1〜10の詳細ページへ移動します。</p>
       <div class="filter-strip">
         <input type="search" class="clean-input" id="char-search" style="flex:1;min-width:200px;" placeholder="キャラ名・スキル効果（血族、氷像、挑発など）..." value="${esc(q)}">
-        <div class="pill-group">${['ALL', '神', '心', '夢', '彩', '幻'].map(a => `<button class="pill ${attr === a ? 'active' : ''}" data-char-attr="${a}">${a === 'ALL' ? '全属性' : a}</button>`).join('')}</div>
+        <div class="pill-group">${['ALL', '神', '心', '夢', '彩', '幻', '異界', '無上'].map(a => `<button class="pill ${attr === a ? 'active' : ''}" data-char-attr="${a}">${a === 'ALL' ? '全属性' : a}</button>`).join('')}</div>
         <div class="pill-group">${['ALL', 'SP', 'UR+', 'UR', 'SSR', 'SR'].map(r => `<button class="pill ${rarity === r ? 'active' : ''}" data-char-rarity="${r}">${r === 'ALL' ? '全レア' : r}</button>`).join('')}</div>
       </div>
       <div class="table-wrap">
