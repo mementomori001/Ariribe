@@ -395,6 +395,27 @@ def add_new_heroes(chars: list, b_hero: bytes, b_skill: bytes | None, loc: dict)
             continue
         cid = f"hero-{hid}"
         if cid in existing_ids or _norm_name(name_ja) in existing_names:
+            ex_c = next((c for c in chars if c.get("id") == cid or _norm_name(c.get("name")) == _norm_name(name_ja)), None)
+            if ex_c and not ex_c.get("skills") and hid in skills_map:
+                tiers = skills_map.get(hid, [])
+                first_t, last_t = (tiers[0] if tiers else {}), (tiers[-1] if tiers else {})
+                skills_obj = {}
+                for slot_key, n_f, d_f in [
+                    ("main", "activename", "activedes1"),
+                    ("p1", "passive1name", "passive1des"),
+                    ("p2", "passive2name", "passive2des"),
+                    ("p3", "passive3name", "passive3des"),
+                    ("p4", "passive4name", "passive4des"),
+                ]:
+                    sname = last_t.get(n_f) or first_t.get(n_f) or ""
+                    sbefore = first_t.get(d_f) or ""
+                    safter = last_t.get(d_f) or sbefore
+                    if sname or safter:
+                        skills_obj[slot_key] = {"name": sname, "before": sbefore, "after": safter}
+                if skills_obj:
+                    ex_c["skills"] = skills_obj
+                    added += 1
+                    print(f"Populated skills for existing character: {cid} ({name_ja})")
             continue
 
         tiers = skills_map.get(hid, [])
@@ -797,6 +818,50 @@ def update_i18n_glossary(data_dir: str, chars: list, circles: list, systems: dic
     return True
 
 
+
+
+def update_spirits(systems: dict, b_shenshu: bytes, loc: dict) -> int:
+    CAT_MAP = {"2": "中級", "3": "高級", "4": "特級", "5": "超級", "6": "超級"}
+    spirits = systems.setdefault("spirits", [])
+    by_name = {_norm_name(s.get("name")): s for s in spirits if s.get("name")}
+    by_rank = {s.get("rank"): s for s in spirits if s.get("rank")}
+    seen = set()
+    added = 0
+    for m in re.finditer(rb"shenshu_name_\d+", b_shenshu):
+        klen = b_shenshu[m.start() - 1]
+        nkey = b_shenshu[m.start() : m.start() + klen].decode("utf-8", errors="ignore")
+        if not nkey.startswith("shenshu_name_") or nkey in seen:
+            continue
+        seen.add(nkey)
+        sid = nkey[len("shenshu_name_") :]
+        name_ja = (loc.get(nkey) or "").strip()
+        if not name_ja or "テスト" in name_ja:
+            continue
+        rank_str = f"ID:{sid}"
+        if rank_str in by_rank or _norm_name(name_ja) in by_name:
+            continue
+        levels = []
+        for lv in range(1, 6):
+            desc = _strip_tags(loc.get(f"skill_des_30{sid}{lv}") or loc.get(f"skill_des_30{sid}{lv}03") or "")
+            if desc:
+                levels.append({"label": f"{lv}凸", "desc": desc})
+        if not levels:
+            continue
+        cat = CAT_MAP.get(sid[2] if len(sid) >= 3 else "", "その他")
+        spirits.append({
+            "name": name_ja,
+            "cat": cat,
+            "rank": rank_str,
+            "note": levels[0]["desc"],
+            "levels": levels,
+        })
+        by_name[_norm_name(name_ja)] = spirits[-1]
+        by_rank[rank_str] = spirits[-1]
+        added += 1
+        print(f"Added new spirit: {name_ja} ({rank_str})")
+    return added
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--build-id", default="", help="G123 ビルド番号 (空なら自動検出/既定84237)")
@@ -879,6 +944,13 @@ def main():
         n_art = update_artifacts(systems, b_art, b_attr, loc)
         if n_art:
             print(f"Added {n_art} new artifacts.")
+            changed = True
+
+    b_shenshu = load_bin("shenshu", bin_map, build_id, args.local_dir)
+    if b_shenshu:
+        n_sp_art = update_spirits(systems, b_shenshu, loc)
+        if n_sp_art:
+            print(f"Added {n_sp_art} new spirits.")
             changed = True
 
     if changed:
