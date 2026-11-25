@@ -747,10 +747,23 @@ def update_artifacts(systems: dict, b_art: bytes, b_attr: bytes | None, loc: dic
         if not aid.isdigit():
             continue
         name_ja = (loc.get(k) or "").strip()
-        if not name_ja or "テスト" in name_ja or _norm_name(name_ja) in by_name:
+        if not name_ja or "テスト" in name_ja:
             continue
         rarity = ARTIFACT_ID_PREFIX_RARITY.get(aid[0], "-") if len(aid) >= 4 else "-"
         note_ja = _combine_note(aid)
+        existing_art = by_name.get(_norm_name(name_ja))
+        if existing_art:
+            art_changed = False
+            if existing_art.get("rarity") in ("", "-", None) and rarity != "-":
+                existing_art["rarity"] = rarity
+                art_changed = True
+            if not existing_art.get("note") and note_ja:
+                existing_art["note"] = note_ja
+                art_changed = True
+            if art_changed:
+                added += 1
+                print(f"Updated artifact (from Localize): {name_ja} ({rarity})")
+            continue
         artifacts.append({
             "name": name_ja,
             "rarity": rarity,
