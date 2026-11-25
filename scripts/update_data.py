@@ -636,7 +636,7 @@ ARTIFACT_RARITY_LABELS = {2: "R", 3: "SR", 4: "SSR", 5: "UR", 6: "UR+", 7: "UR+"
 ARTIFACT_ID_PREFIX_RARITY = {"1": "R", "2": "SR", "3": "SSR", "4": "UR", "5": "UR+", "6": "UR+"}
 
 
-def update_artifacts(systems: dict, b_art: bytes, b_attr: bytes | None, loc: dict) -> int:
+def update_artifacts(systems: dict, b_art: bytes, b_attr: bytes | None, loc: dict, b_jz: bytes | None = None) -> int:
     artifacts = systems.setdefault("artifacts", [])
     by_name = {_norm_name(a.get("name")): a for a in artifacts if a.get("name")}
     known_attrs = {m.group(1).decode("ascii") for m in re.finditer(rb"intr_([a-z0-9_]+)", b_attr)} if b_attr else set()
@@ -678,6 +678,15 @@ def update_artifacts(systems: dict, b_art: bytes, b_attr: bytes | None, loc: dic
                 parts.append(f"【{sname}】{texts[-1]}")
         return " / ".join(parts)
 
+    jz_text_map = {}
+    if b_jz:
+        for m in re.finditer(rb"artifact_jz_name_(\d+)", b_jz):
+            full_code = m.group(1).decode()
+            win = b_jz[m.start() : m.start() + 120]
+            tm = re.search(rb"artifact_jz_text_(\d+)", win)
+            if tm:
+                jz_text_map.setdefault(full_code, []).append(tm.group(0).decode())
+
     def _build_refining(aid: str) -> list:
         out = []
         for idx in range(1, 6):
@@ -688,6 +697,13 @@ def update_artifacts(systems: dict, b_art: bytes, b_attr: bytes | None, loc: dic
                 t = _strip_tags(loc.get(f"artifact_jz_text_{aid}{slot}00{lv}", ""))
                 if t and t != "なし":
                     levels.append(t)
+            if not levels and f"{aid}00{idx}" in jz_text_map:
+                seen_t = set()
+                for tkey in sorted(set(jz_text_map[f"{aid}00{idx}"])):
+                    t = _strip_tags(loc.get(tkey, ""))
+                    if t and t not in ("なし", "无") and t not in seen_t:
+                        seen_t.add(t)
+                        levels.append(t)
             if sname or levels:
                 out.append({"slot": idx, "name": sname, "levels": levels})
         return out
@@ -741,7 +757,7 @@ def update_artifacts(systems: dict, b_art: bytes, b_attr: bytes | None, loc: dic
             if not existing_art.get("note") and note_ja:
                 existing_art["note"] = note_ja
                 art_changed = True
-            if refining and not existing_art.get("refining"):
+            if refining and (not existing_art.get("refining") or sum(len(x.get("levels", [])) for x in refining) > sum(len(x.get("levels", [])) for x in existing_art.get("refining", []))):
                 existing_art["refining"] = refining
                 art_changed = True
             if art_changed:
@@ -789,7 +805,7 @@ def update_artifacts(systems: dict, b_art: bytes, b_attr: bytes | None, loc: dic
             if not existing_art.get("note") and note_ja:
                 existing_art["note"] = note_ja
                 art_changed = True
-            if refining and not existing_art.get("refining"):
+            if refining and (not existing_art.get("refining") or sum(len(x.get("levels", [])) for x in refining) > sum(len(x.get("levels", [])) for x in existing_art.get("refining", []))):
                 existing_art["refining"] = refining
                 art_changed = True
             if art_changed:
@@ -1133,8 +1149,9 @@ def main():
 
     b_art = load_bin("artifact", bin_map, build_id, args.local_dir)
     b_attr = load_bin("heroattr", bin_map, build_id, args.local_dir)
+    b_jz = load_bin("artifact_jingzhu", bin_map, build_id, args.local_dir)
     if b_art:
-        n_art = update_artifacts(systems, b_art, b_attr, loc)
+        n_art = update_artifacts(systems, b_art, b_attr, loc, b_jz)
         if n_art:
             print(f"Added {n_art} new artifacts.")
             changed = True
