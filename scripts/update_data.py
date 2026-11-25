@@ -9,6 +9,7 @@ import argparse
 import json
 import os
 import re
+import struct
 import urllib.request
 
 BASE_HOST = "https://arifure.pro.g123-cpp.com"
@@ -140,7 +141,7 @@ def update_sp_jj(chars: list, b_jj: bytes, loc: dict) -> int:
     SP_JJ_ID_MAP = {}
     for s in list(range(1, 6)) + list(range(26, 31)):
         SP_JJ_ID_MAP[s] = "hero-67501"
-    for s in list(range(6, 10)) + list(range(31, 36)):
+    for s in list(range(6, 11)) + list(range(31, 37)):
         SP_JJ_ID_MAP[s] = "hero-1765"
     for s in range(11, 16):
         SP_JJ_ID_MAP[s] = "hero-67201"
@@ -317,6 +318,124 @@ def update_element_resonance(chars: list, loc: dict) -> int:
     return updated
 
 
+
+
+RARITY_LABELS = {3: "SR", 4: "SSR", 5: "UR", 6: "UR+", 7: "SP"}
+CODE_TO_ATTR = {1: "心", 2: "夢", 3: "彩", 4: "幻", 5: "神", 6: "異界", 7: "無上"}
+
+
+def _decode_id_before_len(buf: bytes, len_pos: int) -> int:
+    if len_pos >= 4 and buf[len_pos - 4] == 0xF0 and (buf[len_pos - 3] & 0xC0) == 0xC0:
+        b1, b2, b3 = buf[len_pos - 3], buf[len_pos - 2], buf[len_pos - 1]
+        return ((b1 & 0x3F) << 16) | (b2 << 8) | b3
+    raw = struct.unpack(">H", buf[len_pos - 2 : len_pos])[0]
+    return raw - 0x8000 if raw >= 0x8000 else raw
+
+
+def _parse_heroskill_map(b_skill: bytes, loc: dict) -> dict:
+    skill_fields = [
+        "activedes1", "passive1des", "passive2des", "passive3des", "passive4des",
+        "activename", "passive1name", "passive2name", "passive3name", "passive4name",
+    ]
+    out = {}
+    headers = list(re.finditer(rb"\x00{8,}\xc0", b_skill))
+    for h_idx, hm in enumerate(headers):
+        pos = hm.end()
+        if pos + 4 > len(b_skill):
+            continue
+        hid = _decode_id_before_len(b_skill, pos + 2) if not (b_skill[pos] == 0xF0 and (b_skill[pos + 1] & 0xC0) == 0xC0) else (
+            ((b_skill[pos + 1] & 0x3F) << 16) | (b_skill[pos + 2] << 8) | b_skill[pos + 3]
+        )
+        chunk_end = headers[h_idx + 1].start() if h_idx + 1 < len(headers) else len(b_skill)
+        if h_idx + 1 < len(headers):
+            chunk_end = headers[h_idx + 1].start()
+        hero_chunk = b_skill[pos:chunk_end]
+        tier_matches = list(re.finditer(rb"hero_hero_skill_activedes1_([0-9_]+)", hero_chunk))
+        for t_idx, tm in enumerate(tier_matches):
+            klen = hero_chunk[tm.start() - 1]
+            full_key = hero_chunk[tm.start() : tm.start() + klen].decode("utf-8", errors="ignore")
+            sid_str = full_key[len("hero_hero_skill_activedes1_") :]
+            t_start = tm.start()
+            t_end = tier_matches[t_idx + 1].start() if t_idx + 1 < len(tier_matches) else len(hero_chunk)
+            t_chunk = hero_chunk[t_start:t_end]
+            tier_obj = {}
+            for sf in skill_fields:
+                pat = f"hero_hero_skill_{sf}_{sid_str}".encode("utf-8")
+                if pat in t_chunk:
+                    key_str = pat.decode("utf-8")
+                    val = _strip_tags(loc.get(key_str, ""))
+                    if val:
+                        tier_obj[sf] = val
+            if tier_obj:
+                out.setdefault(hid, []).append(tier_obj)
+    return out
+
+
+def add_new_heroes(chars: list, b_hero: bytes, b_skill: bytes | None, loc: dict) -> int:
+    existing_ids = {c.get("id") for c in chars}
+    existing_names = {_norm_name(c.get("name")) for c in chars if c.get("name")}
+    skills_map = _parse_heroskill_map(b_skill, loc) if b_skill else {}
+
+    h_matches = [m.start() for m in re.finditer(rb"hero_hero_hero_name_", b_hero)]
+    added = 0
+    for i, pos in enumerate(h_matches):
+        nlen = b_hero[pos - 1]
+        name_key = b_hero[pos : pos + nlen].decode("utf-8", errors="ignore")
+        hid = _decode_id_before_len(b_hero, pos - 1)
+        clen = b_hero[pos + nlen]
+        end = h_matches[i + 1] - 4 if i + 1 < len(h_matches) else len(b_hero)
+        rest = b_hero[pos + nlen + 1 + clen : end]
+        rarity_code = rest[0] if len(rest) > 0 else None
+        faction_code = rest[1] if len(rest) > 1 else None
+
+        name_ja = (loc.get(name_key) or "").strip()
+        if not name_ja or "テスト" in name_ja:
+            continue
+        cid = f"hero-{hid}"
+        if cid in existing_ids or _norm_name(name_ja) in existing_names:
+            continue
+
+        tiers = skills_map.get(hid, [])
+        first_t = tiers[0] if tiers else {}
+        last_t = tiers[-1] if tiers else {}
+        skills_obj = {}
+        for slot_key, n_f, d_f in [
+            ("main", "activename", "activedes1"),
+            ("p1", "passive1name", "passive1des"),
+            ("p2", "passive2name", "passive2des"),
+            ("p3", "passive3name", "passive3des"),
+            ("p4", "passive4name", "passive4des"),
+        ]:
+            sname = last_t.get(n_f) or first_t.get(n_f) or ""
+            sbefore = first_t.get(d_f) or ""
+            safter = last_t.get(d_f) or sbefore
+            if sname or safter:
+                skills_obj[slot_key] = {"name": sname, "before": sbefore, "after": safter}
+
+        chars.append({
+            "id": cid,
+            "name": name_ja,
+            "shortName": name_ja,
+            "rarity": RARITY_LABELS.get(rarity_code, "-"),
+            "attr": CODE_TO_ATTR.get(faction_code, "-"),
+            "subAttr": "",
+            "type": "-",
+            "tier": "-",
+            "roles": [],
+            "summary": "",
+            "recommendedCircles": [],
+            "recommendedArtifacts": [],
+            "recommendedRerolls": [],
+            "skills": skills_obj,
+            "evolutions": [],
+        })
+        existing_ids.add(cid)
+        existing_names.add(_norm_name(name_ja))
+        added += 1
+        print(f"Added new character: {cid} ({name_ja})")
+    return added
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--build-id", default="", help="G123 ビルド番号 (空なら自動検出/既定84237)")
@@ -349,6 +468,14 @@ def main():
     systems = json.load(open(sys_path, encoding="utf-8"))
 
     changed = False
+    b_hero = load_bin("hero", bin_map, build_id, args.local_dir)
+    b_skill = load_bin("heroskill", bin_map, build_id, args.local_dir)
+    if b_hero:
+        n_new = add_new_heroes(chars, b_hero, b_skill, loc)
+        if n_new:
+            print(f"Added {n_new} new characters.")
+            changed = True
+
     b_jj = load_bin("hero_jj", bin_map, build_id, args.local_dir)
     if b_jj:
         n_sp = update_sp_jj(chars, b_jj, loc)
