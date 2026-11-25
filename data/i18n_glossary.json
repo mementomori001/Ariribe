@@ -986,7 +986,7 @@
       "sub": "SP / 無上属性",
       "ja": "ユエ(吸血姫)",
       "ko": "유에(흡혈희)",
-      "en": "Supreme Yue",
+      "en": "Yue (Vampire Princess)",
       "zh": "月(吸血姬)",
       "linkView": "char-detail",
       "linkId": "hero-67503"
@@ -2858,10 +2858,10 @@
     {
       "id": "af_87",
       "category": "アーティファクト",
-      "sub": "SP",
+      "sub": "UR+",
       "ja": "紅月の飾紐",
       "ko": "붉은 달의 장식띠",
-      "en": "",
+      "en": "Crimson Wings Headband",
       "zh": "紅月頭飾",
       "linkView": "artifacts"
     },
@@ -4302,7 +4302,7 @@
       "sub": "戦闘効果",
       "ja": "竜血の真祖",
       "ko": "용혈의 진조",
-      "en": "",
+      "en": "Dragonblood Ancestor",
       "zh": "龍血真祖"
     },
     {
@@ -6264,7 +6264,7 @@
       "sub": "戦闘効果",
       "ja": "血の傀儡",
       "ko": "피의 꼭두각시",
-      "en": "",
+      "en": "Blood Puppet",
       "zh": "血之傀儡"
     },
     {
