@@ -1,7 +1,7 @@
 {
   "meta": {
     "updatedAt": "2026-11-25",
-    "total": 698,
+    "total": 699,
     "languages": [
       {
         "code": "ja",
@@ -6347,6 +6347,15 @@
       "ko": "실드 차지",
       "en": "Shield charge",
       "zh": "護盾蓄力"
+    },
+    {
+      "id": "buff_showname_yemu",
+      "category": "バフ・状態異常",
+      "sub": "戦闘効果",
+      "ja": "夜の帳",
+      "ko": "밤의 장막",
+      "en": "Nightfall",
+      "zh": "夜幕"
     },
     {
       "id": "buff_showname_yhjy",
