@@ -663,21 +663,6 @@ def update_artifacts(systems: dict, b_art: bytes, b_attr: bytes | None, loc: dic
         end = art_matches[i + 1].start() if i + 1 < len(art_matches) else len(b_art)
         art_chunks.setdefault(aid, []).append(b_art[m.start() : end])
 
-    def _build_jz_note(aid: str) -> str:
-        parts = []
-        s_names = [loc.get(f"artifact_jz_name_{aid}00{i}", "").strip() for i in range(1, 6)]
-        s_names = [s for s in s_names if s]
-        for slot_idx in ("04", "05"):
-            texts = []
-            for lv in range(2, 7):
-                t = _strip_tags(loc.get(f"artifact_jz_text_{aid}{slot_idx}00{lv}", ""))
-                if t and t != "なし":
-                    texts.append(t)
-            if texts:
-                sname = s_names[int(slot_idx) - 1] if len(s_names) >= int(slot_idx) else f"スキル{int(slot_idx)}"
-                parts.append(f"【{sname}】{texts[-1]}")
-        return " / ".join(parts)
-
     jz_text_map = {}
     if b_jz:
         for m in re.finditer(rb"artifact_jz_name_(\d+)", b_jz):
@@ -687,8 +672,8 @@ def update_artifacts(systems: dict, b_art: bytes, b_attr: bytes | None, loc: dic
             if tm:
                 jz_text_map.setdefault(full_code, []).append(tm.group(0).decode())
 
-    def _build_refining(aid: str) -> list:
-        out = []
+    def _build_extra_skills(aid: str, rarity: str) -> list:
+        rows = []
         for idx in range(1, 6):
             sname = loc.get(f"artifact_jz_name_{aid}00{idx}", "").strip()
             slot = f"0{idx}"
@@ -704,16 +689,17 @@ def update_artifacts(systems: dict, b_art: bytes, b_attr: bytes | None, loc: dic
                     if t and t not in ("なし", "无") and t not in seen_t:
                         seen_t.add(t)
                         levels.append(t)
-            if sname or levels:
-                out.append({"slot": idx, "name": sname, "levels": levels})
-        return out
-
-    def _combine_note(aid: str) -> str:
-        des_ja = _strip_tags(loc.get(f"artifact_des_{aid}", ""))
-        jz_note = _build_jz_note(aid)
-        if des_ja and jz_note and jz_note not in des_ja:
-            return f"{des_ja} / {jz_note}"
-        return des_ja or jz_note
+            if sname and levels:
+                if len(levels) >= 2:
+                    rows.append({"text_ja": f"選択肢{idx}【{sname}】: Lv.1 {levels[0]} ／ Lv.{len(levels)} {levels[-1]}"})
+                else:
+                    rows.append({"text_ja": f"選択肢{idx}【{sname}】: {levels[0]}"})
+            elif sname:
+                rows.append({"text_ja": f"選択肢{idx}【{sname}】"})
+        if rows:
+            header = f"※{rarity}精錬スキル（下記{len(rows)}種から強化段階に応じて選択）" if rarity != "-" else "※精錬スキル"
+            return [{"text_ja": header}] + rows
+        return []
 
     added = 0
     for aid, chunks in art_chunks.items():
@@ -721,7 +707,8 @@ def update_artifacts(systems: dict, b_art: bytes, b_attr: bytes | None, loc: dic
         if not name_ja or "テスト" in name_ja:
             continue
         rarity = art_rarities.get(aid) or (ARTIFACT_ID_PREFIX_RARITY.get(aid[0], "-") if len(aid) >= 4 else "-")
-        note_ja = _combine_note(aid)
+        des_ja = _strip_tags(loc.get(f"artifact_des_{aid}", ""))
+        extra_skills = _build_extra_skills(aid, rarity)
         attr_by_key = {}
         for ch in chunks:
             for m_tok in re.finditer(rb"[a-z][a-z0-9_]{1,20}", ch):
@@ -739,26 +726,27 @@ def update_artifacts(systems: dict, b_art: bytes, b_attr: bytes | None, loc: dic
             fmt = (lambda v: f"{v/10.0:g}%") if "pro" in k else str
             attrs_out.append({"key": k, "name_ja": k_ja, "base": fmt(vals[0]), "max": fmt(vals[-1]), "values": [fmt(v) for v in vals]})
             eff_parts.append(f"{k_ja} {fmt(vals[0])}〜{fmt(vals[-1])}")
-        jz_note = _build_jz_note(aid)
-        refining = _build_refining(aid)
-        eff_str = " / ".join(eff_parts) or jz_note
+        eff_str = " / ".join(eff_parts)
         existing_art = by_name.get(_norm_name(name_ja))
         if existing_art:
             art_changed = False
+            if "refining" in existing_art:
+                existing_art.pop("refining", None)
+                art_changed = True
             if existing_art.get("rarity") in ("", "-", "SP", None) and rarity != "-":
                 existing_art["rarity"] = rarity
                 art_changed = True
             if not existing_art.get("attributes") and attrs_out:
                 existing_art["attributes"] = attrs_out
                 art_changed = True
-            if not existing_art.get("effect") and eff_str:
+            if (not existing_art.get("effect") or existing_art.get("effect", "").startswith("【")) and eff_str:
                 existing_art["effect"] = eff_str
                 art_changed = True
-            if not existing_art.get("note") and note_ja:
-                existing_art["note"] = note_ja
+            if des_ja and not existing_art.get("desc"):
+                existing_art["desc"] = des_ja
                 art_changed = True
-            if refining and (not existing_art.get("refining") or sum(len(x.get("levels", [])) for x in refining) > sum(len(x.get("levels", [])) for x in existing_art.get("refining", []))):
-                existing_art["refining"] = refining
+            if extra_skills and len(extra_skills) > len(existing_art.get("extraSkills") or []):
+                existing_art["extraSkills"] = extra_skills
                 art_changed = True
             if art_changed:
                 added += 1
@@ -768,11 +756,11 @@ def update_artifacts(systems: dict, b_art: bytes, b_attr: bytes | None, loc: dic
             "rarity": rarity,
             "cost": "-",
             "effect": eff_str,
-            "note": note_ja,
+            "note": "",
             "attributes": attrs_out,
+            "desc": des_ja,
+            "extraSkills": extra_skills,
         }
-        if refining:
-            art_obj["refining"] = refining
         artifacts.append(art_obj)
         by_name[_norm_name(name_ja)] = artifacts[-1]
         added += 1
@@ -789,46 +777,50 @@ def update_artifacts(systems: dict, b_art: bytes, b_attr: bytes | None, loc: dic
         if not name_ja or "テスト" in name_ja:
             continue
         rarity = ARTIFACT_ID_PREFIX_RARITY.get(aid[0], "-") if len(aid) >= 4 else "-"
-        note_ja = _combine_note(aid)
-        jz_note = _build_jz_note(aid)
-        eff_str = jz_note or _strip_tags(loc.get(f"artifact_des_{aid}", ""))
-        refining = _build_refining(aid)
+        des_ja = _strip_tags(loc.get(f"artifact_des_{aid}", ""))
+        extra_skills = _build_extra_skills(aid, rarity)
         existing_art = by_name.get(_norm_name(name_ja))
         if existing_art:
             art_changed = False
+            if "refining" in existing_art:
+                existing_art.pop("refining", None)
+                art_changed = True
             if existing_art.get("rarity") in ("", "-", "SP", None) and rarity != "-":
                 existing_art["rarity"] = rarity
                 art_changed = True
-            if not existing_art.get("effect") and eff_str:
-                existing_art["effect"] = eff_str
+            # Clean up any skill/flavor text previously put into effect when attributes is empty
+            if not existing_art.get("attributes") and existing_art.get("effect", "") and (
+                existing_art["effect"].startswith("【") or existing_art["effect"] == des_ja
+            ):
+                existing_art["effect"] = ""
                 art_changed = True
-            if not existing_art.get("note") and note_ja:
-                existing_art["note"] = note_ja
+            if not existing_art.get("attributes") and existing_art.get("note", "").startswith("【"):
+                existing_art["note"] = ""
                 art_changed = True
-            if refining and (not existing_art.get("refining") or sum(len(x.get("levels", [])) for x in refining) > sum(len(x.get("levels", [])) for x in existing_art.get("refining", []))):
-                existing_art["refining"] = refining
+            if des_ja and not existing_art.get("desc"):
+                existing_art["desc"] = des_ja
+                art_changed = True
+            if extra_skills and len(extra_skills) > len(existing_art.get("extraSkills") or []):
+                existing_art["extraSkills"] = extra_skills
                 art_changed = True
             if art_changed:
                 added += 1
                 print(f"Updated artifact (from Localize): {name_ja} ({rarity})")
             continue
-        art_obj = {
+        artifacts.append({
             "name": name_ja,
             "rarity": rarity,
             "cost": "-",
-            "effect": eff_str,
-            "note": note_ja,
+            "effect": "",
+            "note": "",
             "attributes": [],
-        }
-        if refining:
-            art_obj["refining"] = refining
-        artifacts.append(art_obj)
+            "desc": des_ja,
+            "extraSkills": extra_skills,
+        })
         by_name[_norm_name(name_ja)] = artifacts[-1]
         added += 1
         print(f"Added new artifact (from Localize): {name_ja} ({rarity})")
     return added
-
-
 
 
 def fetch_optional_localize(build_id: str, candidates: list[str]) -> dict:
